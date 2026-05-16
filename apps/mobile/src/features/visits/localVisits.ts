@@ -92,8 +92,12 @@ export function useLocalVisits(storeId?: string) {
   );
 
   const clearAllVisits = useCallback(async () => {
-    setVisits([]);
-    await AsyncStorage.removeItem(STORAGE_KEY);
+    try {
+      await AsyncStorage.removeItem(STORAGE_KEY);
+      setVisits([]); // Direct state update to trigger UI re-render
+    } catch (e) {
+      console.error("Failed to clear visits", e);
+    }
   }, []);
 
   return {
