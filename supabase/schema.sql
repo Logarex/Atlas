@@ -59,11 +59,14 @@ $$;
 
 alter table public.profiles enable row level security;
 
+drop policy if exists "Users can read public profiles" on public.profiles;
 create policy "Users can read public profiles" on public.profiles
 for select using (public_profile or id = auth.uid());
 
+drop policy if exists "Users can update own profile" on public.profiles;
 create policy "Users can update own profile" on public.profiles
 for update using (id = auth.uid()) with check (id = auth.uid());
 
+drop policy if exists "Users can insert own profile" on public.profiles;
 create policy "Users can insert own profile" on public.profiles
 for insert with check (id = auth.uid());
