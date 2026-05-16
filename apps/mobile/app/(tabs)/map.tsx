@@ -58,9 +58,7 @@ export default function MapScreen() {
 
       <View style={styles.panel}>
         <Text style={styles.title}>Carte mondiale</Text>
-        <Text style={styles.copy}>
-          {stores.length} boutiques chargées, {visitedStoreIds.size} marquées comme vues sur cet appareil.
-        </Text>
+
         <View style={styles.legend}>
           {(["open", "closed", "relocated"] as const).map((status) => (
             <View key={status} style={styles.legendItem}>

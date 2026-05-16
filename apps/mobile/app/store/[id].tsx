@@ -272,18 +272,13 @@ export default function StoreDetailScreen() {
           {Object.entries(store.architecture.attributes).map(([key, value]) => (
             <View key={key} style={styles.attribute}>
               <Text style={styles.attributeLabel}>
-                {attributeEmojis[key as keyof typeof attributeEmojis] ?? "•"}{" "}
                 {t(`attributes.${key}`)}
               </Text>
               <Text style={styles.attributeValue}>{t(`values.${value}`)}</Text>
             </View>
           ))}
         </View>
-        {positiveAttributes.length > 0 ? (
-          <Text style={styles.indicatorLine}>
-            {positiveAttributes.map((key) => attributeEmojis[key]).join(" ")}
-          </Text>
-        ) : null}
+
       </View>
 
       <View style={styles.section}>

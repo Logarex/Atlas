@@ -70,7 +70,7 @@ export function StoreCard({ isVisited = false, store }: StoreCardProps) {
             {featureKeys.map((key) => (
               <View key={key} style={styles.featurePill}>
                 <Text style={styles.featureText}>
-                  {attributeEmojis[key]} {t(`attributes.${key}`)}
+                  {t(`attributes.${key}`)}
                 </Text>
               </View>
             ))}

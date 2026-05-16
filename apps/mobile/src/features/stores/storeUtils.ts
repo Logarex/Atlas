@@ -1,23 +1,23 @@
 import type { ArchitectureAttribute, StoreRecord, StoreStatus } from "./store.types";
 
 export const statusEmojis: Record<StoreStatus, string> = {
-  announced: "✨",
-  closed: "⚫",
-  open: "🟢",
-  relocated: "↪️",
-  temporary: "🟡"
+  announced: "",
+  closed: "",
+  open: "",
+  relocated: "",
+  temporary: ""
 };
 
 export const attributeEmojis: Record<ArchitectureAttribute, string> = {
-  avenue: "🛍️",
-  boardroom: "💼",
-  forum: "🎤",
-  geniusBar: "🛠️",
-  glassCube: "◻️",
-  greenWall: "🌿",
-  historicFacade: "🏛️",
-  plaza: "🌇",
-  videoWall: "🖥️"
+  avenue: "",
+  boardroom: "",
+  forum: "",
+  geniusBar: "",
+  glassCube: "",
+  greenWall: "",
+  historicFacade: "",
+  plaza: "",
+  videoWall: ""
 };
 
 export function getStoreName(store: StoreRecord, language: string) {
