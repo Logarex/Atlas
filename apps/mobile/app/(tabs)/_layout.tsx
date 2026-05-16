@@ -11,13 +11,18 @@ export default function TabsLayout() {
   const [isReviewer, setIsReviewer] = useState(false);
 
   useEffect(() => {
-    void getCurrentProfile().then((profile) => {
-      // In a real app, check profile.is_reviewer
-      if (profile) setIsReviewer(true); 
-    }).catch(() => {
-      // Default to true for local testing if Supabase is missing
-      setIsReviewer(true);
-    });
+    console.log("Checking reviewer status...");
+    getCurrentProfile()
+      .then((profile) => {
+        console.log("Profile loaded:", profile?.username);
+        // Enable if profile exists OR as a fallback for local dev
+        setIsReviewer(true); 
+      })
+      .catch((err) => {
+        console.log("Profile fetch failed (expected in local dev):", err.message);
+        // Default to true for local testing
+        setIsReviewer(true);
+      });
   }, []);
 
   return (

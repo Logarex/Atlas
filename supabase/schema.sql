@@ -102,7 +102,7 @@ create table public.friendships (
 create table public.change_requests (
   id uuid primary key default gen_random_uuid(),
   store_id text references public.stores(id) on delete set null,
-  submitted_by uuid not null references public.profiles(id) on delete cascade,
+  submitted_by uuid references public.profiles(id) on delete cascade,
   type text not null,
   status public.submission_status not null default 'pending',
   payload jsonb not null,
