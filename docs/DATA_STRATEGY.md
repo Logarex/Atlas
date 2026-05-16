@@ -32,15 +32,12 @@ Reference: https://www.apple.com/legal/internet-services/terms/site.html
 Use sources in this order:
 
 1. Community observation with contributor license and reviewer approval.
-2. Wikidata structured data when it has compatible CC0 licensing.
-3. Wikimedia Commons photos with compatible licenses and attribution.
-4. Official Apple pages as human-verification links, not scraped content.
-5. Apple Newsroom articles for historical facts, cited and paraphrased.
-6. Local public records or architecture press, only when licenses permit factual reuse.
+2. Wikimedia Commons photos with compatible licenses and attribution.
+3. Official Apple pages as human-verification links, not scraped content.
+4. Apple Newsroom articles for historical facts, cited and paraphrased.
+5. Local public records or architecture press, only when licenses permit factual reuse.
 
-Wikidata licensing reference: https://www.wikidata.org/wiki/Wikidata:Licensing
 
-The helper command `npm run data:import:wikidata` creates candidate records from Wikidata. These candidates still need human review before they become canonical Atlas records, because addresses, opening dates, store status, and architectural attributes may be incomplete or imprecise.
 
 ## OpenStreetMap
 
@@ -82,7 +79,6 @@ Accepted source types:
 - Reliable local reporting.
 - Mall/property announcements.
 - Contributor photos and field observation.
-- Wikidata/Wikipedia only when backed by references or reviewer confidence.
 
 ## Field-level Provenance
 

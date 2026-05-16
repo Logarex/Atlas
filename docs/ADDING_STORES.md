@@ -6,7 +6,6 @@ Atlas keeps the public dataset conservative on purpose. Do not copy other propri
 
 Use these sources first:
 
-- Wikidata structured data for starter facts, because main-namespace structured data is CC0.
 - Apple official store pages as human verification links only.
 - Apple Newsroom articles for opening, reopening, and architecture facts, paraphrased with source URLs.
 - Original community observations and photos submitted under CC0 or CC BY 4.0.
@@ -14,21 +13,7 @@ Use these sources first:
 
 Apple's current store list is useful to know what exists, but Apple's Website Terms prohibit automated page scraping. Treat Apple pages as references you open and verify manually.
 
-## Import Candidate Stores from Wikidata
 
-Run:
-
-```bash
-npm run data:import:wikidata
-```
-
-This writes:
-
-```text
-packages/data/imports/wikidata-apple-stores.json
-```
-
-Those records are candidates, not automatically published data. Review each candidate, fix address/city/opening date/architecture, add sources, then create a real store JSON file in `packages/data/stores`.
 
 ## Add a Store Manually
 

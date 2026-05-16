@@ -148,16 +148,12 @@
     "public": "Public"
   },
   "review": {
-    "title": "Triage des boutiques",
-    "subtitle": "Valide les imports Wikipédia pour la base live.",
-    "noCandidates": "Aucun candidat à trier pour l'instant.",
-    "promote": "Valider la boutique",
-    "skip": "Passer",
+    "title": "Gestion des boutiques",
+    "subtitle": "Gère la base de données communautaire live.",
     "editing": "Modification...",
-    "success": "Boutique promue avec succès !",
-    "error": "Erreur lors de la promotion.",
-    "wikidata": "Source Wikidata",
-    "details": "Détails importés",
+    "success": "Modifications enregistrées !",
+    "error": "Erreur lors de l'enregistrement.",
+    "details": "Détails de la boutique",
     "verifyOnMap": "Voir sur la carte"
   }
 }

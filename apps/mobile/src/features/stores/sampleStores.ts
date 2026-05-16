@@ -1,6 +1,6 @@
 import type { StoreRecord } from "./store.types";
 
-const wikidataLicense = "CC0-1.0";
+
 const appleReferenceLicense = "reference_only";
 
 export const sampleStores: StoreRecord[] = [
@@ -62,14 +62,6 @@ export const sampleStores: StoreRecord[] = [
         license: appleReferenceLicense,
         fields: ["openedOn", "architecture.attributes.glassCube"],
         verifiedAt: "2026-05-16"
-      },
-      {
-        type: "wikidata_item",
-        label: "Wikidata item Q105695664",
-        url: "https://www.wikidata.org/wiki/Q105695664",
-        license: wikidataLicense,
-        fields: ["coordinates", "countryCode"],
-        verifiedAt: "2026-05-16"
       }
     ],
     lastVerifiedAt: "2026-05-16"
@@ -121,14 +113,6 @@ export const sampleStores: StoreRecord[] = [
         url: "https://www.apple.com/retail/tysonscorner/",
         license: appleReferenceLicense,
         fields: ["name", "address", "officialUrl", "hours.officialUrl"],
-        verifiedAt: "2026-05-16"
-      },
-      {
-        type: "wikidata_item",
-        label: "Wikidata item Q131309283",
-        url: "https://www.wikidata.org/wiki/Q131309283",
-        license: wikidataLicense,
-        fields: ["coordinates", "countryCode"],
         verifiedAt: "2026-05-16"
       }
     ],
@@ -183,14 +167,6 @@ export const sampleStores: StoreRecord[] = [
         url: "https://www.apple.com/fr/retail/champs-elysees/",
         license: appleReferenceLicense,
         fields: ["name", "address", "officialUrl", "hours.officialUrl"],
-        verifiedAt: "2026-05-16"
-      },
-      {
-        type: "wikidata_item",
-        label: "Wikidata item Q109810822",
-        url: "https://www.wikidata.org/wiki/Q109810822",
-        license: wikidataLicense,
-        fields: ["coordinates", "countryCode"],
         verifiedAt: "2026-05-16"
       }
     ],
@@ -252,14 +228,6 @@ export const sampleStores: StoreRecord[] = [
         url: "https://www.apple.com/newsroom/2020/09/apple-marina-bay-sands-opens-thursday-in-singapore/",
         license: appleReferenceLicense,
         fields: ["openedOn", "architecture.typology"],
-        verifiedAt: "2026-05-16"
-      },
-      {
-        type: "wikidata_item",
-        label: "Wikidata item Q122509086",
-        url: "https://www.wikidata.org/wiki/Q122509086",
-        license: wikidataLicense,
-        fields: ["coordinates", "countryCode"],
         verifiedAt: "2026-05-16"
       }
     ],

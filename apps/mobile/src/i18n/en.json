@@ -147,16 +147,12 @@
     "public": "Public"
   },
   "review": {
-    "title": "Store Triage",
-    "subtitle": "Validate Wikipedia imports for the live dataset.",
-    "noCandidates": "No candidates to triage right now.",
-    "promote": "Validate Store",
-    "skip": "Skip",
+    "title": "Store Management",
+    "subtitle": "Manage the live community dataset.",
     "editing": "Editing...",
-    "success": "Store promoted successfully!",
-    "error": "Error during promotion.",
-    "wikidata": "Wikidata Source",
-    "details": "Imported Details",
+    "success": "Changes saved successfully!",
+    "error": "Error saving changes.",
+    "details": "Store Details",
     "verifyOnMap": "Verify on Map"
   }
 }

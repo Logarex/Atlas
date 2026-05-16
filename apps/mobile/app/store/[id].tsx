@@ -13,11 +13,12 @@ import { useLocalVisits } from "@/features/visits/localVisits";
 import { formatDate, isISODate, todayISO } from "@/lib/date";
 import { useAppTheme } from "@/theme/useAppTheme";
 import * as ImagePicker from "expo-image-picker";
-import { Link, Stack, useLocalSearchParams } from "expo-router";
+import { Link, Stack, useLocalSearchParams, useRouter } from "expo-router";
 import {
   CalendarDays,
   Camera,
   Check,
+  ChevronLeft,
   Clock,
   Flag,
   MapPin,
@@ -40,6 +41,7 @@ import {
   TextInput,
   View
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { StoreStatus } from "@/features/stores/store.types";
 
 export default function StoreDetailScreen() {
@@ -48,6 +50,8 @@ export default function StoreDetailScreen() {
   const styles = useStyles(theme);
   
   const { id } = useLocalSearchParams<{ id: string }>();
+  const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { stores } = useStores();
   const store = stores.find((item) => item.id === id) ?? stores[0];
   const [visitDate, setVisitDate] = useState(todayISO());
@@ -175,11 +179,18 @@ export default function StoreDetailScreen() {
   }
 
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
+    <View style={styles.screen}>
       <Stack.Screen options={{ title: name }} />
-      <Link href="/(tabs)" style={styles.back}>
-        {t("store.back")}
-      </Link>
+      
+      <Pressable 
+        onPress={() => router.back()} 
+        style={[styles.backButton, { top: insets.top + 8 }]}
+        accessibilityLabel={t("store.back")}
+      >
+        <ChevronLeft color={theme.colors.teal} size={28} />
+      </Pressable>
+
+      <ScrollView contentContainerStyle={[styles.content, { paddingTop: insets.top + 60 }]}>
 
       <View style={styles.hero}>
         <View style={styles.statusPill}>
@@ -326,6 +337,7 @@ export default function StoreDetailScreen() {
           </Pressable>
         ))}
       </View>
+    </ScrollView>
 
       <Modal
         animationType="slide"
@@ -451,12 +463,12 @@ export default function StoreDetailScreen() {
           </View>
         </View>
       </Modal>
-    </ScrollView>
+    </View>
   );
 }
 
 function useStyles(theme: ReturnType<typeof useAppTheme>) {
-  const { colors, radii, spacing, typography } = theme;
+  const { colors, radii, spacing, typography, shadows } = theme;
 
   return useMemo(() => StyleSheet.create({
     screen: {
@@ -465,13 +477,20 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     content: {
       padding: spacing.lg,
-      paddingTop: spacing.xl
     },
-    back: {
-      color: colors.teal,
-      fontSize: typography.small,
-      fontWeight: "700",
-      marginBottom: spacing.lg
+    backButton: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: radii.full,
+      borderWidth: 1,
+      height: 44,
+      justifyContent: "center",
+      left: spacing.lg,
+      position: "absolute",
+      width: 44,
+      zIndex: 10,
+      ...shadows.sm
     },
     hero: {
       gap: spacing.sm

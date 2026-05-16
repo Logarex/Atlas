@@ -17,7 +17,7 @@ Thanks for helping build Atlas.
 - Do not paste Apple marketing copy.
 - Do not upload Apple-owned press images unless redistribution is explicitly permitted.
 - Provide a source for every factual claim.
-- Prefer primary sources, Wikidata CC0 records, Wikimedia Commons with compatible licenses, local observation, and community verification.
+- Prefer primary sources, Wikimedia Commons with compatible licenses, local observation, and community verification.
 
 ## Data Record Format
 

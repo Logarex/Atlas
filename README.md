@@ -55,7 +55,6 @@ See [docs/ADDING_STORES.md](docs/ADDING_STORES.md) for the practical workflow to
 Useful commands:
 
 ```bash
-npm run data:import:wikidata
 npm run data:validate
 ```
 
