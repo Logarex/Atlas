@@ -5,7 +5,7 @@ import { CalendarDays, MapPin } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-import { colors, spacing, typography } from "@/theme/tokens";
+import { colors, radii, shadows, spacing, typography } from "@/theme/tokens";
 
 import {
   attributeEmojis,
@@ -73,14 +73,9 @@ export function StoreCard({ isVisited = false, store }: StoreCardProps) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    padding: spacing.md,
-    shadowColor: colors.ink,
-    shadowOffset: { height: 4, width: 0 },
-    shadowOpacity: 0.06,
-    shadowRadius: 12
+    borderRadius: radii.md,
+    padding: spacing.lg,
+    ...shadows.md
   },
   topLine: {
     alignItems: "center",
@@ -100,45 +95,43 @@ const styles = StyleSheet.create({
   statusPill: {
     alignItems: "center",
     backgroundColor: colors.canvas,
-    borderColor: colors.line,
-    borderRadius: 999,
-    borderWidth: 1,
+    borderRadius: radii.full,
     flexDirection: "row",
     gap: spacing.xs,
-    paddingHorizontal: spacing.sm,
+    paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs
   },
   country: {
     color: colors.teal,
-    fontSize: typography.caption,
+    fontSize: typography.small,
     fontWeight: "800"
   },
   name: {
     color: colors.ink,
-    fontSize: 22,
-    fontWeight: "800",
-    letterSpacing: 0,
-    lineHeight: 27,
-    marginTop: spacing.sm
+    fontSize: typography.title2,
+    fontWeight: "900",
+    letterSpacing: -0.5,
+    lineHeight: 28,
+    marginTop: spacing.md
   },
   location: {
     color: colors.muted,
     flex: 1,
     fontSize: typography.body,
-    lineHeight: 21
+    lineHeight: 22
   },
   iconLine: {
     alignItems: "center",
     flexDirection: "row",
     gap: spacing.xs,
-    marginTop: spacing.xs
+    marginTop: spacing.sm
   },
   metaRow: {
     borderTopColor: colors.line,
     borderTopWidth: 1,
     flexDirection: "row",
     gap: spacing.md,
-    marginTop: spacing.md,
+    marginTop: spacing.lg,
     paddingTop: spacing.md
   },
   metaItem: {
@@ -165,7 +158,7 @@ const styles = StyleSheet.create({
   },
   featurePill: {
     backgroundColor: colors.mint,
-    borderRadius: 999,
+    borderRadius: radii.full,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs
   },

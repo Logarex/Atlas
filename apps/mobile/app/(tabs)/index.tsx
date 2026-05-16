@@ -1,7 +1,7 @@
 import { StoreCard } from "@/features/stores/StoreCard";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
-import { colors, spacing, typography } from "@/theme/tokens";
+import { colors, radii, shadows, spacing, typography } from "@/theme/tokens";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -123,42 +123,41 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.md
   },
   kicker: {
-    color: colors.copper,
+    color: colors.muted,
     fontSize: typography.caption,
-    fontWeight: "700",
-    letterSpacing: 0,
+    fontWeight: "800",
+    letterSpacing: 1,
     textTransform: "uppercase"
   },
   title: {
     color: colors.ink,
-    fontSize: 34,
-    fontWeight: "800",
-    letterSpacing: 0,
-    lineHeight: 39,
+    fontSize: typography.title1,
+    fontWeight: "900",
+    letterSpacing: -0.5,
+    lineHeight: 38,
     marginTop: spacing.xs
   },
   subtitle: {
     color: colors.muted,
     fontSize: typography.body,
-    lineHeight: 23,
+    lineHeight: 24,
     marginTop: spacing.sm
   },
   statsRow: {
     flexDirection: "row",
-    gap: spacing.sm,
-    marginTop: spacing.md
+    gap: spacing.md,
+    marginTop: spacing.lg
   },
   stat: {
     backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
+    borderRadius: radii.md,
     flex: 1,
-    padding: spacing.md
+    padding: spacing.md,
+    ...shadows.sm
   },
   statValue: {
     color: colors.ink,
-    fontSize: 24,
+    fontSize: typography.title2,
     fontWeight: "900"
   },
   statLabel: {
@@ -174,31 +173,28 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
+    borderRadius: radii.md,
     color: colors.ink,
     fontSize: typography.body,
-    height: 48,
-    paddingHorizontal: spacing.md
+    height: 52,
+    paddingHorizontal: spacing.md,
+    ...shadows.sm
   },
   filters: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: spacing.sm,
-    marginTop: spacing.sm
+    marginTop: spacing.md
   },
   filterButton: {
     backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 999,
-    borderWidth: 1,
+    borderRadius: radii.full,
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm
+    paddingVertical: spacing.sm,
+    ...shadows.sm
   },
   filterButtonActive: {
     backgroundColor: colors.ink,
-    borderColor: colors.ink
   },
   filterText: {
     color: colors.muted,
@@ -209,20 +205,20 @@ const styles = StyleSheet.create({
     color: colors.paper
   },
   warning: {
-    color: colors.copper,
+    color: colors.danger,
     fontSize: typography.caption,
     fontWeight: "700",
     marginTop: spacing.sm
   },
   list: {
-    gap: spacing.md,
+    gap: spacing.lg,
     padding: spacing.lg,
     paddingTop: spacing.sm
   },
   empty: {
     color: colors.muted,
     fontSize: typography.body,
-    paddingTop: spacing.xl,
+    paddingTop: spacing.xxl,
     textAlign: "center"
   }
 });
