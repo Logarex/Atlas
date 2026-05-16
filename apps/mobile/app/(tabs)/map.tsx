@@ -4,7 +4,8 @@ import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
 import { useTranslation } from "react-i18next";
 import MapView, { Marker } from "react-native-maps";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useMemo } from "react";
 import type { StoreStatus } from "@/features/stores/store.types";
 

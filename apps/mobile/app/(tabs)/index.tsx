@@ -3,7 +3,8 @@ import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
 import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useMemo } from "react";
 import { Map, Search, Compass } from "lucide-react-native";
 
@@ -74,7 +75,7 @@ export default function HomeScreen() {
               </Pressable>
             </Link>
             <Link href="/map" asChild>
-              <Pressable style={[styles.quickLinkButton, { backgroundColor: theme.colors.copper }]}>
+              <Pressable style={StyleSheet.flatten([styles.quickLinkButton, { backgroundColor: theme.colors.copper }])}>
                 <Map color={theme.colors.paper} size={20} />
                 <Text style={styles.quickLinkText}>Ouvrir la carte mondiale</Text>
               </Pressable>

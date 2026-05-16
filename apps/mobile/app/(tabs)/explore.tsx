@@ -7,12 +7,12 @@ import { useTranslation } from "react-i18next";
 import {
   FlatList,
   Pressable,
-  SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
   View
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const filterKeys = ["all", "open", "closed", "visited"] as const;
 
