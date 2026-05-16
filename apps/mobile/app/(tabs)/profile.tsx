@@ -4,17 +4,16 @@ import {
 import {
   ensureCommunityProfile,
   getCurrentProfile,
-  requestFriend,
   setPublicProfile,
-  syncVisitsToCloud,
   type CommunityProfile
 } from "@/features/social/socialApi";
 import { getStoreName } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
-import { isSupabaseConfigured, supabase } from "@/lib/supabase";
+import { isSupabaseConfigured } from "@/lib/supabase";
+import { signInWithUsername, signOut, deleteAccount } from "@/features/auth/authApi";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Lock, Send, ShieldCheck, UsersRound, Key } from "lucide-react-native";
+import { CalendarDays, Lock, Send, ShieldCheck, Key, UserRound, Trash2, AlertTriangle } from "lucide-react-native";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -24,7 +23,9 @@ import {
   Switch,
   Text,
   TextInput,
-  View
+  View,
+  Alert,
+  ActivityIndicator
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -34,15 +35,13 @@ export default function ProfileScreen() {
   const styles = useStyles(theme);
   
   const { stores } = useStores();
-  const { visits } = useLocalVisits();
+  const { visits, clearAllVisits } = useLocalVisits();
   
   // Auth state
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [authUsername, setAuthUsername] = useState("");
+  const [code, setCode] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const [username, setUsername] = useState("");
-  const [friendUsername, setFriendUsername] = useState("");
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreSource, setNewStoreSource] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
@@ -61,57 +60,46 @@ export default function ProfileScreen() {
   const recentVisits = visits.slice(0, 4);
 
   useEffect(() => {
-    if (!isSupabaseConfigured || !supabase) return;
-
-    // Check if user is actually logged in with email
-    supabase.auth.getSession().then(({ data }) => {
-      setIsLoggedIn(!!data.session?.user?.email);
-    });
-
     void getCurrentProfile()
       .then((currentProfile) => {
         setProfile(currentProfile);
+        setIsLoggedIn(!!currentProfile);
         setIsPublic(currentProfile?.publicProfile ?? false);
-        setUsername(currentProfile?.username ?? "");
+        setAuthUsername(currentProfile?.username ?? "");
       })
       .catch((error) => setMessage(error instanceof Error ? error.message : null));
   }, []);
 
   async function handleLogin() {
-    if (!supabase) return;
     try {
       setMessage("Connexion en cours...");
-      const { error, data } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-      if (error) throw error;
+      await signInWithUsername(authUsername, code);
       
       setIsLoggedIn(true);
-      setMessage("Connecté avec succès. Rechargez l'application.");
+      setMessage("Connecté avec succès.");
       
       // Refresh profile
       const currentProfile = await getCurrentProfile();
       setProfile(currentProfile);
-      setUsername(currentProfile?.username ?? "");
+      setAuthUsername(currentProfile?.username ?? "");
     } catch (e) {
       setMessage(e instanceof Error ? e.message : "Erreur de connexion");
     }
   }
 
   async function handleLogout() {
-    if (!supabase) return;
-    await supabase.auth.signOut();
+    await signOut();
     setIsLoggedIn(false);
+    setProfile(null);
     setMessage("Déconnecté.");
   }
 
   async function handleCreateProfile() {
     try {
       setMessage(t("profile.saving"));
-      const nextProfile = await ensureCommunityProfile(username);
+      const nextProfile = await ensureCommunityProfile(authUsername);
       setProfile(nextProfile);
-      setUsername(nextProfile.username);
+      setAuthUsername(nextProfile.username);
       setIsPublic(nextProfile.publicProfile);
       setMessage(t("profile.profileReady"));
     } catch (error) {
@@ -131,26 +119,38 @@ export default function ProfileScreen() {
     }
   }
 
-  async function handleSyncVisits() {
-    try {
-      setMessage(t("profile.syncing"));
-      const count = await syncVisitsToCloud(visits);
-      setMessage(t("profile.synced", { count }));
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : t("profile.failed"));
-    }
+  async function handleDeleteData() {
+    Alert.alert(
+      t("profile.deleteWarningTitle"),
+      t("profile.deleteWarningMessage"),
+      [
+        { text: t("profile.cancel"), style: "cancel" },
+        { 
+          text: t("profile.confirmDelete"), 
+          style: "destructive",
+          onPress: async () => {
+            try {
+              setMessage(t("profile.saving"));
+              // 1. Delete remote account if exists
+              if (isLoggedIn) {
+                await deleteAccount();
+              }
+              // 2. Clear local data
+              await clearAllVisits();
+              
+              setIsLoggedIn(false);
+              setProfile(null);
+              setMessage("Toutes les données ont été supprimées.");
+            } catch (error) {
+              setMessage(error instanceof Error ? error.message : t("profile.failed"));
+            }
+          }
+        }
+      ]
+    );
   }
 
-  async function handleFriendRequest() {
-    try {
-      setMessage(t("profile.sendingFriend"));
-      const friend = await requestFriend(friendUsername);
-      setFriendUsername("");
-      setMessage(t("profile.friendSent", { username: friend }));
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : t("profile.failed"));
-    }
-  }
+
 
   async function handleNewStoreProposal() {
     try {
@@ -180,46 +180,45 @@ export default function ProfileScreen() {
           <Text style={styles.subtitle}>{t("profile.subtitle")}</Text>
         </View>
 
-        {/* ADMIN LOGIN SECTION */}
+        {/* AUTH SECTION */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Key color={theme.colors.copper} size={22} />
-            <Text style={styles.sectionTitle}>Accès sécurisé</Text>
+            <Text style={styles.sectionTitle}>{t("profile.secureAccess")}</Text>
           </View>
           {isLoggedIn ? (
             <>
-              <Text style={styles.itemText}>Vous êtes connecté de manière sécurisée.</Text>
+              <Text style={styles.itemText}>{t("profile.connectedSecurely")}</Text>
               <Pressable onPress={handleLogout} style={styles.secondaryButton}>
-                <Text style={styles.secondaryButtonText}>Se déconnecter</Text>
+                <Text style={styles.secondaryButtonText}>{t("profile.logout")}</Text>
               </Pressable>
             </>
           ) : (
             <>
-              <Text style={styles.itemText}>Connectez-vous avec votre mot de passe pour accéder au tableau de bord.</Text>
+              <Text style={styles.itemText}>{t("profile.loginCopy")}</Text>
               <TextInput
                 autoCapitalize="none"
-                keyboardType="email-address"
-                onChangeText={setEmail}
-                placeholder="Email"
+                onChangeText={setAuthUsername}
+                placeholder={t("profile.username")}
                 placeholderTextColor={theme.colors.muted}
                 style={styles.input}
-                value={email}
+                value={authUsername}
               />
               <TextInput
                 secureTextEntry
-                onChangeText={setPassword}
-                placeholder="Mot de passe"
+                onChangeText={setCode}
+                placeholder={t("profile.code")}
                 placeholderTextColor={theme.colors.muted}
                 style={styles.input}
-                value={password}
+                value={code}
               />
               <Pressable
-                disabled={!email || !password}
+                disabled={!authUsername || !code}
                 onPress={handleLogin}
                 style={[styles.primaryButton, { backgroundColor: theme.colors.copper }]}
               >
                 <ShieldCheck color={theme.colors.paper} size={18} />
-                <Text style={styles.primaryButtonText}>Se connecter</Text>
+                <Text style={styles.primaryButtonText}>{t("profile.login")}</Text>
               </Pressable>
             </>
           )}
@@ -232,7 +231,7 @@ export default function ProfileScreen() {
             <Text style={styles.statLabel}>{t("profile.stats.visited")}</Text>
           </View>
           <View style={styles.stat}>
-            <UsersRound color={theme.colors.moss} size={20} />
+            <UserRound color={theme.colors.moss} size={20} />
             <Text style={styles.statValue}>{profile ? `@${profile.username}` : "Local"}</Text>
             <Text style={styles.statLabel}>{t("profile.stats.identity")}</Text>
           </View>
@@ -240,16 +239,16 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <UsersRound color={theme.colors.teal} size={22} />
+            <UserRound color={theme.colors.teal} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.community")}</Text>
           </View>
           <TextInput
             autoCapitalize="none"
-            onChangeText={setUsername}
+            onChangeText={setAuthUsername}
             placeholder={t("profile.usernamePlaceholder")}
             placeholderTextColor={theme.colors.muted}
             style={styles.input}
-            value={username}
+            value={authUsername}
           />
           <Pressable
             disabled={!isSupabaseConfigured}
@@ -275,17 +274,6 @@ export default function ProfileScreen() {
             <CalendarDays color={theme.colors.teal} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.visits")}</Text>
           </View>
-          <Pressable
-            disabled={!isSupabaseConfigured || visits.length === 0}
-            onPress={handleSyncVisits}
-            style={[
-              styles.secondaryButton,
-              (!isSupabaseConfigured || visits.length === 0) && styles.disabledButton
-            ]}
-          >
-            <Send color={theme.colors.teal} size={18} />
-            <Text style={styles.secondaryButtonText}>{t("profile.syncVisits")}</Text>
-          </Pressable>
           {recentVisits.length === 0 ? (
             <Text style={styles.itemText}>{t("profile.noVisits")}</Text>
           ) : (
@@ -303,31 +291,7 @@ export default function ProfileScreen() {
           )}
         </View>
 
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <UsersRound color={theme.colors.teal} size={22} />
-            <Text style={styles.sectionTitle}>{t("profile.friends")}</Text>
-          </View>
-          <TextInput
-            autoCapitalize="none"
-            onChangeText={setFriendUsername}
-            placeholder={t("profile.friendPlaceholder")}
-            placeholderTextColor={theme.colors.muted}
-            style={styles.input}
-            value={friendUsername}
-          />
-          <Pressable
-            disabled={!profile || friendUsername.trim().length === 0}
-            onPress={handleFriendRequest}
-            style={[
-              styles.secondaryButton,
-              (!profile || friendUsername.trim().length === 0) && styles.disabledButton
-            ]}
-          >
-            <Send color={theme.colors.teal} size={18} />
-            <Text style={styles.secondaryButtonText}>{t("profile.addFriend")}</Text>
-          </Pressable>
-        </View>
+
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
@@ -381,6 +345,24 @@ export default function ProfileScreen() {
               <Text style={styles.itemText}>{t(`profile.privacy.${key}`)}</Text>
             </View>
           ))}
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <AlertTriangle color={theme.colors.copper} size={22} />
+            <Text style={[styles.sectionTitle, { color: theme.colors.copper }]}>
+              {t("profile.dangerZone")}
+            </Text>
+          </View>
+          <Pressable
+            onPress={handleDeleteData}
+            style={[styles.secondaryButton, { borderColor: theme.colors.copper }]}
+          >
+            <Trash2 color={theme.colors.copper} size={18} />
+            <Text style={[styles.secondaryButtonText, { color: theme.colors.copper }]}>
+              {t("profile.deleteAccount")}
+            </Text>
+          </Pressable>
         </View>
 
         {message ? <Text style={styles.message}>{message}</Text> : null}

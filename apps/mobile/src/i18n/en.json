@@ -70,7 +70,20 @@
       "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
       "optionalAccount": "Visits can stay on-device; accounts are only needed for sync, friends, and moderation.",
       "openData": "Accepted factual contributions can enter the community dataset with source links and review history."
-    }
+    },
+    "secureAccess": "Secure access",
+    "loginCopy": "Log in with your username and code to sync your contributions.",
+    "username": "Username",
+    "code": "Secret code",
+    "login": "Log in",
+    "logout": "Log out",
+    "connectedSecurely": "You are connected securely.",
+    "dangerZone": "Danger zone",
+    "deleteAccount": "Delete my data and account",
+    "deleteWarningTitle": "Are you sure?",
+    "deleteWarningMessage": "This action is irreversible. All contributions linked to your profile will be anonymized or deleted, and your local visits will be cleared.",
+    "cancel": "Cancel",
+    "confirmDelete": "Delete everything"
   },
   "store": {
     "back": "Back to explore",

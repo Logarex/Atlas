@@ -1,6 +1,6 @@
-import { isSupabaseConfigured, supabase } from "@/lib/supabase";
-
-import { ensureCommunityProfile } from "../social/socialApi";
+import { supabase } from "@/lib/supabase";
+import { createGithubIssue } from "@/lib/github";
+import { getCurrentProfile } from "../social/socialApi";
 
 export type StoreChangeDraft = {
   storeId?: string | null;
@@ -22,23 +22,6 @@ export type PhotoSubmissionDraft = {
   peopleVisible: boolean;
 };
 
-function assertSupabase() {
-  if (!isSupabaseConfigured || !supabase) {
-    throw new Error("Supabase is not configured yet.");
-  }
-
-  return supabase;
-}
-
-async function notifyDiscord(record: Record<string, unknown>) {
-  const client = assertSupabase();
-  await client.functions.invoke("notify-discord", {
-    body: {
-      record
-    }
-  });
-}
-
 function fileExtension(fileName?: string | null, mimeType?: string | null) {
   const fromName = fileName?.split(".").pop();
   if (fromName && fromName.length <= 5) return fromName.toLowerCase();
@@ -48,40 +31,42 @@ function fileExtension(fileName?: string | null, mimeType?: string | null) {
 }
 
 export async function submitStoreChange(draft: StoreChangeDraft) {
-  const client = assertSupabase();
-  const profile = await ensureCommunityProfile();
-  const payload = {
-    fieldPath: draft.fieldPath?.trim() ?? "new_store",
-    proposedValue: draft.proposedValue.trim()
-  };
+  const profile = await getCurrentProfile();
+  const username = profile?.username || "anonymous";
+  
+  const title = draft.type === "new_store" 
+    ? `[NEW STORE] ${draft.proposedValue}`
+    : `[CORRECTION] Store ${draft.storeId}`;
+    
+  const body = `
+### Contribution from @${username}
 
-  const { data, error } = await client
-    .from("change_requests")
-    .insert({
-      store_id: draft.storeId ?? null,
-      submitted_by: profile.id,
-      type: draft.type ?? "store_correction",
-      payload,
-      source_url: draft.sourceUrl.trim(),
-      note: draft.note?.trim() || null
-    })
-    .select("id, status, type, store_id, submitted_by, source_url, payload")
-    .single();
+- **Store ID**: ${draft.storeId || "New Store"}
+- **Type**: ${draft.type}
+- **Field**: ${draft.fieldPath || "N/A"}
+- **Proposed Value**: ${draft.proposedValue}
+- **Source**: ${draft.sourceUrl}
+- **Note**: ${draft.note || "None"}
+  `.trim();
 
-  if (error) throw error;
-  await notifyDiscord(data as Record<string, unknown>);
-  return data;
+  await createGithubIssue(title, body, ["contribution", draft.type === "new_store" ? "new-store" : "correction"]);
+  return { success: true };
 }
 
 export async function submitPhoto(draft: PhotoSubmissionDraft) {
-  const client = assertSupabase();
-  const profile = await ensureCommunityProfile();
+  const profile = await getCurrentProfile();
+  const username = profile?.username || "anonymous";
+  const userId = profile?.id || "anonymous";
+
+  // Still use Supabase Storage for the binary data as it's the most reliable way to send images
+  if (!supabase) throw new Error("Supabase not configured");
+
   const extension = fileExtension(draft.fileName, draft.mimeType);
-  const storagePath = `${draft.storeId}/${profile.id}/${Date.now()}.${extension}`;
+  const storagePath = `${draft.storeId}/${userId}/${Date.now()}.${extension}`;
   const response = await fetch(draft.localUri);
   const bytes = await response.arrayBuffer();
 
-  const { error: uploadError } = await client.storage
+  const { error: uploadError } = await supabase.storage
     .from("photo-submissions")
     .upload(storagePath, bytes, {
       contentType: draft.mimeType ?? "image/jpeg",
@@ -90,21 +75,21 @@ export async function submitPhoto(draft: PhotoSubmissionDraft) {
 
   if (uploadError) throw uploadError;
 
-  const { data, error } = await client
-    .from("photo_submissions")
-    .insert({
-      store_id: draft.storeId,
-      submitted_by: profile.id,
-      storage_path: storagePath,
-      license: draft.license,
-      caption: draft.caption?.trim() || null,
-      taken_on: draft.takenOn || null,
-      people_visible: draft.peopleVisible
-    })
-    .select("id, status, store_id, submitted_by, storage_path, license")
-    .single();
+  const { data: { publicUrl } } = supabase.storage.from("photo-submissions").getPublicUrl(storagePath);
 
-  if (error) throw error;
-  await notifyDiscord({ ...data, type: "photo_submission" } as Record<string, unknown>);
-  return data;
+  const title = `[PHOTO] Store ${draft.storeId}`;
+  const body = `
+### Photo contribution from @${username}
+
+- **Store ID**: ${draft.storeId}
+- **Caption**: ${draft.caption || "None"}
+- **Date Taken**: ${draft.takenOn || "Unknown"}
+- **License**: ${draft.license}
+- **People Visible**: ${draft.peopleVisible ? "Yes" : "No"}
+
+**Photo Link**: ${publicUrl}
+  `.trim();
+
+  await createGithubIssue(title, body, ["contribution", "photo"]);
+  return { success: true };
 }

@@ -7,7 +7,6 @@ export type CommunityProfile = {
   username: string;
   displayName?: string | null;
   publicProfile: boolean;
-  isReviewer?: boolean;
 };
 
 function assertSupabase() {
@@ -41,7 +40,7 @@ export async function getCurrentProfile(): Promise<CommunityProfile | null> {
 
   const { data, error } = await client
     .from("profiles")
-    .select("id, username, display_name, public_profile, is_reviewer")
+    .select("id, username, display_name, public_profile")
     .eq("id", session.user.id)
     .maybeSingle();
 
@@ -52,8 +51,7 @@ export async function getCurrentProfile(): Promise<CommunityProfile | null> {
     id: data.id,
     username: data.username,
     displayName: data.display_name,
-    publicProfile: data.public_profile,
-    isReviewer: data.is_reviewer
+    publicProfile: data.public_profile
   };
 }
 
@@ -79,7 +77,7 @@ export async function ensureCommunityProfile(username?: string) {
 
   const { data: existing, error: readError } = await client
     .from("profiles")
-    .select("id, username, display_name, public_profile, is_reviewer")
+    .select("id, username, display_name, public_profile")
     .eq("id", userId)
     .maybeSingle();
 
@@ -95,7 +93,7 @@ export async function ensureCommunityProfile(username?: string) {
         locale: "en",
         public_profile: false
       })
-      .select("id, username, display_name, public_profile, is_reviewer")
+      .select("id, username, display_name, public_profile")
       .single();
 
     if (error) throw error;
@@ -104,8 +102,7 @@ export async function ensureCommunityProfile(username?: string) {
       id: data.id,
       username: data.username,
       displayName: data.display_name,
-      publicProfile: data.public_profile,
-      isReviewer: data.is_reviewer
+      publicProfile: data.public_profile
     };
   }
 
@@ -114,7 +111,7 @@ export async function ensureCommunityProfile(username?: string) {
       .from("profiles")
       .update({ username: safeUsername })
       .eq("id", userId)
-      .select("id, username, display_name, public_profile, is_reviewer")
+      .select("id, username, display_name, public_profile")
       .single();
 
     if (error) throw error;
@@ -123,8 +120,7 @@ export async function ensureCommunityProfile(username?: string) {
       id: data.id,
       username: data.username,
       displayName: data.display_name,
-      publicProfile: data.public_profile,
-      isReviewer: data.is_reviewer
+      publicProfile: data.public_profile
     };
   }
 
@@ -132,8 +128,7 @@ export async function ensureCommunityProfile(username?: string) {
     id: existing.id,
     username: existing.username,
     displayName: existing.display_name,
-    publicProfile: existing.public_profile,
-    isReviewer: existing.is_reviewer
+    publicProfile: existing.public_profile
   };
 }
 
@@ -145,7 +140,7 @@ export async function setPublicProfile(publicProfile: boolean) {
     .from("profiles")
     .update({ public_profile: publicProfile })
     .eq("id", profile.id)
-    .select("id, username, display_name, public_profile, is_reviewer")
+    .select("id, username, display_name, public_profile")
     .single();
 
   if (error) throw error;
@@ -154,54 +149,8 @@ export async function setPublicProfile(publicProfile: boolean) {
     id: data.id,
     username: data.username,
     displayName: data.display_name,
-    publicProfile: data.public_profile,
-    isReviewer: data.is_reviewer
+    publicProfile: data.public_profile
   };
 }
 
-export async function syncVisitsToCloud(visits: LocalVisit[]) {
-  if (visits.length === 0) return 0;
 
-  const client = assertSupabase();
-  const profile = await ensureCommunityProfile();
-  const rows = visits.map((visit) => ({
-    user_id: profile.id,
-    store_id: visit.storeId,
-    visited_on: visit.visitedOn,
-    note: visit.note ?? null,
-    visibility: visit.visibility
-  }));
-
-  const { error } = await client.from("visits").upsert(rows, {
-    onConflict: "user_id,store_id,visited_on"
-  });
-
-  if (error) throw error;
-  return rows.length;
-}
-
-export async function requestFriend(username: string) {
-  const client = assertSupabase();
-  const profile = await ensureCommunityProfile();
-  const normalized = normalizeUsername(username);
-
-  const { data: friend, error: friendError } = await client
-    .from("profiles")
-    .select("id, username")
-    .eq("username", normalized)
-    .maybeSingle();
-
-  if (friendError) throw friendError;
-  if (!friend) throw new Error("No user found with that username.");
-  if (friend.id === profile.id) throw new Error("You cannot add yourself.");
-
-  const { error } = await client.from("friendships").upsert({
-    requester_id: profile.id,
-    addressee_id: friend.id,
-    status: "pending"
-  });
-
-  if (error) throw error;
-
-  return friend.username as string;
-}

@@ -1,0 +1,46 @@
+{
+  "id": "apple-marina-bay-sands",
+  "name": {
+    "en": "Apple Marina Bay Sands",
+    "fr": "Apple Marina Bay Sands"
+  },
+  "status": "open",
+  "city": "Singapore",
+  "region": "Central Region",
+  "countryCode": "SG",
+  "countryName": "Singapore",
+  "address": "2 Bayfront Avenue, B2-06, Singapore 018972",
+  "coordinates": {
+    "latitude": 1.283342,
+    "longitude": 103.857568
+  },
+  "openedOn": "2020-09-10",
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/sg/retail/marinabaysands/",
+  "architecture": {
+    "era": "Town Square",
+    "typology": "Standalone pavilion",
+    "attributes": {
+      "boardroom": "yes",
+      "forum": "yes",
+      "geniusBar": "yes",
+      "glassCube": "no",
+      "greenWall": "unknown",
+      "historicFacade": "no",
+      "plaza": "yes",
+      "videoWall": "yes"
+    },
+    "notes": [
+      "Distinctive spherical store on Marina Bay."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/sg/retail/marinabaysands/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [],
+  "lastVerifiedAt": "2026-05-16"
+}

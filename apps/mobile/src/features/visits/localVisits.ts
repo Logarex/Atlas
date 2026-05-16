@@ -91,8 +91,14 @@ export function useLocalVisits(storeId?: string) {
     [visits]
   );
 
+  const clearAllVisits = useCallback(async () => {
+    setVisits([]);
+    await AsyncStorage.removeItem(STORAGE_KEY);
+  }, []);
+
   return {
     addVisit,
+    clearAllVisits,
     isLoading,
     refresh,
     removeVisit,

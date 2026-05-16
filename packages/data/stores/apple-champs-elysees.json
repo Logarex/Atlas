@@ -1,0 +1,47 @@
+{
+  "id": "apple-champs-elysees",
+  "name": {
+    "en": "Apple Champs-Elysees",
+    "fr": "Apple Champs-Elysees"
+  },
+  "status": "open",
+  "city": "Paris",
+  "region": "Ile-de-France",
+  "countryCode": "FR",
+  "countryName": "France",
+  "address": "114 avenue des Champs-Elysees, 75008 Paris",
+  "coordinates": {
+    "latitude": 48.872273,
+    "longitude": 2.301315
+  },
+  "openedOn": "2018-11-18",
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/fr/retail/champs-elysees/",
+  "architecture": {
+    "era": "Town Square",
+    "typology": "Historic urban flagship",
+    "attributes": {
+      "avenue": "yes",
+      "boardroom": "yes",
+      "forum": "yes",
+      "geniusBar": "yes",
+      "glassCube": "no",
+      "greenWall": "yes",
+      "historicFacade": "yes",
+      "plaza": "no",
+      "videoWall": "yes"
+    },
+    "notes": [
+      "Paris flagship in a restored Haussmann-era building."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/fr/retail/champs-elysees/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [],
+  "lastVerifiedAt": "2026-05-16"
+}
