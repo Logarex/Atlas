@@ -194,8 +194,17 @@ for select using (
 create policy "Public can read stores" on public.stores
 for select using (true);
 
+create policy "Reviewers can insert stores" on public.stores
+for insert with check (public.is_reviewer());
+
+create policy "Reviewers can update stores" on public.stores
+for update using (public.is_reviewer()) with check (public.is_reviewer());
+
 create policy "Public can read store sources" on public.store_sources
 for select using (true);
+
+create policy "Reviewers can manage store sources" on public.store_sources
+for all using (public.is_reviewer());
 
 create policy "Public can read approved photos" on public.photos
 for select using (true);

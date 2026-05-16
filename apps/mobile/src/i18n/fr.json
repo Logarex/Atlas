@@ -2,6 +2,7 @@
   "tabs": {
     "explore": "Explorer",
     "map": "Carte",
+    "review": "Review",
     "profile": "Profil"
   },
   "home": {
@@ -144,5 +145,18 @@
     "private": "Prive",
     "friends": "Amis",
     "public": "Public"
+  },
+  "review": {
+    "title": "Triage des boutiques",
+    "subtitle": "Valide les imports Wikipédia pour la base live.",
+    "noCandidates": "Aucun candidat a trier pour l'instant.",
+    "promote": "Valider la boutique",
+    "skip": "Passer",
+    "editing": "Modification...",
+    "success": "Boutique promue avec succes !",
+    "error": "Erreur lors de la promotion.",
+    "wikidata": "Source Wikidata",
+    "details": "Details importes",
+    "verifyOnMap": "Voir sur la carte"
   }
 }

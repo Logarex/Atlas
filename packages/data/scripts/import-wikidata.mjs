@@ -1,12 +1,17 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createClient } from "@supabase/supabase-js";
+import "dotenv/config";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
 const outDir = join(root, "imports");
 const outPath = join(outDir, "wikidata-apple-stores.json");
 const endpoint = "https://query.wikidata.org/sparql";
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 const query = `
 SELECT ?item ?itemLabel (SAMPLE(?coord) AS ?coord) (SAMPLE(?countryCode) AS ?countryCode)
@@ -147,4 +152,24 @@ await writeFile(
 );
 
 console.log(`Imported ${records.length} Wikidata candidate store record(s) to ${outPath}.`);
+
+if (supabaseUrl && supabaseKey) {
+  console.log("Syncing to Supabase...");
+  const supabase = createClient(supabaseUrl, supabaseKey);
+  
+  // Create table if not exists via SQL would be better, but here we just insert
+  // We'll use the change_requests table or a new one
+  for (const record of records.slice(0, 50)) { // Limit to 50 for now
+    const { error } = await supabase.from("change_requests").insert({
+      type: "new_store_candidate",
+      status: "pending",
+      payload: record,
+      source_url: record.officialUrl,
+      note: "Imported from Wikidata"
+    });
+    if (error) console.error(`Error syncing ${record.id}:`, error.message);
+  }
+  console.log("Sync completed.");
+}
+
 console.log("Review each record before promoting it to packages/data/stores.");

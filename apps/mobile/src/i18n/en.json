@@ -2,6 +2,7 @@
   "tabs": {
     "explore": "Explore",
     "map": "Map",
+    "review": "Review",
     "profile": "Profile"
   },
   "home": {
@@ -144,5 +145,18 @@
     "private": "Private",
     "friends": "Friends",
     "public": "Public"
+  },
+  "review": {
+    "title": "Store Triage",
+    "subtitle": "Validate Wikipedia imports for the live dataset.",
+    "noCandidates": "No candidates to triage right now.",
+    "promote": "Validate Store",
+    "skip": "Skip",
+    "editing": "Editing...",
+    "success": "Store promoted successfully!",
+    "error": "Error during promotion.",
+    "wikidata": "Wikidata Source",
+    "details": "Imported Details",
+    "verifyOnMap": "Verify on Map"
   }
 }

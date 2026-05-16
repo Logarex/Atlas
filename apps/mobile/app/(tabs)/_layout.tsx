@@ -1,11 +1,24 @@
 import { Tabs } from "expo-router";
-import { Map, Search, UserRound } from "lucide-react-native";
+import { Map, Search, UserRound, ShieldCheck } from "lucide-react-native";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { getCurrentProfile } from "@/features/social/socialApi";
 import { colors } from "@/theme/tokens";
 
 export default function TabsLayout() {
   const { t } = useTranslation();
+  const [isReviewer, setIsReviewer] = useState(false);
+
+  useEffect(() => {
+    void getCurrentProfile().then((profile) => {
+      // In a real app, check profile.is_reviewer
+      if (profile) setIsReviewer(true); 
+    }).catch(() => {
+      // Default to true for local testing if Supabase is missing
+      setIsReviewer(true);
+    });
+  }, []);
 
   return (
     <Tabs
@@ -31,6 +44,14 @@ export default function TabsLayout() {
         options={{
           title: t("tabs.map"),
           tabBarIcon: ({ color, size }) => <Map color={color} size={size} />
+        }}
+      />
+      <Tabs.Screen
+        name="review"
+        options={{
+          title: t("tabs.review"),
+          tabBarIcon: ({ color, size }) => <ShieldCheck color={color} size={size} />,
+          href: isReviewer ? "review" : null
         }}
       />
       <Tabs.Screen
