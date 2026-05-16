@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
-import { Modal, StyleSheet, Text, TextInput, View, Pressable, ScrollView, SafeAreaView, Switch } from "react-native";
+import { Modal, StyleSheet, Text, TextInput, View, Pressable, ScrollView, Switch } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useAppTheme } from "@/theme/useAppTheme";
 import type { StoreRecord } from "./store.types";
 import { useTranslation } from "react-i18next";
