@@ -7,6 +7,7 @@ export type CommunityProfile = {
   username: string;
   displayName?: string | null;
   publicProfile: boolean;
+  isReviewer?: boolean;
 };
 
 function assertSupabase() {
@@ -40,7 +41,7 @@ export async function getCurrentProfile(): Promise<CommunityProfile | null> {
 
   const { data, error } = await client
     .from("profiles")
-    .select("id, username, display_name, public_profile")
+    .select("id, username, display_name, public_profile, is_reviewer")
     .eq("id", session.user.id)
     .maybeSingle();
 
@@ -51,7 +52,8 @@ export async function getCurrentProfile(): Promise<CommunityProfile | null> {
     id: data.id,
     username: data.username,
     displayName: data.display_name,
-    publicProfile: data.public_profile
+    publicProfile: data.public_profile,
+    isReviewer: data.is_reviewer
   };
 }
 
@@ -77,7 +79,7 @@ export async function ensureCommunityProfile(username?: string) {
 
   const { data: existing, error: readError } = await client
     .from("profiles")
-    .select("id, username, display_name, public_profile")
+    .select("id, username, display_name, public_profile, is_reviewer")
     .eq("id", userId)
     .maybeSingle();
 
@@ -93,7 +95,7 @@ export async function ensureCommunityProfile(username?: string) {
         locale: "en",
         public_profile: false
       })
-      .select("id, username, display_name, public_profile")
+      .select("id, username, display_name, public_profile, is_reviewer")
       .single();
 
     if (error) throw error;
@@ -102,7 +104,8 @@ export async function ensureCommunityProfile(username?: string) {
       id: data.id,
       username: data.username,
       displayName: data.display_name,
-      publicProfile: data.public_profile
+      publicProfile: data.public_profile,
+      isReviewer: data.is_reviewer
     };
   }
 
@@ -111,7 +114,7 @@ export async function ensureCommunityProfile(username?: string) {
       .from("profiles")
       .update({ username: safeUsername })
       .eq("id", userId)
-      .select("id, username, display_name, public_profile")
+      .select("id, username, display_name, public_profile, is_reviewer")
       .single();
 
     if (error) throw error;
@@ -120,7 +123,8 @@ export async function ensureCommunityProfile(username?: string) {
       id: data.id,
       username: data.username,
       displayName: data.display_name,
-      publicProfile: data.public_profile
+      publicProfile: data.public_profile,
+      isReviewer: data.is_reviewer
     };
   }
 
@@ -128,7 +132,8 @@ export async function ensureCommunityProfile(username?: string) {
     id: existing.id,
     username: existing.username,
     displayName: existing.display_name,
-    publicProfile: existing.public_profile
+    publicProfile: existing.public_profile,
+    isReviewer: existing.is_reviewer
   };
 }
 
@@ -140,7 +145,7 @@ export async function setPublicProfile(publicProfile: boolean) {
     .from("profiles")
     .update({ public_profile: publicProfile })
     .eq("id", profile.id)
-    .select("id, username, display_name, public_profile")
+    .select("id, username, display_name, public_profile, is_reviewer")
     .single();
 
   if (error) throw error;
@@ -149,7 +154,8 @@ export async function setPublicProfile(publicProfile: boolean) {
     id: data.id,
     username: data.username,
     displayName: data.display_name,
-    publicProfile: data.public_profile
+    publicProfile: data.public_profile,
+    isReviewer: data.is_reviewer
   };
 }
 

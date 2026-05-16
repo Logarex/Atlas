@@ -20,7 +20,7 @@
     "filters": {
       "all": "Toutes",
       "open": "Ouvertes",
-      "closed": "Fermees",
+      "closed": "Fermées",
       "visited": "Vues"
     }
   },
@@ -116,9 +116,9 @@
   },
   "status": {
     "open": "Ouvert",
-    "closed": "Ferme",
-    "relocated": "Deplace",
-    "announced": "Annonce",
+    "closed": "Fermé",
+    "relocated": "Déplacé",
+    "announced": "Annoncé",
     "temporary": "Temporaire"
   },
   "attributes": {

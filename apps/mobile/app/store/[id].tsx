@@ -7,12 +7,11 @@ import {
   getPositiveAttributeKeys,
   getStoreName,
   getStorePlace,
-  statusEmojis
 } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { formatDate, isISODate, todayISO } from "@/lib/date";
-import { colors, spacing, typography } from "@/theme/tokens";
+import { useAppTheme } from "@/theme/useAppTheme";
 import * as ImagePicker from "expo-image-picker";
 import { Link, Stack, useLocalSearchParams } from "expo-router";
 import {
@@ -41,9 +40,13 @@ import {
   TextInput,
   View
 } from "react-native";
+import type { StoreStatus } from "@/features/stores/store.types";
 
 export default function StoreDetailScreen() {
   const { t, i18n } = useTranslation();
+  const theme = useAppTheme();
+  const styles = useStyles(theme);
+  
   const { id } = useLocalSearchParams<{ id: string }>();
   const { stores } = useStores();
   const store = stores.find((item) => item.id === id) ?? stores[0];
@@ -67,6 +70,14 @@ export default function StoreDetailScreen() {
     () => (store ? getPositiveAttributeKeys(store) : []),
     [store]
   );
+
+  const statusColors: Record<StoreStatus, string> = {
+    open: theme.colors.teal,
+    closed: theme.colors.ink,
+    relocated: theme.colors.muted,
+    announced: theme.colors.copper,
+    temporary: theme.colors.gold
+  };
 
   if (!store) return null;
 
@@ -172,12 +183,12 @@ export default function StoreDetailScreen() {
 
       <View style={styles.hero}>
         <View style={styles.statusPill}>
-          <Text style={styles.statusEmoji}>{statusEmojis[store.status]}</Text>
+          <View style={[styles.statusDot, { backgroundColor: statusColors[store.status] }]} />
           <Text style={styles.status}>{t(`status.${store.status}`)}</Text>
         </View>
         <Text style={styles.title}>{name}</Text>
         <View style={styles.locationLine}>
-          <MapPin color={colors.muted} size={18} />
+          <MapPin color={theme.colors.muted} size={18} />
           <Text style={styles.location}>{getStorePlace(store)}</Text>
         </View>
         <Text style={styles.address}>{store.address}</Text>
@@ -185,21 +196,21 @@ export default function StoreDetailScreen() {
 
       <View style={styles.actionRow}>
         <Pressable style={styles.primaryButton} onPress={handleAddVisit}>
-          <Check color={colors.paper} size={18} />
+          <Check color={theme.colors.paper} size={18} />
           <Text style={styles.primaryButtonText}>{t("store.markVisited")}</Text>
         </Pressable>
         <Pressable style={styles.iconButton} onPress={handleShareVisit}>
-          <Share2 color={colors.ink} size={19} />
+          <Share2 color={theme.colors.ink} size={19} />
         </Pressable>
       </View>
 
       <View style={styles.visitBox}>
-        <CalendarDays color={colors.teal} size={20} />
+        <CalendarDays color={theme.colors.teal} size={20} />
         <TextInput
           accessibilityLabel={t("store.visitDateLabel")}
           onChangeText={setVisitDate}
           placeholder="YYYY-MM-DD"
-          placeholderTextColor={colors.muted}
+          placeholderTextColor={theme.colors.muted}
           style={styles.dateInput}
           value={visitDate}
         />
@@ -214,7 +225,7 @@ export default function StoreDetailScreen() {
               <Text style={styles.visitDate}>{visit.visitedOn}</Text>
               <Text style={styles.visitVisibility}>{t(`visibility.${visit.visibility}`)}</Text>
               <Pressable onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
-                <X color={colors.danger} size={16} />
+                <X color={theme.colors.danger} size={16} />
               </Pressable>
             </View>
           ))}
@@ -267,7 +278,7 @@ export default function StoreDetailScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.hours")}</Text>
         <View style={styles.hoursBox}>
-          <Clock color={colors.moss} size={20} />
+          <Clock color={theme.colors.moss} size={20} />
           <View style={styles.hoursCopy}>
             <Text style={styles.body}>{t(`hours.${store.hours.policy}`)}</Text>
             <Text style={styles.muted}>{store.hours.note}</Text>
@@ -295,11 +306,11 @@ export default function StoreDetailScreen() {
         <Text style={styles.sectionTitle}>{t("store.contribute")}</Text>
         <View style={styles.actionRow}>
           <Pressable style={styles.secondaryButton} onPress={() => setChangeModalVisible(true)}>
-            <Flag color={colors.teal} size={18} />
+            <Flag color={theme.colors.teal} size={18} />
             <Text style={styles.secondaryButtonText}>{t("store.suggestEdit")}</Text>
           </Pressable>
           <Pressable style={styles.secondaryButton} onPress={() => setPhotoModalVisible(true)}>
-            <Camera color={colors.teal} size={18} />
+            <Camera color={theme.colors.teal} size={18} />
             <Text style={styles.secondaryButtonText}>{t("store.addPhoto")}</Text>
           </Pressable>
         </View>
@@ -327,20 +338,20 @@ export default function StoreDetailScreen() {
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t("store.suggestEdit")}</Text>
               <Pressable onPress={() => setChangeModalVisible(false)}>
-                <X color={colors.ink} size={22} />
+                <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
             <TextInput
               onChangeText={setFieldPath}
               placeholder={t("store.fieldPath")}
-              placeholderTextColor={colors.muted}
+              placeholderTextColor={theme.colors.muted}
               style={styles.input}
               value={fieldPath}
             />
             <TextInput
               onChangeText={setProposedValue}
               placeholder={t("store.proposedValue")}
-              placeholderTextColor={colors.muted}
+              placeholderTextColor={theme.colors.muted}
               style={styles.input}
               value={proposedValue}
             />
@@ -348,7 +359,7 @@ export default function StoreDetailScreen() {
               autoCapitalize="none"
               onChangeText={setSourceUrl}
               placeholder={t("store.sourceUrl")}
-              placeholderTextColor={colors.muted}
+              placeholderTextColor={theme.colors.muted}
               style={styles.input}
               value={sourceUrl}
             />
@@ -356,12 +367,12 @@ export default function StoreDetailScreen() {
               multiline
               onChangeText={setNote}
               placeholder={t("store.note")}
-              placeholderTextColor={colors.muted}
+              placeholderTextColor={theme.colors.muted}
               style={[styles.input, styles.textArea]}
               value={note}
             />
             <Pressable style={styles.primaryButton} onPress={handleSubmitChange}>
-              <Send color={colors.paper} size={18} />
+              <Send color={theme.colors.paper} size={18} />
               <Text style={styles.primaryButtonText}>{t("store.submit")}</Text>
             </Pressable>
             {contributionMessage ? (
@@ -382,11 +393,11 @@ export default function StoreDetailScreen() {
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t("store.addPhoto")}</Text>
               <Pressable onPress={() => setPhotoModalVisible(false)}>
-                <X color={colors.ink} size={22} />
+                <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
             <Pressable style={styles.secondaryButton} onPress={handlePickPhoto}>
-              <Camera color={colors.teal} size={18} />
+              <Camera color={theme.colors.teal} size={18} />
               <Text style={styles.secondaryButtonText}>
                 {photoAsset ? t("store.photoSelected") : t("store.pickPhoto")}
               </Text>
@@ -397,14 +408,14 @@ export default function StoreDetailScreen() {
             <TextInput
               onChangeText={setPhotoCaption}
               placeholder={t("store.caption")}
-              placeholderTextColor={colors.muted}
+              placeholderTextColor={theme.colors.muted}
               style={styles.input}
               value={photoCaption}
             />
             <TextInput
               onChangeText={setPhotoTakenOn}
               placeholder="YYYY-MM-DD"
-              placeholderTextColor={colors.muted}
+              placeholderTextColor={theme.colors.muted}
               style={styles.input}
               value={photoTakenOn}
             />
@@ -431,7 +442,7 @@ export default function StoreDetailScreen() {
               <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
             </View>
             <Pressable style={styles.primaryButton} onPress={handleSubmitPhoto}>
-              <Send color={colors.paper} size={18} />
+              <Send color={theme.colors.paper} size={18} />
               <Text style={styles.primaryButtonText}>{t("store.submit")}</Text>
             </Pressable>
             {contributionMessage ? (
@@ -444,356 +455,362 @@ export default function StoreDetailScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: colors.canvas,
-    flex: 1
-  },
-  content: {
-    padding: spacing.lg,
-    paddingTop: spacing.xl
-  },
-  back: {
-    color: colors.teal,
-    fontSize: typography.small,
-    fontWeight: "700",
-    marginBottom: spacing.lg
-  },
-  hero: {
-    gap: spacing.sm
-  },
-  statusPill: {
-    alignItems: "center",
-    alignSelf: "flex-start",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 999,
-    borderWidth: 1,
-    flexDirection: "row",
-    gap: spacing.xs,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm
-  },
-  statusEmoji: {
-    fontSize: typography.body
-  },
-  status: {
-    color: colors.ink,
-    fontSize: typography.caption,
-    fontWeight: "800",
-    letterSpacing: 0,
-    textTransform: "uppercase"
-  },
-  title: {
-    color: colors.ink,
-    fontSize: 36,
-    fontWeight: "900",
-    letterSpacing: 0,
-    lineHeight: 41
-  },
-  locationLine: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: spacing.xs
-  },
-  location: {
-    color: colors.muted,
-    flex: 1,
-    fontSize: typography.body,
-    lineHeight: 22
-  },
-  address: {
-    color: colors.ink,
-    fontSize: typography.body,
-    lineHeight: 23
-  },
-  actionRow: {
-    flexDirection: "row",
-    gap: spacing.sm,
-    marginTop: spacing.md
-  },
-  primaryButton: {
-    alignItems: "center",
-    backgroundColor: colors.ink,
-    borderRadius: 8,
-    flexDirection: "row",
-    flex: 1,
-    gap: spacing.sm,
-    justifyContent: "center",
-    minHeight: 48,
-    paddingHorizontal: spacing.md
-  },
-  primaryButtonText: {
-    color: colors.paper,
-    fontSize: typography.small,
-    fontWeight: "900"
-  },
-  secondaryButton: {
-    alignItems: "center",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flexDirection: "row",
-    flex: 1,
-    gap: spacing.sm,
-    justifyContent: "center",
-    minHeight: 48,
-    paddingHorizontal: spacing.md
-  },
-  secondaryButtonText: {
-    color: colors.teal,
-    fontSize: typography.small,
-    fontWeight: "900"
-  },
-  iconButton: {
-    alignItems: "center",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    height: 48,
-    justifyContent: "center",
-    width: 52
-  },
-  smallIconButton: {
-    alignItems: "center",
-    height: 30,
-    justifyContent: "center",
-    width: 30
-  },
-  visitBox: {
-    alignItems: "center",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flexDirection: "row",
-    gap: spacing.sm,
-    marginTop: spacing.sm,
-    paddingHorizontal: spacing.md
-  },
-  dateInput: {
-    color: colors.ink,
-    flex: 1,
-    fontSize: typography.body,
-    height: 48
-  },
-  message: {
-    color: colors.copper,
-    fontSize: typography.small,
-    fontWeight: "700",
-    lineHeight: 20,
-    marginTop: spacing.sm
-  },
-  section: {
-    borderTopColor: colors.line,
-    borderTopWidth: 1,
-    marginTop: spacing.xl,
-    paddingTop: spacing.lg
-  },
-  sectionTitle: {
-    color: colors.ink,
-    fontSize: 18,
-    fontWeight: "800",
-    letterSpacing: 0,
-    marginBottom: spacing.sm
-  },
-  body: {
-    color: colors.ink,
-    fontSize: typography.body,
-    lineHeight: 23
-  },
-  muted: {
-    color: colors.muted,
-    fontSize: typography.small,
-    lineHeight: 20
-  },
-  infoGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm
-  },
-  infoItem: {
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flexGrow: 1,
-    minWidth: "30%",
-    padding: spacing.md
-  },
-  infoLabel: {
-    color: colors.muted,
-    fontSize: typography.caption,
-    fontWeight: "800",
-    textTransform: "uppercase"
-  },
-  infoValue: {
-    color: colors.ink,
-    fontSize: typography.small,
-    fontWeight: "800",
-    marginTop: spacing.xs
-  },
-  visitRow: {
-    alignItems: "center",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flexDirection: "row",
-    gap: spacing.sm,
-    justifyContent: "space-between",
-    marginTop: spacing.sm,
-    padding: spacing.md
-  },
-  visitDate: {
-    color: colors.ink,
-    flex: 1,
-    fontSize: typography.body,
-    fontWeight: "800"
-  },
-  visitVisibility: {
-    color: colors.muted,
-    fontSize: typography.caption,
-    fontWeight: "800",
-    textTransform: "uppercase"
-  },
-  attributeGrid: {
-    gap: spacing.sm,
-    marginTop: spacing.md
-  },
-  attribute: {
-    alignItems: "center",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: spacing.md
-  },
-  attributeLabel: {
-    color: colors.muted,
-    flex: 1,
-    fontSize: typography.small
-  },
-  attributeValue: {
-    color: colors.ink,
-    fontSize: typography.small,
-    fontWeight: "800"
-  },
-  indicatorLine: {
-    color: colors.ink,
-    fontSize: 24,
-    marginTop: spacing.md
-  },
-  hoursBox: {
-    alignItems: "flex-start",
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flexDirection: "row",
-    gap: spacing.md,
-    padding: spacing.md
-  },
-  hoursCopy: {
-    flex: 1,
-    gap: spacing.xs
-  },
-  photo: {
-    aspectRatio: 4 / 3,
-    backgroundColor: colors.line,
-    borderRadius: 8,
-    width: "100%"
-  },
-  photoPreview: {
-    aspectRatio: 4 / 3,
-    backgroundColor: colors.line,
-    borderRadius: 8,
-    marginTop: spacing.md,
-    width: "100%"
-  },
-  source: {
-    color: colors.teal,
-    fontSize: typography.small,
-    lineHeight: 22,
-    marginBottom: spacing.xs
-  },
-  sourceLink: {
-    color: colors.teal,
-    fontSize: typography.small,
-    fontWeight: "800",
-    marginTop: spacing.xs
-  },
-  modalBackdrop: {
-    backgroundColor: "rgba(23, 23, 23, 0.35)",
-    flex: 1,
-    justifyContent: "flex-end"
-  },
-  modalSheet: {
-    backgroundColor: colors.canvas,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-    gap: spacing.sm,
-    maxHeight: "88%",
-    padding: spacing.lg
-  },
-  modalHeader: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: spacing.sm
-  },
-  modalTitle: {
-    color: colors.ink,
-    fontSize: 22,
-    fontWeight: "900"
-  },
-  input: {
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    color: colors.ink,
-    fontSize: typography.body,
-    minHeight: 48,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm
-  },
-  textArea: {
-    minHeight: 96,
-    textAlignVertical: "top"
-  },
-  licenseRow: {
-    flexDirection: "row",
-    gap: spacing.sm
-  },
-  licenseButton: {
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    flex: 1,
-    padding: spacing.md
-  },
-  licenseActive: {
-    backgroundColor: colors.ink,
-    borderColor: colors.ink
-  },
-  licenseText: {
-    color: colors.muted,
-    fontSize: typography.small,
-    fontWeight: "800",
-    textAlign: "center"
-  },
-  licenseTextActive: {
-    color: colors.paper
-  },
-  switchRow: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  }
-});
+function useStyles(theme: ReturnType<typeof useAppTheme>) {
+  const { colors, radii, spacing, typography } = theme;
+
+  return useMemo(() => StyleSheet.create({
+    screen: {
+      backgroundColor: colors.canvas,
+      flex: 1
+    },
+    content: {
+      padding: spacing.lg,
+      paddingTop: spacing.xl
+    },
+    back: {
+      color: colors.teal,
+      fontSize: typography.small,
+      fontWeight: "700",
+      marginBottom: spacing.lg
+    },
+    hero: {
+      gap: spacing.sm
+    },
+    statusPill: {
+      alignItems: "center",
+      alignSelf: "flex-start",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 999,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.sm,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm
+    },
+    statusDot: {
+      width: 10,
+      height: 10,
+      borderRadius: radii.full
+    },
+    status: {
+      color: colors.ink,
+      fontSize: typography.caption,
+      fontWeight: "800",
+      letterSpacing: 0,
+      textTransform: "uppercase"
+    },
+    title: {
+      color: colors.ink,
+      fontSize: 36,
+      fontWeight: "900",
+      letterSpacing: 0,
+      lineHeight: 41
+    },
+    locationLine: {
+      alignItems: "center",
+      flexDirection: "row",
+      gap: spacing.xs
+    },
+    location: {
+      color: colors.muted,
+      flex: 1,
+      fontSize: typography.body,
+      lineHeight: 22
+    },
+    address: {
+      color: colors.ink,
+      fontSize: typography.body,
+      lineHeight: 23
+    },
+    actionRow: {
+      flexDirection: "row",
+      gap: spacing.sm,
+      marginTop: spacing.md
+    },
+    primaryButton: {
+      alignItems: "center",
+      backgroundColor: colors.ink,
+      borderRadius: 8,
+      flexDirection: "row",
+      flex: 1,
+      gap: spacing.sm,
+      justifyContent: "center",
+      minHeight: 48,
+      paddingHorizontal: spacing.md
+    },
+    primaryButtonText: {
+      color: colors.paper,
+      fontSize: typography.small,
+      fontWeight: "900"
+    },
+    secondaryButton: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      flex: 1,
+      gap: spacing.sm,
+      justifyContent: "center",
+      minHeight: 48,
+      paddingHorizontal: spacing.md
+    },
+    secondaryButtonText: {
+      color: colors.teal,
+      fontSize: typography.small,
+      fontWeight: "900"
+    },
+    iconButton: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      height: 48,
+      justifyContent: "center",
+      width: 52
+    },
+    smallIconButton: {
+      alignItems: "center",
+      height: 30,
+      justifyContent: "center",
+      width: 30
+    },
+    visitBox: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.sm,
+      marginTop: spacing.sm,
+      paddingHorizontal: spacing.md
+    },
+    dateInput: {
+      color: colors.ink,
+      flex: 1,
+      fontSize: typography.body,
+      height: 48
+    },
+    message: {
+      color: colors.copper,
+      fontSize: typography.small,
+      fontWeight: "700",
+      lineHeight: 20,
+      marginTop: spacing.sm
+    },
+    section: {
+      borderTopColor: colors.line,
+      borderTopWidth: 1,
+      marginTop: spacing.xl,
+      paddingTop: spacing.lg
+    },
+    sectionTitle: {
+      color: colors.ink,
+      fontSize: 18,
+      fontWeight: "800",
+      letterSpacing: 0,
+      marginBottom: spacing.sm
+    },
+    body: {
+      color: colors.ink,
+      fontSize: typography.body,
+      lineHeight: 23
+    },
+    muted: {
+      color: colors.muted,
+      fontSize: typography.small,
+      lineHeight: 20
+    },
+    infoGrid: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: spacing.sm
+    },
+    infoItem: {
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexGrow: 1,
+      minWidth: "30%",
+      padding: spacing.md
+    },
+    infoLabel: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "800",
+      textTransform: "uppercase"
+    },
+    infoValue: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800",
+      marginTop: spacing.xs
+    },
+    visitRow: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.sm,
+      justifyContent: "space-between",
+      marginTop: spacing.sm,
+      padding: spacing.md
+    },
+    visitDate: {
+      color: colors.ink,
+      flex: 1,
+      fontSize: typography.body,
+      fontWeight: "800"
+    },
+    visitVisibility: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "800",
+      textTransform: "uppercase"
+    },
+    attributeGrid: {
+      gap: spacing.sm,
+      marginTop: spacing.md
+    },
+    attribute: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      padding: spacing.md
+    },
+    attributeLabel: {
+      color: colors.muted,
+      flex: 1,
+      fontSize: typography.small
+    },
+    attributeValue: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800"
+    },
+    indicatorLine: {
+      color: colors.ink,
+      fontSize: 24,
+      marginTop: spacing.md
+    },
+    hoursBox: {
+      alignItems: "flex-start",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.md,
+      padding: spacing.md
+    },
+    hoursCopy: {
+      flex: 1,
+      gap: spacing.xs
+    },
+    photo: {
+      aspectRatio: 4 / 3,
+      backgroundColor: colors.line,
+      borderRadius: 8,
+      width: "100%"
+    },
+    photoPreview: {
+      aspectRatio: 4 / 3,
+      backgroundColor: colors.line,
+      borderRadius: 8,
+      marginTop: spacing.md,
+      width: "100%"
+    },
+    source: {
+      color: colors.teal,
+      fontSize: typography.small,
+      lineHeight: 22,
+      marginBottom: spacing.xs
+    },
+    sourceLink: {
+      color: colors.teal,
+      fontSize: typography.small,
+      fontWeight: "800",
+      marginTop: spacing.xs
+    },
+    modalBackdrop: {
+      backgroundColor: "rgba(23, 23, 23, 0.35)",
+      flex: 1,
+      justifyContent: "flex-end"
+    },
+    modalSheet: {
+      backgroundColor: colors.canvas,
+      borderTopLeftRadius: 16,
+      borderTopRightRadius: 16,
+      gap: spacing.sm,
+      maxHeight: "88%",
+      padding: spacing.lg
+    },
+    modalHeader: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: spacing.sm
+    },
+    modalTitle: {
+      color: colors.ink,
+      fontSize: 22,
+      fontWeight: "900"
+    },
+    input: {
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      color: colors.ink,
+      fontSize: typography.body,
+      minHeight: 48,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm
+    },
+    textArea: {
+      minHeight: 96,
+      textAlignVertical: "top"
+    },
+    licenseRow: {
+      flexDirection: "row",
+      gap: spacing.sm
+    },
+    licenseButton: {
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flex: 1,
+      padding: spacing.md
+    },
+    licenseActive: {
+      backgroundColor: colors.ink,
+      borderColor: colors.ink
+    },
+    licenseText: {
+      color: colors.muted,
+      fontSize: typography.small,
+      fontWeight: "800",
+      textAlign: "center"
+    },
+    licenseTextActive: {
+      color: colors.paper
+    },
+    switchRow: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between"
+    }
+  }), [colors, radii, spacing, typography]);
+}

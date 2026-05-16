@@ -159,11 +159,33 @@ language sql
 security definer
 set search_path = public
 as $$
-  -- For local development/testing, we allow everyone to act as a reviewer.
-  -- In production, replace 'true' with the actual check:
-  -- select coalesce((select is_reviewer from public.profiles where id = auth.uid()), false);
-  select true;
+  select coalesce((select is_reviewer from public.profiles where id = auth.uid()), false);
 $$;
+
+-- Trigger to automatically create a profile when a new user signs up
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  insert into public.profiles (id, username, public_profile, is_reviewer)
+  values (
+    new.id,
+    -- Generates a default username like atlas_1234567890
+    'atlas_' || left(replace(new.id::text, '-', ''), 10),
+    false,
+    false
+  );
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute procedure public.handle_new_user();
 
 alter table public.profiles enable row level security;
 alter table public.stores enable row level security;

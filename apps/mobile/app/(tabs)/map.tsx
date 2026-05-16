@@ -1,17 +1,29 @@
-import { getMarkerEmoji, getStoreName, getStorePlace, statusEmojis } from "@/features/stores/storeUtils";
+import { getStoreName, getStorePlace } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
-import { colors, spacing, typography } from "@/theme/tokens";
-import { Link } from "expo-router";
+import { useAppTheme } from "@/theme/useAppTheme";
 import { useTranslation } from "react-i18next";
 import MapView, { Marker } from "react-native-maps";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { useMemo } from "react";
+import type { StoreStatus } from "@/features/stores/store.types";
 
 export default function MapScreen() {
   const { t, i18n } = useTranslation();
+  const theme = useAppTheme();
+  const styles = useStyles(theme);
+  
   const { stores } = useStores();
   const { visits } = useLocalVisits();
   const visitedStoreIds = new Set(visits.map((visit) => visit.storeId));
+
+  const statusColors: Record<StoreStatus, string> = {
+    open: theme.colors.teal,
+    closed: theme.colors.ink,
+    relocated: theme.colors.muted,
+    announced: theme.colors.copper,
+    temporary: theme.colors.gold
+  };
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -24,119 +36,115 @@ export default function MapScreen() {
         }}
         style={styles.map}
       >
-        {stores.map((store) => (
-          <Marker
-            coordinate={store.coordinates}
-            description={getStorePlace(store)}
-            key={store.id}
-            title={getStoreName(store, i18n.language)}
-          >
-            <View style={styles.marker}>
-              <Text style={styles.markerText}>
-                {visitedStoreIds.has(store.id) ? "✅" : getMarkerEmoji(store)}
-              </Text>
-            </View>
-          </Marker>
-        ))}
+        {stores.map((store) => {
+          const isVisited = visitedStoreIds.has(store.id);
+          const pinColor = isVisited ? theme.colors.moss : statusColors[store.status];
+          
+          return (
+            <Marker
+              coordinate={store.coordinates}
+              description={getStorePlace(store)}
+              key={store.id}
+              title={getStoreName(store, i18n.language)}
+            >
+              <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>
+                <View style={[styles.markerInner, { backgroundColor: pinColor }]} />
+              </View>
+            </Marker>
+          );
+        })}
       </MapView>
 
       <View style={styles.panel}>
-        <Text style={styles.title}>{t("map.title")}</Text>
+        <Text style={styles.title}>Carte mondiale</Text>
         <Text style={styles.copy}>
-          {t("map.copy", { count: stores.length, visited: visitedStoreIds.size })}
+          {stores.length} boutiques chargées, {visitedStoreIds.size} marquées comme vues sur cet appareil.
         </Text>
         <View style={styles.legend}>
           {(["open", "closed", "relocated"] as const).map((status) => (
-            <Text key={status} style={styles.legendItem}>
-              {statusEmojis[status]} {t(`status.${status}`)}
-            </Text>
+            <View key={status} style={styles.legendItem}>
+              <View style={[styles.legendDot, { backgroundColor: statusColors[status] }]} />
+              <Text style={styles.legendText}>{t(`status.${status}`)}</Text>
+            </View>
           ))}
-          <Text style={styles.legendItem}>✅ {t("map.visited")}</Text>
-        </View>
-        <View style={styles.row}>
-          {stores.slice(0, 6).map((store) => (
-            <Link
-              href={{ pathname: "/store/[id]", params: { id: store.id } }}
-              key={store.id}
-              style={styles.link}
-            >
-              {getStoreName(store, i18n.language)}
-            </Link>
-          ))}
+          <View style={styles.legendItem}>
+            <View style={[styles.legendDot, { backgroundColor: theme.colors.moss }]} />
+            <Text style={styles.legendText}>{t("map.visited")}</Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: colors.canvas,
-    flex: 1
-  },
-  map: {
-    ...StyleSheet.absoluteFill
-  },
-  panel: {
-    backgroundColor: colors.paper,
-    borderColor: colors.line,
-    borderRadius: 8,
-    borderWidth: 1,
-    bottom: spacing.lg,
-    left: spacing.lg,
-    padding: spacing.md,
-    position: "absolute",
-    right: spacing.lg
-  },
-  title: {
-    color: colors.ink,
-    fontSize: 20,
-    fontWeight: "800",
-    letterSpacing: 0
-  },
-  copy: {
-    color: colors.muted,
-    fontSize: typography.small,
-    lineHeight: 20,
-    marginTop: spacing.xs
-  },
-  legend: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm,
-    marginTop: spacing.md
-  },
-  legendItem: {
-    color: colors.ink,
-    fontSize: typography.caption,
-    fontWeight: "700"
-  },
-  row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm,
-    marginTop: spacing.md
-  },
-  link: {
-    color: colors.teal,
-    fontSize: typography.small,
-    fontWeight: "700"
-  },
-  marker: {
-    alignItems: "center",
-    backgroundColor: colors.paper,
-    borderColor: colors.ink,
-    borderRadius: 18,
-    borderWidth: 1,
-    height: 34,
-    justifyContent: "center",
-    shadowColor: colors.ink,
-    shadowOffset: { height: 3, width: 0 },
-    shadowOpacity: 0.18,
-    shadowRadius: 8,
-    width: 34
-  },
-  markerText: {
-    fontSize: 18
-  }
-});
+function useStyles(theme: ReturnType<typeof useAppTheme>) {
+  const { colors, radii, shadows, spacing, typography } = theme;
+
+  return useMemo(() => StyleSheet.create({
+    screen: {
+      backgroundColor: colors.canvas,
+      flex: 1
+    },
+    map: {
+      ...StyleSheet.absoluteFillObject
+    },
+    panel: {
+      backgroundColor: colors.paper,
+      borderRadius: radii.md,
+      bottom: spacing.lg,
+      left: spacing.lg,
+      padding: spacing.lg,
+      position: "absolute",
+      right: spacing.lg,
+      ...shadows.md
+    },
+    title: {
+      color: colors.ink,
+      fontSize: typography.title3,
+      fontWeight: "900",
+      letterSpacing: -0.5
+    },
+    copy: {
+      color: colors.muted,
+      fontSize: typography.small,
+      lineHeight: 20,
+      marginTop: spacing.xs
+    },
+    legend: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: spacing.md,
+      marginTop: spacing.md
+    },
+    legendItem: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.xs
+    },
+    legendDot: {
+      width: 12,
+      height: 12,
+      borderRadius: radii.full
+    },
+    legendText: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "700"
+    },
+    marker: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderRadius: 16,
+      borderWidth: 2,
+      height: 24,
+      justifyContent: "center",
+      width: 24,
+      ...shadows.sm
+    },
+    markerInner: {
+      borderRadius: 8,
+      height: 14,
+      width: 14
+    }
+  }), [colors, radii, shadows, spacing, typography]);
+}

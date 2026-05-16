@@ -1,224 +1,226 @@
-import { StoreCard } from "@/features/stores/StoreCard";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
-import { colors, radii, shadows, spacing, typography } from "@/theme/tokens";
-import { useMemo, useState } from "react";
+import { useAppTheme } from "@/theme/useAppTheme";
+import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
-import {
-  FlatList,
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View
-} from "react-native";
+import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useMemo } from "react";
+import { Map, Search, Compass } from "lucide-react-native";
 
-const filterKeys = ["all", "open", "closed", "visited"] as const;
-
-export default function ExploreScreen() {
+export default function HomeScreen() {
   const { t } = useTranslation();
-  const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<(typeof filterKeys)[number]>("all");
-  const { error, isLoading, source, stores } = useStores();
+  const theme = useAppTheme();
+  const styles = useStyles(theme);
+  
+  const { source, stores } = useStores();
   const { visits } = useLocalVisits();
+  
   const visitedStoreIds = useMemo(
     () => new Set(visits.map((visit) => visit.storeId)),
     [visits]
   );
 
-  const filteredStores = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    return stores.filter((store) => {
-      if (filter === "open" && store.status !== "open") return false;
-      if (filter === "closed" && store.status !== "closed") return false;
-      if (filter === "visited" && !visitedStoreIds.has(store.id)) return false;
-      if (!normalized) return true;
-
-      const values = [
-        store.name.en,
-        store.name.fr,
-        store.city,
-        store.region ?? "",
-        store.countryCode,
-        store.countryName ?? "",
-        store.status,
-        store.architecture.era,
-        ...Object.keys(store.architecture.attributes)
-      ];
-      return values.some((value) => value.toLowerCase().includes(normalized));
-    });
-  }, [filter, query, stores, visitedStoreIds]);
+  const totalStores = stores.length > 0 ? stores.length : 1;
+  const progressPercent = Math.min(100, Math.round((visitedStoreIds.size / totalStores) * 100));
 
   return (
     <SafeAreaView style={styles.screen}>
-      <View style={styles.header}>
-        <Text style={styles.kicker}>{t("home.kicker")}</Text>
-        <Text style={styles.title}>{t("home.title")}</Text>
-        <Text style={styles.subtitle}>{t("home.subtitle")}</Text>
-        <View style={styles.statsRow}>
-          <View style={styles.stat}>
-            <Text style={styles.statValue}>{stores.length}</Text>
-            <Text style={styles.statLabel}>
-              {source === "supabase" ? t("home.liveDataset") : t("home.seedDataset")}
+      <ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <Text style={styles.kicker}>{t("home.kicker")}</Text>
+          <Text style={styles.title}>{t("home.title")}</Text>
+          <Text style={styles.subtitle}>{t("home.subtitle")}</Text>
+          
+          <View style={styles.statsRow}>
+            <View style={styles.stat}>
+              <Text style={styles.statValue}>{stores.length}</Text>
+              <Text style={styles.statLabel}>
+                {source === "supabase" ? t("home.liveDataset") : t("home.seedDataset")}
+              </Text>
+            </View>
+            <View style={styles.stat}>
+              <Text style={styles.statValue}>{visitedStoreIds.size}</Text>
+              <Text style={styles.statLabel}>{t("home.visitedCount")}</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Compass color={theme.colors.teal} size={22} />
+            <Text style={styles.sectionTitle}>Ta Progression</Text>
+          </View>
+          <View style={styles.progressContainer}>
+            <View style={styles.progressHeader}>
+              <Text style={styles.progressLabel}>Apple Stores visités</Text>
+              <Text style={styles.progressPercent}>{progressPercent}%</Text>
+            </View>
+            <View style={styles.progressBarBg}>
+              <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
+            </View>
+            <Text style={styles.progressHint}>
+              Il te reste {totalStores - visitedStoreIds.size} boutiques à découvrir dans le monde.
             </Text>
           </View>
-          <View style={styles.stat}>
-            <Text style={styles.statValue}>{visitedStoreIds.size}</Text>
-            <Text style={styles.statLabel}>{t("home.visitedCount")}</Text>
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Accès Rapide</Text>
+          <View style={styles.quickLinks}>
+            <Link href="/explore" asChild>
+              <Pressable style={styles.quickLinkButton}>
+                <Search color={theme.colors.paper} size={20} />
+                <Text style={styles.quickLinkText}>Rechercher une boutique</Text>
+              </Pressable>
+            </Link>
+            <Link href="/map" asChild>
+              <Pressable style={[styles.quickLinkButton, { backgroundColor: theme.colors.copper }]}>
+                <Map color={theme.colors.paper} size={20} />
+                <Text style={styles.quickLinkText}>Ouvrir la carte mondiale</Text>
+              </Pressable>
+            </Link>
           </View>
         </View>
-      </View>
 
-      <View style={styles.searchWrap}>
-        <TextInput
-          accessibilityLabel={t("home.searchLabel")}
-          autoCapitalize="none"
-          onChangeText={setQuery}
-          placeholder={t("home.searchPlaceholder")}
-          placeholderTextColor={colors.muted}
-          style={styles.searchInput}
-          value={query}
-        />
-        <View style={styles.filters}>
-          {filterKeys.map((key) => (
-            <Pressable
-              key={key}
-              onPress={() => setFilter(key)}
-              style={[styles.filterButton, filter === key && styles.filterButtonActive]}
-            >
-              <Text style={[styles.filterText, filter === key && styles.filterTextActive]}>
-                {t(`home.filters.${key}`)}
-              </Text>
-            </Pressable>
-          ))}
-        </View>
-        {error ? <Text style={styles.warning}>{t("home.remoteError")}</Text> : null}
-        {isLoading ? <Text style={styles.warning}>{t("home.loading")}</Text> : null}
-      </View>
-
-      <FlatList
-        contentContainerStyle={styles.list}
-        data={filteredStores}
-        keyExtractor={(store) => store.id}
-        renderItem={({ item }) => (
-          <StoreCard isVisited={visitedStoreIds.has(item.id)} store={item} />
-        )}
-        ListEmptyComponent={
-          <Text style={styles.empty}>{t("home.empty")}</Text>
-        }
-      />
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: colors.canvas,
-    flex: 1
-  },
-  header: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.lg,
-    paddingBottom: spacing.md
-  },
-  kicker: {
-    color: colors.muted,
-    fontSize: typography.caption,
-    fontWeight: "800",
-    letterSpacing: 1,
-    textTransform: "uppercase"
-  },
-  title: {
-    color: colors.ink,
-    fontSize: typography.title1,
-    fontWeight: "900",
-    letterSpacing: -0.5,
-    lineHeight: 38,
-    marginTop: spacing.xs
-  },
-  subtitle: {
-    color: colors.muted,
-    fontSize: typography.body,
-    lineHeight: 24,
-    marginTop: spacing.sm
-  },
-  statsRow: {
-    flexDirection: "row",
-    gap: spacing.md,
-    marginTop: spacing.lg
-  },
-  stat: {
-    backgroundColor: colors.paper,
-    borderRadius: radii.md,
-    flex: 1,
-    padding: spacing.md,
-    ...shadows.sm
-  },
-  statValue: {
-    color: colors.ink,
-    fontSize: typography.title2,
-    fontWeight: "900"
-  },
-  statLabel: {
-    color: colors.muted,
-    fontSize: typography.caption,
-    fontWeight: "700",
-    marginTop: spacing.xs,
-    textTransform: "uppercase"
-  },
-  searchWrap: {
-    paddingHorizontal: spacing.lg,
-    paddingBottom: spacing.sm
-  },
-  searchInput: {
-    backgroundColor: colors.paper,
-    borderRadius: radii.md,
-    color: colors.ink,
-    fontSize: typography.body,
-    height: 52,
-    paddingHorizontal: spacing.md,
-    ...shadows.sm
-  },
-  filters: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm,
-    marginTop: spacing.md
-  },
-  filterButton: {
-    backgroundColor: colors.paper,
-    borderRadius: radii.full,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-    ...shadows.sm
-  },
-  filterButtonActive: {
-    backgroundColor: colors.ink,
-  },
-  filterText: {
-    color: colors.muted,
-    fontSize: typography.small,
-    fontWeight: "800"
-  },
-  filterTextActive: {
-    color: colors.paper
-  },
-  warning: {
-    color: colors.danger,
-    fontSize: typography.caption,
-    fontWeight: "700",
-    marginTop: spacing.sm
-  },
-  list: {
-    gap: spacing.lg,
-    padding: spacing.lg,
-    paddingTop: spacing.sm
-  },
-  empty: {
-    color: colors.muted,
-    fontSize: typography.body,
-    paddingTop: spacing.xxl,
-    textAlign: "center"
-  }
-});
+function useStyles(theme: ReturnType<typeof useAppTheme>) {
+  const { colors, radii, shadows, spacing, typography } = theme;
+
+  return useMemo(() => StyleSheet.create({
+    screen: {
+      backgroundColor: colors.canvas,
+      flex: 1
+    },
+    content: {
+      paddingBottom: spacing.xxl
+    },
+    header: {
+      paddingHorizontal: spacing.lg,
+      paddingTop: spacing.xxl,
+      paddingBottom: spacing.md
+    },
+    kicker: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "800",
+      letterSpacing: 1,
+      textTransform: "uppercase"
+    },
+    title: {
+      color: colors.ink,
+      fontSize: 40,
+      fontWeight: "900",
+      letterSpacing: -1,
+      lineHeight: 44,
+      marginTop: spacing.xs
+    },
+    subtitle: {
+      color: colors.muted,
+      fontSize: typography.title3,
+      lineHeight: 28,
+      marginTop: spacing.md
+    },
+    statsRow: {
+      flexDirection: "row",
+      gap: spacing.lg,
+      marginTop: spacing.xl
+    },
+    stat: {
+      backgroundColor: colors.paper,
+      borderRadius: radii.lg,
+      flex: 1,
+      padding: spacing.lg,
+      ...shadows.sm
+    },
+    statValue: {
+      color: colors.ink,
+      fontSize: typography.title1,
+      fontWeight: "900"
+    },
+    statLabel: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "800",
+      marginTop: spacing.sm,
+      textTransform: "uppercase"
+    },
+    section: {
+      paddingHorizontal: spacing.lg,
+      marginTop: spacing.xl
+    },
+    sectionHeader: {
+      alignItems: "center",
+      flexDirection: "row",
+      gap: spacing.sm,
+      marginBottom: spacing.md
+    },
+    sectionTitle: {
+      color: colors.ink,
+      fontSize: typography.title2,
+      fontWeight: "900",
+      letterSpacing: -0.5,
+      marginBottom: spacing.sm
+    },
+    progressContainer: {
+      backgroundColor: colors.paper,
+      borderRadius: radii.lg,
+      padding: spacing.lg,
+      ...shadows.sm
+    },
+    progressHeader: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "flex-end",
+      marginBottom: spacing.sm
+    },
+    progressLabel: {
+      color: colors.ink,
+      fontSize: typography.body,
+      fontWeight: "800"
+    },
+    progressPercent: {
+      color: colors.teal,
+      fontSize: typography.title2,
+      fontWeight: "900"
+    },
+    progressBarBg: {
+      height: 12,
+      backgroundColor: colors.canvas,
+      borderRadius: radii.full,
+      overflow: "hidden"
+    },
+    progressBarFill: {
+      height: "100%",
+      backgroundColor: colors.teal,
+      borderRadius: radii.full
+    },
+    progressHint: {
+      color: colors.muted,
+      fontSize: typography.small,
+      marginTop: spacing.md,
+      lineHeight: 20
+    },
+    quickLinks: {
+      gap: spacing.md,
+      marginTop: spacing.xs
+    },
+    quickLinkButton: {
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: colors.ink,
+      padding: spacing.lg,
+      borderRadius: radii.lg,
+      gap: spacing.md,
+      ...shadows.sm
+    },
+    quickLinkText: {
+      color: colors.paper,
+      fontSize: typography.body,
+      fontWeight: "800"
+    }
+  }), [colors, radii, shadows, spacing, typography]);
+}

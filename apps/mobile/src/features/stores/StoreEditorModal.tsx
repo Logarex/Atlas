@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Modal, StyleSheet, Text, TextInput, View, Pressable, ScrollView, SafeAreaView, Switch } from "react-native";
-import { colors, radii, shadows, spacing, typography } from "@/theme/tokens";
+import { useAppTheme } from "@/theme/useAppTheme";
 import type { StoreRecord } from "./store.types";
 import { useTranslation } from "react-i18next";
 import { X } from "lucide-react-native";
@@ -14,6 +14,9 @@ type StoreEditorModalProps = {
 
 export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEditorModalProps) {
   const { t } = useTranslation();
+  const theme = useAppTheme();
+  const styles = useStyles(theme);
+  
   const [loading, setLoading] = useState(false);
   const isNew = !store;
 
@@ -76,7 +79,7 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
         <View style={styles.header}>
           <Text style={styles.title}>{isNew ? "Create Store" : "Edit Store"}</Text>
           <Pressable onPress={onClose} style={styles.closeBtn}>
-            <X color={colors.ink} size={24} />
+            <X color={theme.colors.ink} size={24} />
           </Pressable>
         </View>
 
@@ -89,6 +92,7 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
               onChangeText={setId} 
               editable={isNew} 
               placeholder="apple-fifth-avenue"
+              placeholderTextColor={theme.colors.muted}
             />
           </View>
 
@@ -161,96 +165,100 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.canvas
-  },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: spacing.lg,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.line,
-    backgroundColor: colors.paper
-  },
-  title: {
-    fontSize: typography.title3,
-    fontWeight: "800",
-    color: colors.ink
-  },
-  closeBtn: {
-    padding: spacing.xs,
-    backgroundColor: colors.sky,
-    borderRadius: radii.full
-  },
-  form: {
-    padding: spacing.lg,
-    gap: spacing.md
-  },
-  row: {
-    flexDirection: "row",
-    gap: spacing.md
-  },
-  field: {
-    gap: spacing.xs
-  },
-  label: {
-    fontSize: typography.caption,
-    fontWeight: "700",
-    color: colors.muted,
-    textTransform: "uppercase"
-  },
-  input: {
-    backgroundColor: colors.paper,
-    borderWidth: 1,
-    borderColor: colors.line,
-    borderRadius: radii.sm,
-    padding: spacing.md,
-    fontSize: typography.body,
-    color: colors.ink
-  },
-  statusWrap: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm
-  },
-  statusBtn: {
-    backgroundColor: colors.paper,
-    borderWidth: 1,
-    borderColor: colors.line,
-    borderRadius: radii.full,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm
-  },
-  statusBtnActive: {
-    backgroundColor: colors.ink,
-    borderColor: colors.ink
-  },
-  statusText: {
-    fontSize: typography.small,
-    fontWeight: "700",
-    color: colors.muted
-  },
-  statusTextActive: {
-    color: colors.paper
-  },
-  footer: {
-    padding: spacing.lg,
-    backgroundColor: colors.paper,
-    borderTopWidth: 1,
-    borderTopColor: colors.line
-  },
-  saveBtn: {
-    backgroundColor: colors.copper,
-    padding: spacing.md,
-    borderRadius: radii.md,
-    alignItems: "center"
-  },
-  saveBtnText: {
-    color: colors.paper,
-    fontSize: typography.body,
-    fontWeight: "800"
-  }
-});
+function useStyles(theme: ReturnType<typeof useAppTheme>) {
+  const { colors, radii, spacing, typography } = theme;
+
+  return useMemo(() => StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: colors.canvas
+    },
+    header: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: spacing.lg,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.line,
+      backgroundColor: colors.paper
+    },
+    title: {
+      fontSize: typography.title3,
+      fontWeight: "800",
+      color: colors.ink
+    },
+    closeBtn: {
+      padding: spacing.xs,
+      backgroundColor: colors.sky,
+      borderRadius: radii.full
+    },
+    form: {
+      padding: spacing.lg,
+      gap: spacing.md
+    },
+    row: {
+      flexDirection: "row",
+      gap: spacing.md
+    },
+    field: {
+      gap: spacing.xs
+    },
+    label: {
+      fontSize: typography.caption,
+      fontWeight: "700",
+      color: colors.muted,
+      textTransform: "uppercase"
+    },
+    input: {
+      backgroundColor: colors.paper,
+      borderWidth: 1,
+      borderColor: colors.line,
+      borderRadius: radii.sm,
+      padding: spacing.md,
+      fontSize: typography.body,
+      color: colors.ink
+    },
+    statusWrap: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: spacing.sm
+    },
+    statusBtn: {
+      backgroundColor: colors.paper,
+      borderWidth: 1,
+      borderColor: colors.line,
+      borderRadius: radii.full,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm
+    },
+    statusBtnActive: {
+      backgroundColor: colors.ink,
+      borderColor: colors.ink
+    },
+    statusText: {
+      fontSize: typography.small,
+      fontWeight: "700",
+      color: colors.muted
+    },
+    statusTextActive: {
+      color: colors.paper
+    },
+    footer: {
+      padding: spacing.lg,
+      backgroundColor: colors.paper,
+      borderTopWidth: 1,
+      borderTopColor: colors.line
+    },
+    saveBtn: {
+      backgroundColor: colors.copper,
+      padding: spacing.md,
+      borderRadius: radii.md,
+      alignItems: "center"
+    },
+    saveBtnText: {
+      color: colors.paper,
+      fontSize: typography.body,
+      fontWeight: "800"
+    }
+  }), [colors, radii, spacing, typography]);
+}
