@@ -1,14 +1,167 @@
-import { sampleStores } from "@/features/stores/sampleStores";
+import {
+  submitPhoto,
+  submitStoreChange
+} from "@/features/contributions/contributionApi";
+import {
+  attributeEmojis,
+  getPositiveAttributeKeys,
+  getStoreName,
+  getStorePlace,
+  statusEmojis
+} from "@/features/stores/storeUtils";
+import { useStores } from "@/features/stores/useStores";
+import { useLocalVisits } from "@/features/visits/localVisits";
+import { formatDate, isISODate, todayISO } from "@/lib/date";
 import { colors, spacing, typography } from "@/theme/tokens";
+import * as ImagePicker from "expo-image-picker";
 import { Link, Stack, useLocalSearchParams } from "expo-router";
+import {
+  CalendarDays,
+  Camera,
+  Check,
+  Clock,
+  Flag,
+  MapPin,
+  Send,
+  Share2,
+  X
+} from "lucide-react-native";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Linking,
+  Modal,
+  Pressable,
+  ScrollView,
+  Share,
+  StyleSheet,
+  Switch,
+  Text,
+  TextInput,
+  View
+} from "react-native";
 
 export default function StoreDetailScreen() {
   const { t, i18n } = useTranslation();
   const { id } = useLocalSearchParams<{ id: string }>();
-  const store = sampleStores.find((item) => item.id === id) ?? sampleStores[0];
-  const name = i18n.language.startsWith("fr") ? store.name.fr : store.name.en;
+  const { stores } = useStores();
+  const store = stores.find((item) => item.id === id) ?? stores[0];
+  const [visitDate, setVisitDate] = useState(todayISO());
+  const [visitMessage, setVisitMessage] = useState<string | null>(null);
+  const [changeModalVisible, setChangeModalVisible] = useState(false);
+  const [photoModalVisible, setPhotoModalVisible] = useState(false);
+  const [fieldPath, setFieldPath] = useState("architecture.attributes.");
+  const [proposedValue, setProposedValue] = useState("");
+  const [sourceUrl, setSourceUrl] = useState("");
+  const [note, setNote] = useState("");
+  const [contributionMessage, setContributionMessage] = useState<string | null>(null);
+  const [photoAsset, setPhotoAsset] = useState<ImagePicker.ImagePickerAsset | null>(null);
+  const [photoCaption, setPhotoCaption] = useState("");
+  const [photoTakenOn, setPhotoTakenOn] = useState(todayISO());
+  const [photoLicense, setPhotoLicense] = useState<"CC-BY-4.0" | "CC0-1.0">("CC-BY-4.0");
+  const [peopleVisible, setPeopleVisible] = useState(false);
+  const { addVisit, removeVisit, storeVisits } = useLocalVisits(store?.id);
+  const name = store ? getStoreName(store, i18n.language) : "";
+  const positiveAttributes = useMemo(
+    () => (store ? getPositiveAttributeKeys(store) : []),
+    [store]
+  );
+
+  if (!store) return null;
+
+  async function handleAddVisit() {
+    if (!isISODate(visitDate)) {
+      setVisitMessage(t("store.visitInvalidDate"));
+      return;
+    }
+
+    await addVisit(store.id, visitDate);
+    setVisitMessage(t("store.visitSaved"));
+  }
+
+  async function handleShareVisit() {
+    const date = storeVisits[0]?.visitedOn ?? visitDate;
+    await Share.share({
+      message: t("store.shareText", {
+        date,
+        name,
+        place: getStorePlace(store)
+      })
+    });
+  }
+
+  async function handleSubmitChange() {
+    try {
+      setContributionMessage(t("store.submitting"));
+      await submitStoreChange({
+        storeId: store.id,
+        fieldPath,
+        proposedValue,
+        sourceUrl,
+        note
+      });
+      setContributionMessage(t("store.changeSubmitted"));
+      setFieldPath("architecture.attributes.");
+      setProposedValue("");
+      setSourceUrl("");
+      setNote("");
+    } catch (error) {
+      setContributionMessage(error instanceof Error ? error.message : t("store.submitFailed"));
+    }
+  }
+
+  async function handlePickPhoto() {
+    const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!permission.granted) {
+      setContributionMessage(t("store.photoPermissionDenied"));
+      return;
+    }
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: false,
+      exif: false,
+      mediaTypes: ["images"],
+      quality: 0.86
+    });
+
+    if (!result.canceled) {
+      setPhotoAsset(result.assets[0]);
+    }
+  }
+
+  async function handleSubmitPhoto() {
+    if (!photoAsset) {
+      setContributionMessage(t("store.photoRequired"));
+      return;
+    }
+
+    if (photoTakenOn && !isISODate(photoTakenOn)) {
+      setContributionMessage(t("store.visitInvalidDate"));
+      return;
+    }
+
+    try {
+      setContributionMessage(t("store.submitting"));
+      await submitPhoto({
+        storeId: store.id,
+        localUri: photoAsset.uri,
+        mimeType: photoAsset.mimeType,
+        fileName: photoAsset.fileName,
+        caption: photoCaption,
+        takenOn: photoTakenOn,
+        license: photoLicense,
+        peopleVisible
+      });
+      setContributionMessage(t("store.photoSubmitted"));
+      setPhotoAsset(null);
+      setPhotoCaption("");
+      setPhotoTakenOn(todayISO());
+      setPeopleVisible(false);
+    } catch (error) {
+      setContributionMessage(error instanceof Error ? error.message : t("store.submitFailed"));
+    }
+  }
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
@@ -17,39 +170,276 @@ export default function StoreDetailScreen() {
         {t("store.back")}
       </Link>
 
-      <Text style={styles.status}>{t(`status.${store.status}`)}</Text>
-      <Text style={styles.title}>{name}</Text>
-      <Text style={styles.location}>
-        {store.city}, {store.countryCode}
-      </Text>
+      <View style={styles.hero}>
+        <View style={styles.statusPill}>
+          <Text style={styles.statusEmoji}>{statusEmojis[store.status]}</Text>
+          <Text style={styles.status}>{t(`status.${store.status}`)}</Text>
+        </View>
+        <Text style={styles.title}>{name}</Text>
+        <View style={styles.locationLine}>
+          <MapPin color={colors.muted} size={18} />
+          <Text style={styles.location}>{getStorePlace(store)}</Text>
+        </View>
+        <Text style={styles.address}>{store.address}</Text>
+      </View>
+
+      <View style={styles.actionRow}>
+        <Pressable style={styles.primaryButton} onPress={handleAddVisit}>
+          <Check color={colors.paper} size={18} />
+          <Text style={styles.primaryButtonText}>{t("store.markVisited")}</Text>
+        </Pressable>
+        <Pressable style={styles.iconButton} onPress={handleShareVisit}>
+          <Share2 color={colors.ink} size={19} />
+        </Pressable>
+      </View>
+
+      <View style={styles.visitBox}>
+        <CalendarDays color={colors.teal} size={20} />
+        <TextInput
+          accessibilityLabel={t("store.visitDateLabel")}
+          onChangeText={setVisitDate}
+          placeholder="YYYY-MM-DD"
+          placeholderTextColor={colors.muted}
+          style={styles.dateInput}
+          value={visitDate}
+        />
+      </View>
+      {visitMessage ? <Text style={styles.message}>{visitMessage}</Text> : null}
+
+      {storeVisits.length > 0 ? (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>{t("store.yourVisits")}</Text>
+          {storeVisits.map((visit) => (
+            <View key={visit.id} style={styles.visitRow}>
+              <Text style={styles.visitDate}>{visit.visitedOn}</Text>
+              <Text style={styles.visitVisibility}>{t(`visibility.${visit.visibility}`)}</Text>
+              <Pressable onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
+                <X color={colors.danger} size={16} />
+              </Pressable>
+            </View>
+          ))}
+        </View>
+      ) : null}
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.history")}</Text>
-        <Text style={styles.body}>
-          {t("store.openedOn", { date: store.openedOn })}
-        </Text>
+        <View style={styles.infoGrid}>
+          <View style={styles.infoItem}>
+            <Text style={styles.infoLabel}>{t("store.opened")}</Text>
+            <Text style={styles.infoValue}>
+              {formatDate(store.openedOn, t("store.dateUnknown"))}
+            </Text>
+          </View>
+          <View style={styles.infoItem}>
+            <Text style={styles.infoLabel}>{t("store.closed")}</Text>
+            <Text style={styles.infoValue}>
+              {formatDate(store.closedOn, t("store.notClosed"))}
+            </Text>
+          </View>
+          <View style={styles.infoItem}>
+            <Text style={styles.infoLabel}>{t("store.verified")}</Text>
+            <Text style={styles.infoValue}>{store.lastVerifiedAt}</Text>
+          </View>
+        </View>
       </View>
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.architecture")}</Text>
+        <Text style={styles.body}>{store.architecture.typology ?? store.architecture.era}</Text>
         <View style={styles.attributeGrid}>
           {Object.entries(store.architecture.attributes).map(([key, value]) => (
             <View key={key} style={styles.attribute}>
-              <Text style={styles.attributeLabel}>{t(`attributes.${key}`)}</Text>
+              <Text style={styles.attributeLabel}>
+                {attributeEmojis[key as keyof typeof attributeEmojis] ?? "•"}{" "}
+                {t(`attributes.${key}`)}
+              </Text>
               <Text style={styles.attributeValue}>{t(`values.${value}`)}</Text>
             </View>
           ))}
+        </View>
+        {positiveAttributes.length > 0 ? (
+          <Text style={styles.indicatorLine}>
+            {positiveAttributes.map((key) => attributeEmojis[key]).join(" ")}
+          </Text>
+        ) : null}
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>{t("store.hours")}</Text>
+        <View style={styles.hoursBox}>
+          <Clock color={colors.moss} size={20} />
+          <View style={styles.hoursCopy}>
+            <Text style={styles.body}>{t(`hours.${store.hours.policy}`)}</Text>
+            <Text style={styles.muted}>{store.hours.note}</Text>
+            <Pressable onPress={() => Linking.openURL(store.hours.officialUrl)}>
+              <Text style={styles.sourceLink}>
+                {t("store.verifyOfficial")} ↗
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>{t("store.photos")}</Text>
+        {store.photos?.length ? (
+          store.photos.map((photo) => (
+            <Image key={photo.id} source={{ uri: photo.url }} style={styles.photo} />
+          ))
+        ) : (
+          <Text style={styles.muted}>{t("store.noPhotos")}</Text>
+        )}
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>{t("store.contribute")}</Text>
+        <View style={styles.actionRow}>
+          <Pressable style={styles.secondaryButton} onPress={() => setChangeModalVisible(true)}>
+            <Flag color={colors.teal} size={18} />
+            <Text style={styles.secondaryButtonText}>{t("store.suggestEdit")}</Text>
+          </Pressable>
+          <Pressable style={styles.secondaryButton} onPress={() => setPhotoModalVisible(true)}>
+            <Camera color={colors.teal} size={18} />
+            <Text style={styles.secondaryButtonText}>{t("store.addPhoto")}</Text>
+          </Pressable>
         </View>
       </View>
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.sources")}</Text>
         {store.sources.map((source) => (
-          <Text key={source.url} style={styles.source}>
-            {source.label}
-          </Text>
+          <Pressable key={`${source.url}-${source.label}`} onPress={() => Linking.openURL(source.url)}>
+            <Text style={styles.source}>
+              {source.label} · {source.license}
+            </Text>
+          </Pressable>
         ))}
       </View>
+
+      <Modal
+        animationType="slide"
+        onRequestClose={() => setChangeModalVisible(false)}
+        transparent
+        visible={changeModalVisible}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalSheet}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>{t("store.suggestEdit")}</Text>
+              <Pressable onPress={() => setChangeModalVisible(false)}>
+                <X color={colors.ink} size={22} />
+              </Pressable>
+            </View>
+            <TextInput
+              onChangeText={setFieldPath}
+              placeholder={t("store.fieldPath")}
+              placeholderTextColor={colors.muted}
+              style={styles.input}
+              value={fieldPath}
+            />
+            <TextInput
+              onChangeText={setProposedValue}
+              placeholder={t("store.proposedValue")}
+              placeholderTextColor={colors.muted}
+              style={styles.input}
+              value={proposedValue}
+            />
+            <TextInput
+              autoCapitalize="none"
+              onChangeText={setSourceUrl}
+              placeholder={t("store.sourceUrl")}
+              placeholderTextColor={colors.muted}
+              style={styles.input}
+              value={sourceUrl}
+            />
+            <TextInput
+              multiline
+              onChangeText={setNote}
+              placeholder={t("store.note")}
+              placeholderTextColor={colors.muted}
+              style={[styles.input, styles.textArea]}
+              value={note}
+            />
+            <Pressable style={styles.primaryButton} onPress={handleSubmitChange}>
+              <Send color={colors.paper} size={18} />
+              <Text style={styles.primaryButtonText}>{t("store.submit")}</Text>
+            </Pressable>
+            {contributionMessage ? (
+              <Text style={styles.message}>{contributionMessage}</Text>
+            ) : null}
+          </View>
+        </View>
+      </Modal>
+
+      <Modal
+        animationType="slide"
+        onRequestClose={() => setPhotoModalVisible(false)}
+        transparent
+        visible={photoModalVisible}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalSheet}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>{t("store.addPhoto")}</Text>
+              <Pressable onPress={() => setPhotoModalVisible(false)}>
+                <X color={colors.ink} size={22} />
+              </Pressable>
+            </View>
+            <Pressable style={styles.secondaryButton} onPress={handlePickPhoto}>
+              <Camera color={colors.teal} size={18} />
+              <Text style={styles.secondaryButtonText}>
+                {photoAsset ? t("store.photoSelected") : t("store.pickPhoto")}
+              </Text>
+            </Pressable>
+            {photoAsset ? (
+              <Image source={{ uri: photoAsset.uri }} style={styles.photoPreview} />
+            ) : null}
+            <TextInput
+              onChangeText={setPhotoCaption}
+              placeholder={t("store.caption")}
+              placeholderTextColor={colors.muted}
+              style={styles.input}
+              value={photoCaption}
+            />
+            <TextInput
+              onChangeText={setPhotoTakenOn}
+              placeholder="YYYY-MM-DD"
+              placeholderTextColor={colors.muted}
+              style={styles.input}
+              value={photoTakenOn}
+            />
+            <View style={styles.licenseRow}>
+              {(["CC-BY-4.0", "CC0-1.0"] as const).map((license) => (
+                <Pressable
+                  key={license}
+                  onPress={() => setPhotoLicense(license)}
+                  style={[styles.licenseButton, photoLicense === license && styles.licenseActive]}
+                >
+                  <Text
+                    style={[
+                      styles.licenseText,
+                      photoLicense === license && styles.licenseTextActive
+                    ]}
+                  >
+                    {license}
+                  </Text>
+                </Pressable>
+              ))}
+            </View>
+            <View style={styles.switchRow}>
+              <Text style={styles.body}>{t("store.peopleVisible")}</Text>
+              <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
+            </View>
+            <Pressable style={styles.primaryButton} onPress={handleSubmitPhoto}>
+              <Send color={colors.paper} size={18} />
+              <Text style={styles.primaryButtonText}>{t("store.submit")}</Text>
+            </Pressable>
+            {contributionMessage ? (
+              <Text style={styles.message}>{contributionMessage}</Text>
+            ) : null}
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
@@ -69,8 +459,26 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginBottom: spacing.lg
   },
+  hero: {
+    gap: spacing.sm
+  },
+  statusPill: {
+    alignItems: "center",
+    alignSelf: "flex-start",
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 999,
+    borderWidth: 1,
+    flexDirection: "row",
+    gap: spacing.xs,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm
+  },
+  statusEmoji: {
+    fontSize: typography.body
+  },
   status: {
-    color: colors.copper,
+    color: colors.ink,
     fontSize: typography.caption,
     fontWeight: "800",
     letterSpacing: 0,
@@ -81,12 +489,101 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "900",
     letterSpacing: 0,
-    lineHeight: 41,
-    marginTop: spacing.xs
+    lineHeight: 41
+  },
+  locationLine: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: spacing.xs
   },
   location: {
     color: colors.muted,
+    flex: 1,
     fontSize: typography.body,
+    lineHeight: 22
+  },
+  address: {
+    color: colors.ink,
+    fontSize: typography.body,
+    lineHeight: 23
+  },
+  actionRow: {
+    flexDirection: "row",
+    gap: spacing.sm,
+    marginTop: spacing.md
+  },
+  primaryButton: {
+    alignItems: "center",
+    backgroundColor: colors.ink,
+    borderRadius: 8,
+    flexDirection: "row",
+    flex: 1,
+    gap: spacing.sm,
+    justifyContent: "center",
+    minHeight: 48,
+    paddingHorizontal: spacing.md
+  },
+  primaryButtonText: {
+    color: colors.paper,
+    fontSize: typography.small,
+    fontWeight: "900"
+  },
+  secondaryButton: {
+    alignItems: "center",
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: "row",
+    flex: 1,
+    gap: spacing.sm,
+    justifyContent: "center",
+    minHeight: 48,
+    paddingHorizontal: spacing.md
+  },
+  secondaryButtonText: {
+    color: colors.teal,
+    fontSize: typography.small,
+    fontWeight: "900"
+  },
+  iconButton: {
+    alignItems: "center",
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    height: 48,
+    justifyContent: "center",
+    width: 52
+  },
+  smallIconButton: {
+    alignItems: "center",
+    height: 30,
+    justifyContent: "center",
+    width: 30
+  },
+  visitBox: {
+    alignItems: "center",
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: "row",
+    gap: spacing.sm,
+    marginTop: spacing.sm,
+    paddingHorizontal: spacing.md
+  },
+  dateInput: {
+    color: colors.ink,
+    flex: 1,
+    fontSize: typography.body,
+    height: 48
+  },
+  message: {
+    color: colors.copper,
+    fontSize: typography.small,
+    fontWeight: "700",
+    lineHeight: 20,
     marginTop: spacing.sm
   },
   section: {
@@ -103,14 +600,71 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm
   },
   body: {
-    color: colors.muted,
+    color: colors.ink,
     fontSize: typography.body,
     lineHeight: 23
   },
-  attributeGrid: {
+  muted: {
+    color: colors.muted,
+    fontSize: typography.small,
+    lineHeight: 20
+  },
+  infoGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: spacing.sm
   },
+  infoItem: {
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flexGrow: 1,
+    minWidth: "30%",
+    padding: spacing.md
+  },
+  infoLabel: {
+    color: colors.muted,
+    fontSize: typography.caption,
+    fontWeight: "800",
+    textTransform: "uppercase"
+  },
+  infoValue: {
+    color: colors.ink,
+    fontSize: typography.small,
+    fontWeight: "800",
+    marginTop: spacing.xs
+  },
+  visitRow: {
+    alignItems: "center",
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: "row",
+    gap: spacing.sm,
+    justifyContent: "space-between",
+    marginTop: spacing.sm,
+    padding: spacing.md
+  },
+  visitDate: {
+    color: colors.ink,
+    flex: 1,
+    fontSize: typography.body,
+    fontWeight: "800"
+  },
+  visitVisibility: {
+    color: colors.muted,
+    fontSize: typography.caption,
+    fontWeight: "800",
+    textTransform: "uppercase"
+  },
+  attributeGrid: {
+    gap: spacing.sm,
+    marginTop: spacing.md
+  },
   attribute: {
+    alignItems: "center",
     backgroundColor: colors.paper,
     borderColor: colors.line,
     borderRadius: 8,
@@ -129,9 +683,117 @@ const styles = StyleSheet.create({
     fontSize: typography.small,
     fontWeight: "800"
   },
+  indicatorLine: {
+    color: colors.ink,
+    fontSize: 24,
+    marginTop: spacing.md
+  },
+  hoursBox: {
+    alignItems: "flex-start",
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: "row",
+    gap: spacing.md,
+    padding: spacing.md
+  },
+  hoursCopy: {
+    flex: 1,
+    gap: spacing.xs
+  },
+  photo: {
+    aspectRatio: 4 / 3,
+    backgroundColor: colors.line,
+    borderRadius: 8,
+    width: "100%"
+  },
+  photoPreview: {
+    aspectRatio: 4 / 3,
+    backgroundColor: colors.line,
+    borderRadius: 8,
+    marginTop: spacing.md,
+    width: "100%"
+  },
   source: {
     color: colors.teal,
     fontSize: typography.small,
-    lineHeight: 20
+    lineHeight: 22,
+    marginBottom: spacing.xs
+  },
+  sourceLink: {
+    color: colors.teal,
+    fontSize: typography.small,
+    fontWeight: "800",
+    marginTop: spacing.xs
+  },
+  modalBackdrop: {
+    backgroundColor: "rgba(23, 23, 23, 0.35)",
+    flex: 1,
+    justifyContent: "flex-end"
+  },
+  modalSheet: {
+    backgroundColor: colors.canvas,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    gap: spacing.sm,
+    maxHeight: "88%",
+    padding: spacing.lg
+  },
+  modalHeader: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: spacing.sm
+  },
+  modalTitle: {
+    color: colors.ink,
+    fontSize: 22,
+    fontWeight: "900"
+  },
+  input: {
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    color: colors.ink,
+    fontSize: typography.body,
+    minHeight: 48,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm
+  },
+  textArea: {
+    minHeight: 96,
+    textAlignVertical: "top"
+  },
+  licenseRow: {
+    flexDirection: "row",
+    gap: spacing.sm
+  },
+  licenseButton: {
+    backgroundColor: colors.paper,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flex: 1,
+    padding: spacing.md
+  },
+  licenseActive: {
+    backgroundColor: colors.ink,
+    borderColor: colors.ink
+  },
+  licenseText: {
+    color: colors.muted,
+    fontSize: typography.small,
+    fontWeight: "800",
+    textAlign: "center"
+  },
+  licenseTextActive: {
+    color: colors.paper
+  },
+  switchRow: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between"
   }
 });

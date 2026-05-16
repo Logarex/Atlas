@@ -1,13 +1,17 @@
 export const colors = {
-  canvas: "#F7F2EA",
+  canvas: "#F4F1EA",
   paper: "#FFFDF8",
   ink: "#171717",
-  muted: "#6F6A61",
-  line: "#DED6C8",
-  copper: "#A45D3A",
+  muted: "#67645E",
+  line: "#DCD5C8",
+  copper: "#A55F3D",
   teal: "#176B73",
-  moss: "#65743A",
-  rose: "#B75D69"
+  moss: "#637A45",
+  rose: "#B75D69",
+  mint: "#E8F2E6",
+  sky: "#E8F0F7",
+  gold: "#F4E5B8",
+  danger: "#9B3030"
 } as const;
 
 export const spacing = {

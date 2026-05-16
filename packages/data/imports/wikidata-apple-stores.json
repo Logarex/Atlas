@@ -1,0 +1,4890 @@
+{
+  "source": "Wikidata SPARQL",
+  "sourceUrl": "https://www.wikidata.org/wiki/Q421253",
+  "license": "CC0-1.0",
+  "importedAt": "2026-05-16T13:32:20.150Z",
+  "count": 102,
+  "records": [
+    {
+      "id": "apple-aix-en-provence",
+      "status": "open",
+      "name": {
+        "en": "Apple Aix-en-Provence",
+        "fr": "Apple Aix-en-Provence"
+      },
+      "countryCode": "FR",
+      "countryName": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "city": "Provence-Alpes-Côte d'Azur",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 43.525722222,
+        "longitude": 5.445555555
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/fr/retail/aix-en-provence/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/fr/retail/aix-en-provence/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131409586",
+          "url": "https://www.wikidata.org/wiki/Q131409586",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-akasya",
+      "status": "open",
+      "name": {
+        "en": "Apple Akasya",
+        "fr": "Apple Akasya"
+      },
+      "countryCode": "TR",
+      "countryName": "Turkey",
+      "region": "Üsküdar",
+      "city": "Üsküdar",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.00162,
+        "longitude": 29.05481
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/tr/retail/akasya/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/tr/retail/akasya/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q130341860",
+          "url": "https://www.wikidata.org/wiki/Q130341860",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-aspengrove",
+      "status": "open",
+      "name": {
+        "en": "Apple Aspen Grove",
+        "fr": "Apple Aspen Grove"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Colorado",
+      "city": "Colorado",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 39.585197625,
+        "longitude": -105.026491599
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/aspengrove/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/aspengrove/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411360",
+          "url": "https://www.wikidata.org/wiki/Q131411360",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-aventura",
+      "status": "open",
+      "name": {
+        "en": "Apple Aventura",
+        "fr": "Apple Aventura"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 25.95814529,
+        "longitude": -80.141700153
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/aventura/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/aventura/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137126630",
+          "url": "https://www.wikidata.org/wiki/Q137126630",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-bagdatcaddesi",
+      "status": "open",
+      "name": {
+        "en": "Apple Bağdat Caddesi",
+        "fr": "Apple Bağdat Caddesi"
+      },
+      "countryCode": "TR",
+      "countryName": "Turkey",
+      "region": "Kadıköy",
+      "city": "Kadıköy",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 40.964620853,
+        "longitude": 29.071914705
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/tr/retail/bagdatcaddesi/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/tr/retail/bagdatcaddesi/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q130341861",
+          "url": "https://www.wikidata.org/wiki/Q130341861",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-bellevuesquare",
+      "status": "open",
+      "name": {
+        "en": "Apple Bellevue Square",
+        "fr": "Apple Bellevue Square"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Washington",
+      "city": "Washington",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 47.616342996,
+        "longitude": -122.204305271
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/bellevuesquare/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/bellevuesquare/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309149",
+          "url": "https://www.wikidata.org/wiki/Q131309149",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-birmingham",
+      "status": "open",
+      "name": {
+        "en": "Apple Birmingham",
+        "fr": "Apple Birmingham"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "Birmingham",
+      "city": "Birmingham",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 52.478869337,
+        "longitude": -1.898379791
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/birmingham/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/birmingham/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137084387",
+          "url": "https://www.wikidata.org/wiki/Q137084387",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-bluewater",
+      "status": "open",
+      "name": {
+        "en": "Apple Bluewater",
+        "fr": "Apple Bluewater"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "Stone",
+      "city": "Stone",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 51.43893582,
+        "longitude": 0.269559568
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/bluewater/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/bluewater/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137086540",
+          "url": "https://www.wikidata.org/wiki/Q137086540",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-bondi",
+      "status": "open",
+      "name": {
+        "en": "Apple Bondi",
+        "fr": "Apple Bondi"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "New South Wales",
+      "city": "New South Wales",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": -33.892262988,
+        "longitude": 151.250282453
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/au/retail/bondi/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/au/retail/bondi/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309098",
+          "url": "https://www.wikidata.org/wiki/Q131309098",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-brentcross",
+      "status": "open",
+      "name": {
+        "en": "Apple Brent Cross",
+        "fr": "Apple Brent Cross"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "London Borough of Barnet",
+      "city": "London Borough of Barnet",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 51.576259154,
+        "longitude": -0.224873298
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/brentcross/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/brentcross/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137126775",
+          "url": "https://www.wikidata.org/wiki/Q137126775",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-brickellcitycentre",
+      "status": "open",
+      "name": {
+        "en": "Apple Brickell City Centre",
+        "fr": "Apple Brickell City Centre"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 25.76667,
+        "longitude": -80.19349
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/brickellcitycentre/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/brickellcitycentre/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411423",
+          "url": "https://www.wikidata.org/wiki/Q131411423",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-broadway",
+      "status": "open",
+      "name": {
+        "en": "Apple Broadway",
+        "fr": "Apple Broadway"
+      },
+      "countryCode": "AU",
+      "countryName": "Australia",
+      "region": "Sydney",
+      "city": "Sydney",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": -33.883185908,
+        "longitude": 151.194544608
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/au/retail/broadway/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/au/retail/broadway/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309108",
+          "url": "https://www.wikidata.org/wiki/Q131309108",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-broadwayplaza",
+      "status": "open",
+      "name": {
+        "en": "Apple Broadway Plaza",
+        "fr": "Apple Broadway Plaza"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 37.896415438,
+        "longitude": -122.059489061
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/broadwayplaza/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/broadwayplaza/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377631",
+          "url": "https://www.wikidata.org/wiki/Q131377631",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-brussels",
+      "status": "open",
+      "name": {
+        "en": "Apple Brussels",
+        "fr": "Apple Brussels"
+      },
+      "countryCode": "BE",
+      "countryName": "Belgium",
+      "region": "Brussels-Capital Region",
+      "city": "Brussels-Capital Region",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 50.836505484,
+        "longitude": 4.358163055
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/befr/retail/brussels/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/befr/retail/brussels/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131378652",
+          "url": "https://www.wikidata.org/wiki/Q131378652",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-burlingame",
+      "status": "open",
+      "name": {
+        "en": "Apple Burlingame",
+        "fr": "Apple Burlingame"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 37.578269946,
+        "longitude": -122.347101392
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/burlingame/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/burlingame/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411349",
+          "url": "https://www.wikidata.org/wiki/Q131411349",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-cambridgeside",
+      "status": "open",
+      "name": {
+        "en": "Apple CambridgeSide",
+        "fr": "Apple CambridgeSide"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Massachusetts",
+      "city": "Massachusetts",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.367933333,
+        "longitude": -71.075952777
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/cambridgeside/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/cambridgeside/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131409536",
+          "url": "https://www.wikidata.org/wiki/Q131409536",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-canberra",
+      "status": "open",
+      "name": {
+        "en": "Apple Canberra",
+        "fr": "Apple Canberra"
+      },
+      "countryCode": "AU",
+      "countryName": "Australia",
+      "region": "Canberra",
+      "city": "Canberra",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": -35.280542009,
+        "longitude": 149.133801968
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/au/retail/canberra/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/au/retail/canberra/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309095",
+          "url": "https://www.wikidata.org/wiki/Q131309095",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-carnegielibrary",
+      "status": "open",
+      "name": {
+        "en": "Apple Carnegie Library",
+        "fr": "Apple Carnegie Library"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Washington, D.C.",
+      "city": "Washington, D.C.",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 38.902530672,
+        "longitude": -77.022914008
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/carnegielibrary/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/carnegielibrary/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q133554666",
+          "url": "https://www.wikidata.org/wiki/Q133554666",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-carrousel-du-louvre",
+      "status": "open",
+      "name": {
+        "en": "Apple Carrousel du Louvre",
+        "fr": "Apple Carrousel du Louvre"
+      },
+      "countryCode": "FR",
+      "countryName": "France",
+      "region": "1st arrondissement of Paris",
+      "city": "1st arrondissement of Paris",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 48.861704978,
+        "longitude": 2.334424072
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q109810013",
+          "url": "https://www.wikidata.org/wiki/Q109810013",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-castletowers",
+      "status": "open",
+      "name": {
+        "en": "Apple Castle Towers",
+        "fr": "Apple Castle Towers"
+      },
+      "countryCode": "AU",
+      "countryName": "Australia",
+      "region": "New South Wales",
+      "city": "New South Wales",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": -33.73076425,
+        "longitude": 151.006202887
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/au/retail/castletowers/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/au/retail/castletowers/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309114",
+          "url": "https://www.wikidata.org/wiki/Q131309114",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-champs-elysees",
+      "status": "open",
+      "name": {
+        "en": "Apple Champs-Élysées",
+        "fr": "Apple Champs-Élysées"
+      },
+      "countryCode": "FR",
+      "countryName": "France",
+      "region": "8th arrondissement of Paris",
+      "city": "8th arrondissement of Paris",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 48.872272974,
+        "longitude": 2.301315031
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/fr/retail/champs-elysees/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/fr/retail/champs-elysees/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q109810822",
+          "url": "https://www.wikidata.org/wiki/Q109810822",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-chandlerfashioncenter",
+      "status": "open",
+      "name": {
+        "en": "Apple Chandler Fashion Center",
+        "fr": "Apple Chandler Fashion Center"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Arizona",
+      "city": "Arizona",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.302248429,
+        "longitude": -111.899684302
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/chandlerfashioncenter/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/chandlerfashioncenter/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411301",
+          "url": "https://www.wikidata.org/wiki/Q131411301",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-churchillsquare",
+      "status": "open",
+      "name": {
+        "en": "Apple Churchill Square",
+        "fr": "Apple Churchill Square"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "Brighton and Hove",
+      "city": "Brighton and Hove",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 50.822240939,
+        "longitude": -0.145682297
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/churchillsquare/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/churchillsquare/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137081524",
+          "url": "https://www.wikidata.org/wiki/Q137081524",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-clarendon",
+      "status": "open",
+      "name": {
+        "en": "Apple Clarendon",
+        "fr": "Apple Clarendon"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Virginia",
+      "city": "Virginia",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 38.887880041,
+        "longitude": -77.091118609
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/clarendon/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/clarendon/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131421973",
+          "url": "https://www.wikidata.org/wiki/Q131421973",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-coconutpoint",
+      "status": "open",
+      "name": {
+        "en": "Apple Coconut Point",
+        "fr": "Apple Coconut Point"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 26.402051662,
+        "longitude": -81.806633987
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/coconutpoint/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/coconutpoint/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309076",
+          "url": "https://www.wikidata.org/wiki/Q131309076",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-countryclubplaza",
+      "status": "open",
+      "name": {
+        "en": "Apple Country Club Plaza",
+        "fr": "Apple Country Club Plaza"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Missouri",
+      "city": "Missouri",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 39.041303532,
+        "longitude": -94.590105331
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/countryclubplaza/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/countryclubplaza/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q134551623",
+          "url": "https://www.wikidata.org/wiki/Q134551623",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-coventgarden",
+      "status": "open",
+      "name": {
+        "en": "Apple Covent Garden",
+        "fr": "Apple Covent Garden"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "England",
+      "city": "England",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 51.51227248,
+        "longitude": -0.123618936
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/coventgarden/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/coventgarden/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q26319829",
+          "url": "https://www.wikidata.org/wiki/Q26319829",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-crossgates",
+      "status": "open",
+      "name": {
+        "en": "Apple Crossgates",
+        "fr": "Apple Crossgates"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "New York",
+      "city": "New York",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.688795627,
+        "longitude": -73.849222692
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/crossgates/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/crossgates/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377787",
+          "url": "https://www.wikidata.org/wiki/Q131377787",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-delamo",
+      "status": "open",
+      "name": {
+        "en": "Apple Del Amo",
+        "fr": "Apple Del Amo"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.83362,
+        "longitude": -118.35039
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/delamo/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/delamo/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309325",
+          "url": "https://www.wikidata.org/wiki/Q131309325",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-eastontowncenter",
+      "status": "open",
+      "name": {
+        "en": "Apple Easton Town Center",
+        "fr": "Apple Easton Town Center"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Ohio",
+      "city": "Ohio",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 40.052647795,
+        "longitude": -82.914634354
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/eastontowncenter/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/eastontowncenter/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309254",
+          "url": "https://www.wikidata.org/wiki/Q131309254",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-fashionisland",
+      "status": "open",
+      "name": {
+        "en": "Apple Fashion Island",
+        "fr": "Apple Fashion Island"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.614980219,
+        "longitude": -117.876784938
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/fashionisland/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/fashionisland/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377730",
+          "url": "https://www.wikidata.org/wiki/Q131377730",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-fashionvalley",
+      "status": "open",
+      "name": {
+        "en": "Apple Fashion Valley",
+        "fr": "Apple Fashion Valley"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 32.768466558,
+        "longitude": -117.16585883
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/fashionvalley/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/fashionvalley/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131698365",
+          "url": "https://www.wikidata.org/wiki/Q131698365",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-fifthavenue",
+      "status": "open",
+      "name": {
+        "en": "Apple Fifth Avenue",
+        "fr": "Apple Fifth Avenue"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Manhattan",
+      "city": "Manhattan",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 40.76383,
+        "longitude": -73.97298
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/fifthavenue/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/fifthavenue/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q105695664",
+          "url": "https://www.wikidata.org/wiki/Q105695664",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-galleria-dallas",
+      "status": "open",
+      "name": {
+        "en": "Apple Galleria Dallas",
+        "fr": "Apple Galleria Dallas"
+      },
+      "countryCode": null,
+      "countryName": null,
+      "region": null,
+      "city": "Needs review",
+      "address": "Needs review",
+      "coordinates": null,
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309247",
+          "url": "https://www.wikidata.org/wiki/Q131309247",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-glendalegalleria",
+      "status": "open",
+      "name": {
+        "en": "Apple Glendale Galleria",
+        "fr": "Apple Glendale Galleria"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 34.145264701,
+        "longitude": -118.258408686
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/glendalegalleria/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/glendalegalleria/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309119",
+          "url": "https://www.wikidata.org/wiki/Q131309119",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-grand-central",
+      "status": "open",
+      "name": {
+        "en": "Apple Grand Central",
+        "fr": "Apple Grand Central"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Manhattan",
+      "city": "Manhattan",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 40.752732817,
+        "longitude": -73.976959375
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q118187039",
+          "url": "https://www.wikidata.org/wiki/Q118187039",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-iconsiam",
+      "status": "open",
+      "name": {
+        "en": "Apple Iconsiam",
+        "fr": "Apple Iconsiam"
+      },
+      "countryCode": "TH",
+      "countryName": "Thailand",
+      "region": null,
+      "city": "Needs review",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 13.72645,
+        "longitude": 100.51084
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/th/retail/iconsiam/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/th/retail/iconsiam/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137261969",
+          "url": "https://www.wikidata.org/wiki/Q137261969",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-internationalplaza",
+      "status": "open",
+      "name": {
+        "en": "Apple International Plaza",
+        "fr": "Apple International Plaza"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 27.96408,
+        "longitude": -82.51972
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/internationalplaza/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/internationalplaza/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131378028",
+          "url": "https://www.wikidata.org/wiki/Q131378028",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-jewelchangiairport",
+      "status": "open",
+      "name": {
+        "en": "Apple Jewel Changi Airport",
+        "fr": "Apple Jewel Changi Airport"
+      },
+      "countryCode": "SG",
+      "countryName": "Singapore",
+      "region": "East Region",
+      "city": "East Region",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 1.360594175,
+        "longitude": 103.989604266
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/sg/retail/jewelchangiairport/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/sg/retail/jewelchangiairport/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137077189",
+          "url": "https://www.wikidata.org/wiki/Q137077189",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-jordan-creek",
+      "status": "open",
+      "name": {
+        "en": "Apple Jordan Creek",
+        "fr": "Apple Jordan Creek"
+      },
+      "countryCode": null,
+      "countryName": null,
+      "region": null,
+      "city": "Needs review",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.570175546,
+        "longitude": -93.803989593
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137103991",
+          "url": "https://www.wikidata.org/wiki/Q137103991",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-kenwoodtownecentre",
+      "status": "open",
+      "name": {
+        "en": "Apple Kenwood Towne Centre",
+        "fr": "Apple Kenwood Towne Centre"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Ohio",
+      "city": "Ohio",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 39.201537519,
+        "longitude": -84.377848285
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/kenwoodtownecentre/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/kenwoodtownecentre/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411338",
+          "url": "https://www.wikidata.org/wiki/Q131411338",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-knoxstreet",
+      "status": "open",
+      "name": {
+        "en": "Apple Knox Street",
+        "fr": "Apple Knox Street"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Texas",
+      "city": "Texas",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 32.822530368,
+        "longitude": -96.787910067
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/knoxstreet/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/knoxstreet/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131698690",
+          "url": "https://www.wikidata.org/wiki/Q131698690",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-kaerntnerstrasse",
+      "status": "open",
+      "name": {
+        "en": "Apple Kärntner Straße",
+        "fr": "Apple Kärntner Straße"
+      },
+      "countryCode": "AT",
+      "countryName": "Austria",
+      "region": "Vienna",
+      "city": "Vienna",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 48.206975366,
+        "longitude": 16.371824404
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/at/retail/kaerntnerstrasse/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/at/retail/kaerntnerstrasse/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q11776049",
+          "url": "https://www.wikidata.org/wiki/Q11776049",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-leawood",
+      "status": "open",
+      "name": {
+        "en": "Apple Leawood",
+        "fr": "Apple Leawood"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Kansas",
+      "city": "Kansas",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 38.911353707,
+        "longitude": -94.637780566
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/leawood/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/leawood/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q134573031",
+          "url": "https://www.wikidata.org/wiki/Q134573031",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-lenoxsquare",
+      "status": "open",
+      "name": {
+        "en": "Apple Lenox Square",
+        "fr": "Apple Lenox Square"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Georgia",
+      "city": "Georgia",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.8479,
+        "longitude": -84.36349
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/lenoxsquare/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/lenoxsquare/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309195",
+          "url": "https://www.wikidata.org/wiki/Q131309195",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-lincolnpark",
+      "status": "open",
+      "name": {
+        "en": "Apple Lincoln Park",
+        "fr": "Apple Lincoln Park"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Chicago",
+      "city": "Chicago",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.910597226,
+        "longitude": -87.648504419
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/lincolnpark/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/lincolnpark/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q133634045",
+          "url": "https://www.wikidata.org/wiki/Q133634045",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-maine-mall",
+      "status": "open",
+      "name": {
+        "en": "Apple Maine Mall",
+        "fr": "Apple Maine Mall"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Cumberland County",
+      "city": "Cumberland County",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 43.633645341,
+        "longitude": -70.334550726
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137127252",
+          "url": "https://www.wikidata.org/wiki/Q137127252",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-mallofamerica",
+      "status": "open",
+      "name": {
+        "en": "Apple Mall of America",
+        "fr": "Apple Mall of America"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Minnesota",
+      "city": "Minnesota",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 44.854292504,
+        "longitude": -93.243932758
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/mallofamerica/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/mallofamerica/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309221",
+          "url": "https://www.wikidata.org/wiki/Q131309221",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-manchesterarndale",
+      "status": "open",
+      "name": {
+        "en": "Apple Manchester Arndale",
+        "fr": "Apple Manchester Arndale"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "Manchester",
+      "city": "Manchester",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 53.48362054,
+        "longitude": -2.24086445
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/manchesterarndale/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/manchesterarndale/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137126883",
+          "url": "https://www.wikidata.org/wiki/Q137126883",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-marchesaintgermain",
+      "status": "open",
+      "name": {
+        "en": "Apple Marché Saint-Germain",
+        "fr": "Apple Marché Saint-Germain"
+      },
+      "countryCode": "FR",
+      "countryName": "France",
+      "region": "6th arrondissement of Paris",
+      "city": "6th arrondissement of Paris",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 48.852415667,
+        "longitude": 2.335925207
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/fr/retail/marchesaintgermain/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/fr/retail/marchesaintgermain/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q109812746",
+          "url": "https://www.wikidata.org/wiki/Q109812746",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-marinabaysands",
+      "status": "open",
+      "name": {
+        "en": "Apple Marina Bay Sands",
+        "fr": "Apple Marina Bay Sands"
+      },
+      "countryCode": "SG",
+      "countryName": "Singapore",
+      "region": "Downtown Core",
+      "city": "Downtown Core",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 1.2833424,
+        "longitude": 103.8575679
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/sg/retail/marinabaysands/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/sg/retail/marinabaysands/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q122509086",
+          "url": "https://www.wikidata.org/wiki/Q122509086",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-marketstreet",
+      "status": "open",
+      "name": {
+        "en": "Apple MarketStreet",
+        "fr": "Apple MarketStreet"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Massachusetts",
+      "city": "Massachusetts",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.515713261,
+        "longitude": -71.03450323
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/marketstreet/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/marketstreet/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377524",
+          "url": "https://www.wikidata.org/wiki/Q131377524",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-meadowhall",
+      "status": "open",
+      "name": {
+        "en": "Apple Meadowhall",
+        "fr": "Apple Meadowhall"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "Sheffield",
+      "city": "Sheffield",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 53.413978009,
+        "longitude": -1.41123434
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/meadowhall/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/meadowhall/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137126725",
+          "url": "https://www.wikidata.org/wiki/Q137126725",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-michiganavenue",
+      "status": "open",
+      "name": {
+        "en": "Apple Michigan Avenue",
+        "fr": "Apple Michigan Avenue"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Illinois",
+      "city": "Illinois",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.88943,
+        "longitude": -87.62351
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/michiganavenue/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/michiganavenue/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131421427",
+          "url": "https://www.wikidata.org/wiki/Q131421427",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-nagoyasakae",
+      "status": "open",
+      "name": {
+        "en": "Apple Nagoya Sakae",
+        "fr": "Apple Nagoya Sakae"
+      },
+      "countryCode": "JP",
+      "countryName": "Japan",
+      "region": "Sakae 3-chōme",
+      "city": "Sakae 3-chōme",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 35.165488,
+        "longitude": 136.906971
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/jp/retail/nagoyasakae/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/jp/retail/nagoyasakae/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q97320946",
+          "url": "https://www.wikidata.org/wiki/Q97320946",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-northlakemall",
+      "status": "open",
+      "name": {
+        "en": "Apple Northlake Mall",
+        "fr": "Apple Northlake Mall"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "North Carolina",
+      "city": "North Carolina",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 35.352772294,
+        "longitude": -80.851411709
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/northlakemall/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/northlakemall/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309084",
+          "url": "https://www.wikidata.org/wiki/Q131309084",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-northridge",
+      "status": "open",
+      "name": {
+        "en": "Apple Northridge",
+        "fr": "Apple Northridge"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Los Angeles",
+      "city": "Los Angeles",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 34.239381845,
+        "longitude": -118.556156897
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/northridge/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/northridge/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411179",
+          "url": "https://www.wikidata.org/wiki/Q131411179",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-opera",
+      "status": "open",
+      "name": {
+        "en": "Apple Opéra",
+        "fr": "Apple Opéra"
+      },
+      "countryCode": "FR",
+      "countryName": "France",
+      "region": "Île-de-France",
+      "city": "Île-de-France",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 48.872296223,
+        "longitude": 2.333238198
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/fr/retail/opera/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/fr/retail/opera/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q109811836",
+          "url": "https://www.wikidata.org/wiki/Q109811836",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-orchardroad",
+      "status": "open",
+      "name": {
+        "en": "Apple Orchard Road",
+        "fr": "Apple Orchard Road"
+      },
+      "countryCode": "SG",
+      "countryName": "Singapore",
+      "region": "Orchard",
+      "city": "Orchard",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 1.302906049,
+        "longitude": 103.83637727
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/sg/retail/orchardroad/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/sg/retail/orchardroad/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q54805307",
+          "url": "https://www.wikidata.org/wiki/Q54805307",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-paloalto",
+      "status": "open",
+      "name": {
+        "en": "Apple Palo Alto",
+        "fr": "Apple Palo Alto"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 37.446348486,
+        "longitude": -122.160749701
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/paloalto/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/paloalto/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309129",
+          "url": "https://www.wikidata.org/wiki/Q131309129",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-pasadena",
+      "status": "open",
+      "name": {
+        "en": "Apple Pasadena",
+        "fr": "Apple Pasadena"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 34.145399609,
+        "longitude": -118.151633944
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/pasadena/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/pasadena/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131421946",
+          "url": "https://www.wikidata.org/wiki/Q131421946",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-piazza-liberty",
+      "status": "open",
+      "name": {
+        "en": "Apple Piazza Liberty",
+        "fr": "Apple Piazza Liberty"
+      },
+      "countryCode": "IT",
+      "countryName": "Italy",
+      "region": "Milan",
+      "city": "Milan",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 45.465426,
+        "longitude": 9.194087
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q56328172",
+          "url": "https://www.wikidata.org/wiki/Q56328172",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-pioneerplace",
+      "status": "open",
+      "name": {
+        "en": "Apple Pioneer Place",
+        "fr": "Apple Pioneer Place"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Oregon",
+      "city": "Oregon",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 45.517859817,
+        "longitude": -122.677518954
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/pioneerplace/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/pioneerplace/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q105690168",
+          "url": "https://www.wikidata.org/wiki/Q105690168",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-pudong",
+      "status": "open",
+      "name": {
+        "en": "Apple Pudong",
+        "fr": "Apple Pudong"
+      },
+      "countryCode": null,
+      "countryName": null,
+      "region": null,
+      "city": "Needs review",
+      "address": "Needs review",
+      "coordinates": null,
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q64584654",
+          "url": "https://www.wikidata.org/wiki/Q64584654",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-regentstreet",
+      "status": "open",
+      "name": {
+        "en": "Apple Regent Street",
+        "fr": "Apple Regent Street"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "England",
+      "city": "England",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 51.514282,
+        "longitude": -0.141993
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/regentstreet/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/regentstreet/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q55696161",
+          "url": "https://www.wikidata.org/wiki/Q55696161",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-rockinghampark",
+      "status": "open",
+      "name": {
+        "en": "Apple Rockingham Park",
+        "fr": "Apple Rockingham Park"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "New Hampshire",
+      "city": "New Hampshire",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.76713,
+        "longitude": -71.23217
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/rockinghampark/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/rockinghampark/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411323",
+          "url": "https://www.wikidata.org/wiki/Q131411323",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-romaest",
+      "status": "open",
+      "name": {
+        "en": "Apple RomaEst",
+        "fr": "Apple RomaEst"
+      },
+      "countryCode": "IT",
+      "countryName": "Italy",
+      "region": "Rome",
+      "city": "Rome",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.913801535,
+        "longitude": 12.660782147
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/it/retail/romaest/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/it/retail/romaest/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411685",
+          "url": "https://www.wikidata.org/wiki/Q131411685",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-rosedalecenter",
+      "status": "open",
+      "name": {
+        "en": "Apple Rosedale Center",
+        "fr": "Apple Rosedale Center"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Minnesota",
+      "city": "Minnesota",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 45.012751868,
+        "longitude": -93.173401119
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/rosedalecenter/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/rosedalecenter/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131410063",
+          "url": "https://www.wikidata.org/wiki/Q131410063",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-rosenstrasse",
+      "status": "open",
+      "name": {
+        "en": "Apple Rosenstraße",
+        "fr": "Apple Rosenstraße"
+      },
+      "countryCode": "DE",
+      "countryName": "Germany",
+      "region": "Bavaria",
+      "city": "Bavaria",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 48.136847249,
+        "longitude": 11.574564218
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/de/retail/rosenstrasse/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/de/retail/rosenstrasse/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411759",
+          "url": "https://www.wikidata.org/wiki/Q131411759",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-saddlecreek",
+      "status": "open",
+      "name": {
+        "en": "Apple Saddle Creek",
+        "fr": "Apple Saddle Creek"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Tennessee",
+      "city": "Tennessee",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 35.093507338,
+        "longitude": -89.812820319
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/saddlecreek/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/saddlecreek/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131378040",
+          "url": "https://www.wikidata.org/wiki/Q131378040",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-saintecatherine",
+      "status": "open",
+      "name": {
+        "en": "Apple Sainte-Catherine",
+        "fr": "Apple Sainte-Catherine"
+      },
+      "countryCode": "CA",
+      "countryName": "Canada",
+      "region": "Quebec",
+      "city": "Quebec",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 45.497658412,
+        "longitude": -73.575728491
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/ca/retail/saintecatherine/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/ca/retail/saintecatherine/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137080538",
+          "url": "https://www.wikidata.org/wiki/Q137080538",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-sanlitun",
+      "status": "open",
+      "name": {
+        "en": "Apple Sanlitun",
+        "fr": "Apple Sanlitun"
+      },
+      "countryCode": "CN",
+      "countryName": "People's Republic of China",
+      "region": "Sanlitun Subdistrict",
+      "city": "Sanlitun Subdistrict",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 39.933418266,
+        "longitude": 116.447670501
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q55696398",
+          "url": "https://www.wikidata.org/wiki/Q55696398",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-scottsdalefashionsquare",
+      "status": "open",
+      "name": {
+        "en": "Apple Scottsdale Fashion Square",
+        "fr": "Apple Scottsdale Fashion Square"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Arizona",
+      "city": "Arizona",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.503627859,
+        "longitude": -111.926514186
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/scottsdalefashionsquare/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/scottsdalefashionsquare/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411452",
+          "url": "https://www.wikidata.org/wiki/Q131411452",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-soho",
+      "status": "open",
+      "name": {
+        "en": "Apple Soho",
+        "fr": "Apple Soho"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "New York City",
+      "city": "New York City",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 40.725072163,
+        "longitude": -73.999027029
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/soho/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/soho/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q59919361",
+          "url": "https://www.wikidata.org/wiki/Q59919361",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-southcoastplaza",
+      "status": "open",
+      "name": {
+        "en": "Apple South Coast Plaza",
+        "fr": "Apple South Coast Plaza"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.691966503,
+        "longitude": -117.893093321
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/southcoastplaza/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/southcoastplaza/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309166",
+          "url": "https://www.wikidata.org/wiki/Q131309166",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-stonestown",
+      "status": "open",
+      "name": {
+        "en": "Apple Stonestown",
+        "fr": "Apple Stonestown"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "San Francisco",
+      "city": "San Francisco",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 37.727210529,
+        "longitude": -122.476847109
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/stonestown/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/stonestown/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131421643",
+          "url": "https://www.wikidata.org/wiki/Q131421643",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-store-taipei-xinyi-a13",
+      "status": "open",
+      "name": {
+        "en": "Apple Store Taipei Xinyi A13",
+        "fr": "Apple Store Taipei Xinyi A13"
+      },
+      "countryCode": "TW",
+      "countryName": "Taiwan",
+      "region": "Taipei",
+      "city": "Taipei",
+      "address": "Needs review",
+      "coordinates": null,
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q67000641",
+          "url": "https://www.wikidata.org/wiki/Q67000641",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-store-at-ifc-mall",
+      "status": "open",
+      "name": {
+        "en": "Apple Store at IFC Mall",
+        "fr": "Apple Store at IFC Mall"
+      },
+      "countryCode": null,
+      "countryName": null,
+      "region": null,
+      "city": "Needs review",
+      "address": "Needs review",
+      "coordinates": null,
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q134701354",
+          "url": "https://www.wikidata.org/wiki/Q134701354",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-store-ginza",
+      "status": "open",
+      "name": {
+        "en": "Apple Store, Ginza",
+        "fr": "Apple Store, Ginza"
+      },
+      "countryCode": "JP",
+      "countryName": "Japan",
+      "region": "Ginza",
+      "city": "Ginza",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 35.672125,
+        "longitude": 139.76585
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q113635877",
+          "url": "https://www.wikidata.org/wiki/Q113635877",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-store-marunouchi",
+      "status": "open",
+      "name": {
+        "en": "Apple Store, Marunouchi",
+        "fr": "Apple Store, Marunouchi"
+      },
+      "countryCode": "JP",
+      "countryName": "Japan",
+      "region": "Marunouchi",
+      "city": "Marunouchi",
+      "address": "Needs review",
+      "coordinates": null,
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q113636066",
+          "url": "https://www.wikidata.org/wiki/Q113636066",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-store-west-lake",
+      "status": "open",
+      "name": {
+        "en": "Apple Store, West Lake",
+        "fr": "Apple Store, West Lake"
+      },
+      "countryCode": "CN",
+      "countryName": "People's Republic of China",
+      "region": "Hangzhou",
+      "city": "Hangzhou",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 30.25652778,
+        "longitude": 120.15875
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": null,
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": null,
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q54812523",
+          "url": "https://www.wikidata.org/wiki/Q54812523",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-suburbansquare",
+      "status": "open",
+      "name": {
+        "en": "Apple Suburban Square",
+        "fr": "Apple Suburban Square"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Pennsylvania",
+      "city": "Pennsylvania",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 40.008796392,
+        "longitude": -75.287917797
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/suburbansquare/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/suburbansquare/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137075467",
+          "url": "https://www.wikidata.org/wiki/Q137075467",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-taipei101",
+      "status": "open",
+      "name": {
+        "en": "Apple Taipei 101",
+        "fr": "Apple Taipei 101"
+      },
+      "countryCode": "TW",
+      "countryName": "Taiwan",
+      "region": "Taipei",
+      "city": "Taipei",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 25.033852777,
+        "longitude": 121.564216666
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/tw/retail/taipei101/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/tw/retail/taipei101/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q67136027",
+          "url": "https://www.wikidata.org/wiki/Q67136027",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-exchangetrx",
+      "status": "open",
+      "name": {
+        "en": "Apple The Exchange TRX",
+        "fr": "Apple The Exchange TRX"
+      },
+      "countryCode": "MY",
+      "countryName": "Malaysia",
+      "region": "Kuala Lumpur",
+      "city": "Kuala Lumpur",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 3.1423,
+        "longitude": 101.7178
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/my/retail/exchangetrx/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/my/retail/exchangetrx/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q126870956",
+          "url": "https://www.wikidata.org/wiki/Q126870956",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-thefalls",
+      "status": "open",
+      "name": {
+        "en": "Apple The Falls",
+        "fr": "Apple The Falls"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 25.643702874,
+        "longitude": -80.338237187
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/thefalls/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/thefalls/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377582",
+          "url": "https://www.wikidata.org/wiki/Q131377582",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-thegrove",
+      "status": "open",
+      "name": {
+        "en": "Apple The Grove",
+        "fr": "Apple The Grove"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Los Angeles",
+      "city": "Los Angeles",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 34.071429355,
+        "longitude": -118.357489954
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/thegrove/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/thegrove/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411585",
+          "url": "https://www.wikidata.org/wiki/Q131411585",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-ticescorner",
+      "status": "open",
+      "name": {
+        "en": "Apple Tice's Corner",
+        "fr": "Apple Tice's Corner"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "New Jersey",
+      "city": "New Jersey",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.041913623,
+        "longitude": -74.075031772
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/ticescorner/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/ticescorner/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377606",
+          "url": "https://www.wikidata.org/wiki/Q131377606",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-traffordcentre",
+      "status": "open",
+      "name": {
+        "en": "Apple Trafford Centre",
+        "fr": "Apple Trafford Centre"
+      },
+      "countryCode": "GB",
+      "countryName": "United Kingdom",
+      "region": "Trafford",
+      "city": "Trafford",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 53.465388888,
+        "longitude": -2.346277777
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/uk/retail/traffordcentre/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/uk/retail/traffordcentre/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137088659",
+          "url": "https://www.wikidata.org/wiki/Q137088659",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-twelveoaks",
+      "status": "open",
+      "name": {
+        "en": "Apple Twelve Oaks",
+        "fr": "Apple Twelve Oaks"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Michigan",
+      "city": "Michigan",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.49233539,
+        "longitude": -83.470497924
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/twelveoaks/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/twelveoaks/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131698508",
+          "url": "https://www.wikidata.org/wiki/Q131698508",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-tysonscorner",
+      "status": "open",
+      "name": {
+        "en": "Apple Tysons Corner",
+        "fr": "Apple Tysons Corner"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Virginia",
+      "city": "Virginia",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 38.917624007,
+        "longitude": -77.221469161
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/tysonscorner/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/tysonscorner/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309283",
+          "url": "https://www.wikidata.org/wiki/Q131309283",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-uptown",
+      "status": "open",
+      "name": {
+        "en": "Apple Uptown",
+        "fr": "Apple Uptown"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Minnesota",
+      "city": "Minnesota",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 44.947696324,
+        "longitude": -93.298676246
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/uptown/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/uptown/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131416745",
+          "url": "https://www.wikidata.org/wiki/Q131416745",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-valleyfair",
+      "status": "open",
+      "name": {
+        "en": "Apple Valley Fair",
+        "fr": "Apple Valley Fair"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "California",
+      "city": "California",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 37.324452158,
+        "longitude": -121.946514489
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/valleyfair/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/valleyfair/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131698221",
+          "url": "https://www.wikidata.org/wiki/Q131698221",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-villagepointe",
+      "status": "open",
+      "name": {
+        "en": "Apple Village Pointe",
+        "fr": "Apple Village Pointe"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Nebraska",
+      "city": "Nebraska",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.261215152,
+        "longitude": -96.183038124
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/villagepointe/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/villagepointe/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131308820",
+          "url": "https://www.wikidata.org/wiki/Q131308820",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-villagemall",
+      "status": "open",
+      "name": {
+        "en": "Apple VillageMall",
+        "fr": "Apple VillageMall"
+      },
+      "countryCode": "BR",
+      "countryName": "Brazil",
+      "region": "Rio de Janeiro",
+      "city": "Rio de Janeiro",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": -22.998084062,
+        "longitude": -43.35146212
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/br/retail/villagemall/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/br/retail/villagemall/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q133738386",
+          "url": "https://www.wikidata.org/wiki/Q133738386",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-waldengalleria",
+      "status": "open",
+      "name": {
+        "en": "Apple Walden Galleria",
+        "fr": "Apple Walden Galleria"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "New York",
+      "city": "New York",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.914884094,
+        "longitude": -78.762026799
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/waldengalleria/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/waldengalleria/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377762",
+          "url": "https://www.wikidata.org/wiki/Q131377762",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-walnutstreet",
+      "status": "open",
+      "name": {
+        "en": "Apple Walnut Street",
+        "fr": "Apple Walnut Street"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Pennsylvania",
+      "city": "Pennsylvania",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 39.950046251,
+        "longitude": -75.16788997
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/walnutstreet/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/walnutstreet/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q137072559",
+          "url": "https://www.wikidata.org/wiki/Q137072559",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-watersideshops",
+      "status": "open",
+      "name": {
+        "en": "Apple Waterside Shops",
+        "fr": "Apple Waterside Shops"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 26.213237521,
+        "longitude": -81.801663879
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/watersideshops/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/watersideshops/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309071",
+          "url": "https://www.wikidata.org/wiki/Q131309071",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-wellingtongreen",
+      "status": "open",
+      "name": {
+        "en": "Apple Wellington Green",
+        "fr": "Apple Wellington Green"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Florida",
+      "city": "Florida",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 26.646988175,
+        "longitude": -80.208939338
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/wellingtongreen/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/wellingtongreen/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411214",
+          "url": "https://www.wikidata.org/wiki/Q131411214",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-westfarms",
+      "status": "open",
+      "name": {
+        "en": "Apple Westfarms",
+        "fr": "Apple Westfarms"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Connecticut",
+      "city": "Connecticut",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.722780964,
+        "longitude": -72.764445556
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/westfarms/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/westfarms/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131411287",
+          "url": "https://www.wikidata.org/wiki/Q131411287",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-willowbend",
+      "status": "open",
+      "name": {
+        "en": "Apple Willow Bend",
+        "fr": "Apple Willow Bend"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Texas",
+      "city": "Texas",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 33.031040001,
+        "longitude": -96.83172117
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/willowbend/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/willowbend/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131309239",
+          "url": "https://www.wikidata.org/wiki/Q131309239",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-woodfield",
+      "status": "open",
+      "name": {
+        "en": "Apple Woodfield",
+        "fr": "Apple Woodfield"
+      },
+      "countryCode": "US",
+      "countryName": "United States",
+      "region": "Illinois",
+      "city": "Illinois",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 42.045682599,
+        "longitude": -88.038892033
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/retail/woodfield/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/retail/woodfield/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q131377845",
+          "url": "https://www.wikidata.org/wiki/Q131377845",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    },
+    {
+      "id": "apple-zorlucenter",
+      "status": "open",
+      "name": {
+        "en": "Apple Zorlu Center",
+        "fr": "Apple Zorlu Center"
+      },
+      "countryCode": "TR",
+      "countryName": "Turkey",
+      "region": "Beşiktaş",
+      "city": "Beşiktaş",
+      "address": "Needs review",
+      "coordinates": {
+        "latitude": 41.066250813,
+        "longitude": 29.017168999
+      },
+      "openedOn": null,
+      "closedOn": null,
+      "officialUrl": "https://www.apple.com/tr/retail/zorlucenter/",
+      "architecture": {
+        "era": "Needs review",
+        "typology": "Needs review",
+        "attributes": {}
+      },
+      "hours": {
+        "policy": "official-link-only",
+        "officialUrl": "https://www.apple.com/tr/retail/zorlucenter/",
+        "lastVerifiedAt": null,
+        "note": "Hours are volatile. Verify on the official Apple page."
+      },
+      "sources": [
+        {
+          "type": "wikidata_item",
+          "label": "Wikidata item Q130341859",
+          "url": "https://www.wikidata.org/wiki/Q130341859",
+          "license": "CC0-1.0",
+          "fields": [
+            "name",
+            "coordinates",
+            "countryCode",
+            "officialUrl"
+          ],
+          "verifiedAt": "2026-05-16"
+        }
+      ],
+      "reviewState": "imported_needs_human_review",
+      "importedAt": "2026-05-16T13:32:20.150Z"
+    }
+  ]
+}

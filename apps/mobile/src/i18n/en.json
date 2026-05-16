@@ -9,39 +9,109 @@
     "title": "Apple retail stores, mapped and sourced.",
     "subtitle": "Browse notable stores, preserve closures and remodels, and help build a complete open dataset.",
     "searchLabel": "Search stores",
-    "searchPlaceholder": "Search by store, city, country, status...",
-    "empty": "No stores match this search yet."
+    "searchPlaceholder": "Search by store, city, country, status, feature...",
+    "empty": "No stores match this search yet.",
+    "loading": "Loading the live community dataset...",
+    "remoteError": "Live data is unavailable, showing the local reviewed seed.",
+    "liveDataset": "Live stores",
+    "seedDataset": "Seed stores",
+    "visitedCount": "Visited",
+    "filters": {
+      "all": "All",
+      "open": "Open",
+      "closed": "Closed",
+      "visited": "Visited"
+    }
   },
   "map": {
     "title": "Worldwide map",
-    "copy": "The first marker is seeded. The map layer is isolated so the project can move to MapLibre when needed."
+    "copy": "{{count}} stores loaded, {{visited}} marked visited on this device.",
+    "visited": "Visited"
   },
   "profile": {
     "kicker": "Optional account",
     "title": "Visits, friends, and sharing without tracking.",
-    "subtitle": "The social layer is opt-in: mark stores visited, choose what is public, and share visit cards.",
-    "items": {
-      "visits": {
-        "title": "Visited stores",
-        "copy": "Save the stores you have seen, with optional dates and private notes."
-      },
-      "friends": {
-        "title": "Friends",
-        "copy": "Follow people you trust and compare public visit lists."
-      },
-      "privacy": {
-        "title": "Privacy first",
-        "copy": "Location stays local unless a feature clearly asks to save or submit it."
-      }
+    "subtitle": "Mark stores locally without an account. Create a community profile only when you want sync, friends, or submissions.",
+    "community": "Community profile",
+    "usernamePlaceholder": "username",
+    "createProfile": "Create profile",
+    "updateProfile": "Update profile",
+    "publicProfile": "Public profile",
+    "publicProfileCopy": "Allow other users to find your username and see public visits.",
+    "visits": "Visited stores",
+    "syncVisits": "Sync local visits",
+    "noVisits": "No visits saved on this device yet.",
+    "friends": "Friends",
+    "friendPlaceholder": "friend username",
+    "addFriend": "Send friend request",
+    "newStore": "Missing store",
+    "newStorePlaceholder": "Store name or location",
+    "newStoreSource": "Source URL",
+    "newStoreNote": "What should reviewers know?",
+    "submitStore": "Submit missing store",
+    "privacyTitle": "Privacy",
+    "saving": "Saving profile...",
+    "profileReady": "Community profile ready.",
+    "privacySaved": "Privacy setting saved.",
+    "syncing": "Syncing visits...",
+    "synced": "{{count}} visit(s) synced.",
+    "sendingFriend": "Sending friend request...",
+    "friendSent": "Friend request sent to @{{username}}.",
+    "submittingStore": "Submitting missing store...",
+    "storeSubmitted": "Missing store submitted for review.",
+    "failed": "Something went wrong.",
+    "stats": {
+      "visited": "Stores seen",
+      "identity": "Identity"
+    },
+    "privacy": {
+      "noAds": "No ads, no behavioral tracking SDKs, no resale of personal data.",
+      "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
+      "optionalAccount": "Visits can stay on-device; accounts are only needed for sync, friends, and moderation.",
+      "openData": "Accepted factual contributions can enter the open dataset with source links and review history."
     }
   },
   "store": {
     "back": "Back to explore",
+    "visitedBadge": "Visited",
     "history": "History",
     "architecture": "Architecture",
+    "hours": "Hours",
+    "photos": "Photos",
     "sources": "Sources",
-    "openedOn": "Opened on {{date}}.",
-    "openedShort": "Opened {{date}}"
+    "contribute": "Contribute",
+    "opened": "Opened",
+    "closed": "Closed",
+    "verified": "Verified",
+    "notClosed": "Not closed",
+    "dateUnknown": "Date unknown",
+    "era": "Era",
+    "openedShort": "Opened {{date}}",
+    "markVisited": "Mark visited",
+    "visitDateLabel": "Visit date",
+    "visitInvalidDate": "Use a date formatted as YYYY-MM-DD.",
+    "visitSaved": "Visit saved on this device.",
+    "yourVisits": "Your visits",
+    "shareText": "I visited {{name}} in {{place}} on {{date}}. Tracked with Atlas.",
+    "verifyOfficial": "Verify on Apple",
+    "noPhotos": "No approved community photos yet.",
+    "suggestEdit": "Suggest edit",
+    "addPhoto": "Add photo",
+    "submitting": "Submitting for review...",
+    "submitFailed": "Could not submit right now.",
+    "changeSubmitted": "Correction submitted for review.",
+    "photoPermissionDenied": "Photo library permission is needed to choose an image.",
+    "photoRequired": "Choose a photo first.",
+    "photoSubmitted": "Photo submitted for review.",
+    "fieldPath": "Field path, for example architecture.attributes.greenWall",
+    "proposedValue": "Proposed value",
+    "sourceUrl": "Source URL",
+    "note": "Optional note",
+    "submit": "Submit",
+    "pickPhoto": "Choose photo",
+    "photoSelected": "Photo selected",
+    "caption": "Caption",
+    "peopleVisible": "People are visible"
   },
   "status": {
     "open": "Open",
@@ -51,15 +121,28 @@
     "temporary": "Temporary"
   },
   "attributes": {
+    "avenue": "Avenue",
     "boardroom": "Boardroom",
-    "greenWall": "Green wall",
     "forum": "Forum",
+    "geniusBar": "Genius Bar",
     "glassCube": "Glass cube",
-    "plaza": "Plaza"
+    "greenWall": "Green wall",
+    "historicFacade": "Historic facade",
+    "plaza": "Plaza",
+    "videoWall": "Video wall"
   },
   "values": {
     "yes": "Yes",
     "no": "No",
     "unknown": "Unknown"
+  },
+  "hours": {
+    "official-link-only": "Hours are not copied into Atlas because they change frequently.",
+    "community-verified": "Community-verified hours are available, with freshness metadata."
+  },
+  "visibility": {
+    "private": "Private",
+    "friends": "Friends",
+    "public": "Public"
   }
 }

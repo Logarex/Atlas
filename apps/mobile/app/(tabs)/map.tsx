@@ -1,4 +1,6 @@
-import { sampleStores } from "@/features/stores/sampleStores";
+import { getMarkerEmoji, getStoreName, getStorePlace, statusEmojis } from "@/features/stores/storeUtils";
+import { useStores } from "@/features/stores/useStores";
+import { useLocalVisits } from "@/features/visits/localVisits";
 import { colors, spacing, typography } from "@/theme/tokens";
 import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
@@ -6,7 +8,10 @@ import MapView, { Marker } from "react-native-maps";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function MapScreen() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { stores } = useStores();
+  const { visits } = useLocalVisits();
+  const visitedStoreIds = new Set(visits.map((visit) => visit.storeId));
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -19,27 +24,43 @@ export default function MapScreen() {
         }}
         style={styles.map}
       >
-        {sampleStores.map((store) => (
+        {stores.map((store) => (
           <Marker
             coordinate={store.coordinates}
-            description={`${store.city}, ${store.countryCode}`}
+            description={getStorePlace(store)}
             key={store.id}
-            title={store.name.en}
-          />
+            title={getStoreName(store, i18n.language)}
+          >
+            <View style={styles.marker}>
+              <Text style={styles.markerText}>
+                {visitedStoreIds.has(store.id) ? "✅" : getMarkerEmoji(store)}
+              </Text>
+            </View>
+          </Marker>
         ))}
       </MapView>
 
       <View style={styles.panel}>
         <Text style={styles.title}>{t("map.title")}</Text>
-        <Text style={styles.copy}>{t("map.copy")}</Text>
+        <Text style={styles.copy}>
+          {t("map.copy", { count: stores.length, visited: visitedStoreIds.size })}
+        </Text>
+        <View style={styles.legend}>
+          {(["open", "closed", "relocated"] as const).map((status) => (
+            <Text key={status} style={styles.legendItem}>
+              {statusEmojis[status]} {t(`status.${status}`)}
+            </Text>
+          ))}
+          <Text style={styles.legendItem}>✅ {t("map.visited")}</Text>
+        </View>
         <View style={styles.row}>
-          {sampleStores.map((store) => (
+          {stores.slice(0, 6).map((store) => (
             <Link
               href={{ pathname: "/store/[id]", params: { id: store.id } }}
               key={store.id}
               style={styles.link}
             >
-              {store.name.en}
+              {getStoreName(store, i18n.language)}
             </Link>
           ))}
         </View>
@@ -79,6 +100,17 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginTop: spacing.xs
   },
+  legend: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+    marginTop: spacing.md
+  },
+  legendItem: {
+    color: colors.ink,
+    fontSize: typography.caption,
+    fontWeight: "700"
+  },
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -89,5 +121,22 @@ const styles = StyleSheet.create({
     color: colors.teal,
     fontSize: typography.small,
     fontWeight: "700"
+  },
+  marker: {
+    alignItems: "center",
+    backgroundColor: colors.paper,
+    borderColor: colors.ink,
+    borderRadius: 18,
+    borderWidth: 1,
+    height: 34,
+    justifyContent: "center",
+    shadowColor: colors.ink,
+    shadowOffset: { height: 3, width: 0 },
+    shadowOpacity: 0.18,
+    shadowRadius: 8,
+    width: 34
+  },
+  markerText: {
+    fontSize: 18
   }
 });

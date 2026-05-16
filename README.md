@@ -50,6 +50,14 @@ Create `apps/mobile/.env` from `apps/mobile/.env.example` before connecting Supa
 Atlas does not scrape apple.com, does not copy Facades data, and does not reuse Apple-owned photos or marketing copy. The canonical dataset should be built from compatible open data, manual research, field-level citations, and user contributions licensed for reuse.
 
 See [docs/DATA_STRATEGY.md](docs/DATA_STRATEGY.md) for the detailed source policy.
+See [docs/ADDING_STORES.md](docs/ADDING_STORES.md) for the practical workflow to add stores, photos, and marker attributes.
+
+Useful commands:
+
+```bash
+npm run data:import:wikidata
+npm run data:validate
+```
 
 ## License
 

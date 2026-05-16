@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
 const webhookUrl = Deno.env.get("DISCORD_WEBHOOK_URL");
+const reviewBaseUrl = Deno.env.get("ATLAS_REVIEW_URL");
 
 serve(async (request) => {
   if (request.method !== "POST") {
@@ -15,6 +16,9 @@ serve(async (request) => {
   const record = payload.record ?? payload;
   const submissionType = record.type ?? "photo_submission";
   const storeId = record.store_id ?? "new-store";
+  const reviewUrl = reviewBaseUrl
+    ? `${reviewBaseUrl.replace(/\/$/, "")}/${record.id ?? ""}`
+    : null;
 
   const response = await fetch(webhookUrl, {
     method: "POST",
@@ -27,6 +31,7 @@ serve(async (request) => {
         {
           title: `${submissionType}: ${storeId}`,
           color: 15233816,
+          url: reviewUrl ?? undefined,
           fields: [
             {
               name: "Status",
@@ -41,6 +46,10 @@ serve(async (request) => {
             {
               name: "Source",
               value: record.source_url ?? "No source URL provided"
+            },
+            {
+              name: "Payload",
+              value: `\`\`\`json\n${JSON.stringify(record.payload ?? record, null, 2).slice(0, 900)}\n\`\`\``
             }
           ]
         }

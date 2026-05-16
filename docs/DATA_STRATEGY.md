@@ -40,6 +40,8 @@ Use sources in this order:
 
 Wikidata licensing reference: https://www.wikidata.org/wiki/Wikidata:Licensing
 
+The helper command `npm run data:import:wikidata` creates candidate records from Wikidata. These candidates still need human review before they become canonical Atlas records, because addresses, opening dates, store status, and architectural attributes may be incomplete or imprecise.
+
 ## OpenStreetMap
 
 OpenStreetMap is excellent for map display and may help research. Its data is ODbL, which has share-alike obligations.

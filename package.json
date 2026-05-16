@@ -11,7 +11,8 @@
     "mobile:ios": "npm --workspace apps/mobile run ios",
     "mobile:android": "npm --workspace apps/mobile run android",
     "mobile:typecheck": "npm --workspace apps/mobile run typecheck",
-    "data:validate": "node packages/data/scripts/validate.mjs"
+    "data:validate": "node packages/data/scripts/validate.mjs",
+    "data:import:wikidata": "node packages/data/scripts/import-wikidata.mjs"
   },
   "devDependencies": {
     "ajv": "^8.20.0",

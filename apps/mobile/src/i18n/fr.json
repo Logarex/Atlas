@@ -7,41 +7,111 @@
   "home": {
     "kicker": "Atlas communautaire",
     "title": "Les Apple Store, cartographies et sources.",
-    "subtitle": "Explore les boutiques remarquables, preserve les fermetures et renovations, et aide a construire une base ouverte complete.",
+    "subtitle": "Explore les boutiques remarquables, conserve les fermetures et renovations, et aide a construire une base ouverte complete.",
     "searchLabel": "Rechercher des boutiques",
-    "searchPlaceholder": "Boutique, ville, pays, statut...",
-    "empty": "Aucune boutique ne correspond encore a cette recherche."
+    "searchPlaceholder": "Boutique, ville, pays, statut, attribut...",
+    "empty": "Aucune boutique ne correspond encore a cette recherche.",
+    "loading": "Chargement de la base communautaire...",
+    "remoteError": "Les donnees live sont indisponibles, affichage de la base locale verifiee.",
+    "liveDataset": "Boutiques live",
+    "seedDataset": "Base locale",
+    "visitedCount": "Vues",
+    "filters": {
+      "all": "Toutes",
+      "open": "Ouvertes",
+      "closed": "Fermees",
+      "visited": "Vues"
+    }
   },
   "map": {
     "title": "Carte mondiale",
-    "copy": "Le premier marqueur est ajoute. La couche carte est isolee pour pouvoir migrer vers MapLibre si necessaire."
+    "copy": "{{count}} boutiques chargees, {{visited}} marquees comme vues sur cet appareil.",
+    "visited": "Vue"
   },
   "profile": {
     "kicker": "Compte optionnel",
     "title": "Visites, amis et partage sans pistage.",
-    "subtitle": "La partie sociale reste optionnelle : marque les boutiques vues, choisis ce qui est public, et partage des cartes de visite.",
-    "items": {
-      "visits": {
-        "title": "Boutiques vues",
-        "copy": "Enregistre les boutiques que tu as vues, avec dates optionnelles et notes privees."
-      },
-      "friends": {
-        "title": "Amis",
-        "copy": "Ajoute des personnes de confiance et compare les listes publiques."
-      },
-      "privacy": {
-        "title": "Confidentialite d'abord",
-        "copy": "La localisation reste locale sauf si une fonctionnalite demande clairement de la sauvegarder ou de l'envoyer."
-      }
+    "subtitle": "Marque les boutiques vues en local sans compte. Cree un profil communautaire seulement pour la synchro, les amis ou les contributions.",
+    "community": "Profil communautaire",
+    "usernamePlaceholder": "nom d'utilisateur",
+    "createProfile": "Creer le profil",
+    "updateProfile": "Mettre a jour",
+    "publicProfile": "Profil public",
+    "publicProfileCopy": "Permettre aux autres utilisateurs de trouver ton pseudo et de voir tes visites publiques.",
+    "visits": "Boutiques vues",
+    "syncVisits": "Synchroniser les visites",
+    "noVisits": "Aucune visite enregistree sur cet appareil pour l'instant.",
+    "friends": "Amis",
+    "friendPlaceholder": "pseudo ami",
+    "addFriend": "Envoyer la demande",
+    "newStore": "Boutique manquante",
+    "newStorePlaceholder": "Nom ou emplacement",
+    "newStoreSource": "URL source",
+    "newStoreNote": "Information utile pour la review",
+    "submitStore": "Proposer la boutique",
+    "privacyTitle": "Confidentialite",
+    "saving": "Enregistrement du profil...",
+    "profileReady": "Profil communautaire pret.",
+    "privacySaved": "Reglage de confidentialite enregistre.",
+    "syncing": "Synchronisation des visites...",
+    "synced": "{{count}} visite(s) synchronisee(s).",
+    "sendingFriend": "Envoi de la demande...",
+    "friendSent": "Demande envoyee a @{{username}}.",
+    "submittingStore": "Envoi de la boutique...",
+    "storeSubmitted": "Boutique envoyee pour review.",
+    "failed": "Une erreur est survenue.",
+    "stats": {
+      "visited": "Boutiques vues",
+      "identity": "Identite"
+    },
+    "privacy": {
+      "noAds": "Pas de publicite, pas de SDK de pistage comportemental, pas de revente de donnees personnelles.",
+      "localLocation": "La localisation sert localement a trouver les boutiques proches, sauf sauvegarde explicite.",
+      "optionalAccount": "Les visites peuvent rester sur l'appareil ; le compte sert seulement a la synchro, aux amis et a la moderation.",
+      "openData": "Les contributions factuelles acceptees peuvent rejoindre la base ouverte avec sources et historique de review."
     }
   },
   "store": {
     "back": "Retour a l'exploration",
+    "visitedBadge": "Vue",
     "history": "Histoire",
     "architecture": "Architecture",
+    "hours": "Horaires",
+    "photos": "Photos",
     "sources": "Sources",
-    "openedOn": "Ouverture le {{date}}.",
-    "openedShort": "Ouverture {{date}}"
+    "contribute": "Contribuer",
+    "opened": "Ouverture",
+    "closed": "Fermeture",
+    "verified": "Verifie",
+    "notClosed": "Pas fermee",
+    "dateUnknown": "Date inconnue",
+    "era": "Epoque",
+    "openedShort": "Ouverture {{date}}",
+    "markVisited": "Marquer comme vue",
+    "visitDateLabel": "Date de visite",
+    "visitInvalidDate": "Utilise une date au format YYYY-MM-DD.",
+    "visitSaved": "Visite enregistree sur cet appareil.",
+    "yourVisits": "Tes visites",
+    "shareText": "J'ai visite {{name}} a {{place}} le {{date}}. Suivi avec Atlas.",
+    "verifyOfficial": "Verifier chez Apple",
+    "noPhotos": "Aucune photo communautaire approuvee pour l'instant.",
+    "suggestEdit": "Proposer une correction",
+    "addPhoto": "Ajouter une photo",
+    "submitting": "Envoi pour review...",
+    "submitFailed": "Impossible d'envoyer pour l'instant.",
+    "changeSubmitted": "Correction envoyee pour review.",
+    "photoPermissionDenied": "L'acces aux photos est necessaire pour choisir une image.",
+    "photoRequired": "Choisis une photo d'abord.",
+    "photoSubmitted": "Photo envoyee pour review.",
+    "fieldPath": "Champ, par exemple architecture.attributes.greenWall",
+    "proposedValue": "Valeur proposee",
+    "sourceUrl": "URL source",
+    "note": "Note optionnelle",
+    "submit": "Envoyer",
+    "pickPhoto": "Choisir une photo",
+    "photoSelected": "Photo selectionnee",
+    "caption": "Legende",
+    "peopleVisible": "Des personnes sont visibles"
   },
   "status": {
     "open": "Ouvert",
@@ -51,15 +121,28 @@
     "temporary": "Temporaire"
   },
   "attributes": {
+    "avenue": "Avenue",
     "boardroom": "Boardroom",
-    "greenWall": "Mur vegetal",
     "forum": "Forum",
+    "geniusBar": "Genius Bar",
     "glassCube": "Cube en verre",
-    "plaza": "Plaza"
+    "greenWall": "Mur vegetal",
+    "historicFacade": "Facade historique",
+    "plaza": "Plaza",
+    "videoWall": "Mur video"
   },
   "values": {
     "yes": "Oui",
     "no": "Non",
     "unknown": "Inconnu"
+  },
+  "hours": {
+    "official-link-only": "Les horaires ne sont pas copies dans Atlas car ils changent souvent.",
+    "community-verified": "Des horaires verifies par la communaute sont disponibles avec une date de fraicheur."
+  },
+  "visibility": {
+    "private": "Prive",
+    "friends": "Amis",
+    "public": "Public"
   }
 }

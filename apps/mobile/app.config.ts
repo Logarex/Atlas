@@ -13,7 +13,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     bundleIdentifier: "com.louischabert.atlas",
     infoPlist: {
       NSLocationWhenInUseUsageDescription:
-        "Atlas uses your location locally to show nearby stores."
+        "Atlas uses your location locally to show nearby stores.",
+      NSPhotoLibraryUsageDescription:
+        "Atlas lets you choose photos you own before submitting them for review."
     }
   },
   android: {
@@ -25,7 +27,17 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     permissions: ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
   },
-  plugins: ["expo-router", "expo-localization"],
+  plugins: [
+    "expo-router",
+    "expo-localization",
+    [
+      "expo-image-picker",
+      {
+        photosPermission:
+          "Atlas lets you choose photos you own before submitting them for review."
+      }
+    ]
+  ],
   experiments: {
     typedRoutes: true
   }

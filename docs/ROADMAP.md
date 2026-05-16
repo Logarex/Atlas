@@ -15,7 +15,7 @@
 - English/French language switching from device locale.
 - Supabase connection.
 - Username profiles.
-- Mark store as visited with date.
+- Mark store as visited with date, including local-only use without an account.
 - Basic search and filters.
 
 ## Phase 2: Data and Moderation

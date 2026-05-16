@@ -40,6 +40,7 @@ create table public.profiles (
   locale text not null default 'en' check (locale in ('en', 'fr')),
   public_profile boolean not null default false,
   is_reviewer boolean not null default false,
+  trust_level integer not null default 0 check (trust_level between 0 and 5),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -49,6 +50,8 @@ create table public.stores (
   status public.store_status not null,
   name jsonb not null,
   country_code char(2) not null,
+  country_name text,
+  region text,
   city text not null,
   address text not null,
   latitude double precision not null check (latitude between -90 and 90),
@@ -123,6 +126,10 @@ create table public.photo_submissions (
   updated_at timestamptz not null default now()
 );
 
+insert into storage.buckets (id, name, public)
+values ('photo-submissions', 'photo-submissions', false)
+on conflict (id) do nothing;
+
 create table public.photos (
   id uuid primary key default gen_random_uuid(),
   store_id text not null references public.stores(id) on delete cascade,
@@ -167,6 +174,22 @@ alter table public.change_requests enable row level security;
 alter table public.photo_submissions enable row level security;
 alter table public.photos enable row level security;
 alter table public.reviews enable row level security;
+
+create policy "Users can upload pending photos" on storage.objects
+for insert with check (
+  bucket_id = 'photo-submissions'
+  and auth.uid() is not null
+  and (storage.foldername(name))[2] = auth.uid()::text
+);
+
+create policy "Users can read own pending photos" on storage.objects
+for select using (
+  bucket_id = 'photo-submissions'
+  and (
+    (storage.foldername(name))[2] = auth.uid()::text
+    or public.is_reviewer()
+  )
+);
 
 create policy "Public can read stores" on public.stores
 for select using (true);
