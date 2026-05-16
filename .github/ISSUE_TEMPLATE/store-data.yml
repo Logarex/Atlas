@@ -30,5 +30,5 @@ body:
     attributes:
       label: License confirmation
       options:
-        - label: I am not copying data from Facades or another proprietary app.
+        - label: I am not copying data from other proprietary apps or another proprietary app.
           required: true

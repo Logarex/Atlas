@@ -24,11 +24,6 @@ export default function HomeScreen() {
 
   const totalStores = stores.length > 0 ? stores.length : 1;
   const progressPercent = Math.min(100, Math.round((visitedStoreIds.size / totalStores) * 100));
-  
-  const historicalStores = useMemo(() => 
-    stores.filter(s => s.architecture.attributes.historicFacade === "yes").slice(0, 3),
-    [stores]
-  );
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
@@ -82,31 +77,6 @@ export default function HomeScreen() {
             </View>
           </View>
         )}
-
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Compass color={theme.colors.copper} size={22} />
-            <Text style={styles.sectionTitle}>{t("home.architectureTitle")}</Text>
-          </View>
-          <Text style={styles.sectionSubtitle}>{t("home.architectureSubtitle")}</Text>
-          <View style={styles.recentGrid}>
-            {historicalStores.map((store) => (
-              <Link key={store.id} href={`/store/${store.id}`} asChild>
-                <Pressable style={styles.recentCard}>
-                  <View style={styles.iconCircle}>
-                    <Compass size={16} color={theme.colors.copper} />
-                  </View>
-                  <View style={styles.recentCardBody}>
-                    <Text style={styles.recentName} numberOfLines={1}>
-                      {getStoreName(store, t("lang"))}
-                    </Text>
-                    <Text style={styles.recentDate}>{store.city}, {store.countryCode}</Text>
-                  </View>
-                </Pressable>
-              </Link>
-            ))}
-          </View>
-        </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Accès Rapide</Text>
@@ -290,20 +260,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.muted,
       fontSize: typography.caption,
       marginTop: 2
-    },
-    sectionSubtitle: {
-      color: colors.muted,
-      fontSize: typography.small,
-      marginBottom: spacing.md,
-      marginTop: -spacing.xs
-    },
-    iconCircle: {
-      width: 32,
-      height: 32,
-      borderRadius: radii.full,
-      backgroundColor: colors.sky,
-      alignItems: "center",
-      justifyContent: "center"
     }
   }), [colors, radii, shadows, spacing, typography]);
 }

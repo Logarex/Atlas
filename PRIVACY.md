@@ -2,7 +2,7 @@
 
 Last updated: 2026-05-16
 
-Atlas is an open source community project. It is designed to avoid advertising, tracking, resale of personal data, and unnecessary collection.
+Atlas is a community project. It is designed to avoid advertising, tracking, resale of personal data, and unnecessary collection.
 
 ## What We Collect
 

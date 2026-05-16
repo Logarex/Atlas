@@ -17,7 +17,7 @@ Add screenshots for UI changes.
 
 ## Checklist
 
-- [ ] I did not copy data, photos, or text from Facades or another proprietary app.
+- [ ] I did not copy data, photos, or text from other proprietary apps or another proprietary app.
 - [ ] I included sources for factual changes.
 - [ ] I confirmed photo licenses when adding photos.
 - [ ] I ran relevant validation or tests.

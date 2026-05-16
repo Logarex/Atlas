@@ -12,7 +12,7 @@ Thanks for helping build Atlas.
 
 ## Data Rules
 
-- Do not copy data from Facades or any proprietary app.
+- Do not copy data from other proprietary apps or any proprietary app.
 - Do not scrape Apple websites or use hidden/private Apple APIs.
 - Do not paste Apple marketing copy.
 - Do not upload Apple-owned press images unless redistribution is explicitly permitted.

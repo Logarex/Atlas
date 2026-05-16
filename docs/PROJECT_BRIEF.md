@@ -4,7 +4,7 @@
 
 Atlas.
 
-The final public app name should stay neutral and descriptive. Avoid names that imply endorsement by Apple, and avoid cloning Facades branding.
+The final public app name should stay neutral and descriptive. Avoid names that imply endorsement by Apple, and avoid cloning other proprietary apps branding.
 
 ## Vision
 
@@ -55,7 +55,7 @@ The first credible public release should include:
 - Submit correction from the app.
 - Discord notification for new submissions.
 - Maintainer approval flow.
-- Privacy page and open source README.
+- Privacy page and detailed README.
 
 ## Later
 

@@ -8,7 +8,7 @@
   "home": {
     "kicker": "Community atlas",
     "title": "Apple retail stores, mapped and sourced.",
-    "subtitle": "Browse notable stores, preserve closures and remodels, and help build a complete open dataset.",
+    "subtitle": "Browse notable stores, preserve closures and remodels, and help build a complete community dataset.",
     "searchLabel": "Search stores",
     "searchPlaceholder": "Search by store, city, country, status, feature...",
     "empty": "No stores match this search yet.",
@@ -69,7 +69,7 @@
       "noAds": "No ads, no behavioral tracking SDKs, no resale of personal data.",
       "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
       "optionalAccount": "Visits can stay on-device; accounts are only needed for sync, friends, and moderation.",
-      "openData": "Accepted factual contributions can enter the open dataset with source links and review history."
+      "openData": "Accepted factual contributions can enter the community dataset with source links and review history."
     }
   },
   "store": {

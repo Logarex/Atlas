@@ -1,6 +1,6 @@
 # Adding Stores, Photos, and Markers
 
-Atlas keeps the public dataset conservative on purpose. Do not copy Facades data, do not scrape Apple pages, and do not upload Apple-owned photos.
+Atlas keeps the public dataset conservative on purpose. Do not copy other proprietary apps data, do not scrape Apple pages, and do not upload Apple-owned photos.
 
 ## Safe Store Sources
 

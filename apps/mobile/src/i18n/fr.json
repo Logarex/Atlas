@@ -8,7 +8,7 @@
   "home": {
     "kicker": "Atlas communautaire",
     "title": "Les Apple Store, cartographies et sources.",
-    "subtitle": "Explore les boutiques remarquables, conserve les fermetures et rénovations, et aide à construire une base ouverte complète.",
+    "subtitle": "Explore les boutiques remarquables, conserve les fermetures et rénovations, et aide à construire une base de données communautaire complète.",
     "searchLabel": "Rechercher des boutiques",
     "searchPlaceholder": "Boutique, ville, pays, statut, attribut...",
     "empty": "Aucune boutique ne correspond encore à cette recherche.",
@@ -23,9 +23,7 @@
       "closed": "Fermées",
       "visited": "Vues"
     },
-    "recentVisits": "Dernières visites",
-    "architectureTitle": "Façades & Patrimoine",
-    "architectureSubtitle": "Boutiques situées dans des lieux chargés d'histoire."
+    "recentVisits": "Dernières visites"
   },
   "map": {
     "title": "Carte mondiale",
@@ -72,7 +70,7 @@
       "noAds": "Pas de publicité, pas de mouchards de pistage comportemental, pas de revente de données personnelles.",
       "localLocation": "La localisation sert localement à trouver les boutiques proches, sauf sauvegarde explicite.",
       "optionalAccount": "Les visites peuvent rester sur l'appareil ; le compte sert seulement à la synchro, aux amis et à la modération.",
-      "openData": "Les contributions factuelles acceptées peuvent rejoindre la base ouverte avec sources et historique de révision."
+      "openData": "Les contributions factuelles acceptées peuvent rejoindre la base de données communautaire avec sources et historique de révision."
     }
   },
   "store": {

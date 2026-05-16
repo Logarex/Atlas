@@ -2,7 +2,7 @@
 
 ## Overview
 
-Atlas uses a mobile-first architecture with a versioned open dataset and a hosted backend for accounts, social features, submissions, and moderation.
+Atlas uses a mobile-first architecture with a versioned community dataset and a hosted backend for accounts, social features, submissions, and moderation.
 
 ```text
 Expo mobile app
@@ -27,7 +27,7 @@ Key modules:
 
 ## Backend
 
-Supabase is the default backend because it provides open source infrastructure, Postgres, row-level security, auth, storage, and Edge Functions without building a custom backend too early.
+Supabase is the default backend because it provides robust infrastructure, Postgres, row-level security, auth, storage, and Edge Functions without building a custom backend too early.
 
 Core tables:
 
@@ -49,7 +49,7 @@ As community submissions grow, accepted changes should either:
 1. update Supabase and be exported back to JSON, or
 2. create a GitHub pull request that updates the data package.
 
-The second option is better for long-term open source transparency.
+The second option is better for long-term transparency.
 
 ## Maps
 

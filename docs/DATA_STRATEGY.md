@@ -6,7 +6,7 @@ Atlas should be complete, but not by copying proprietary compilations. The datas
 
 ## Hard Rules
 
-- Do not copy Facades data, photos, structure, or visual identity.
+- Do not copy other proprietary apps data, photos, structure, or visual identity.
 - Do not scrape apple.com.
 - Do not use hidden Apple APIs.
 - Do not copy Apple marketing text.
