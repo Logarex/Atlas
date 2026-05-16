@@ -1,0 +1,65 @@
+{
+  "tabs": {
+    "explore": "Explore",
+    "map": "Map",
+    "profile": "Profile"
+  },
+  "home": {
+    "kicker": "Community atlas",
+    "title": "Apple retail stores, mapped and sourced.",
+    "subtitle": "Browse notable stores, preserve closures and remodels, and help build a complete open dataset.",
+    "searchLabel": "Search stores",
+    "searchPlaceholder": "Search by store, city, country, status...",
+    "empty": "No stores match this search yet."
+  },
+  "map": {
+    "title": "Worldwide map",
+    "copy": "The first marker is seeded. The map layer is isolated so the project can move to MapLibre when needed."
+  },
+  "profile": {
+    "kicker": "Optional account",
+    "title": "Visits, friends, and sharing without tracking.",
+    "subtitle": "The social layer is opt-in: mark stores visited, choose what is public, and share visit cards.",
+    "items": {
+      "visits": {
+        "title": "Visited stores",
+        "copy": "Save the stores you have seen, with optional dates and private notes."
+      },
+      "friends": {
+        "title": "Friends",
+        "copy": "Follow people you trust and compare public visit lists."
+      },
+      "privacy": {
+        "title": "Privacy first",
+        "copy": "Location stays local unless a feature clearly asks to save or submit it."
+      }
+    }
+  },
+  "store": {
+    "back": "Back to explore",
+    "history": "History",
+    "architecture": "Architecture",
+    "sources": "Sources",
+    "openedOn": "Opened on {{date}}.",
+    "openedShort": "Opened {{date}}"
+  },
+  "status": {
+    "open": "Open",
+    "closed": "Closed",
+    "relocated": "Relocated",
+    "announced": "Announced",
+    "temporary": "Temporary"
+  },
+  "attributes": {
+    "boardroom": "Boardroom",
+    "greenWall": "Green wall",
+    "forum": "Forum",
+    "glassCube": "Glass cube",
+    "plaza": "Plaza"
+  },
+  "values": {
+    "yes": "Yes",
+    "no": "No",
+    "unknown": "Unknown"
+  }
+}

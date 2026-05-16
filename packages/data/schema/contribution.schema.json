@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:atlas:schema:contribution",
+  "title": "Atlas Contribution",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "submittedBy",
+    "payload",
+    "sourceUrl",
+    "licenseAgreement"
+  ],
+  "properties": {
+    "type": {
+      "enum": [
+        "store_correction",
+        "new_store",
+        "photo",
+        "closure",
+        "architecture_attribute"
+      ]
+    },
+    "storeId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "submittedBy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object"
+    },
+    "sourceUrl": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "note": {
+      "type": "string"
+    },
+    "licenseAgreement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metadata",
+        "photos"
+      ],
+      "properties": {
+        "metadata": {
+          "enum": [
+            "CC0-1.0"
+          ]
+        },
+        "photos": {
+          "enum": [
+            "CC-BY-4.0",
+            "CC0-1.0",
+            "not_applicable"
+          ]
+        }
+      }
+    }
+  }
+}

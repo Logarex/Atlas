@@ -1,0 +1,65 @@
+{
+  "tabs": {
+    "explore": "Explorer",
+    "map": "Carte",
+    "profile": "Profil"
+  },
+  "home": {
+    "kicker": "Atlas communautaire",
+    "title": "Les Apple Store, cartographies et sources.",
+    "subtitle": "Explore les boutiques remarquables, preserve les fermetures et renovations, et aide a construire une base ouverte complete.",
+    "searchLabel": "Rechercher des boutiques",
+    "searchPlaceholder": "Boutique, ville, pays, statut...",
+    "empty": "Aucune boutique ne correspond encore a cette recherche."
+  },
+  "map": {
+    "title": "Carte mondiale",
+    "copy": "Le premier marqueur est ajoute. La couche carte est isolee pour pouvoir migrer vers MapLibre si necessaire."
+  },
+  "profile": {
+    "kicker": "Compte optionnel",
+    "title": "Visites, amis et partage sans pistage.",
+    "subtitle": "La partie sociale reste optionnelle : marque les boutiques vues, choisis ce qui est public, et partage des cartes de visite.",
+    "items": {
+      "visits": {
+        "title": "Boutiques vues",
+        "copy": "Enregistre les boutiques que tu as vues, avec dates optionnelles et notes privees."
+      },
+      "friends": {
+        "title": "Amis",
+        "copy": "Ajoute des personnes de confiance et compare les listes publiques."
+      },
+      "privacy": {
+        "title": "Confidentialite d'abord",
+        "copy": "La localisation reste locale sauf si une fonctionnalite demande clairement de la sauvegarder ou de l'envoyer."
+      }
+    }
+  },
+  "store": {
+    "back": "Retour a l'exploration",
+    "history": "Histoire",
+    "architecture": "Architecture",
+    "sources": "Sources",
+    "openedOn": "Ouverture le {{date}}.",
+    "openedShort": "Ouverture {{date}}"
+  },
+  "status": {
+    "open": "Ouvert",
+    "closed": "Ferme",
+    "relocated": "Deplace",
+    "announced": "Annonce",
+    "temporary": "Temporaire"
+  },
+  "attributes": {
+    "boardroom": "Boardroom",
+    "greenWall": "Mur vegetal",
+    "forum": "Forum",
+    "glassCube": "Cube en verre",
+    "plaza": "Plaza"
+  },
+  "values": {
+    "yes": "Oui",
+    "no": "Non",
+    "unknown": "Inconnu"
+  }
+}

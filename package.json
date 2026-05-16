@@ -1,0 +1,25 @@
+{
+  "name": "atlas",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "apps/mobile",
+    "packages/data"
+  ],
+  "scripts": {
+    "mobile:start": "npm --workspace apps/mobile run start --",
+    "mobile:ios": "npm --workspace apps/mobile run ios",
+    "mobile:android": "npm --workspace apps/mobile run android",
+    "mobile:typecheck": "npm --workspace apps/mobile run typecheck",
+    "data:validate": "node packages/data/scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "@expo/metro-config@55.0.21": {
+      "postcss": "8.5.14"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "../schema/store.schema.json",
+  "id": "apple-fifth-avenue",
+  "status": "open",
+  "name": {
+    "en": "Apple Fifth Avenue",
+    "fr": "Apple Fifth Avenue"
+  },
+  "countryCode": "US",
+  "city": "New York",
+  "address": "767 Fifth Avenue, New York, NY 10153",
+  "coordinates": {
+    "latitude": 40.763831,
+    "longitude": -73.972981
+  },
+  "openedOn": "2006-05-19",
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/retail/fifthavenue/",
+  "architecture": {
+    "era": "glass-cube-flagship",
+    "typology": "urban-flagship",
+    "attributes": {
+      "boardroom": "unknown",
+      "greenWall": "unknown",
+      "forum": "yes",
+      "glassCube": "yes",
+      "plaza": "yes"
+    }
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/retail/fifthavenue/",
+    "lastVerifiedAt": null,
+    "note": "Hours are volatile. Verify on the official Apple page."
+  },
+  "sources": [
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/retail/fifthavenue/",
+      "license": "reference_only",
+      "fields": [
+        "name",
+        "address",
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-16"
+    },
+    {
+      "type": "apple_newsroom",
+      "label": "Apple Newsroom opening announcement",
+      "url": "https://www.apple.com/newsroom/2006/05/18The-Apple-Store-Fifth-Avenue-to-Open-on-Friday-May-19/",
+      "license": "reference_only",
+      "fields": [
+        "openedOn",
+        "architecture.era",
+        "architecture.typology",
+        "architecture.attributes.glassCube",
+        "architecture.attributes.plaza"
+      ],
+      "verifiedAt": "2026-05-16"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-16"
+}
