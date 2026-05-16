@@ -6,7 +6,8 @@ import { useTranslation } from "react-i18next";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useMemo } from "react";
-import { Map, Search, Compass } from "lucide-react-native";
+import { Map, Search, Compass, Clock, Info, History } from "lucide-react-native";
+import { getStoreName } from "@/features/stores/storeUtils";
 
 export default function HomeScreen() {
   const { t } = useTranslation();
@@ -23,33 +24,26 @@ export default function HomeScreen() {
 
   const totalStores = stores.length > 0 ? stores.length : 1;
   const progressPercent = Math.min(100, Math.round((visitedStoreIds.size / totalStores) * 100));
+  
+  const historicalStores = useMemo(() => 
+    stores.filter(s => s.architecture.attributes.historicFacade === "yes").slice(0, 3),
+    [stores]
+  );
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
           <Text style={styles.kicker}>{t("home.kicker")}</Text>
           <Text style={styles.title}>{t("home.title")}</Text>
           <Text style={styles.subtitle}>{t("home.subtitle")}</Text>
           
-          <View style={styles.statsRow}>
-            <View style={styles.stat}>
-              <Text style={styles.statValue}>{stores.length}</Text>
-              <Text style={styles.statLabel}>
-                {source === "supabase" ? t("home.liveDataset") : t("home.seedDataset")}
-              </Text>
-            </View>
-            <View style={styles.stat}>
-              <Text style={styles.statValue}>{visitedStoreIds.size}</Text>
-              <Text style={styles.statLabel}>{t("home.visitedCount")}</Text>
-            </View>
-          </View>
         </View>
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Compass color={theme.colors.teal} size={22} />
-            <Text style={styles.sectionTitle}>Ta Progression</Text>
+            <Text style={styles.sectionTitle}>Ma Progression</Text>
           </View>
           <View style={styles.progressContainer}>
             <View style={styles.progressHeader}>
@@ -59,9 +53,58 @@ export default function HomeScreen() {
             <View style={styles.progressBarBg}>
               <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
             </View>
-            <Text style={styles.progressHint}>
-              Il te reste {totalStores - visitedStoreIds.size} boutiques à découvrir dans le monde.
-            </Text>
+          </View>
+        </View>
+
+        {visits.length > 0 && (
+          <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <History color={theme.colors.teal} size={22} />
+              <Text style={styles.sectionTitle}>{t("home.recentVisits")}</Text>
+            </View>
+            <View style={styles.recentGrid}>
+              {visits.slice(0, 3).map((visit) => {
+                const store = stores.find(s => s.id === visit.storeId);
+                return (
+                  <Link key={visit.id} href={`/store/${visit.storeId}`} asChild>
+                    <Pressable style={styles.recentCard}>
+                      <Clock size={16} color={theme.colors.muted} />
+                      <View style={styles.recentCardBody}>
+                        <Text style={styles.recentName} numberOfLines={1}>
+                          {store ? getStoreName(store, t("lang")) : visit.storeId}
+                        </Text>
+                        <Text style={styles.recentDate}>{visit.visitedOn}</Text>
+                      </View>
+                    </Pressable>
+                  </Link>
+                );
+              })}
+            </View>
+          </View>
+        )}
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Compass color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("home.architectureTitle")}</Text>
+          </View>
+          <Text style={styles.sectionSubtitle}>{t("home.architectureSubtitle")}</Text>
+          <View style={styles.recentGrid}>
+            {historicalStores.map((store) => (
+              <Link key={store.id} href={`/store/${store.id}`} asChild>
+                <Pressable style={styles.recentCard}>
+                  <View style={styles.iconCircle}>
+                    <Compass size={16} color={theme.colors.copper} />
+                  </View>
+                  <View style={styles.recentCardBody}>
+                    <Text style={styles.recentName} numberOfLines={1}>
+                      {getStoreName(store, t("lang"))}
+                    </Text>
+                    <Text style={styles.recentDate}>{store.city}, {store.countryCode}</Text>
+                  </View>
+                </Pressable>
+              </Link>
+            ))}
           </View>
         </View>
 
@@ -97,7 +140,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       flex: 1
     },
     content: {
-      paddingBottom: spacing.xxl
+      paddingBottom: spacing.lg
     },
     header: {
       paddingHorizontal: spacing.lg,
@@ -222,6 +265,45 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.paper,
       fontSize: typography.body,
       fontWeight: "800"
+    },
+    recentGrid: {
+      gap: spacing.sm
+    },
+    recentCard: {
+      backgroundColor: colors.paper,
+      borderRadius: radii.md,
+      padding: spacing.md,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.md,
+      ...shadows.sm
+    },
+    recentCardBody: {
+      flex: 1
+    },
+    recentName: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800"
+    },
+    recentDate: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      marginTop: 2
+    },
+    sectionSubtitle: {
+      color: colors.muted,
+      fontSize: typography.small,
+      marginBottom: spacing.md,
+      marginTop: -spacing.xs
+    },
+    iconCircle: {
+      width: 32,
+      height: 32,
+      borderRadius: radii.full,
+      backgroundColor: colors.sky,
+      alignItems: "center",
+      justifyContent: "center"
     }
   }), [colors, radii, shadows, spacing, typography]);
 }

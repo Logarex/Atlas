@@ -139,7 +139,7 @@ export default function ReviewScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <View style={styles.header}>
         <Text style={styles.title}>Admin Dashboard</Text>
         <Text style={styles.subtitle}>Manage stores and pending imports</Text>
@@ -368,7 +368,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     fab: {
       position: "absolute",
-      bottom: spacing.xxl,
+      bottom: spacing.lg,
       right: spacing.lg,
       backgroundColor: colors.copper,
       width: 60,

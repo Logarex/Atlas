@@ -172,7 +172,7 @@ export default function ProfileScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
           <Text style={styles.kicker}>{t("profile.kicker")}</Text>
@@ -184,7 +184,7 @@ export default function ProfileScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Key color={theme.colors.copper} size={22} />
-            <Text style={styles.sectionTitle}>Accès Sécurisé</Text>
+            <Text style={styles.sectionTitle}>Accès sécurisé</Text>
           </View>
           {isLoggedIn ? (
             <>
@@ -195,7 +195,7 @@ export default function ProfileScreen() {
             </>
           ) : (
             <>
-              <Text style={styles.itemText}>Connectez-vous avec votre mot de passe pour accéder à l'Admin Dashboard.</Text>
+              <Text style={styles.itemText}>Connectez-vous avec votre mot de passe pour accéder au tableau de bord.</Text>
               <TextInput
                 autoCapitalize="none"
                 keyboardType="email-address"
@@ -398,7 +398,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       flex: 1
     },
     content: {
-      paddingBottom: spacing.xl
+      paddingBottom: spacing.lg
     },
     header: {
       padding: spacing.lg

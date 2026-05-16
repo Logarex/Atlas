@@ -27,7 +27,7 @@ export default function MapScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <MapView
         initialRegion={{
           latitude: 30,
@@ -92,7 +92,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     panel: {
       backgroundColor: colors.paper,
       borderRadius: radii.md,
-      bottom: spacing.lg,
+      bottom: spacing.md,
       left: spacing.lg,
       padding: spacing.lg,
       position: "absolute",

@@ -55,7 +55,7 @@ export default function ExploreScreen() {
   }, [filter, query, stores, visitedStoreIds]);
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <View style={styles.header}>
         <Text style={styles.title}>Explorer</Text>
       </View>
@@ -168,7 +168,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       gap: spacing.xxl,
       padding: spacing.lg,
       paddingTop: spacing.xs,
-      paddingBottom: spacing.xxl
+      paddingBottom: spacing.lg
     },
     empty: {
       color: colors.muted,
