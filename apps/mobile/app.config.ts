@@ -7,10 +7,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   scheme: "atlas",
   version: "0.0.1",
   orientation: "portrait",
-  userInterfaceStyle: "light",
+  userInterfaceStyle: "automatic",
+  icon: "./assets/icon.png",
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.louischabert.atlas",
+    icon: "./assets/icon.png",
     infoPlist: {
       NSLocationWhenInUseUsageDescription:
         "Atlas uses your location locally to show nearby stores.",
@@ -20,6 +22,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     package: "com.louischabert.atlas",
+    icon: "./assets/icon.png",
+    adaptiveIcon: {
+      foregroundImage: "./assets/adaptive-icon.png",
+      backgroundColor: "#E9E1D1"
+    },
     config: {
       googleMaps: {
         apiKey: process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY
