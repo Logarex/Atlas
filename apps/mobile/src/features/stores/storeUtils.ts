@@ -75,8 +75,109 @@ export function normalizeSearchText(value: string | null | undefined) {
     .trim();
 }
 
-export function getStoreName(store: StoreRecord, language: string) {
-  return language.startsWith("fr") ? store.name.fr : store.name.en;
+export const latinStoreNames: Record<string, string> = {
+  "apple-101": "Apple Taipei 101",
+  "apple-a13": "Apple Xinyi A13",
+  "apple-center66wuxi": "Apple Center 66 Wuxi",
+  "apple-changsha": "Apple Changsha",
+  "apple-chaoyangjoycity": "Apple Chaoyang Joy City",
+  "apple-chinacentralmall": "Apple China Central Mall",
+  "apple-fukuoka": "Apple Fukuoka",
+  "apple-galaxymacau": "Apple Galaxy Macau",
+  "apple-gangnam": "Apple Gangnam",
+  "apple-garosugil": "Apple Garosugil",
+  "apple-ginza": "Apple Ginza",
+  "apple-globalharbor": "Apple Global Harbor",
+  "apple-hanam": "Apple Hanam",
+  "apple-holidayplazashenzhen": "Apple Holiday Plaza Shenzhen",
+  "apple-hongdae": "Apple Hongdae",
+  "apple-hongkongplaza": "Apple Hong Kong Plaza",
+  "apple-iapm": "Apple Shanghai iapm",
+  "apple-jamsil": "Apple Jamsil",
+  "apple-jiefangbei": "Apple Jiefangbei",
+  "apple-jingan": "Apple Jing’an",
+  "apple-kawasaki": "Apple Kawasaki",
+  "apple-kunming": "Apple Kunming",
+  "apple-kyoto": "Apple Kyoto",
+  "apple-livatbeijing": "Apple Livat Beijing",
+  "apple-marunouchi": "Apple Marunouchi",
+  "apple-mixcchengdu": "Apple MixC Chengdu",
+  "apple-mixcchongqing": "Apple MixC Chongqing",
+  "apple-mixchangzhou": "Apple MixC Hangzhou",
+  "apple-mixchefei": "Apple MixC Hefei",
+  "apple-mixcnanning": "Apple MixC Nanning",
+  "apple-mixcqingdao": "Apple MixC Qingdao",
+  "apple-mixcshenyang": "Apple MixC Shenyang",
+  "apple-mixcshenzhen": "Apple MixC Shenzhen",
+  "apple-mixctianjin": "Apple MixC Tianjin",
+  "apple-mixcwenzhou": "Apple MixC Wenzhou",
+  "apple-mixczhengzhou": "Apple MixC Zhengzhou",
+  "apple-myeongdong": "Apple Myeongdong",
+  "apple-nagoyasakae": "Apple Nagoya Sakae",
+  "apple-nanjingeast": "Apple Nanjing East",
+  "apple-olympia66dalian": "Apple Olympia 66 Dalian",
+  "apple-omotesando": "Apple Omotesando",
+  "apple-paradisewalkchongqing": "Apple Paradise Walk Chongqing",
+  "apple-parc66jinan": "Apple Parc 66 Jinan",
+  "apple-parccentral": "Apple Parc Central",
+  "apple-pudong": "Apple Pudong",
+  "apple-qibao": "Apple Qibao",
+  "apple-riverside66tianjin": "Apple Riverside 66 Tianjin",
+  "apple-sanlitun": "Apple Sanlitun",
+  "apple-shibuya": "Apple Shibuya",
+  "apple-shinjuku": "Apple Shinjuku",
+  "apple-shinsaibashi": "Apple Shinsaibashi",
+  "apple-suzhou": "Apple Suzhou",
+  "apple-tahoeplaza": "Apple Tahoe Plaza",
+  "apple-taikoolichengdu": "Apple Taikoo Li Chengdu",
+  "apple-tianjinjoycity": "Apple Tianjin Joy City",
+  "apple-tianyisquare": "Apple Tianyi Square",
+  "apple-umeda": "Apple Umeda",
+  "apple-uniwalkqianhai": "Apple Uniwalk Qianhai",
+  "apple-wangfujing": "Apple Wangfujing",
+  "apple-westlake": "Apple Westlake",
+  "apple-wondercity": "Apple Wonder City",
+  "apple-wuhan": "Apple Wuhan",
+  "apple-wujiaochang": "Apple Wujiaochang",
+  "apple-xiamenlifestylecenter": "Apple Xiamen Lifestyle Center",
+  "apple-xidanjoycity": "Apple Xidan Joy City",
+  "apple-xinjiekou": "Apple Xinjiekou",
+  "apple-xuanwulake": "Apple Xuanwu Lake",
+  "apple-yeouido": "Apple Yeouido",
+  "apple-zhongjiejoycity": "Apple Zhongjie Joy City",
+  "apple-zhujiangnewtown": "Apple Zhujiang New Town"
+};
+
+export function getStoreName(
+  store: StoreRecord,
+  language: string,
+  options?: { noLocal?: boolean }
+) {
+  const baseName = language.startsWith("fr") ? store.name.fr : store.name.en;
+  const isFRorEN = language.startsWith("fr") || language.startsWith("en");
+
+  if (isFRorEN && latinStoreNames[store.id]) {
+    const latinName = latinStoreNames[store.id];
+    if (options?.noLocal) {
+      return latinName;
+    } else {
+      return `${latinName} (${baseName})`;
+    }
+  }
+
+  return baseName;
+}
+
+const localPhotosMap: Record<string, any> = {};
+
+export function getPhotoSource(url: string) {
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return { uri: url };
+  }
+  if (localPhotosMap[url]) {
+    return localPhotosMap[url];
+  }
+  return { uri: url };
 }
 
 export function getStorePlace(store: StoreRecord) {

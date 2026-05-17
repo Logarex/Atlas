@@ -263,9 +263,7 @@
         "additionalProperties": false,
         "required": [
           "id",
-          "url",
-          "credit",
-          "license"
+          "url"
         ],
         "properties": {
           "id": {
@@ -274,7 +272,7 @@
           },
           "url": {
             "type": "string",
-            "pattern": "^https://"
+            "pattern": "^(?:https?://|/|\\.\\.?/)"
           },
           "credit": {
             "type": "string",

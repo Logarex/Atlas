@@ -7,6 +7,16 @@ import type { LocalVisit, VisitVisibility } from "./visit.types";
 
 const STORAGE_KEY = "@atlas/local-visits/v1";
 
+// Simple pub-sub mechanism for synchronization
+type LocalVisitsListener = (visits: LocalVisit[]) => void;
+const listeners = new Set<LocalVisitsListener>();
+
+function notifyListeners(nextVisits: LocalVisit[]) {
+  for (const listener of listeners) {
+    listener(nextVisits);
+  }
+}
+
 function createVisit(storeId: string, visitedOn: string, visibility: VisitVisibility): LocalVisit {
   const now = new Date().toISOString();
 
@@ -41,7 +51,14 @@ export function useLocalVisits(storeId?: string) {
   const [isLoading, setIsLoading] = useState(true);
 
   const refresh = useCallback(async () => {
-    setVisits(await readLocalVisits());
+    const loadedVisits = await readLocalVisits();
+    // Sort visits by visitedOn descending, then createdAt descending
+    const sorted = [...loadedVisits].sort((a, b) => {
+      const dateCompare = b.visitedOn.localeCompare(a.visitedOn);
+      if (dateCompare !== 0) return dateCompare;
+      return b.createdAt.localeCompare(a.createdAt);
+    });
+    setVisits(sorted);
     setIsLoading(false);
   }, []);
 
@@ -49,11 +66,25 @@ export function useLocalVisits(storeId?: string) {
     void refresh();
   }, [refresh]);
 
+  useEffect(() => {
+    const listener: LocalVisitsListener = (updatedVisits) => {
+      // Keep it sorted
+      const sorted = [...updatedVisits].sort((a, b) => {
+        const dateCompare = b.visitedOn.localeCompare(a.visitedOn);
+        if (dateCompare !== 0) return dateCompare;
+        return b.createdAt.localeCompare(a.createdAt);
+      });
+      setVisits(sorted);
+    };
+    listeners.add(listener);
+    return () => {
+      listeners.delete(listener);
+    };
+  }, []);
+
   const storeVisits = useMemo(() => {
     if (!storeId) return [];
-    return visits
-      .filter((visit) => visit.storeId === storeId)
-      .sort((a, b) => b.visitedOn.localeCompare(a.visitedOn));
+    return visits.filter((visit) => visit.storeId === storeId);
   }, [storeId, visits]);
 
   const addVisit = useCallback(
@@ -66,6 +97,7 @@ export function useLocalVisits(storeId?: string) {
       ];
       setVisits(nextVisits);
       await writeLocalVisits(nextVisits);
+      notifyListeners(nextVisits);
     },
     [visits]
   );
@@ -75,6 +107,7 @@ export function useLocalVisits(storeId?: string) {
       const nextVisits = visits.filter((visit) => visit.id !== visitId);
       setVisits(nextVisits);
       await writeLocalVisits(nextVisits);
+      notifyListeners(nextVisits);
     },
     [visits]
   );
@@ -87,6 +120,7 @@ export function useLocalVisits(storeId?: string) {
       );
       setVisits(nextVisits);
       await writeLocalVisits(nextVisits);
+      notifyListeners(nextVisits);
     },
     [visits]
   );
@@ -94,7 +128,8 @@ export function useLocalVisits(storeId?: string) {
   const clearAllVisits = useCallback(async () => {
     try {
       await AsyncStorage.removeItem(STORAGE_KEY);
-      setVisits([]); // Direct state update to trigger UI re-render
+      setVisits([]);
+      notifyListeners([]);
     } catch (e) {
       console.error("Failed to clear visits", e);
     }

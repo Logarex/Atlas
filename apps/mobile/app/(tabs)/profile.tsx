@@ -282,7 +282,7 @@ export default function ProfileScreen() {
               return (
                 <View key={visit.id} style={styles.visitRow}>
                   <Text style={styles.visitName}>
-                    {store ? getStoreName(store, i18n.language) : visit.storeId}
+                    {store ? getStoreName(store, i18n.language, { noLocal: true }) : visit.storeId}
                   </Text>
                   <Text style={styles.visitDate}>{visit.visitedOn}</Text>
                 </View>

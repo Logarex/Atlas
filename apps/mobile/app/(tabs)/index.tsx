@@ -34,15 +34,15 @@ export default function HomeScreen() {
           <Text style={styles.subtitle}>{t("home.subtitle")}</Text>
           <View style={styles.statsRow}>
             <View style={styles.stat}>
-              <Text style={styles.statValue}>{stats.open}</Text>
+              <Text style={styles.statValue} adjustsFontSizeToFit numberOfLines={1}>{stats.open}</Text>
               <Text style={styles.statLabel}>{t("home.stats.open")}</Text>
             </View>
             <View style={styles.stat}>
-              <Text style={styles.statValue}>{stats.closed}</Text>
+              <Text style={styles.statValue} adjustsFontSizeToFit numberOfLines={1}>{stats.closed}</Text>
               <Text style={styles.statLabel}>{t("home.stats.closed")}</Text>
             </View>
             <View style={styles.stat}>
-              <Text style={styles.statValue}>{stats.relocated}</Text>
+              <Text style={styles.statValue} adjustsFontSizeToFit numberOfLines={1}>{stats.relocated}</Text>
               <Text style={styles.statLabel}>{t("home.stats.relocated")}</Text>
             </View>
           </View>
@@ -79,7 +79,7 @@ export default function HomeScreen() {
                       <Clock size={16} color={theme.colors.muted} />
                       <View style={styles.recentCardBody}>
                         <Text style={styles.recentName} numberOfLines={1}>
-                          {store ? getStoreName(store, t("lang")) : visit.storeId}
+                          {store ? getStoreName(store, t("lang"), { noLocal: true }) : visit.storeId}
                         </Text>
                         <Text style={styles.recentDate}>{visit.visitedOn}</Text>
                       </View>
@@ -153,14 +153,15 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     statsRow: {
       flexDirection: "row",
-      gap: spacing.lg,
+      gap: spacing.sm,
       marginTop: spacing.xl
     },
     stat: {
       backgroundColor: colors.paper,
-      borderRadius: radii.lg,
+      borderRadius: radii.md,
       flex: 1,
-      padding: spacing.lg,
+      paddingHorizontal: spacing.sm,
+      paddingVertical: spacing.md,
       ...shadows.sm
     },
     statValue: {

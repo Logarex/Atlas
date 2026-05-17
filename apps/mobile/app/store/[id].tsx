@@ -7,6 +7,7 @@ import {
   getPositiveAttributeKeys,
   getStoreName,
   getStorePlace,
+  getPhotoSource,
 } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
@@ -304,9 +305,33 @@ export default function StoreDetailScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.photos")}</Text>
         {store.photos?.length ? (
-          store.photos.map((photo) => (
-            <Image key={photo.id} source={{ uri: photo.url }} style={styles.photo} />
-          ))
+          <View style={styles.photosList}>
+            {store.photos.map((photo) => {
+              const hasCredit = !!photo.credit;
+              const hasLicense = !!photo.license;
+              const hasCaption = !!photo.caption;
+
+              return (
+                <View key={photo.id} style={styles.photoCard}>
+                  <Image source={getPhotoSource(photo.url)} style={styles.photoImage} />
+                  {(hasCaption || hasCredit || hasLicense) && (
+                    <View style={styles.photoMeta}>
+                      {hasCaption && (
+                        <Text style={styles.photoCaption}>{photo.caption}</Text>
+                      )}
+                      {(hasCredit || hasLicense) && (
+                        <Text style={styles.photoCredit}>
+                          {hasCredit ? `© ${photo.credit}` : ""}
+                          {hasCredit && hasLicense ? " · " : ""}
+                          {hasLicense ? photo.license : ""}
+                        </Text>
+                      )}
+                    </View>
+                  )}
+                </View>
+              );
+            })}
+          </View>
         ) : (
           <Text style={styles.muted}>{t("store.noPhotos")}</Text>
         )}
@@ -736,11 +761,39 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       flex: 1,
       gap: spacing.xs
     },
-    photo: {
-      aspectRatio: 4 / 3,
+    photosList: {
+      gap: spacing.md,
+      marginTop: spacing.sm
+    },
+    photoCard: {
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: radii.md,
+      borderWidth: 1,
+      overflow: "hidden",
+      ...shadows.sm
+    },
+    photoImage: {
+      aspectRatio: 16 / 9,
       backgroundColor: colors.line,
-      borderRadius: 8,
       width: "100%"
+    },
+    photoMeta: {
+      padding: spacing.md,
+      gap: spacing.xs
+    },
+    photoCaption: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "700",
+      lineHeight: 18
+    },
+    photoCredit: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "800",
+      letterSpacing: 0,
+      textTransform: "uppercase"
     },
     photoPreview: {
       aspectRatio: 4 / 3,
