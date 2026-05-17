@@ -90,7 +90,14 @@
     "deleteWarningTitle": "Es-tu sûr ?",
     "deleteWarningMessage": "Cette action est irréversible. Toutes tes contributions liées à ton profil seront anonymisées ou supprimées, et tes visites locales seront effacées.",
     "cancel": "Annuler",
-    "confirmDelete": "Tout supprimer"
+    "confirmDelete": "Tout supprimer",
+    "theme": {
+      "title": "Thème & Logo",
+      "copy": "Sélectionne ton apparence préférée. Le logo d'accueil sera synchronisé automatiquement.",
+      "system": "Par défaut",
+      "light": "Clair",
+      "dark": "Sombre"
+    }
   },
   "store": {
     "back": "Retour à l'exploration",

@@ -13,7 +13,7 @@ import { useLocalVisits } from "@/features/visits/localVisits";
 import { isSupabaseConfigured } from "@/lib/supabase";
 import { signInWithUsername, signOut, deleteAccount } from "@/features/auth/authApi";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Lock, Send, ShieldCheck, Key, UserRound, Trash2, AlertTriangle } from "lucide-react-native";
+import { CalendarDays, Lock, Send, ShieldCheck, Key, UserRound, Trash2, AlertTriangle, Palette } from "lucide-react-native";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -334,6 +334,40 @@ export default function ProfileScreen() {
           </Pressable>
         </View>
 
+        {/* THEME SECTION */}
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Palette color={theme.colors.teal} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.theme.title")}</Text>
+          </View>
+          <Text style={styles.itemText}>{t("profile.theme.copy")}</Text>
+          
+          <View style={styles.themeSelectorRow}>
+            {(["system", "light", "dark"] as const).map((mode) => {
+              const isActive = theme.themeSetting === mode;
+              return (
+                <Pressable
+                  key={mode}
+                  onPress={() => theme.setThemeSetting(mode)}
+                  style={[
+                    styles.themeButton,
+                    isActive && styles.themeButtonActive
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.themeButtonText,
+                      isActive && styles.themeButtonTextActive
+                    ]}
+                  >
+                    {t(`profile.theme.${mode}`)}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Lock color={theme.colors.teal} size={22} />
@@ -551,6 +585,35 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     privacyIcon: {
       color: colors.teal,
       fontSize: typography.body,
+      fontWeight: "900"
+    },
+    themeSelectorRow: {
+      flexDirection: "row",
+      gap: spacing.sm,
+      marginTop: spacing.xs
+    },
+    themeButton: {
+      alignItems: "center",
+      backgroundColor: colors.canvas,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flex: 1,
+      justifyContent: "center",
+      minHeight: 40,
+      paddingHorizontal: spacing.sm
+    },
+    themeButtonActive: {
+      backgroundColor: colors.copper,
+      borderColor: colors.copper
+    },
+    themeButtonText: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800"
+    },
+    themeButtonTextActive: {
+      color: colors.paper,
       fontWeight: "900"
     },
     message: {
