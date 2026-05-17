@@ -41,6 +41,31 @@
     "note": "Hours change often. Verify on the official Apple page before visiting."
   },
   "photos": [],
-  "sources": [],
+  "sources": [
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/sg/retail/marinabaysands/",
+      "license": "reference_only",
+      "fields": [
+        "name",
+        "address",
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-16"
+    },
+    {
+      "type": "apple_newsroom",
+      "label": "Apple Newsroom opening article",
+      "url": "https://www.apple.com/newsroom/2020/09/apple-marina-bay-sands-opens-thursday-in-singapore/",
+      "license": "reference_only",
+      "fields": [
+        "openedOn",
+        "architecture.typology"
+      ],
+      "verifiedAt": "2026-05-16"
+    }
+  ],
   "lastVerifiedAt": "2026-05-16"
 }

@@ -110,7 +110,7 @@
     },
     "officialUrl": {
       "type": "string",
-      "pattern": "^https://www\\.apple\\.com/retail/"
+      "pattern": "^https://www\\.apple\\.com/(?:[a-z]{2}(?:-[a-z]{2})?/)?retail/"
     },
     "architecture": {
       "type": "object",
@@ -137,6 +137,12 @@
               "no",
               "unknown"
             ]
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
       }

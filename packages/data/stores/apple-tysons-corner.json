@@ -40,6 +40,20 @@
     "note": "Hours change often. Verify on the official Apple page before visiting."
   },
   "photos": [],
-  "sources": [],
+  "sources": [
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/retail/tysonscorner/",
+      "license": "reference_only",
+      "fields": [
+        "name",
+        "address",
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-16"
+    }
+  ],
   "lastVerifiedAt": "2026-05-16"
 }

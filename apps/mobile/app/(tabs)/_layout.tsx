@@ -48,12 +48,7 @@ export default function TabsLayout() {
           tabBarIcon: ({ color, size }) => <UserRound color={color} size={size} />
         }}
       />
-      <Tabs.Screen
-        name="review"
-        options={{
-          href: null
-        }}
-      />
+
     </Tabs>
   );
 }

@@ -53,6 +53,17 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-16"
+    },
+    {
+      "type": "apple_newsroom",
+      "label": "Apple Newsroom opening announcement",
+      "url": "https://www.apple.com/newsroom/2006/05/18The-Apple-Store-Fifth-Avenue-to-Open-on-Friday-May-19/",
+      "license": "reference_only",
+      "fields": [
+        "openedOn",
+        "architecture.attributes.glassCube"
+      ],
+      "verifiedAt": "2026-05-16"
     }
   ],
   "lastVerifiedAt": "2026-05-16"
