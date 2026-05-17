@@ -1,0 +1,75 @@
+{
+  "id": "apple-brisbane",
+  "storeNumber": "R466",
+  "name": {
+    "en": "Apple Brisbane",
+    "fr": "Apple Brisbane"
+  },
+  "status": "open",
+  "city": "Brisbane City",
+  "region": "Queensland",
+  "countryCode": "AU",
+  "countryName": "Australia",
+  "address": "MacArthur Chambers 233 Queen Street, 4000, Brisbane City, Queensland",
+  "coordinates": {
+    "latitude": -27.46835,
+    "longitude": 153.027261
+  },
+  "openedOn": null,
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/au/retail/brisbane/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    }
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/au/retail/brisbane/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/au/retail/brisbane/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-12"
+}

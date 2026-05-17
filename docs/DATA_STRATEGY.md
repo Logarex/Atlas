@@ -32,10 +32,13 @@ Reference: https://www.apple.com/legal/internet-services/terms/site.html
 Use sources in this order:
 
 1. Community observation with contributor license and reviewer approval.
-2. Wikimedia Commons photos with compatible licenses and attribution.
-3. Official Apple pages as human-verification links, not scraped content.
-4. Apple Newsroom articles for historical facts, cited and paraphrased.
-5. Local public records or architecture press, only when licenses permit factual reuse.
+2. Published CC0 factual datasets with exact run/source provenance, such as All the Places snapshots.
+3. Wikimedia Commons photos with compatible licenses and attribution.
+4. Official Apple pages as human-verification links, not scraped content.
+5. Apple Newsroom articles for historical facts, cited and paraphrased.
+6. Local public records or architecture press, only when licenses permit factual reuse.
+
+All the Places imports must use their published CC0 output. Do not run the Apple spider from Atlas, do not copy Apple page text, and do not treat volatile fields like hours as community verified.
 
 
 

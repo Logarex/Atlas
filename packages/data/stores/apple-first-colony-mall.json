@@ -1,0 +1,75 @@
+{
+  "id": "apple-first-colony-mall",
+  "storeNumber": "R205",
+  "name": {
+    "en": "Apple First Colony Mall",
+    "fr": "Apple First Colony Mall"
+  },
+  "status": "open",
+  "city": "Sugar Land",
+  "region": "Texas",
+  "countryCode": "US",
+  "countryName": "United States",
+  "address": "16535 Southwest Freeway, Sugar Land, TX 77479",
+  "coordinates": {
+    "latitude": 29.59141,
+    "longitude": -95.625
+  },
+  "openedOn": null,
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/retail/firstcolonymall/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    }
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/retail/firstcolonymall/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/retail/firstcolonymall/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-12"
+}

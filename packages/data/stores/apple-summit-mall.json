@@ -1,0 +1,75 @@
+{
+  "id": "apple-summit-mall",
+  "storeNumber": "R353",
+  "name": {
+    "en": "Apple Summit Mall",
+    "fr": "Apple Summit Mall"
+  },
+  "status": "open",
+  "city": "Akron",
+  "region": "Ohio",
+  "countryCode": "US",
+  "countryName": "United States",
+  "address": "3265 West Market Street, Akron, OH 44333",
+  "coordinates": {
+    "latitude": 41.13441,
+    "longitude": -81.61738
+  },
+  "openedOn": null,
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/retail/summitmall/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    }
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/retail/summitmall/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/retail/summitmall/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-12"
+}

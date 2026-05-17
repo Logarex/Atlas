@@ -1,0 +1,75 @@
+{
+  "id": "apple-puerta-del-sol",
+  "storeNumber": "R450",
+  "name": {
+    "en": "Apple Puerta del Sol",
+    "fr": "Apple Puerta del Sol"
+  },
+  "status": "open",
+  "city": "Madrid",
+  "region": "Madrid",
+  "countryCode": "ES",
+  "countryName": "Spain",
+  "address": "Plaza de la Puerta del Sol, 1, 28013, Madrid",
+  "coordinates": {
+    "latitude": 40.4169,
+    "longitude": -3.702157
+  },
+  "openedOn": null,
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/es/retail/puertadelsol/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    }
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/es/retail/puertadelsol/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/es/retail/puertadelsol/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-12"
+}

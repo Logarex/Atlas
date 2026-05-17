@@ -1,5 +1,6 @@
 {
   "id": "apple-fifth-avenue",
+  "storeNumber": "R095",
   "name": {
     "en": "Apple Fifth Avenue",
     "fr": "Apple Fifth Avenue"
@@ -12,7 +13,7 @@
   "address": "767 Fifth Avenue, New York, NY 10153",
   "coordinates": {
     "latitude": 40.76383,
-    "longitude": -73.97298
+    "longitude": -73.97296
   },
   "openedOn": "2006-05-19",
   "closedOn": null,
@@ -21,11 +22,13 @@
     "era": "Glass Cube Flagship",
     "typology": "Urban flagship",
     "attributes": {
+      "avenue": "unknown",
       "boardroom": "unknown",
       "forum": "yes",
       "geniusBar": "yes",
       "glassCube": "yes",
       "greenWall": "unknown",
+      "historicFacade": "unknown",
       "plaza": "yes",
       "videoWall": "yes"
     },
@@ -64,6 +67,24 @@
         "architecture.attributes.glassCube"
       ],
       "verifiedAt": "2026-05-16"
+    },
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
     }
   ],
   "lastVerifiedAt": "2026-05-16"

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "import:apple": "node scripts/import-apple-from-alltheplaces.mjs",
     "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {

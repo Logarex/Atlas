@@ -45,6 +45,7 @@ export type StorePhoto = {
 
 export type StoreRecord = {
   id: string;
+  storeNumber?: string;
   name: {
     en: string;
     fr: string;

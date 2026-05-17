@@ -1,0 +1,75 @@
+{
+  "id": "apple-dusseldorf",
+  "storeNumber": "R331",
+  "name": {
+    "en": "Apple Düsseldorf",
+    "fr": "Apple Düsseldorf"
+  },
+  "status": "open",
+  "city": "Düsseldorf",
+  "region": "Nordrhein-Westfalen",
+  "countryCode": "DE",
+  "countryName": "Germany",
+  "address": "Kö-Bogen Königsallee 2, 40212, Düsseldorf, Nordrhein-Westfalen",
+  "coordinates": {
+    "latitude": 51.22675,
+    "longitude": 6.77995
+  },
+  "openedOn": null,
+  "closedOn": null,
+  "officialUrl": "https://www.apple.com/de/retail/duesseldorf/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    }
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/de/retail/duesseldorf/",
+    "lastVerifiedAt": null,
+    "note": "Hours change often. Verify on the official Apple page before visiting."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_official_page",
+      "label": "Apple official store page",
+      "url": "https://www.apple.com/de/retail/duesseldorf/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-12"
+}

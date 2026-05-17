@@ -1,18 +1,19 @@
 {
   "id": "apple-champs-elysees",
+  "storeNumber": "R675",
   "name": {
-    "en": "Apple Champs-Elysees",
-    "fr": "Apple Champs-Elysees"
+    "en": "Apple Champs-Élysées",
+    "fr": "Apple Champs-Élysées"
   },
   "status": "open",
   "city": "Paris",
-  "region": "Ile-de-France",
+  "region": "Paris",
   "countryCode": "FR",
   "countryName": "France",
-  "address": "114 avenue des Champs-Elysees, 75008 Paris",
+  "address": "114 av. des Champs-Élysées, 75008, Paris",
   "coordinates": {
-    "latitude": 48.872273,
-    "longitude": 2.301315
+    "latitude": 48.872217,
+    "longitude": 2.301233
   },
   "openedOn": "2018-11-18",
   "closedOn": null,
@@ -55,6 +56,24 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-16"
+    },
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
     }
   ],
   "lastVerifiedAt": "2026-05-16"

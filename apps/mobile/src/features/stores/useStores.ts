@@ -1,9 +1,7 @@
-import { sampleStores } from "./sampleStores";
-
-
+import { generatedStores } from "./generatedStores";
 
 export function useStores() {
-  const stores = sampleStores;
+  const stores = generatedStores;
 
   return {
     error: null,

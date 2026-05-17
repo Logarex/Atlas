@@ -1,18 +1,19 @@
 {
   "id": "apple-tysons-corner",
+  "storeNumber": "R010",
   "name": {
     "en": "Apple Tysons Corner",
     "fr": "Apple Tysons Corner"
   },
   "status": "open",
-  "city": "Tysons",
+  "city": "McLean",
   "region": "Virginia",
   "countryCode": "US",
   "countryName": "United States",
-  "address": "1961 Chain Bridge Rd, Tysons, VA 22102",
+  "address": "7926 Tysons Corner Center, McLean, VA 22102",
   "coordinates": {
-    "latitude": 38.917624,
-    "longitude": -77.221469
+    "latitude": 38.918185,
+    "longitude": -77.22096
   },
   "openedOn": "2001-05-19",
   "closedOn": null,
@@ -21,11 +22,13 @@
     "era": "Original Retail",
     "typology": "Mall store",
     "attributes": {
+      "avenue": "unknown",
       "boardroom": "unknown",
       "forum": "yes",
       "geniusBar": "yes",
       "glassCube": "no",
       "greenWall": "unknown",
+      "historicFacade": "unknown",
       "plaza": "no",
       "videoWall": "yes"
     },
@@ -53,6 +56,24 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-16"
+    },
+    {
+      "type": "alltheplaces_cc0",
+      "label": "All the Places Apple GeoJSON run 2026-05-09-13-32-52",
+      "url": "https://alltheplaces-data.openaddresses.io/runs/2026-05-09-13-32-52/output/apple.geojson",
+      "license": "CC0-1.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "address",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "coordinates",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-12"
     }
   ],
   "lastVerifiedAt": "2026-05-16"

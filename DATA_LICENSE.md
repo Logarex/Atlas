@@ -22,4 +22,6 @@ Do not upload Apple-owned photos, press images, screenshots, marketing imagery, 
 
 OpenStreetMap data is licensed under ODbL. If this project ever imports OSM-derived data into the canonical dataset, those derived records must be isolated and distributed with the required ODbL terms and attribution.
 
+All the Places publishes generated spider output under CC0. Atlas may import those published CC0 snapshots when every generated record cites the exact run URL and keeps volatile or unverified fields marked as such.
+
 Map tiles, geocoding providers, and external datasets may have separate licenses. Their data must not be mixed into the CC0 canonical dataset unless their terms permit it.
