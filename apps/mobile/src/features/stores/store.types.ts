@@ -15,7 +15,10 @@ export type ArchitectureAttribute =
   | "glassCube"
   | "greenWall"
   | "historicFacade"
+  | "outdoor"
+  | "pickup"
   | "plaza"
+  | "trees"
   | "videoWall";
 
 export type StoreSource = {
@@ -46,6 +49,7 @@ export type StorePhoto = {
 export type StoreRecord = {
   id: string;
   storeNumber?: string;
+  aliases?: string[];
   name: {
     en: string;
     fr: string;

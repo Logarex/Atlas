@@ -1,4 +1,5 @@
 import { StoreCard } from "@/features/stores/StoreCard";
+import { matchesStoreSearch } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
@@ -32,25 +33,11 @@ export default function ExploreScreen() {
   );
 
   const filteredStores = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
     return stores.filter((store) => {
       if (filter === "open" && store.status !== "open") return false;
       if (filter === "closed" && store.status !== "closed") return false;
       if (filter === "visited" && !visitedStoreIds.has(store.id)) return false;
-      if (!normalized) return true;
-
-      const values = [
-        store.name.en,
-        store.name.fr,
-        store.city,
-        store.region ?? "",
-        store.countryCode,
-        store.countryName ?? "",
-        store.status,
-        store.architecture.era,
-        ...Object.keys(store.architecture.attributes)
-      ];
-      return values.some((value) => value.toLowerCase().includes(normalized));
+      return matchesStoreSearch(store, query);
     });
   }, [filter, query, stores, visitedStoreIds]);
 
@@ -85,6 +72,9 @@ export default function ExploreScreen() {
         </View>
         {error ? <Text style={styles.warning}>{t("home.remoteError")}</Text> : null}
         {isLoading ? <Text style={styles.warning}>{t("home.loading")}</Text> : null}
+        <Text style={styles.resultCount}>
+          {t("home.resultCount", { count: filteredStores.length })}
+        </Text>
       </View>
 
       <FlatList
@@ -162,6 +152,12 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.danger,
       fontSize: typography.caption,
       fontWeight: "700",
+      marginTop: spacing.md
+    },
+    resultCount: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "800",
       marginTop: spacing.md
     },
     list: {

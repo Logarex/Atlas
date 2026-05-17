@@ -13,6 +13,7 @@
     "mobile:typecheck": "npm --workspace apps/mobile run typecheck",
     "data:import:apple": "node packages/data/scripts/import-apple-from-alltheplaces.mjs",
     "data:import:apple-history": "node packages/data/scripts/import-apple-history-from-fandom.mjs",
+    "data:apply:apple-supplement": "node packages/data/scripts/apply-apple-retail-supplement.mjs",
     "data:validate": "node packages/data/scripts/validate.mjs"
   },
   "devDependencies": {

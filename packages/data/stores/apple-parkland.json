@@ -11,7 +11,10 @@
   "countryCode": "CN",
   "countryName": "China",
   "address": "No. 19 Jiefang Road, Zhongshan District, Dalian, Liaoning, China",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 38.91494,
+    "longitude": 121.631667
+  },
   "openedOn": "2015-10-24",
   "closedOn": "2025-08-09",
   "officialUrl": "https://web.archive.org/web/20250729125109/https://www.apple.com.cn/retail/parkland/",
@@ -89,7 +92,21 @@
         "sources.license"
       ],
       "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "aliases",
+        "coordinates"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-17"
+  "lastVerifiedAt": "2026-05-17",
+  "aliases": [
+    "百年城"
+  ]
 }

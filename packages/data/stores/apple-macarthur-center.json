@@ -11,7 +11,10 @@
   "countryCode": "US",
   "countryName": "United States",
   "address": "MacArthur Center, 300 Monticello Ave, Norfolk, Virginia 23510",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 36.849,
+    "longitude": -76.288429
+  },
   "openedOn": "2006-09-09",
   "closedOn": "2021-05-14",
   "officialUrl": "https://web.archive.org/web/20210213215531/https://www.apple.com/retail/macarthurcenter/",
@@ -87,6 +90,16 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates"
       ],
       "verifiedAt": "2026-05-17"
     }

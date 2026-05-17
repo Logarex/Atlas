@@ -9,8 +9,11 @@
   "city": "Rome",
   "countryCode": "IT",
   "countryName": "Italy",
-  "address": "Rome, Italy",
-  "coordinates": null,
+  "address": "Via Collatina, 858, Rome, Lazio, Italy",
+  "coordinates": {
+    "latitude": 41.91376,
+    "longitude": 12.66103
+  },
   "openedOn": "2007-03-31",
   "closedOn": "2020-10-17",
   "officialUrl": "https://web.archive.org/web/20200530232524/https://www.apple.com/it/retail/romaest/",
@@ -86,6 +89,17 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates",
+        "address"
       ],
       "verifiedAt": "2026-05-17"
     }

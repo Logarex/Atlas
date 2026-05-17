@@ -11,7 +11,10 @@
   "countryCode": "AU",
   "countryName": "Australia",
   "address": "Westfield Hornsby, Shops 2090-2093, Hornsby, New South Wales, Australia 2077",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": -33.704938,
+    "longitude": 151.100048
+  },
   "openedOn": "2011-09-24",
   "closedOn": "2025-10-04",
   "officialUrl": "https://web.archive.org/web/20230618112505/https://www.apple.com/au/retail/hornsby/",
@@ -87,6 +90,16 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates"
       ],
       "verifiedAt": "2026-05-17"
     }

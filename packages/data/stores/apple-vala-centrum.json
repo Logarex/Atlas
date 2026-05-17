@@ -10,7 +10,10 @@
   "countryCode": "SE",
   "countryName": "Sweden",
   "address": "Väla Centrum, Marknadsvägen 9, 254 69 Helsingborg, Sweden",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 56.09183,
+    "longitude": 12.757644
+  },
   "openedOn": "2013-11-09",
   "closedOn": "2024-07-13",
   "officialUrl": "https://web.archive.org/web/20240709003107/https://www.apple.com/se/retail/valacentrum/",
@@ -88,7 +91,21 @@
         "sources.license"
       ],
       "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "aliases",
+        "coordinates"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-17"
+  "lastVerifiedAt": "2026-05-17",
+  "aliases": [
+    "Vala Centrum"
+  ]
 }

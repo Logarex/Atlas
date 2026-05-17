@@ -11,7 +11,10 @@
   "countryCode": "US",
   "countryName": "United States",
   "address": "1555 Simi Town Center Way, Simi Valley, California 93065",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 34.284786,
+    "longitude": -118.770675
+  },
   "openedOn": "2006-05-13",
   "closedOn": "2017-09-15",
   "officialUrl": "https://web.archive.org/web/20170712002429/https://www.apple.com/retail/simivalley/",
@@ -87,6 +90,16 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates"
       ],
       "verifiedAt": "2026-05-17"
     }

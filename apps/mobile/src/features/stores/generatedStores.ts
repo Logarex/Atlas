@@ -525,7 +525,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "AU",
     "countryName": "Australia",
     "address": "Westfield Hornsby, Shops 2090-2093, Hornsby, New South Wales, Australia 2077",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": -33.704938,
+      "longitude": 151.100048
+    },
     "openedOn": "2011-09-24",
     "closedOn": "2025-10-04",
     "officialUrl": "https://web.archive.org/web/20230618112505/https://www.apple.com/au/retail/hornsby/",
@@ -601,6 +604,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -1793,9 +1806,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Garden City Perth"
+    ]
   },
   {
     "id": "apple-perth-city",
@@ -4710,7 +4736,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "CN",
     "countryName": "China",
     "address": "No. 19 Jiefang Road, Zhongshan District, Dalian, Liaoning, China",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 38.91494,
+      "longitude": 121.631667
+    },
     "openedOn": "2015-10-24",
     "closedOn": "2025-08-09",
     "officialUrl": "https://web.archive.org/web/20250729125109/https://www.apple.com.cn/retail/parkland/",
@@ -4788,9 +4817,23 @@ export const generatedStores: StoreRecord[] = [
           "sources.license"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases",
+          "coordinates"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "百年城"
+    ]
   },
   {
     "id": "apple-qibao",
@@ -6318,9 +6361,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Galaxy Mall"
+    ]
   },
   {
     "id": "apple-tianjinjoycity",
@@ -7338,9 +7394,23 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Nanjing IST",
+      "南京艾尚天地"
+    ]
   },
   {
     "id": "apple-xuanwulake",
@@ -7423,9 +7493,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Nanjing Jinmao Place"
+    ]
   },
   {
     "id": "apple-wondercity",
@@ -8443,9 +8526,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Thaihot Plaza"
+    ]
   },
   {
     "id": "apple-olympia66dalian",
@@ -9650,7 +9746,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "FR",
     "countryName": "France",
     "address": "99 rue de Rivoli, 75001 Paris, France",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 48.86134,
+      "longitude": 2.33408
+    },
     "openedOn": "2009-11-07",
     "closedOn": "2018-10-27",
     "officialUrl": "https://web.archive.org/web/20180324071053/https://www.apple.com/fr/retail/carrouseldulouvre/",
@@ -9728,9 +9827,23 @@ export const generatedStores: StoreRecord[] = [
           "sources.license"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases",
+          "coordinates"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Carrousel du Louvre"
+    ]
   },
   {
     "id": "apple-atlantis",
@@ -14336,8 +14449,11 @@ export const generatedStores: StoreRecord[] = [
     "city": "Rome",
     "countryCode": "IT",
     "countryName": "Italy",
-    "address": "Rome, Italy",
-    "coordinates": null,
+    "address": "Via Collatina, 858, Rome, Lazio, Italy",
+    "coordinates": {
+      "latitude": 41.91376,
+      "longitude": 12.66103
+    },
     "openedOn": "2007-03-31",
     "closedOn": "2020-10-17",
     "officialUrl": "https://web.archive.org/web/20200530232524/https://www.apple.com/it/retail/romaest/",
@@ -14413,6 +14529,17 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates",
+          "address"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -14780,7 +14907,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "JP",
     "countryName": "Japan",
     "address": "3-10-24 Ichibancho, Aoba-ku, Sendai, Miyagi Prefecture, Japan 980-0811",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 38.26166,
+      "longitude": 140.87151
+    },
     "openedOn": "2005-12-10",
     "closedOn": "2019-01-25",
     "officialUrl": "https://web.archive.org/web/20181116043355/https://www.apple.com/jp/retail/sendaiichibancho/",
@@ -14858,9 +14988,23 @@ export const generatedStores: StoreRecord[] = [
           "sources.license"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases",
+          "coordinates"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "仙台一番町"
+    ]
   },
   {
     "id": "apple-kyoto",
@@ -15793,9 +15937,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Fukuoka Tenjin"
+    ]
   },
   {
     "id": "apple-cotai-strip",
@@ -15878,9 +16035,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Cotai Central"
+    ]
   },
   {
     "id": "apple-galaxymacau",
@@ -18372,7 +18542,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "SE",
     "countryName": "Sweden",
     "address": "Väla Centrum, Marknadsvägen 9, 254 69 Helsingborg, Sweden",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 56.09183,
+      "longitude": 12.757644
+    },
     "openedOn": "2013-11-09",
     "closedOn": "2024-07-13",
     "officialUrl": "https://web.archive.org/web/20240709003107/https://www.apple.com/se/retail/valacentrum/",
@@ -18450,9 +18623,23 @@ export const generatedStores: StoreRecord[] = [
           "sources.license"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases",
+          "coordinates"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Vala Centrum"
+    ]
   },
   {
     "id": "apple-emporia",
@@ -21000,9 +21187,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Drake Circus"
+    ]
   },
   {
     "id": "apple-churchill-square",
@@ -21520,9 +21720,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Buchanan Street"
+    ]
   },
   {
     "id": "apple-bentall-centre",
@@ -22370,9 +22583,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "The Harlequin"
+    ]
   },
   {
     "id": "apple-bromley",
@@ -23378,9 +23604,22 @@ export const generatedStores: StoreRecord[] = [
           "openedOn"
         ],
         "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "aliases"
+        ],
+        "verifiedAt": "2026-05-17"
       }
     ],
-    "lastVerifiedAt": "2026-05-17"
+    "lastVerifiedAt": "2026-05-17",
+    "aliases": [
+      "Bullring"
+    ]
   },
   {
     "id": "apple-touchwood-centre",
@@ -25337,11 +25576,14 @@ export const generatedStores: StoreRecord[] = [
     "region": "California",
     "countryCode": "US",
     "countryName": "United States",
-    "address": "Cupertino, CA, USA",
-    "coordinates": null,
+    "address": "One Infinite Loop, Cupertino, California, United States",
+    "coordinates": {
+      "latitude": 37.331423,
+      "longitude": -122.030503
+    },
     "openedOn": "2015-09-19",
     "closedOn": "2024-01-20",
-    "officialUrl": null,
+    "officialUrl": "https://www.apple.com/retail/infiniteloop/",
     "architecture": {
       "era": "Unknown",
       "typology": "Unknown",
@@ -25362,7 +25604,7 @@ export const generatedStores: StoreRecord[] = [
     },
     "hours": {
       "policy": "official-link-only",
-      "officialUrl": null,
+      "officialUrl": "https://www.apple.com/retail/infiniteloop/",
       "lastVerifiedAt": null,
       "note": "This store is closed. No current hours are available; use the linked sources for archival details."
     },
@@ -25392,6 +25634,19 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates",
+          "address",
+          "officialUrl",
+          "hours.officialUrl"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -28726,7 +28981,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "US",
     "countryName": "United States",
     "address": "1555 Simi Town Center Way, Simi Valley, California 93065",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 34.284786,
+      "longitude": -118.770675
+    },
     "openedOn": "2006-05-13",
     "closedOn": "2017-09-15",
     "officialUrl": "https://web.archive.org/web/20170712002429/https://www.apple.com/retail/simivalley/",
@@ -28802,6 +29060,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -33567,7 +33835,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "US",
     "countryName": "United States",
     "address": "Northbrook Court, 1056 Northbrook Court, Northbrook, Illinois 60062",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 42.150365,
+      "longitude": -87.817012
+    },
     "openedOn": "2005-07-16",
     "closedOn": "2025-04-26",
     "officialUrl": "https://web.archive.org/web/20250828082319/https://www.apple.com/retail/northbrook/",
@@ -33643,6 +33914,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -38491,7 +38772,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "US",
     "countryName": "United States",
     "address": "The Pier at Caesars, Atlantic City, New Jersey 08401",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 39.35482,
+      "longitude": -74.43484
+    },
     "openedOn": "2006-08-19",
     "closedOn": "2018-06-30",
     "officialUrl": "https://web.archive.org/web/20151108054850/https://www.apple.com/retail/thepier/",
@@ -38567,6 +38851,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -41735,7 +42029,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "US",
     "countryName": "United States",
     "address": "Northlake Mall, 6801 Northlake Mall Drive, Charlotte, North Carolina 28216",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 35.352634,
+      "longitude": -80.851586
+    },
     "openedOn": "2011-08-27",
     "closedOn": "2023-03-01",
     "officialUrl": "https://web.archive.org/web/20190223161946/https://www.apple.com/retail/northlakemall/",
@@ -41811,6 +42108,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -45993,7 +46300,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "US",
     "countryName": "United States",
     "address": "The Shops at Willow Bend, 6121 West Park Blvd., Plano, Texas 75093",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 33.03127,
+      "longitude": -96.83184
+    },
     "openedOn": "2001-08-03",
     "closedOn": "2019-04-12",
     "officialUrl": "https://web.archive.org/web/20190223162248/https://www.apple.com/retail/willowbend/",
@@ -46069,6 +46379,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }
@@ -47281,7 +47601,10 @@ export const generatedStores: StoreRecord[] = [
     "countryCode": "US",
     "countryName": "United States",
     "address": "MacArthur Center, 300 Monticello Ave, Norfolk, Virginia 23510",
-    "coordinates": null,
+    "coordinates": {
+      "latitude": 36.849,
+      "longitude": -76.288429
+    },
     "openedOn": "2006-09-09",
     "closedOn": "2021-05-14",
     "officialUrl": "https://web.archive.org/web/20210213215531/https://www.apple.com/retail/macarthurcenter/",
@@ -47357,6 +47680,16 @@ export const generatedStores: StoreRecord[] = [
         "license": "reference_only",
         "fields": [
           "sources.license"
+        ],
+        "verifiedAt": "2026-05-17"
+      },
+      {
+        "type": "user_provided_retail_metadata",
+        "label": "User-provided Apple retail metadata supplement",
+        "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+        "license": "user-provided factual metadata",
+        "fields": [
+          "coordinates"
         ],
         "verifiedAt": "2026-05-17"
       }

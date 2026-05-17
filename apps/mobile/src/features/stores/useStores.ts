@@ -1,4 +1,5 @@
 import { generatedStores } from "./generatedStores";
+import { appleStoreCounts } from "./storeStats";
 
 export function useStores() {
   const stores = generatedStores;
@@ -7,6 +8,7 @@ export function useStores() {
     error: null,
     isLoading: false,
     source: "local",
+    stats: appleStoreCounts,
     stores
   };
 }

@@ -10,11 +10,14 @@
   "region": "California",
   "countryCode": "US",
   "countryName": "United States",
-  "address": "Cupertino, CA, USA",
-  "coordinates": null,
+  "address": "One Infinite Loop, Cupertino, California, United States",
+  "coordinates": {
+    "latitude": 37.331423,
+    "longitude": -122.030503
+  },
   "openedOn": "2015-09-19",
   "closedOn": "2024-01-20",
-  "officialUrl": null,
+  "officialUrl": "https://www.apple.com/retail/infiniteloop/",
   "architecture": {
     "era": "Unknown",
     "typology": "Unknown",
@@ -35,7 +38,7 @@
   },
   "hours": {
     "policy": "official-link-only",
-    "officialUrl": null,
+    "officialUrl": "https://www.apple.com/retail/infiniteloop/",
     "lastVerifiedAt": null,
     "note": "This store is closed. No current hours are available; use the linked sources for archival details."
   },
@@ -65,6 +68,19 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates",
+        "address",
+        "officialUrl",
+        "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-17"
     }

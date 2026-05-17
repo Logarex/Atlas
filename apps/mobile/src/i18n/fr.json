@@ -11,6 +11,7 @@
     "subtitle": "Explore les boutiques remarquables, conserve les fermetures et rénovations, et aide à construire une base de données communautaire complète.",
     "searchLabel": "Rechercher des boutiques",
     "searchPlaceholder": "Boutique, ville, pays, statut, attribut...",
+    "resultCount": "{{count}} boutique(s)",
     "empty": "Aucune boutique ne correspond encore à cette recherche.",
     "loading": "Chargement de la base communautaire...",
     "remoteError": "Les données live sont indisponibles, affichage de la base locale vérifiée.",
@@ -23,7 +24,12 @@
       "closed": "Fermées",
       "visited": "Vues"
     },
-    "recentVisits": "Dernières visites"
+    "recentVisits": "Dernières visites",
+    "stats": {
+      "open": "Ouvertes",
+      "closed": "Fermées",
+      "relocated": "Anciens lieux"
+    }
   },
   "map": {
     "title": "Carte mondiale",
@@ -143,7 +149,10 @@
     "glassCube": "Cube en verre",
     "greenWall": "Mur végétal",
     "historicFacade": "Façade historique",
+    "outdoor": "Entrée extérieure",
+    "pickup": "Comptoir Pickup",
     "plaza": "Plaza",
+    "trees": "Arbres",
     "videoWall": "Mur vidéo"
   },
   "values": {

@@ -10,7 +10,10 @@
   "countryCode": "JP",
   "countryName": "Japan",
   "address": "3-10-24 Ichibancho, Aoba-ku, Sendai, Miyagi Prefecture, Japan 980-0811",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 38.26166,
+    "longitude": 140.87151
+  },
   "openedOn": "2005-12-10",
   "closedOn": "2019-01-25",
   "officialUrl": "https://web.archive.org/web/20181116043355/https://www.apple.com/jp/retail/sendaiichibancho/",
@@ -88,7 +91,21 @@
         "sources.license"
       ],
       "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "aliases",
+        "coordinates"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-17"
+  "lastVerifiedAt": "2026-05-17",
+  "aliases": [
+    "仙台一番町"
+  ]
 }

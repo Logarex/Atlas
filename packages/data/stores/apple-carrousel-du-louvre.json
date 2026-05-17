@@ -11,7 +11,10 @@
   "countryCode": "FR",
   "countryName": "France",
   "address": "99 rue de Rivoli, 75001 Paris, France",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 48.86134,
+    "longitude": 2.33408
+  },
   "openedOn": "2009-11-07",
   "closedOn": "2018-10-27",
   "officialUrl": "https://web.archive.org/web/20180324071053/https://www.apple.com/fr/retail/carrouseldulouvre/",
@@ -89,7 +92,21 @@
         "sources.license"
       ],
       "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "aliases",
+        "coordinates"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-17"
+  "lastVerifiedAt": "2026-05-17",
+  "aliases": [
+    "Carrousel du Louvre"
+  ]
 }

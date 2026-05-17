@@ -1,0 +1,210 @@
+{
+  "source": "User-provided Apple retail metadata list",
+  "sourceUrl": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+  "verifiedAt": "2026-05-17",
+  "notes": [
+    "The source list is not authoritative for current status. Atlas keeps existing current status and closure dates, and only uses non-conflicting supplemental fields.",
+    "Supplemental coordinates are only applied when the existing Atlas record has no coordinates."
+  ],
+  "records": [
+    {
+      "id": "apple-hornsby",
+      "storeNumber": "R458",
+      "coordinates": {
+        "latitude": -33.704938,
+        "longitude": 151.100048
+      }
+    },
+    {
+      "id": "apple-parkland",
+      "storeNumber": "R478",
+      "aliases": [
+        "百年城"
+      ],
+      "coordinates": {
+        "latitude": 38.91494,
+        "longitude": 121.631667
+      }
+    },
+    {
+      "id": "apple-carrousel-du-louvre",
+      "storeNumber": "R276",
+      "aliases": [
+        "Carrousel du Louvre"
+      ],
+      "coordinates": {
+        "latitude": 48.86134,
+        "longitude": 2.33408
+      }
+    },
+    {
+      "id": "apple-romaest",
+      "storeNumber": "R038",
+      "address": "Via Collatina, 858, Rome, Lazio, Italy",
+      "replaceAddress": true,
+      "coordinates": {
+        "latitude": 41.91376,
+        "longitude": 12.66103
+      }
+    },
+    {
+      "id": "apple-sendai-ichibancho",
+      "storeNumber": "R150",
+      "aliases": [
+        "仙台一番町"
+      ],
+      "coordinates": {
+        "latitude": 38.26166,
+        "longitude": 140.87151
+      }
+    },
+    {
+      "id": "apple-vala-centrum",
+      "storeNumber": "R593",
+      "aliases": [
+        "Vala Centrum"
+      ],
+      "coordinates": {
+        "latitude": 56.09183,
+        "longitude": 12.757644
+      }
+    },
+    {
+      "id": "apple-infinite-loop",
+      "storeNumber": "R052",
+      "address": "One Infinite Loop, Cupertino, California, United States",
+      "replaceAddress": true,
+      "officialUrl": "https://www.apple.com/retail/infiniteloop/",
+      "coordinates": {
+        "latitude": 37.331423,
+        "longitude": -122.030503
+      }
+    },
+    {
+      "id": "apple-simi-valley",
+      "storeNumber": "R171",
+      "coordinates": {
+        "latitude": 34.284786,
+        "longitude": -118.770675
+      }
+    },
+    {
+      "id": "apple-northbrook",
+      "storeNumber": "R141",
+      "coordinates": {
+        "latitude": 42.150365,
+        "longitude": -87.817012
+      }
+    },
+    {
+      "id": "apple-the-pier",
+      "storeNumber": "R173",
+      "coordinates": {
+        "latitude": 39.35482,
+        "longitude": -74.43484
+      }
+    },
+    {
+      "id": "apple-northlake-mall",
+      "storeNumber": "R463",
+      "coordinates": {
+        "latitude": 35.352634,
+        "longitude": -80.851586
+      }
+    },
+    {
+      "id": "apple-willow-bend",
+      "storeNumber": "R008",
+      "coordinates": {
+        "latitude": 33.03127,
+        "longitude": -96.83184
+      }
+    },
+    {
+      "id": "apple-macarthur-center",
+      "storeNumber": "R211",
+      "coordinates": {
+        "latitude": 36.849,
+        "longitude": -76.288429
+      }
+    },
+    {
+      "id": "apple-xinjiekou",
+      "storeNumber": "R493",
+      "aliases": [
+        "Nanjing IST",
+        "南京艾尚天地"
+      ]
+    },
+    {
+      "id": "apple-mixctianjin",
+      "storeNumber": "R638",
+      "aliases": [
+        "Galaxy Mall"
+      ]
+    },
+    {
+      "id": "apple-tahoeplaza",
+      "storeNumber": "R646",
+      "aliases": [
+        "Thaihot Plaza"
+      ]
+    },
+    {
+      "id": "apple-xuanwulake",
+      "storeNumber": "R703",
+      "aliases": [
+        "Nanjing Jinmao Place"
+      ]
+    },
+    {
+      "id": "apple-cotai-strip",
+      "storeNumber": "R697",
+      "aliases": [
+        "Cotai Central"
+      ]
+    },
+    {
+      "id": "apple-fukuoka",
+      "storeNumber": "R048",
+      "aliases": [
+        "Fukuoka Tenjin"
+      ]
+    },
+    {
+      "id": "apple-birmingham",
+      "storeNumber": "R118",
+      "aliases": [
+        "Bullring"
+      ]
+    },
+    {
+      "id": "apple-glasgow",
+      "storeNumber": "R135",
+      "aliases": [
+        "Buchanan Street"
+      ]
+    },
+    {
+      "id": "apple-booragoon",
+      "storeNumber": "R508",
+      "aliases": [
+        "Garden City Perth"
+      ]
+    },
+    {
+      "id": "apple-plymouth",
+      "storeNumber": "R545",
+      "aliases": [
+        "Drake Circus"
+      ]
+    },
+    {
+      "id": "apple-watford",
+      "storeNumber": "R527",
+      "aliases": [
+        "The Harlequin"
+      ]
+    }
+  ]
+}

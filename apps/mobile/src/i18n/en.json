@@ -11,6 +11,7 @@
     "subtitle": "Browse notable stores, preserve closures and remodels, and help build a complete community dataset.",
     "searchLabel": "Search stores",
     "searchPlaceholder": "Search by store, city, country, status, feature...",
+    "resultCount": "{{count}} store(s)",
     "empty": "No stores match this search yet.",
     "loading": "Loading the live community dataset...",
     "remoteError": "Live data is unavailable, showing the local reviewed seed.",
@@ -22,7 +23,13 @@
       "open": "Open",
       "closed": "Closed",
       "visited": "Visited"
-    }
+    },
+    "stats": {
+      "open": "Open",
+      "closed": "Closed",
+      "relocated": "Former places"
+    },
+    "recentVisits": "Recent visits"
   },
   "map": {
     "title": "Worldwide map",
@@ -142,7 +149,10 @@
     "glassCube": "Glass cube",
     "greenWall": "Green wall",
     "historicFacade": "Historic facade",
+    "outdoor": "Outdoor entrance",
+    "pickup": "Pickup counter",
     "plaza": "Plaza",
+    "trees": "Trees",
     "videoWall": "Video wall"
   },
   "values": {

@@ -11,7 +11,10 @@
   "countryCode": "US",
   "countryName": "United States",
   "address": "Northlake Mall, 6801 Northlake Mall Drive, Charlotte, North Carolina 28216",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 35.352634,
+    "longitude": -80.851586
+  },
   "openedOn": "2011-08-27",
   "closedOn": "2023-03-01",
   "officialUrl": "https://web.archive.org/web/20190223161946/https://www.apple.com/retail/northlakemall/",
@@ -87,6 +90,16 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates"
       ],
       "verifiedAt": "2026-05-17"
     }

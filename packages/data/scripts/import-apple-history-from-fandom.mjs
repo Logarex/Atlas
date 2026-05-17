@@ -34,7 +34,10 @@ const attributeKeys = [
   "glassCube",
   "greenWall",
   "historicFacade",
+  "outdoor",
+  "pickup",
   "plaza",
+  "trees",
   "videoWall"
 ];
 

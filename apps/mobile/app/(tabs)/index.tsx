@@ -14,7 +14,7 @@ export default function HomeScreen() {
   const theme = useAppTheme();
   const styles = useStyles(theme);
   
-  const { source, stores } = useStores();
+  const { stats, stores } = useStores();
   const { visits } = useLocalVisits();
   
   const visitedStoreIds = useMemo(
@@ -32,7 +32,20 @@ export default function HomeScreen() {
           <Text style={styles.kicker}>{t("home.kicker")}</Text>
           <Text style={styles.title}>{t("home.title")}</Text>
           <Text style={styles.subtitle}>{t("home.subtitle")}</Text>
-          
+          <View style={styles.statsRow}>
+            <View style={styles.stat}>
+              <Text style={styles.statValue}>{stats.open}</Text>
+              <Text style={styles.statLabel}>{t("home.stats.open")}</Text>
+            </View>
+            <View style={styles.stat}>
+              <Text style={styles.statValue}>{stats.closed}</Text>
+              <Text style={styles.statLabel}>{t("home.stats.closed")}</Text>
+            </View>
+            <View style={styles.stat}>
+              <Text style={styles.statValue}>{stats.relocated}</Text>
+              <Text style={styles.statLabel}>{t("home.stats.relocated")}</Text>
+            </View>
+          </View>
         </View>
 
         <View style={styles.section}>

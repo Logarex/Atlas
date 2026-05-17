@@ -11,7 +11,10 @@
   "countryCode": "US",
   "countryName": "United States",
   "address": "Northbrook Court, 1056 Northbrook Court, Northbrook, Illinois 60062",
-  "coordinates": null,
+  "coordinates": {
+    "latitude": 42.150365,
+    "longitude": -87.817012
+  },
   "openedOn": "2005-07-16",
   "closedOn": "2025-04-26",
   "officialUrl": "https://web.archive.org/web/20250828082319/https://www.apple.com/retail/northbrook/",
@@ -87,6 +90,16 @@
       "license": "reference_only",
       "fields": [
         "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-supplement-2026-05-17.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates"
       ],
       "verifiedAt": "2026-05-17"
     }
