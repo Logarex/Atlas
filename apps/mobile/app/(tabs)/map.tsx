@@ -6,18 +6,34 @@ import { useTranslation } from "react-i18next";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type { StoreStatus } from "@/features/stores/store.types";
+import type { LayoutChangeEvent } from "react-native";
 
 export default function MapScreen() {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
   const styles = useStyles(theme);
+  const [mapSize, setMapSize] = useState({ height: 0, width: 0 });
   
   const { stores } = useStores();
   const { visits } = useLocalVisits();
   const visitedStoreIds = new Set(visits.map((visit) => visit.storeId));
   const geocodedStores = stores.filter((store) => store.coordinates);
+  const canRenderMap = mapSize.height > 0 && mapSize.width > 0;
+
+  function handleMapLayout(event: LayoutChangeEvent) {
+    const { height, width } = event.nativeEvent.layout;
+    if (height <= 0 || width <= 0) return;
+
+    setMapSize((currentSize) => {
+      if (currentSize.height === height && currentSize.width === width) {
+        return currentSize;
+      }
+
+      return { height, width };
+    });
+  }
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
@@ -29,34 +45,38 @@ export default function MapScreen() {
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
-      <MapView
-        initialRegion={{
-          latitude: 30,
-          longitude: 0,
-          latitudeDelta: 120,
-          longitudeDelta: 120
-        }}
-        style={styles.map}
-      >
-        {geocodedStores.map((store) => {
-          const isVisited = visitedStoreIds.has(store.id);
-          const pinColor = isVisited ? theme.colors.moss : statusColors[store.status];
-          const coordinate = store.coordinates!;
-          
-          return (
-            <Marker
-              coordinate={coordinate}
-              description={getStorePlace(store)}
-              key={store.id}
-              title={getStoreName(store, i18n.language)}
-            >
-              <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>
-                <View style={[styles.markerInner, { backgroundColor: pinColor }]} />
-              </View>
-            </Marker>
-          );
-        })}
-      </MapView>
+      <View onLayout={handleMapLayout} style={styles.mapContainer}>
+        {canRenderMap ? (
+          <MapView
+            initialRegion={{
+              latitude: 30,
+              longitude: 0,
+              latitudeDelta: 120,
+              longitudeDelta: 120
+            }}
+            style={[styles.map, mapSize]}
+          >
+            {geocodedStores.map((store) => {
+              const isVisited = visitedStoreIds.has(store.id);
+              const pinColor = isVisited ? theme.colors.moss : statusColors[store.status];
+              const coordinate = store.coordinates!;
+
+              return (
+                <Marker
+                  coordinate={coordinate}
+                  description={getStorePlace(store)}
+                  key={store.id}
+                  title={getStoreName(store, i18n.language)}
+                >
+                  <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>
+                    <View style={[styles.markerInner, { backgroundColor: pinColor }]} />
+                  </View>
+                </Marker>
+              );
+            })}
+          </MapView>
+        ) : null}
+      </View>
 
       <View style={styles.panel}>
         <Text style={styles.title}>Carte mondiale</Text>
@@ -86,8 +106,11 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       backgroundColor: colors.canvas,
       flex: 1
     },
-    map: {
+    mapContainer: {
       ...StyleSheet.absoluteFillObject
+    },
+    map: {
+      flex: 1
     },
     panel: {
       backgroundColor: colors.paper,

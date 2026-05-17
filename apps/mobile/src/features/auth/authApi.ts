@@ -1,32 +1,40 @@
 import { supabase } from "@/lib/supabase";
 
+function emailForUsername(username: string) {
+  return `${username.trim().toLowerCase()}@atlas.internal`;
+}
+
 export async function signInWithUsername(username: string, code: string) {
   if (!supabase) throw new Error("Supabase not configured");
 
-  const email = `${username.trim().toLowerCase()}@atlas.internal`;
+  const email = emailForUsername(username);
   
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password: code,
   });
 
-  if (error) {
-    // If user doesn't exist, try to sign up
-    if (error.message.includes("Invalid login credentials")) {
-      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-        email,
-        password: code,
-        options: {
-          data: {
-            username: username.trim(),
-          }
-        }
-      });
-      if (signUpError) throw signUpError;
-      return signUpData;
+  if (error) throw error;
+
+  return data;
+}
+
+export async function signUpWithUsername(username: string, code: string) {
+  if (!supabase) throw new Error("Supabase not configured");
+
+  const email = emailForUsername(username);
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password: code,
+    options: {
+      data: {
+        username: username.trim()
+      }
     }
-    throw error;
-  }
+  });
+
+  if (error) throw error;
 
   return data;
 }

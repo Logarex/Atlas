@@ -11,12 +11,13 @@ import { getStoreName } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { isSupabaseConfigured } from "@/lib/supabase";
-import { signInWithUsername, signOut, deleteAccount } from "@/features/auth/authApi";
+import { deleteAccount, signInWithUsername, signOut, signUpWithUsername } from "@/features/auth/authApi";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Lock, Send, ShieldCheck, Key, UserRound, Trash2, AlertTriangle, Palette } from "lucide-react-native";
+import { CalendarDays, Lock, Send, ShieldCheck, Key, UserRound, Trash2, AlertTriangle, Palette, UserPlus } from "lucide-react-native";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  Alert,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -24,8 +25,6 @@ import {
   Text,
   TextInput,
   View,
-  Alert,
-  ActivityIndicator
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -41,6 +40,7 @@ export default function ProfileScreen() {
   const [authUsername, setAuthUsername] = useState("");
   const [code, setCode] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAuthLoading, setIsAuthLoading] = useState(false);
 
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreSource, setNewStoreSource] = useState("");
@@ -58,8 +58,14 @@ export default function ProfileScreen() {
     [visits]
   );
   const recentVisits = visits.slice(0, 4);
+  const canUseAuth = isSupabaseConfigured
+    && authUsername.trim().length >= 3
+    && code.length >= 6
+    && !isAuthLoading;
 
   useEffect(() => {
+    if (!isSupabaseConfigured) return;
+
     void getCurrentProfile()
       .then((currentProfile) => {
         setProfile(currentProfile);
@@ -72,18 +78,43 @@ export default function ProfileScreen() {
 
   async function handleLogin() {
     try {
-      setMessage("Connexion en cours...");
+      setIsAuthLoading(true);
+      setMessage(t("profile.signingIn"));
       await signInWithUsername(authUsername, code);
-      
-      setIsLoggedIn(true);
-      setMessage("Connecté avec succès.");
-      
-      // Refresh profile
-      const currentProfile = await getCurrentProfile();
+
+      const currentProfile = await ensureCommunityProfile(authUsername);
       setProfile(currentProfile);
-      setAuthUsername(currentProfile?.username ?? "");
+      setAuthUsername(currentProfile.username);
+      setIsPublic(currentProfile.publicProfile);
+      setIsLoggedIn(true);
+      setMessage(t("profile.loginSuccess"));
     } catch (e) {
       setMessage(e instanceof Error ? e.message : "Erreur de connexion");
+    } finally {
+      setIsAuthLoading(false);
+    }
+  }
+
+  async function handleCreateAccount() {
+    try {
+      setIsAuthLoading(true);
+      setMessage(t("profile.creatingAccount"));
+      const authData = await signUpWithUsername(authUsername, code);
+
+      if (!authData.session) {
+        throw new Error(t("profile.confirmationRequired"));
+      }
+
+      const nextProfile = await ensureCommunityProfile(authUsername);
+      setProfile(nextProfile);
+      setAuthUsername(nextProfile.username);
+      setIsPublic(nextProfile.publicProfile);
+      setIsLoggedIn(true);
+      setMessage(t("profile.accountCreated"));
+    } catch (e) {
+      setMessage(e instanceof Error ? e.message : t("profile.failed"));
+    } finally {
+      setIsAuthLoading(false);
     }
   }
 
@@ -91,20 +122,8 @@ export default function ProfileScreen() {
     await signOut();
     setIsLoggedIn(false);
     setProfile(null);
-    setMessage("Déconnecté.");
-  }
-
-  async function handleCreateProfile() {
-    try {
-      setMessage(t("profile.saving"));
-      const nextProfile = await ensureCommunityProfile(authUsername);
-      setProfile(nextProfile);
-      setAuthUsername(nextProfile.username);
-      setIsPublic(nextProfile.publicProfile);
-      setMessage(t("profile.profileReady"));
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : t("profile.failed"));
-    }
+    setCode("");
+    setMessage(t("profile.loggedOut"));
   }
 
   async function handleTogglePublic(value: boolean) {
@@ -189,6 +208,13 @@ export default function ProfileScreen() {
           {isLoggedIn ? (
             <>
               <Text style={styles.itemText}>{t("profile.connectedSecurely")}</Text>
+              <View style={styles.switchRow}>
+                <View style={styles.switchCopy}>
+                  <Text style={styles.itemTitle}>{t("profile.publicProfile")}</Text>
+                  <Text style={styles.itemText}>{t("profile.publicProfileCopy")}</Text>
+                </View>
+                <Switch disabled={!profile} value={isPublic} onValueChange={handleTogglePublic} />
+              </View>
               <Pressable onPress={handleLogout} style={styles.secondaryButton}>
                 <Text style={styles.secondaryButtonText}>{t("profile.logout")}</Text>
               </Pressable>
@@ -213,12 +239,27 @@ export default function ProfileScreen() {
                 value={code}
               />
               <Pressable
-                disabled={!authUsername || !code}
+                disabled={!canUseAuth}
                 onPress={handleLogin}
-                style={[styles.primaryButton, { backgroundColor: theme.colors.copper }]}
+                style={[
+                  styles.primaryButton,
+                  { backgroundColor: theme.colors.copper },
+                  !canUseAuth && styles.disabledButton
+                ]}
               >
                 <ShieldCheck color={theme.colors.paper} size={18} />
                 <Text style={styles.primaryButtonText}>{t("profile.login")}</Text>
+              </Pressable>
+              <Pressable
+                disabled={!canUseAuth}
+                onPress={handleCreateAccount}
+                style={[
+                  styles.secondaryButton,
+                  !canUseAuth && styles.disabledButton
+                ]}
+              >
+                <UserPlus color={theme.colors.teal} size={18} />
+                <Text style={styles.secondaryButtonText}>{t("profile.createAccount")}</Text>
               </Pressable>
             </>
           )}
@@ -234,38 +275,6 @@ export default function ProfileScreen() {
             <UserRound color={theme.colors.moss} size={20} />
             <Text style={styles.statValue}>{profile ? `@${profile.username}` : "Local"}</Text>
             <Text style={styles.statLabel}>{t("profile.stats.identity")}</Text>
-          </View>
-        </View>
-
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <UserRound color={theme.colors.teal} size={22} />
-            <Text style={styles.sectionTitle}>{t("profile.community")}</Text>
-          </View>
-          <TextInput
-            autoCapitalize="none"
-            onChangeText={setAuthUsername}
-            placeholder={t("profile.usernamePlaceholder")}
-            placeholderTextColor={theme.colors.muted}
-            style={styles.input}
-            value={authUsername}
-          />
-          <Pressable
-            disabled={!isSupabaseConfigured}
-            onPress={handleCreateProfile}
-            style={[styles.primaryButton, !isSupabaseConfigured && styles.disabledButton]}
-          >
-            <ShieldCheck color={theme.colors.paper} size={18} />
-            <Text style={styles.primaryButtonText}>
-              {profile ? t("profile.updateProfile") : t("profile.createProfile")}
-            </Text>
-          </Pressable>
-          <View style={styles.switchRow}>
-            <View style={styles.switchCopy}>
-              <Text style={styles.itemTitle}>{t("profile.publicProfile")}</Text>
-              <Text style={styles.itemText}>{t("profile.publicProfileCopy")}</Text>
-            </View>
-            <Switch disabled={!profile} value={isPublic} onValueChange={handleTogglePublic} />
           </View>
         </View>
 
