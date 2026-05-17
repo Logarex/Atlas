@@ -27,6 +27,11 @@ class AppIconModule: NSObject {
       reject("NOT_SUPPORTED", "Alternate icons are not supported on this device.", nil)
       return
     }
+
+    guard UIApplication.shared.applicationState == .active else {
+      reject("APP_INACTIVE", "App icon changes require an active application.", nil)
+      return
+    }
     
     let currentIconName = UIApplication.shared.alternateIconName
     let targetIconName = (iconName == "" || iconName == nil) ? nil : iconName
@@ -38,7 +43,12 @@ class AppIconModule: NSObject {
     
     UIApplication.shared.setAlternateIconName(targetIconName) { error in
       if let error = error {
-        reject("ERROR", error.localizedDescription, error)
+        let nsError = error as NSError
+        if nsError.code == NSUserCancelledError {
+          reject("CANCELLED", error.localizedDescription, error)
+        } else {
+          reject("ERROR", error.localizedDescription, error)
+        }
       } else {
         resolve(UIApplication.shared.alternateIconName)
       }

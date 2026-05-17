@@ -12,10 +12,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.louischabert.atlas",
-    icon: {
-      light: "./assets/icon.png",
-      dark: "./assets/icon-dark.png"
-    },
+    icon: "./assets/icon.png",
     infoPlist: {
       NSLocationWhenInUseUsageDescription:
         "Atlas uses your location locally to show nearby stores.",

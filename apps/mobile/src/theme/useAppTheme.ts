@@ -9,21 +9,34 @@ const { AppIconModule } = NativeModules;
 
 export type ThemeSetting = "system" | "light" | "dark";
 
-type AppIconName = "AppIcon-Light" | "AppIcon-Dark";
+type AppIconName = "AppIcon-Dark" | null;
 
-let requestedIconName: AppIconName | null = null;
+let requestedIconName: AppIconName = null;
+let hasPendingIconRequest = false;
 let currentIconSync: Promise<void> | null = null;
 let temporaryIconRetryCount = 0;
 
 function iconNameForTheme(isDark: boolean): AppIconName {
-  return isDark ? "AppIcon-Dark" : "AppIcon-Light";
+  return isDark ? "AppIcon-Dark" : null;
 }
 
 function isTemporaryIconError(error: unknown) {
-  const message = error instanceof Error ? error.message : "";
+  const code = (error as { code?: string }).code;
+  const message = error instanceof Error ? error.message.toLowerCase() : "";
 
-  return message.includes("temporarily unavailable")
-    || message.includes("Ressources temporairement indisponibles");
+  return code === "APP_INACTIVE"
+    || message.includes("temporarily unavailable")
+    || message.includes("ressources temporairement indisponibles");
+}
+
+function isCancelledIconError(error: unknown) {
+  const code = (error as { code?: string }).code;
+  const message = error instanceof Error ? error.message.toLowerCase() : "";
+
+  return code === "CANCELLED"
+    || message.includes("cancelled")
+    || message.includes("canceled")
+    || message.includes("annul");
 }
 
 function wait(ms: number) {
@@ -38,19 +51,20 @@ async function setNativeAppIcon(iconName: AppIconName) {
   const currentIconName = await AppIconModule.getAlternateIconName();
   if (currentIconName === iconName) return;
 
-  await AppIconModule.setAlternateIconName(iconName);
+  await AppIconModule.setAlternateIconName(iconName ?? "");
 }
 
 async function drainIconSyncQueue() {
   if (currentIconSync) return currentIconSync;
 
   currentIconSync = (async () => {
-    while (requestedIconName) {
+    while (hasPendingIconRequest) {
       const iconName = requestedIconName;
-      requestedIconName = null;
+      hasPendingIconRequest = false;
 
       if (AppState.currentState !== "active") {
         requestedIconName = iconName;
+        hasPendingIconRequest = true;
         break;
       }
 
@@ -67,10 +81,16 @@ async function drainIconSyncQueue() {
           if (temporaryIconRetryCount < 3) {
             temporaryIconRetryCount += 1;
             requestedIconName = iconName;
+            hasPendingIconRequest = true;
             await wait(1200);
             continue;
           }
 
+          temporaryIconRetryCount = 0;
+          return;
+        }
+
+        if (isCancelledIconError(error)) {
           temporaryIconRetryCount = 0;
           return;
         }
@@ -80,7 +100,7 @@ async function drainIconSyncQueue() {
     }
   })().finally(() => {
     currentIconSync = null;
-    if (requestedIconName && AppState.currentState === "active") {
+    if (hasPendingIconRequest && AppState.currentState === "active") {
       void drainIconSyncQueue();
     }
   });
@@ -92,6 +112,7 @@ function syncAppIcon(isDark: boolean) {
   if (Platform.OS !== "ios" || !AppIconModule) return;
 
   requestedIconName = iconNameForTheme(isDark);
+  hasPendingIconRequest = true;
   void drainIconSyncQueue();
 }
 
