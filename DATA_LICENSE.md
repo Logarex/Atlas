@@ -24,4 +24,6 @@ OpenStreetMap data is licensed under ODbL. If this project ever imports OSM-deri
 
 All the Places publishes generated spider output under CC0. Atlas may import those published CC0 snapshots when every generated record cites the exact run URL and keeps volatile or unverified fields marked as such.
 
+Apple Wiki / Fandom historical store pages are CC BY-SA 3.0 unless a wiki-specific edit page states otherwise. Atlas may keep closed-store and relocation facts from those pages only when the generated records retain CC BY-SA attribution and are not represented as CC0 curated metadata.
+
 Map tiles, geocoding providers, and external datasets may have separate licenses. Their data must not be mixed into the CC0 canonical dataset unless their terms permit it.

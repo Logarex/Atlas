@@ -1,0 +1,94 @@
+{
+  "id": "apple-romaest",
+  "storeNumber": "R038",
+  "name": {
+    "en": "Apple RomaEst",
+    "fr": "Apple RomaEst"
+  },
+  "status": "closed",
+  "city": "Rome",
+  "countryCode": "IT",
+  "countryName": "Italy",
+  "address": "Rome, Italy",
+  "coordinates": null,
+  "openedOn": "2007-03-31",
+  "closedOn": "2020-10-17",
+  "officialUrl": "https://web.archive.org/web/20200530232524/https://www.apple.com/it/retail/romaest/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    },
+    "notes": [
+      "Closed Apple Store imported from the Apple Wiki historical opening-date table."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://web.archive.org/web/20200530232524/https://www.apple.com/it/retail/romaest/",
+    "lastVerifiedAt": null,
+    "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "apple_wiki_history_table",
+      "label": "Apple Wiki opening-date table",
+      "url": "https://apple.fandom.com/wiki/List_of_Apple_Stores_by_opening_date",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "status",
+        "city",
+        "region",
+        "countryCode",
+        "openedOn",
+        "closedOn"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "apple_wiki_store_page",
+      "label": "Apple Wiki page: Apple RomaEst",
+      "url": "https://apple.fandom.com/wiki/Apple_RomaEst",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "address",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "apple_archived_official_page",
+      "label": "Archived Apple official store page",
+      "url": "https://web.archive.org/web/20200530232524/https://www.apple.com/it/retail/romaest/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "fandom_license",
+      "label": "Fandom licensing terms",
+      "url": "https://www.fandom.com/licensing",
+      "license": "reference_only",
+      "fields": [
+        "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-17"
+}

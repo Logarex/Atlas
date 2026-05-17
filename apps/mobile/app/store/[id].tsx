@@ -85,6 +85,8 @@ export default function StoreDetailScreen() {
 
   if (!store) return null;
 
+  const hoursOfficialUrl = store.hours.officialUrl;
+
   async function handleAddVisit() {
     if (!isISODate(visitDate)) {
       setVisitMessage(t("store.visitInvalidDate"));
@@ -288,11 +290,13 @@ export default function StoreDetailScreen() {
           <View style={styles.hoursCopy}>
             <Text style={styles.body}>{t(`hours.${store.hours.policy}`)}</Text>
             <Text style={styles.muted}>{store.hours.note}</Text>
-            <Pressable onPress={() => Linking.openURL(store.hours.officialUrl)}>
-              <Text style={styles.sourceLink}>
-                {t("store.verifyOfficial")} ↗
-              </Text>
-            </Pressable>
+            {hoursOfficialUrl ? (
+              <Pressable onPress={() => Linking.openURL(hoursOfficialUrl)}>
+                <Text style={styles.sourceLink}>
+                  {t("store.verifyOfficial")} ↗
+                </Text>
+              </Pressable>
+            ) : null}
           </View>
         </View>
       </View>

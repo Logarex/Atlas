@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "import:apple": "node scripts/import-apple-from-alltheplaces.mjs",
+    "import:apple-history": "node scripts/import-apple-history-from-fandom.mjs",
     "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {

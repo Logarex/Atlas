@@ -37,6 +37,7 @@ Use sources in this order:
 4. Official Apple pages as human-verification links, not scraped content.
 5. Apple Newsroom articles for historical facts, cited and paraphrased.
 6. Local public records or architecture press, only when licenses permit factual reuse.
+7. Apple Wiki / Fandom historical tables for closed or relocated store facts, only with CC BY-SA attribution retained on each affected record.
 
 All the Places imports must use their published CC0 output. Do not run the Apple spider from Atlas, do not copy Apple page text, and do not treat volatile fields like hours as community verified.
 
@@ -82,6 +83,7 @@ Accepted source types:
 - Reliable local reporting.
 - Mall/property announcements.
 - Contributor photos and field observation.
+- Apple Wiki / Fandom pages when the record keeps the CC BY-SA source and the field is treated as externally licensed history, not CC0 curated metadata.
 
 ## Field-level Provenance
 

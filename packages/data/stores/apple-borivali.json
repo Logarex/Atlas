@@ -15,7 +15,7 @@
     "latitude": 19.2218,
     "longitude": 72.86
   },
-  "openedOn": null,
+  "openedOn": "2026-02-26",
   "closedOn": null,
   "officialUrl": "https://www.apple.com/in/retail/borivali/",
   "architecture": {
@@ -69,7 +69,17 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_newsroom",
+      "label": "Apple Newsroom: Apple Borivali opens in Mumbai this Thursday, February 26",
+      "url": "https://www.apple.com/in/newsroom/2026/02/apple-borivali-opens-in-mumbai-this-thursday-february-26/",
+      "license": "reference_only",
+      "fields": [
+        "openedOn"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-12"
+  "lastVerifiedAt": "2026-05-17"
 }

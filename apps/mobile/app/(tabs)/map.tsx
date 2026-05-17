@@ -17,6 +17,7 @@ export default function MapScreen() {
   const { stores } = useStores();
   const { visits } = useLocalVisits();
   const visitedStoreIds = new Set(visits.map((visit) => visit.storeId));
+  const geocodedStores = stores.filter((store) => store.coordinates);
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
@@ -37,13 +38,14 @@ export default function MapScreen() {
         }}
         style={styles.map}
       >
-        {stores.map((store) => {
+        {geocodedStores.map((store) => {
           const isVisited = visitedStoreIds.has(store.id);
           const pinColor = isVisited ? theme.colors.moss : statusColors[store.status];
+          const coordinate = store.coordinates!;
           
           return (
             <Marker
-              coordinate={store.coordinates}
+              coordinate={coordinate}
               description={getStorePlace(store)}
               key={store.id}
               title={getStoreName(store, i18n.language)}

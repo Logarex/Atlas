@@ -15,7 +15,7 @@
     "latitude": 23.134593,
     "longitude": 113.31986
   },
-  "openedOn": null,
+  "openedOn": "2016-01-28",
   "closedOn": null,
   "officialUrl": "https://www.apple.com.cn/retail/parccentral/",
   "architecture": {
@@ -69,7 +69,17 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_wiki_history_table",
+      "label": "Apple Wiki opening-date table",
+      "url": "https://apple.fandom.com/wiki/List_of_Apple_Stores_by_opening_date",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "openedOn"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-12"
+  "lastVerifiedAt": "2026-05-17"
 }

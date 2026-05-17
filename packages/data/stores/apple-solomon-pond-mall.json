@@ -1,0 +1,73 @@
+{
+  "id": "apple-solomon-pond-mall",
+  "storeNumber": "R622",
+  "name": {
+    "en": "Apple Solomon Pond Mall",
+    "fr": "Apple Solomon Pond Mall"
+  },
+  "status": "relocated",
+  "city": "Marlborough",
+  "region": "Massachusetts",
+  "countryCode": "US",
+  "countryName": "United States",
+  "address": "Marlborough, MA, USA",
+  "coordinates": null,
+  "openedOn": "2014-10-11",
+  "closedOn": null,
+  "officialUrl": null,
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    },
+    "notes": [
+      "Former Apple Store location imported from the Apple Wiki historical relocation markers."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": null,
+    "lastVerifiedAt": null,
+    "note": "This is a former Apple Store location. Hours are not available for the historical address."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "apple_wiki_history_table",
+      "label": "Apple Wiki opening-date table",
+      "url": "https://apple.fandom.com/wiki/List_of_Apple_Stores_by_opening_date",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "status",
+        "city",
+        "region",
+        "countryCode",
+        "openedOn",
+        "closedOn"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "fandom_license",
+      "label": "Fandom licensing terms",
+      "url": "https://www.fandom.com/licensing",
+      "license": "reference_only",
+      "fields": [
+        "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-17"
+}

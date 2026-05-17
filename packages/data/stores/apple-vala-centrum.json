@@ -1,0 +1,94 @@
+{
+  "id": "apple-vala-centrum",
+  "storeNumber": "R593",
+  "name": {
+    "en": "Apple Väla Centrum",
+    "fr": "Apple Väla Centrum"
+  },
+  "status": "closed",
+  "city": "Helsingborg",
+  "countryCode": "SE",
+  "countryName": "Sweden",
+  "address": "Väla Centrum, Marknadsvägen 9, 254 69 Helsingborg, Sweden",
+  "coordinates": null,
+  "openedOn": "2013-11-09",
+  "closedOn": "2024-07-13",
+  "officialUrl": "https://web.archive.org/web/20240709003107/https://www.apple.com/se/retail/valacentrum/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    },
+    "notes": [
+      "Closed Apple Store imported from the Apple Wiki historical opening-date table."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://web.archive.org/web/20240709003107/https://www.apple.com/se/retail/valacentrum/",
+    "lastVerifiedAt": null,
+    "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "apple_wiki_history_table",
+      "label": "Apple Wiki opening-date table",
+      "url": "https://apple.fandom.com/wiki/List_of_Apple_Stores_by_opening_date",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "status",
+        "city",
+        "region",
+        "countryCode",
+        "openedOn",
+        "closedOn"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "apple_wiki_store_page",
+      "label": "Apple Wiki page: Apple Väla Centrum",
+      "url": "https://apple.fandom.com/wiki/Apple_V%C3%A4la_Centrum",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "address",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "apple_archived_official_page",
+      "label": "Archived Apple official store page",
+      "url": "https://web.archive.org/web/20240709003107/https://www.apple.com/se/retail/valacentrum/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "fandom_license",
+      "label": "Fandom licensing terms",
+      "url": "https://www.fandom.com/licensing",
+      "license": "reference_only",
+      "fields": [
+        "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-17"
+}

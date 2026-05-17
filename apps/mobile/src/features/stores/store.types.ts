@@ -29,7 +29,7 @@ export type StoreSource = {
 
 export type StoreHours = {
   policy: "official-link-only" | "community-verified";
-  officialUrl: string;
+  officialUrl: string | null;
   lastVerifiedAt?: string | null;
   note?: string;
 };
@@ -59,10 +59,10 @@ export type StoreRecord = {
   coordinates: {
     latitude: number;
     longitude: number;
-  };
+  } | null;
   openedOn: string | null;
   closedOn?: string | null;
-  officialUrl: string;
+  officialUrl: string | null;
   architecture: {
     era: string;
     typology?: string;

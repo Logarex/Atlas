@@ -1,0 +1,95 @@
+{
+  "id": "apple-royal-hawaiian",
+  "storeNumber": "R198",
+  "name": {
+    "en": "Apple Royal Hawaiian",
+    "fr": "Apple Royal Hawaiian"
+  },
+  "status": "closed",
+  "city": "Honolulu",
+  "region": "Hawaii",
+  "countryCode": "US",
+  "countryName": "United States",
+  "address": "Royal Hawaiian Center, 2301 Kalakaua Ave, Honolulu, Hawaii 96815",
+  "coordinates": null,
+  "openedOn": "2008-09-27",
+  "closedOn": "2024-01-20",
+  "officialUrl": "https://web.archive.org/web/20240120102027/https://www.apple.com/retail/royalhawaiian/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Unknown",
+    "attributes": {
+      "avenue": "unknown",
+      "boardroom": "unknown",
+      "forum": "unknown",
+      "geniusBar": "unknown",
+      "glassCube": "unknown",
+      "greenWall": "unknown",
+      "historicFacade": "unknown",
+      "plaza": "unknown",
+      "videoWall": "unknown"
+    },
+    "notes": [
+      "Closed Apple Store imported from the Apple Wiki historical opening-date table."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://web.archive.org/web/20240120102027/https://www.apple.com/retail/royalhawaiian/",
+    "lastVerifiedAt": null,
+    "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "apple_wiki_history_table",
+      "label": "Apple Wiki opening-date table",
+      "url": "https://apple.fandom.com/wiki/List_of_Apple_Stores_by_opening_date",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "storeNumber",
+        "name",
+        "status",
+        "city",
+        "region",
+        "countryCode",
+        "openedOn",
+        "closedOn"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "apple_wiki_store_page",
+      "label": "Apple Wiki page: Apple Royal Hawaiian",
+      "url": "https://apple.fandom.com/wiki/Apple_Royal_Hawaiian",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "address",
+        "officialUrl"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "apple_archived_official_page",
+      "label": "Archived Apple official store page",
+      "url": "https://web.archive.org/web/20240120102027/https://www.apple.com/retail/royalhawaiian/",
+      "license": "reference_only",
+      "fields": [
+        "officialUrl",
+        "hours.officialUrl"
+      ],
+      "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "fandom_license",
+      "label": "Fandom licensing terms",
+      "url": "https://www.fandom.com/licensing",
+      "license": "reference_only",
+      "fields": [
+        "sources.license"
+      ],
+      "verifiedAt": "2026-05-17"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-17"
+}

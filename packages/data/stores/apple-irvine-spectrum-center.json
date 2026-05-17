@@ -15,7 +15,7 @@
     "latitude": 33.6489,
     "longitude": -117.7406
   },
-  "openedOn": null,
+  "openedOn": "2006-02-11",
   "closedOn": null,
   "officialUrl": "https://www.apple.com/retail/irvinespectrumcenter/",
   "architecture": {
@@ -69,7 +69,17 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "retail_press",
+      "label": "9to5Mac: Apple stores in Orland Park, Irvine expanding to new locations",
+      "url": "https://9to5mac.com/2018/08/13/apple-store-orland-park-irvine-moving-august-18/",
+      "license": "reference_only",
+      "fields": [
+        "openedOn"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-12"
+  "lastVerifiedAt": "2026-05-17"
 }

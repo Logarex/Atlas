@@ -14,7 +14,7 @@
     "latitude": 1.302795,
     "longitude": 103.836399
   },
-  "openedOn": null,
+  "openedOn": "2017-05-27",
   "closedOn": null,
   "officialUrl": "https://www.apple.com/sg/retail/orchardroad/",
   "architecture": {
@@ -68,7 +68,17 @@
         "hours.officialUrl"
       ],
       "verifiedAt": "2026-05-12"
+    },
+    {
+      "type": "apple_wiki_history_table",
+      "label": "Apple Wiki opening-date table",
+      "url": "https://apple.fandom.com/wiki/List_of_Apple_Stores_by_opening_date",
+      "license": "CC-BY-SA-3.0",
+      "fields": [
+        "openedOn"
+      ],
+      "verifiedAt": "2026-05-17"
     }
   ],
-  "lastVerifiedAt": "2026-05-12"
+  "lastVerifiedAt": "2026-05-17"
 }
