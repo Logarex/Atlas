@@ -3,7 +3,7 @@ import UIKit
 import React
 
 @objc(AppIconModule)
-class AppIconModule: NSObject, RCTBridgeModule {
+class AppIconModule: NSObject {
   
   static func moduleName() -> String! {
     return "AppIconModule"

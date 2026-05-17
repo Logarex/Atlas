@@ -22,14 +22,17 @@
     "era": "Original Retail",
     "typology": "Mall store",
     "attributes": {
-      "avenue": "unknown",
-      "boardroom": "unknown",
+      "avenue": "yes",
+      "boardroom": "no",
       "forum": "yes",
       "geniusBar": "yes",
       "glassCube": "no",
-      "greenWall": "unknown",
+      "greenWall": "no",
       "historicFacade": "unknown",
+      "outdoor": "no",
+      "pickup": "yes",
       "plaza": "no",
+      "trees": "no",
       "videoWall": "yes"
     },
     "notes": [
@@ -84,7 +87,22 @@
         "openedOn"
       ],
       "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-storelist-2026-05-18.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "architecture.attributes.avenue",
+        "architecture.attributes.boardroom",
+        "architecture.attributes.greenWall",
+        "architecture.attributes.outdoor",
+        "architecture.attributes.pickup",
+        "architecture.attributes.trees"
+      ],
+      "verifiedAt": "2026-05-18"
     }
   ],
-  "lastVerifiedAt": "2026-05-17"
+  "lastVerifiedAt": "2026-05-18"
 }

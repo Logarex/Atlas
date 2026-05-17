@@ -11,22 +11,28 @@
   "countryCode": "US",
   "countryName": "United States",
   "address": "Stonebriar Centre, 2601 Preston Road, Frisco, Texas 75034",
-  "coordinates": null,
-  "openedOn": "2009-08-28",
+  "coordinates": {
+    "latitude": 33.0989,
+    "longitude": -96.81203
+  },
+  "openedOn": "2009-08-29",
   "closedOn": "2019-04-12",
   "officialUrl": "https://web.archive.org/web/20190223161946/https://www.apple.com/retail/stonebriar/",
   "architecture": {
     "era": "Unknown",
-    "typology": "Unknown",
+    "typology": "Classic",
     "attributes": {
-      "avenue": "unknown",
-      "boardroom": "unknown",
-      "forum": "unknown",
-      "geniusBar": "unknown",
+      "avenue": "no",
+      "boardroom": "no",
+      "forum": "no",
+      "geniusBar": "yes",
       "glassCube": "unknown",
-      "greenWall": "unknown",
+      "greenWall": "no",
       "historicFacade": "unknown",
-      "plaza": "unknown",
+      "outdoor": "no",
+      "pickup": "no",
+      "plaza": "no",
+      "trees": "no",
       "videoWall": "unknown"
     },
     "notes": [
@@ -89,7 +95,28 @@
         "sources.license"
       ],
       "verifiedAt": "2026-05-17"
+    },
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-storelist-2026-05-18.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "coordinates",
+        "openedOn",
+        "architecture.typology",
+        "architecture.attributes.avenue",
+        "architecture.attributes.boardroom",
+        "architecture.attributes.forum",
+        "architecture.attributes.geniusBar",
+        "architecture.attributes.greenWall",
+        "architecture.attributes.outdoor",
+        "architecture.attributes.pickup",
+        "architecture.attributes.plaza",
+        "architecture.attributes.trees"
+      ],
+      "verifiedAt": "2026-05-18"
     }
   ],
-  "lastVerifiedAt": "2026-05-17"
+  "lastVerifiedAt": "2026-05-18"
 }

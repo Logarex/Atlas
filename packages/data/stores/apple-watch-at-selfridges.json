@@ -1,0 +1,95 @@
+{
+  "id": "apple-watch-at-selfridges",
+  "storeNumber": "R659",
+  "aliases": [],
+  "name": {
+    "en": "Apple Watch at Selfridges",
+    "fr": "Apple Watch at Selfridges"
+  },
+  "status": "closed",
+  "city": "London",
+  "region": "Central London",
+  "countryCode": "GB",
+  "countryName": "United Kingdom",
+  "address": "400 Oxford Street, London, Central London, United Kingdom",
+  "coordinates": {
+    "latitude": 51.514438,
+    "longitude": -0.152764
+  },
+  "openedOn": "2015-04-10",
+  "closedOn": "2017-01-03",
+  "officialUrl": "https://www.apple.com/uk/retail/selfridges/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Watch Shop",
+    "attributes": {
+      "avenue": "no",
+      "boardroom": "no",
+      "forum": "no",
+      "geniusBar": "no",
+      "glassCube": "unknown",
+      "greenWall": "no",
+      "historicFacade": "unknown",
+      "outdoor": "no",
+      "pickup": "no",
+      "plaza": "no",
+      "trees": "yes",
+      "videoWall": "unknown"
+    },
+    "notes": [
+      "Closed Apple Watch shop imported from the user-provided Apple retail storelist."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/uk/retail/selfridges/",
+    "lastVerifiedAt": null,
+    "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-storelist-2026-05-18.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "storeNumber",
+        "name",
+        "status",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "address",
+        "coordinates",
+        "openedOn",
+        "closedOn",
+        "officialUrl",
+        "architecture.typology",
+        "architecture.attributes.avenue",
+        "architecture.attributes.boardroom",
+        "architecture.attributes.forum",
+        "architecture.attributes.geniusBar",
+        "architecture.attributes.greenWall",
+        "architecture.attributes.outdoor",
+        "architecture.attributes.pickup",
+        "architecture.attributes.plaza",
+        "architecture.attributes.trees"
+      ],
+      "verifiedAt": "2026-05-18"
+    },
+    {
+      "type": "retail_press",
+      "label": "MacRumors: Selfridges Apple Watch Pop Up Shop Shuts Down",
+      "url": "https://www.macrumors.com/2017/01/03/selfridges-apple-watch-shuts-down/",
+      "license": "reference_only",
+      "fields": [
+        "status",
+        "closedOn"
+      ],
+      "verifiedAt": "2026-05-18"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-18"
+}

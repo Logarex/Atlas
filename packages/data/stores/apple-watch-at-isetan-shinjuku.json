@@ -1,0 +1,95 @@
+{
+  "id": "apple-watch-at-isetan-shinjuku",
+  "storeNumber": "RXXX",
+  "aliases": [],
+  "name": {
+    "en": "Apple Watch at Isetan Shinjuku",
+    "fr": "Apple Watch at Isetan Shinjuku"
+  },
+  "status": "closed",
+  "city": "Shinjuku-ku",
+  "region": "Tokyo",
+  "countryCode": "JP",
+  "countryName": "Japan",
+  "address": "3-14-1 Shinjuku, Shinjuku-ku, Tokyo, Japan",
+  "coordinates": {
+    "latitude": 35.691574,
+    "longitude": 139.704647
+  },
+  "openedOn": "2015-04-10",
+  "closedOn": "2018-05-13",
+  "officialUrl": "https://www.apple.com/jp/retail/isetanshinjuku/",
+  "architecture": {
+    "era": "Unknown",
+    "typology": "Watch Shop",
+    "attributes": {
+      "avenue": "no",
+      "boardroom": "no",
+      "forum": "no",
+      "geniusBar": "no",
+      "glassCube": "unknown",
+      "greenWall": "no",
+      "historicFacade": "unknown",
+      "outdoor": "no",
+      "pickup": "no",
+      "plaza": "no",
+      "trees": "no",
+      "videoWall": "unknown"
+    },
+    "notes": [
+      "Closed Apple Watch shop imported from the user-provided Apple retail storelist."
+    ]
+  },
+  "hours": {
+    "policy": "official-link-only",
+    "officialUrl": "https://www.apple.com/jp/retail/isetanshinjuku/",
+    "lastVerifiedAt": null,
+    "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+  },
+  "photos": [],
+  "sources": [
+    {
+      "type": "user_provided_retail_metadata",
+      "label": "User-provided Apple retail metadata supplement",
+      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-storelist-2026-05-18.json",
+      "license": "user-provided factual metadata",
+      "fields": [
+        "storeNumber",
+        "name",
+        "status",
+        "city",
+        "region",
+        "countryCode",
+        "countryName",
+        "address",
+        "coordinates",
+        "openedOn",
+        "closedOn",
+        "officialUrl",
+        "architecture.typology",
+        "architecture.attributes.avenue",
+        "architecture.attributes.boardroom",
+        "architecture.attributes.forum",
+        "architecture.attributes.geniusBar",
+        "architecture.attributes.greenWall",
+        "architecture.attributes.outdoor",
+        "architecture.attributes.pickup",
+        "architecture.attributes.plaza",
+        "architecture.attributes.trees"
+      ],
+      "verifiedAt": "2026-05-18"
+    },
+    {
+      "type": "retail_press",
+      "label": "9to5Mac: World's last Apple Watch shop at Isetan Shinjuku closing May 13th",
+      "url": "https://9to5mac.com/2018/04/21/apple-watch-isetan-shinjuku-closing-may-13/",
+      "license": "reference_only",
+      "fields": [
+        "status",
+        "closedOn"
+      ],
+      "verifiedAt": "2026-05-18"
+    }
+  ],
+  "lastVerifiedAt": "2026-05-18"
+}
