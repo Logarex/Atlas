@@ -95,8 +95,7 @@
     "confirmDelete": "Delete everything",
     "deleted": "All local data has been deleted.",
     "theme": {
-      "title": "Theme & Logo",
-      "copy": "Select your preferred appearance. iOS will use the matching home screen icon when available.",
+      "title": "Theme",
       "system": "Default",
       "light": "Light",
       "dark": "Dark"

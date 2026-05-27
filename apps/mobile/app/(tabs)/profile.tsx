@@ -180,7 +180,6 @@ export default function ProfileScreen() {
             <Palette color={theme.colors.teal} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.theme.title")}</Text>
           </View>
-          <Text style={styles.itemText}>{t("profile.theme.copy")}</Text>
 
           <View style={styles.themeSelectorRow}>
             {(["system", "light", "dark"] as const).map((mode) => {
