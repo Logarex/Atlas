@@ -689,7 +689,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20230618112505/https://www.apple.com/au/retail/hornsby/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -3726,7 +3726,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20200617080009/https://www.apple.com/ca/retail/oakridgecentre/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -5987,7 +5987,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20250729125109/https://www.apple.com.cn/retail/parkland/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -12417,7 +12417,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20180324071053/https://www.apple.com/fr/retail/carrouseldulouvre/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -13100,7 +13100,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/galerieslafayette/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -18397,7 +18397,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20200530232524/https://www.apple.com/it/retail/romaest/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -18848,7 +18848,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20160205075339/http://www.apple.com/jp/retail/sapporo/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -18973,7 +18973,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20181116043355/https://www.apple.com/jp/retail/sendaiichibancho/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -19110,7 +19110,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/isetanshinjuku/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -23687,7 +23687,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20240709003107/https://www.apple.com/se/retail/valacentrum/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -26813,7 +26813,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/selfridges/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -27352,7 +27352,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20250817104436/https://www.apple.com/uk/retail/bristol/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -32616,7 +32616,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/infiniteloop/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -36908,7 +36908,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20170712002429/https://www.apple.com/retail/simivalley/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -42302,7 +42302,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20240120102027/https://www.apple.com/retail/royalhawaiian/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -42962,7 +42962,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20250828082319/https://www.apple.com/retail/northbrook/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -46556,7 +46556,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20250817103757/https://www.apple.com/retail/partridgecreek/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -47407,7 +47407,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20200304103354/https://www.apple.com/retail/uptown/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -49135,7 +49135,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20151108054850/https://www.apple.com/retail/thepier/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -53218,7 +53218,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20190223161946/https://www.apple.com/retail/northlakemall/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -58039,7 +58039,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20190223161946/https://www.apple.com/retail/stonebriar/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -58589,7 +58589,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20190223162248/https://www.apple.com/retail/willowbend/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -59577,7 +59577,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20121106010029/http://www.apple.com/retail/thegateway/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [
@@ -60189,7 +60189,7 @@ export const generatedStores: StoreRecord[] = [
       "policy": "official-link-only",
       "officialUrl": "https://web.archive.org/web/20210213215531/https://www.apple.com/retail/macarthurcenter/",
       "lastVerifiedAt": null,
-      "note": "This store is closed. No current hours are available; use the linked sources for archival details."
+      "note": "This store is closed. No current hours are available."
     },
     "photos": [],
     "sources": [

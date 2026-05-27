@@ -29,7 +29,6 @@ export default function ProfileScreen() {
   const { visits, clearAllVisits } = useLocalVisits();
 
   const [newStoreName, setNewStoreName] = useState("");
-  const [newStoreSource, setNewStoreSource] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
   const [message, setMessage] = useState<string | null>(null);
 
@@ -75,11 +74,9 @@ export default function ProfileScreen() {
         storeId: null,
         type: "new_store",
         proposedValue: newStoreName,
-        sourceUrl: newStoreSource,
         note: newStoreNote
       });
       setNewStoreName("");
-      setNewStoreSource("");
       setNewStoreNote("");
       setMessage(t("profile.storeSubmitted"));
     } catch (error) {
@@ -137,14 +134,6 @@ export default function ProfileScreen() {
             placeholderTextColor={theme.colors.muted}
             style={styles.input}
             value={newStoreName}
-          />
-          <TextInput
-            autoCapitalize="none"
-            onChangeText={setNewStoreSource}
-            placeholder={t("profile.newStoreSource")}
-            placeholderTextColor={theme.colors.muted}
-            style={styles.input}
-            value={newStoreSource}
           />
           <TextInput
             multiline

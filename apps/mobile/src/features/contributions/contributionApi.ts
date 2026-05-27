@@ -6,7 +6,6 @@ export type StoreChangeDraft = {
   type?: "store_correction" | "new_store";
   fieldPath?: string;
   proposedValue: string;
-  sourceUrl: string;
   note?: string;
 };
 
@@ -36,7 +35,6 @@ export async function submitStoreChange(draft: StoreChangeDraft) {
 - **Type**: ${draft.type}
 - **Field**: ${draft.fieldPath || "N/A"}
 - **Proposed Value**: ${draft.proposedValue}
-- **Source**: ${draft.sourceUrl}
 - **Note**: ${draft.note || "None"}
   `.trim();
 

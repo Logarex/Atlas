@@ -46,7 +46,6 @@
     "noVisits": "No visits saved on this device yet.",
     "newStore": "Missing store",
     "newStorePlaceholder": "Store name or location",
-    "newStoreSource": "Source URL",
     "newStoreNote": "What should reviewers know?",
     "submitStore": "Submit missing store",
     "privacyTitle": "Privacy",
@@ -61,7 +60,7 @@
       "noAds": "No ads, no behavioral tracking SDKs, no resale of personal data.",
       "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
       "optionalAccount": "Visits stay on-device; contributions are sent as GitHub issues.",
-      "openData": "Accepted factual contributions can enter the local dataset with source links and review history."
+      "openData": "Accepted factual contributions can enter the local dataset with review history."
     },
     "dangerZone": "Danger zone",
     "deleteAccount": "Delete my local data",
@@ -85,7 +84,6 @@
     "architecture": "Architecture",
     "hours": "Hours",
     "photos": "Photos",
-    "sources": "Sources",
     "contribute": "Contribute",
     "opened": "Opened",
     "closed": "Closed",
@@ -112,7 +110,6 @@
     "photoSubmitted": "Photo submitted for review.",
     "fieldPath": "Field path, for example architecture.attributes.greenWall",
     "proposedValue": "Proposed value",
-    "sourceUrl": "Source URL",
     "note": "Optional note",
     "submit": "Submit",
     "pickPhoto": "Choose photo",

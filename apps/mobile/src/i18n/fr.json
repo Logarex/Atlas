@@ -46,7 +46,6 @@
     "noVisits": "Aucune visite enregistrée sur cet appareil pour l'instant.",
     "newStore": "Boutique manquante",
     "newStorePlaceholder": "Nom ou emplacement",
-    "newStoreSource": "URL source",
     "newStoreNote": "Information utile pour la révision",
     "submitStore": "Proposer la boutique",
     "privacyTitle": "Confidentialité",
@@ -61,7 +60,7 @@
       "noAds": "Pas de publicité, pas de mouchards de pistage comportemental, pas de revente de données personnelles.",
       "localLocation": "La localisation sert localement à trouver les boutiques proches, sauf sauvegarde explicite.",
       "optionalAccount": "Les visites restent sur l'appareil ; les contributions partent en issues GitHub.",
-      "openData": "Les contributions factuelles acceptées peuvent rejoindre la base locale avec sources et historique de révision."
+      "openData": "Les contributions factuelles acceptées peuvent rejoindre la base locale avec un historique de révision."
     },
     "dangerZone": "Zone de danger",
     "deleteAccount": "Supprimer mes données locales",
@@ -85,7 +84,6 @@
     "architecture": "Architecture",
     "hours": "Horaires",
     "photos": "Photos",
-    "sources": "Sources",
     "contribute": "Contribuer",
     "opened": "Ouverture",
     "closed": "Fermeture",
@@ -112,7 +110,6 @@
     "photoSubmitted": "Photo envoyée pour révision.",
     "fieldPath": "Champ, par exemple architecture.attributes.greenWall",
     "proposedValue": "Valeur proposée",
-    "sourceUrl": "URL source",
     "note": "Note optionnelle",
     "submit": "Envoyer",
     "pickPhoto": "Choisir une photo",

@@ -61,7 +61,6 @@ export default function StoreDetailScreen() {
   const [photoModalVisible, setPhotoModalVisible] = useState(false);
   const [fieldPath, setFieldPath] = useState("architecture.attributes.");
   const [proposedValue, setProposedValue] = useState("");
-  const [sourceUrl, setSourceUrl] = useState("");
   const [note, setNote] = useState("");
   const [contributionMessage, setContributionMessage] = useState<string | null>(null);
   const [photoAsset, setPhotoAsset] = useState<ImagePicker.ImagePickerAsset | null>(null);
@@ -116,13 +115,11 @@ export default function StoreDetailScreen() {
         storeId: store.id,
         fieldPath,
         proposedValue,
-        sourceUrl,
         note
       });
       setContributionMessage(t("store.changeSubmitted"));
       setFieldPath("architecture.attributes.");
       setProposedValue("");
-      setSourceUrl("");
       setNote("");
     } catch (error) {
       setContributionMessage(error instanceof Error ? error.message : t("store.submitFailed"));
@@ -350,16 +347,6 @@ export default function StoreDetailScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>{t("store.sources")}</Text>
-        {store.sources.map((source) => (
-          <Pressable key={`${source.url}-${source.label}`} onPress={() => Linking.openURL(source.url)}>
-            <Text style={styles.source}>
-              {source.label} · {source.license}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
     </ScrollView>
 
       <Modal
@@ -389,14 +376,6 @@ export default function StoreDetailScreen() {
               placeholderTextColor={theme.colors.muted}
               style={styles.input}
               value={proposedValue}
-            />
-            <TextInput
-              autoCapitalize="none"
-              onChangeText={setSourceUrl}
-              placeholder={t("store.sourceUrl")}
-              placeholderTextColor={theme.colors.muted}
-              style={styles.input}
-              value={sourceUrl}
             />
             <TextInput
               multiline
@@ -800,12 +779,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       borderRadius: 8,
       marginTop: spacing.md,
       width: "100%"
-    },
-    source: {
-      color: colors.teal,
-      fontSize: typography.small,
-      lineHeight: 22,
-      marginBottom: spacing.xs
     },
     sourceLink: {
       color: colors.teal,
