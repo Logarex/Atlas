@@ -6,17 +6,17 @@ import { useTranslation } from "react-i18next";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useMemo } from "react";
-import { Map, Search, Compass, Clock, Info, History } from "lucide-react-native";
+import { Compass, Clock, History } from "lucide-react-native";
 import { getStoreName } from "@/features/stores/storeUtils";
 
 export default function HomeScreen() {
   const { t } = useTranslation();
   const theme = useAppTheme();
   const styles = useStyles(theme);
-  
+
   const { stats, stores } = useStores();
   const { visits } = useLocalVisits();
-  
+
   const visitedStoreIds = useMemo(
     () => new Set(visits.map((visit) => visit.storeId)),
     [visits]
@@ -51,11 +51,11 @@ export default function HomeScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Compass color={theme.colors.teal} size={22} />
-            <Text style={styles.sectionTitle}>Ma Progression</Text>
+            <Text style={styles.sectionTitle}>{t("home.progressTitle")}</Text>
           </View>
           <View style={styles.progressContainer}>
             <View style={styles.progressHeader}>
-              <Text style={styles.progressLabel}>Apple Stores visités</Text>
+              <Text style={styles.progressLabel}>{t("home.progressLabel")}</Text>
               <Text style={styles.progressPercent}>{progressPercent}%</Text>
             </View>
             <View style={styles.progressBarBg}>
@@ -90,25 +90,6 @@ export default function HomeScreen() {
             </View>
           </View>
         )}
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Accès Rapide</Text>
-          <View style={styles.quickLinks}>
-            <Link href="/explore" asChild>
-              <Pressable style={styles.quickLinkButton}>
-                <Search color={theme.colors.paper} size={20} />
-                <Text style={styles.quickLinkText}>Rechercher une boutique</Text>
-              </Pressable>
-            </Link>
-            <Link href="/map" asChild>
-              <Pressable style={StyleSheet.flatten([styles.quickLinkButton, { backgroundColor: theme.colors.copper }])}>
-                <Map color={theme.colors.paper} size={20} />
-                <Text style={styles.quickLinkText}>Ouvrir la carte mondiale</Text>
-              </Pressable>
-            </Link>
-          </View>
-        </View>
-
       </ScrollView>
     </SafeAreaView>
   );
@@ -225,30 +206,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       height: "100%",
       backgroundColor: colors.teal,
       borderRadius: radii.full
-    },
-    progressHint: {
-      color: colors.muted,
-      fontSize: typography.small,
-      marginTop: spacing.md,
-      lineHeight: 20
-    },
-    quickLinks: {
-      gap: spacing.md,
-      marginTop: spacing.xs
-    },
-    quickLinkButton: {
-      flexDirection: "row",
-      alignItems: "center",
-      backgroundColor: colors.ink,
-      padding: spacing.lg,
-      borderRadius: radii.lg,
-      gap: spacing.md,
-      ...shadows.sm
-    },
-    quickLinkText: {
-      color: colors.paper,
-      fontSize: typography.body,
-      fontWeight: "800"
     },
     recentGrid: {
       gap: spacing.sm

@@ -6,9 +6,11 @@
     "profile": "Profile"
   },
   "home": {
-    "kicker": "Community atlas",
-    "title": "Apple retail stores, mapped and sourced.",
-    "subtitle": "Browse notable stores, preserve closures and remodels, and help build a complete sourced dataset.",
+    "kicker": "Community Atlas",
+    "title": "Explore Apple stores.",
+    "subtitle": "Find locations, track visits, and check the essentials.",
+    "progressTitle": "Progress",
+    "progressLabel": "Visited stores",
     "searchLabel": "Search stores",
     "searchPlaceholder": "Search by store, city, country, status, feature...",
     "resultCount": "{{count}} store(s)",
@@ -37,11 +39,9 @@
     "visited": "Visited"
   },
   "profile": {
-    "kicker": "Local profile",
-    "title": "Visits and contributions without tracking.",
-    "subtitle": "Mark stores locally and keep a local username for GitHub issue submissions. No remote account is required.",
-    "community": "Local profile",
-    "usernamePlaceholder": "username",
+    "kicker": "Personal space",
+    "title": "Your visits.",
+    "subtitle": "Review visited stores, suggest a missing store, and adjust the app appearance.",
     "visits": "Visited stores",
     "noVisits": "No visits saved on this device yet.",
     "newStore": "Missing store",
@@ -50,29 +50,23 @@
     "newStoreNote": "What should reviewers know?",
     "submitStore": "Submit missing store",
     "privacyTitle": "Privacy",
-    "saving": "Saving profile...",
-    "profileReady": "Local profile saved.",
+    "saving": "Saving...",
     "submittingStore": "Submitting missing store...",
     "storeSubmitted": "Missing store submitted for review.",
     "failed": "Something went wrong.",
     "stats": {
-      "visited": "Stores seen",
-      "identity": "Identity"
+      "visited": "Stores seen"
     },
     "privacy": {
       "noAds": "No ads, no behavioral tracking SDKs, no resale of personal data.",
       "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
-      "optionalAccount": "Visits and profile details stay on-device; contributions are sent as GitHub issues.",
+      "optionalAccount": "Visits stay on-device; contributions are sent as GitHub issues.",
       "openData": "Accepted factual contributions can enter the local dataset with source links and review history."
     },
-    "localProfile": "Local profile",
-    "localProfileCopy": "Choose the username shown in GitHub issue submissions. It is saved only on this device.",
-    "username": "Username",
-    "saveProfile": "Save profile",
     "dangerZone": "Danger zone",
     "deleteAccount": "Delete my local data",
     "deleteWarningTitle": "Are you sure?",
-    "deleteWarningMessage": "This action is irreversible. Your local profile and visits will be cleared from this device.",
+    "deleteWarningMessage": "This action is irreversible. Your visits and local settings will be cleared from this device.",
     "cancel": "Cancel",
     "confirmDelete": "Delete everything",
     "deleted": "All local data has been deleted.",

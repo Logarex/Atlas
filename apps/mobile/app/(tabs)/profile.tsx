@@ -1,18 +1,13 @@
 import {
   submitStoreChange,
 } from "@/features/contributions/contributionApi";
-import {
-  clearLocalProfile,
-  ensureCommunityProfile,
-  getCurrentProfile,
-  type CommunityProfile
-} from "@/features/social/socialApi";
+import { clearLocalProfile } from "@/features/social/socialApi";
 import { getStoreName } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Lock, Send, UserRound, Trash2, AlertTriangle, Palette, BadgeCheck } from "lucide-react-native";
-import { useEffect, useMemo, useState } from "react";
+import { CalendarDays, Lock, Send, Trash2, AlertTriangle, Palette } from "lucide-react-native";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Alert,
@@ -29,19 +24,15 @@ export default function ProfileScreen() {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
   const styles = useStyles(theme);
-  
+
   const { stores } = useStores();
   const { visits, clearAllVisits } = useLocalVisits();
-  
-  const [localUsername, setLocalUsername] = useState("");
-  const [isProfileSaving, setIsProfileSaving] = useState(false);
 
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreSource, setNewStoreSource] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
-  const [profile, setProfile] = useState<CommunityProfile | null>(null);
   const [message, setMessage] = useState<string | null>(null);
-  
+
   const storeById = useMemo(
     () => new Map(stores.map((store) => [store.id, store])),
     [stores]
@@ -51,32 +42,6 @@ export default function ProfileScreen() {
     [visits]
   );
   const recentVisits = visits.slice(0, 4);
-  const canSaveProfile = localUsername.trim().length >= 3 && !isProfileSaving;
-
-  useEffect(() => {
-    void getCurrentProfile()
-      .then((currentProfile) => {
-        setProfile(currentProfile);
-        setLocalUsername(currentProfile?.username ?? "");
-      })
-      .catch((error) => setMessage(error instanceof Error ? error.message : null));
-  }, []);
-
-  async function handleSaveProfile() {
-    try {
-      setIsProfileSaving(true);
-      setMessage(t("profile.saving"));
-      const nextProfile = await ensureCommunityProfile(localUsername);
-      if (!nextProfile) throw new Error(t("profile.failed"));
-      setProfile(nextProfile);
-      setLocalUsername(nextProfile.username);
-      setMessage(t("profile.profileReady"));
-    } catch (e) {
-      setMessage(e instanceof Error ? e.message : t("profile.failed"));
-    } finally {
-      setIsProfileSaving(false);
-    }
-  }
 
   async function handleDeleteData() {
     Alert.alert(
@@ -84,8 +49,8 @@ export default function ProfileScreen() {
       t("profile.deleteWarningMessage"),
       [
         { text: t("profile.cancel"), style: "cancel" },
-        { 
-          text: t("profile.confirmDelete"), 
+        {
+          text: t("profile.confirmDelete"),
           style: "destructive",
           onPress: async () => {
             try {
@@ -93,8 +58,6 @@ export default function ProfileScreen() {
               await clearLocalProfile();
               await clearAllVisits();
 
-              setProfile(null);
-              setLocalUsername("");
               setMessage(t("profile.deleted"));
             } catch (error) {
               setMessage(error instanceof Error ? error.message : t("profile.failed"));
@@ -104,8 +67,6 @@ export default function ProfileScreen() {
       ]
     );
   }
-
-
 
   async function handleNewStoreProposal() {
     try {
@@ -135,44 +96,11 @@ export default function ProfileScreen() {
           <Text style={styles.subtitle}>{t("profile.subtitle")}</Text>
         </View>
 
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <BadgeCheck color={theme.colors.copper} size={22} />
-            <Text style={styles.sectionTitle}>{t("profile.localProfile")}</Text>
-          </View>
-          <Text style={styles.itemText}>{t("profile.localProfileCopy")}</Text>
-          <TextInput
-            autoCapitalize="none"
-            onChangeText={setLocalUsername}
-            placeholder={t("profile.username")}
-            placeholderTextColor={theme.colors.muted}
-            style={styles.input}
-            value={localUsername}
-          />
-          <Pressable
-            disabled={!canSaveProfile}
-            onPress={handleSaveProfile}
-            style={[
-              styles.primaryButton,
-              { backgroundColor: theme.colors.copper },
-              !canSaveProfile && styles.disabledButton
-            ]}
-          >
-            <BadgeCheck color={theme.colors.paper} size={18} />
-            <Text style={styles.primaryButtonText}>{t("profile.saveProfile")}</Text>
-          </Pressable>
-        </View>
-
         <View style={styles.statsRow}>
           <View style={styles.stat}>
             <CalendarDays color={theme.colors.teal} size={20} />
             <Text style={styles.statValue}>{visitedStoreIds.size}</Text>
             <Text style={styles.statLabel}>{t("profile.stats.visited")}</Text>
-          </View>
-          <View style={styles.stat}>
-            <UserRound color={theme.colors.moss} size={20} />
-            <Text style={styles.statValue}>{profile ? `@${profile.username}` : "Local"}</Text>
-            <Text style={styles.statLabel}>{t("profile.stats.identity")}</Text>
           </View>
         </View>
 
@@ -197,8 +125,6 @@ export default function ProfileScreen() {
             })
           )}
         </View>
-
-
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
@@ -241,14 +167,13 @@ export default function ProfileScreen() {
           </Pressable>
         </View>
 
-        {/* THEME SECTION */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Palette color={theme.colors.teal} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.theme.title")}</Text>
           </View>
           <Text style={styles.itemText}>{t("profile.theme.copy")}</Text>
-          
+
           <View style={styles.themeSelectorRow}>
             {(["system", "light", "dark"] as const).map((mode) => {
               const isActive = theme.themeSetting === mode;
@@ -419,21 +344,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       height: 92,
       paddingTop: spacing.md,
       textAlignVertical: "top"
-    },
-    primaryButton: {
-      alignItems: "center",
-      backgroundColor: colors.ink,
-      borderRadius: 8,
-      flexDirection: "row",
-      gap: spacing.sm,
-      justifyContent: "center",
-      minHeight: 48,
-      paddingHorizontal: spacing.md
-    },
-    primaryButtonText: {
-      color: colors.paper,
-      fontSize: typography.small,
-      fontWeight: "900"
     },
     secondaryButton: {
       alignItems: "center",
