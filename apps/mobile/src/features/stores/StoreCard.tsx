@@ -1,7 +1,7 @@
 import type { StoreRecord, StoreStatus } from "./store.types";
 
 import { Link } from "expo-router";
-import { CalendarDays, MapPin } from "lucide-react-native";
+import { MapPin } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useMemo } from "react";
@@ -9,7 +9,6 @@ import { useMemo } from "react";
 import { useAppTheme } from "@/theme/useAppTheme";
 import {
   getPhotoSource,
-  getPositiveAttributeKeys,
   getStoreName,
   getStorePlace
 } from "./storeUtils";
@@ -25,7 +24,6 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
   const theme = useAppTheme();
   const styles = useStyles(theme);
   const name = getStoreName(store, i18n.language);
-  const featureKeys = getPositiveAttributeKeys(store).slice(0, 3);
   const coverPhoto = store.photos?.[0];
 
   const statusColors: Record<StoreStatus, string> = {
@@ -59,31 +57,6 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
           <MapPin color={theme.colors.muted} size={15} />
           <Text style={styles.location}>{getStorePlace(store)}</Text>
         </View>
-        <View style={styles.metaRow}>
-          <View style={styles.metaItem}>
-            <Text style={styles.metaLabel}>{t("store.era")}</Text>
-            <Text style={styles.meta}>{store.architecture.era}</Text>
-          </View>
-          <View style={styles.metaItem}>
-            <CalendarDays color={theme.colors.moss} size={15} />
-            <Text style={styles.meta}>
-              {store.openedOn
-                ? t("store.openedShort", { date: store.openedOn })
-                : t("store.dateUnknown")}
-            </Text>
-          </View>
-        </View>
-        {featureKeys.length > 0 ? (
-          <View style={styles.featureRow}>
-            {featureKeys.map((key) => (
-              <View key={key} style={styles.featurePill}>
-                <Text style={styles.featureText}>
-                  {t(`attributes.${key}`)}
-                </Text>
-              </View>
-            ))}
-          </View>
-        ) : null}
         {visitDates.length > 0 ? (
           <View style={styles.personalHistory}>
             <Text style={styles.personalHistoryLabel}>{t("store.personalHistory")}</Text>
@@ -165,47 +138,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       flexDirection: "row",
       gap: spacing.xs,
       marginTop: spacing.sm
-    },
-    metaRow: {
-      borderTopColor: colors.line,
-      borderTopWidth: 1,
-      flexDirection: "row",
-      gap: spacing.md,
-      marginTop: spacing.lg,
-      paddingTop: spacing.md
-    },
-    metaItem: {
-      flex: 1,
-      gap: spacing.xs
-    },
-    metaLabel: {
-      color: colors.muted,
-      fontSize: typography.caption,
-      fontWeight: "800",
-      textTransform: "uppercase"
-    },
-    meta: {
-      color: colors.ink,
-      flex: 1,
-      fontSize: typography.small,
-      lineHeight: 19
-    },
-    featureRow: {
-      flexDirection: "row",
-      flexWrap: "wrap",
-      gap: spacing.sm,
-      marginTop: spacing.md
-    },
-    featurePill: {
-      backgroundColor: colors.mint,
-      borderRadius: radii.full,
-      paddingHorizontal: spacing.sm,
-      paddingVertical: spacing.xs
-    },
-    featureText: {
-      color: colors.ink,
-      fontSize: typography.caption,
-      fontWeight: "700"
     },
     personalHistory: {
       backgroundColor: colors.canvas,
