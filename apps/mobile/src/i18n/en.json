@@ -116,7 +116,7 @@
     "community": {
       "title": "Community and license",
       "body": "Atlas is a community project built to last. The app will live as long as users help enrich stores, correct details, add photos, and keep the dataset useful for everyone.",
-      "license": "Public code under the MIT license: review, contribution, learning, and reuse are possible."
+      "license": "Public code under the MIT license."
     },
     "dangerZone": "Danger zone",
     "deleteAccount": "Delete local data",
