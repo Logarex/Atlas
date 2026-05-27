@@ -40,6 +40,7 @@ export type StoreHours = {
 export type StorePhoto = {
   id: string;
   url: string;
+  thumbUrl?: string;
   credit: string;
   license: string;
   caption?: string;

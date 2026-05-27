@@ -274,6 +274,10 @@
             "type": "string",
             "pattern": "^(?:https?://|/|\\.\\.?/)"
           },
+          "thumbUrl": {
+            "type": "string",
+            "pattern": "^(?:https?://|/|\\.\\.?/)"
+          },
           "credit": {
             "type": "string",
             "minLength": 1

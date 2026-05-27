@@ -62,12 +62,14 @@ const missingAssets = [];
 
 for (const store of stores) {
   for (const photo of store.photos ?? []) {
-    if (!isLocalMobileAsset(photo.url)) continue;
+    for (const url of [photo.url, photo.thumbUrl]) {
+      if (!isLocalMobileAsset(url)) continue;
 
-    localPhotoUrls.add(photo.url);
-    const assetPath = join(mobileRoot, photo.url.replace(/^\.\//, ""));
-    if (!existsSync(assetPath)) {
-      missingAssets.push(`${store.id}: ${photo.url}`);
+      localPhotoUrls.add(url);
+      const assetPath = join(mobileRoot, url.replace(/^\.\//, ""));
+      if (!existsSync(assetPath)) {
+        missingAssets.push(`${store.id}: ${url}`);
+      }
     }
   }
 }

@@ -43,7 +43,7 @@ import {
   View
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import type { StoreStatus } from "@/features/stores/store.types";
+import type { StorePhoto, StoreStatus } from "@/features/stores/store.types";
 
 export default function StoreDetailScreen() {
   const { t, i18n } = useTranslation();
@@ -59,6 +59,7 @@ export default function StoreDetailScreen() {
   const [visitMessage, setVisitMessage] = useState<string | null>(null);
   const [changeModalVisible, setChangeModalVisible] = useState(false);
   const [photoModalVisible, setPhotoModalVisible] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<StorePhoto | null>(null);
   const [fieldPath, setFieldPath] = useState("architecture.attributes.");
   const [proposedValue, setProposedValue] = useState("");
   const [note, setNote] = useState("");
@@ -308,27 +309,29 @@ export default function StoreDetailScreen() {
           >
             {store.photos.map((photo) => {
               const hasCredit = !!photo.credit;
-              const hasLicense = !!photo.license;
               const hasCaption = !!photo.caption;
 
               return (
-                <View key={photo.id} style={styles.photoCard}>
-                  <Image source={getPhotoSource(photo.url)} style={styles.photoImage} />
-                  {(hasCaption || hasCredit || hasLicense) && (
+                <Pressable
+                  key={photo.id}
+                  accessibilityRole="button"
+                  onPress={() => setSelectedPhoto(photo)}
+                  style={styles.photoCard}
+                >
+                  <Image source={getPhotoSource(photo.thumbUrl ?? photo.url)} style={styles.photoImage} />
+                  {(hasCaption || hasCredit) && (
                     <View style={styles.photoMeta}>
                       {hasCaption && (
                         <Text style={styles.photoCaption}>{photo.caption}</Text>
                       )}
-                      {(hasCredit || hasLicense) && (
+                      {hasCredit && (
                         <Text style={styles.photoCredit}>
-                          {hasCredit ? `© ${photo.credit}` : ""}
-                          {hasCredit && hasLicense ? " · " : ""}
-                          {hasLicense ? photo.license : ""}
+                          © {photo.credit}
                         </Text>
                       )}
                     </View>
                   )}
-                </View>
+                </Pressable>
               );
             })}
           </ScrollView>
@@ -352,6 +355,41 @@ export default function StoreDetailScreen() {
       </View>
 
     </ScrollView>
+
+      <Modal
+        animationType="fade"
+        onRequestClose={() => setSelectedPhoto(null)}
+        transparent
+        visible={!!selectedPhoto}
+      >
+        <View style={[styles.photoViewerBackdrop, { paddingTop: insets.top + 12 }]}>
+          <View style={styles.photoViewerHeader}>
+            <Text style={styles.photoViewerTitle}>{t("store.photos")}</Text>
+            <Pressable onPress={() => setSelectedPhoto(null)} style={styles.photoViewerClose}>
+              <X color={theme.colors.paper} size={22} />
+            </Pressable>
+          </View>
+          {selectedPhoto ? (
+            <>
+              <Image
+                source={getPhotoSource(selectedPhoto.url)}
+                style={styles.photoViewerImage}
+                resizeMode="contain"
+              />
+              <View style={[styles.photoViewerMeta, { paddingBottom: insets.bottom + 20 }]}>
+                {selectedPhoto.caption ? (
+                  <Text style={styles.photoViewerCaption}>{selectedPhoto.caption}</Text>
+                ) : null}
+                <Text style={styles.photoViewerCredit}>
+                  {[selectedPhoto.credit, selectedPhoto.license, selectedPhoto.takenOn]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </Text>
+              </View>
+            </>
+          ) : null}
+        </View>
+      </Modal>
 
       <Modal
         animationType="slide"
@@ -779,6 +817,58 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontWeight: "800",
       letterSpacing: 0,
       textTransform: "uppercase"
+    },
+    photoViewerBackdrop: {
+      backgroundColor: "rgba(0, 0, 0, 0.92)",
+      flex: 1,
+      paddingHorizontal: spacing.lg
+    },
+    photoViewerHeader: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: spacing.md
+    },
+    photoViewerTitle: {
+      color: colors.paper,
+      fontSize: typography.body,
+      fontWeight: "900"
+    },
+    photoViewerClose: {
+      alignItems: "center",
+      borderColor: "rgba(255, 255, 255, 0.25)",
+      borderRadius: radii.full,
+      borderWidth: 1,
+      height: 36,
+      justifyContent: "center",
+      width: 36
+    },
+    photoViewerImage: {
+      alignSelf: "center",
+      flex: 1,
+      maxHeight: "78%",
+      width: "100%"
+    },
+    photoViewerMeta: {
+      backgroundColor: colors.paper,
+      borderRadius: 8,
+      gap: spacing.xs,
+      marginTop: spacing.md,
+      padding: spacing.md,
+      paddingTop: spacing.md
+    },
+    photoViewerCaption: {
+      color: colors.ink,
+      fontSize: typography.body,
+      fontWeight: "800",
+      lineHeight: 22
+    },
+    photoViewerCredit: {
+      color: colors.muted,
+      fontSize: typography.small,
+      fontWeight: "800",
+      letterSpacing: 0,
+      lineHeight: 18
     },
     photoPreview: {
       aspectRatio: 4 / 3,
