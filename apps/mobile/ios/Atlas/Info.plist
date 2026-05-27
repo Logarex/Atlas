@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.1</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -33,7 +33,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>12.0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -45,18 +45,18 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Atlas can use the camera if you choose to add a personal store photo.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Allow $(PRODUCT_NAME) to access your location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow $(PRODUCT_NAME) to access your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Atlas uses your location locally to show nearby stores.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Atlas lets you choose photos you own to save them locally or submit them for review.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Atlas may save exported visit photos when you choose to share or back up your local data.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Atlas can use the camera if you choose to add a personal store photo.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Atlas lets you choose photos you own to save them locally or submit them for review.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>

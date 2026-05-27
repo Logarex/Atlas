@@ -62,6 +62,18 @@ const font: Record<string, string[]> = {
   "?": ["01110", "10001", "00001", "00010", "00100", "00000", "00100"]
 };
 
+function ensureJpegBufferShim() {
+  const globalScope = globalThis as unknown as {
+    Buffer?: { from: (value: ArrayLike<number>) => Uint8Array };
+  };
+
+  if (!globalScope.Buffer) {
+    globalScope.Buffer = {
+      from: (value: ArrayLike<number>) => Uint8Array.from(value)
+    };
+  }
+}
+
 function rgb(hex: string): Rgb {
   return [
     Number.parseInt(hex.slice(1, 3), 16),
@@ -185,6 +197,8 @@ function drawText(
 }
 
 export function createShareCardJpegBase64(input: CardInput) {
+  ensureJpegBufferShim();
+
   const colors = {
     canvas: rgb("#F7F1E5"),
     copper: rgb("#C85B36"),
@@ -209,7 +223,7 @@ export function createShareCardJpegBase64(input: CardInput) {
   drawText(data, input.visitedLabel, 710, 100, {
     color: colors.copper,
     maxWidth: 390,
-    scale: 4
+    scale: 3
   });
 
   const afterTitle = drawText(data, input.title, 88, 198, {
@@ -230,9 +244,9 @@ export function createShareCardJpegBase64(input: CardInput) {
   fillRect(data, 88, 452, 1024, 4, colors.line);
   drawText(data, input.tagline, 88, 498, {
     color: colors.ink,
-    maxLines: 1,
+    maxLines: 2,
     maxWidth: 1024,
-    scale: 5
+    scale: 4
   });
 
   const encoded = encode({ data, width: cardWidth, height: cardHeight }, 92);
