@@ -3,8 +3,6 @@ import {
   submitStoreChange
 } from "@/features/contributions/contributionApi";
 import {
-  attributeEmojis,
-  getPositiveAttributeKeys,
   getStoreName,
   getStorePlace,
   getPhotoSource,
@@ -71,17 +69,12 @@ export default function StoreDetailScreen() {
   const [peopleVisible, setPeopleVisible] = useState(false);
   const { addVisit, removeVisit, storeVisits } = useLocalVisits(store?.id);
   const name = store ? getStoreName(store, i18n.language) : "";
-  const positiveAttributes = useMemo(
-    () => (store ? getPositiveAttributeKeys(store) : []),
-    [store]
-  );
-
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
-    closed: theme.colors.ink,
+    closed: theme.colors.rose,
     relocated: theme.colors.muted,
-    announced: theme.colors.copper,
-    temporary: theme.colors.gold
+    announced: theme.colors.gold,
+    temporary: theme.colors.moss
   };
 
   if (!store) return null;
@@ -194,10 +187,6 @@ export default function StoreDetailScreen() {
       <ScrollView contentContainerStyle={[styles.content, { paddingTop: insets.top + 60 }]}>
 
       <View style={styles.hero}>
-        <View style={styles.statusPill}>
-          <View style={[styles.statusDot, { backgroundColor: statusColors[store.status] }]} />
-          <Text style={styles.status}>{t(`status.${store.status}`)}</Text>
-        </View>
         <Text style={styles.title}>{name}</Text>
         <View style={styles.locationLine}>
           <MapPin color={theme.colors.muted} size={18} />
@@ -231,7 +220,7 @@ export default function StoreDetailScreen() {
 
       {storeVisits.length > 0 ? (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t("store.yourVisits")}</Text>
+          <Text style={styles.sectionTitle}>{t("store.personalHistory")}</Text>
           {storeVisits.map((visit) => (
             <View key={visit.id} style={styles.visitRow}>
               <Text style={styles.visitDate}>{visit.visitedOn}</Text>
@@ -247,12 +236,19 @@ export default function StoreDetailScreen() {
         <Text style={styles.sectionTitle}>{t("store.history")}</Text>
         <View style={styles.infoGrid}>
           <View style={styles.infoItem}>
+            <Text style={styles.infoLabel}>{t("store.status")}</Text>
+            <View style={styles.infoStatusRow}>
+              <View style={[styles.statusDot, { backgroundColor: statusColors[store.status] }]} />
+              <Text style={styles.infoStatusValue}>{t(`status.${store.status}`)}</Text>
+            </View>
+          </View>
+          <View style={styles.infoItem}>
             <Text style={styles.infoLabel}>{t("store.opened")}</Text>
             <Text style={styles.infoValue}>
               {formatDate(store.openedOn, t("store.dateUnknown"))}
             </Text>
           </View>
-          {store.status !== 'open' && store.status !== 'announced' && (
+          {store.status !== "open" && store.status !== "announced" && (
             <View style={styles.infoItem}>
               <Text style={styles.infoLabel}>{t("store.closed")}</Text>
               <Text style={styles.infoValue}>
@@ -541,29 +537,10 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     hero: {
       gap: spacing.sm
     },
-    statusPill: {
-      alignItems: "center",
-      alignSelf: "flex-start",
-      backgroundColor: colors.paper,
-      borderColor: colors.line,
-      borderRadius: 999,
-      borderWidth: 1,
-      flexDirection: "row",
-      gap: spacing.sm,
-      paddingHorizontal: spacing.md,
-      paddingVertical: spacing.sm
-    },
     statusDot: {
       width: 10,
       height: 10,
       borderRadius: radii.full
-    },
-    status: {
-      color: colors.ink,
-      fontSize: typography.caption,
-      fontWeight: "800",
-      letterSpacing: 0,
-      textTransform: "uppercase"
     },
     title: {
       color: colors.ink,
@@ -715,6 +692,17 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontSize: typography.small,
       fontWeight: "800",
       marginTop: spacing.xs
+    },
+    infoStatusRow: {
+      alignItems: "center",
+      flexDirection: "row",
+      gap: spacing.xs,
+      marginTop: spacing.xs
+    },
+    infoStatusValue: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800"
     },
     visitRow: {
       alignItems: "center",

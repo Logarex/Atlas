@@ -9,10 +9,9 @@
     "kicker": "Community Atlas",
     "title": "Explore Apple stores.",
     "subtitle": "Find locations, track visits, and check the essentials.",
-    "progressTitle": "Progress",
-    "progressLabel": "Visited stores",
     "searchLabel": "Search stores",
     "searchPlaceholder": "Search by store, city, country, status, feature...",
+    "clearSearch": "Clear search",
     "resultCount": "{{count}} store(s)",
     "empty": "No stores match this search yet.",
     "loading": "Loading the live community dataset...",
@@ -25,6 +24,31 @@
       "open": "Open",
       "closed": "Closed",
       "visited": "Visited"
+    },
+    "advancedFilters": {
+      "title": "Advanced filters",
+      "subtitle": "Combine countries, regions, years, styles, store features, and extras.",
+      "button": "Advanced filters",
+      "activeButton": "{{count}} advanced filter(s)",
+      "close": "Close filters",
+      "reset": "Reset",
+      "done": "Apply",
+      "eraValue": "Era: {{value}}",
+      "typologyValue": "Style: {{value}}",
+      "groups": {
+        "countries": "Countries",
+        "regions": "Regions",
+        "years": "Years",
+        "designStyles": "Design style",
+        "features": "Store features",
+        "extras": "Extras"
+      },
+      "extras": {
+        "hasPhotos": "With photo",
+        "hasOfficialUrl": "Apple link",
+        "hasCoordinates": "On the map",
+        "hasNotes": "Architecture notes"
+      }
     },
     "stats": {
       "open": "Open",
@@ -53,9 +77,9 @@
     "submittingStore": "Submitting missing store...",
     "storeSubmitted": "Missing store submitted for review.",
     "failed": "Something went wrong.",
-    "stats": {
-      "visited": "Stores seen"
-    },
+    "progressTitle": "Progress",
+    "progressLabel": "Visited stores",
+    "progressCount": "{{visited}} / {{total}}",
     "privacy": {
       "noAds": "No ads, no behavioral tracking SDKs, no resale of personal data.",
       "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
@@ -85,6 +109,7 @@
     "hours": "Hours",
     "photos": "Photos",
     "contribute": "Contribute",
+    "status": "Status",
     "opened": "Opened",
     "closed": "Closed",
     "verified": "Verified",
@@ -96,7 +121,7 @@
     "visitDateLabel": "Visit date",
     "visitInvalidDate": "Use a date formatted as YYYY-MM-DD.",
     "visitSaved": "Visit saved on this device.",
-    "yourVisits": "Your visits",
+    "personalHistory": "Personal history",
     "shareText": "I visited {{name}} in {{place}} on {{date}}. Tracked with Atlas.",
     "verifyOfficial": "Verify on Apple",
     "noPhotos": "No approved community photos yet.",

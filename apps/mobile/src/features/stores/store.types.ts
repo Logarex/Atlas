@@ -78,6 +78,6 @@ export type StoreRecord = {
   };
   hours: StoreHours;
   photos?: StorePhoto[];
-  sources: StoreSource[];
+  sources?: StoreSource[];
   lastVerifiedAt: string;
 };

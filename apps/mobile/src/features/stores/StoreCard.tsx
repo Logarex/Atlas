@@ -3,12 +3,12 @@ import type { StoreRecord, StoreStatus } from "./store.types";
 import { Link } from "expo-router";
 import { CalendarDays, MapPin } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useMemo } from "react";
 
 import { useAppTheme } from "@/theme/useAppTheme";
 import {
-  attributeEmojis,
+  getPhotoSource,
   getPositiveAttributeKeys,
   getStoreName,
   getStorePlace
@@ -17,14 +17,16 @@ import {
 type StoreCardProps = {
   store: StoreRecord;
   isVisited?: boolean;
+  visitDates?: string[];
 };
 
-export function StoreCard({ isVisited = false, store }: StoreCardProps) {
+export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCardProps) {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
   const styles = useStyles(theme);
   const name = getStoreName(store, i18n.language);
   const featureKeys = getPositiveAttributeKeys(store).slice(0, 3);
+  const coverPhoto = store.photos?.[0];
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
@@ -39,6 +41,12 @@ export function StoreCard({ isVisited = false, store }: StoreCardProps) {
   return (
     <Link href={{ pathname: "/store/[id]", params: { id: store.id } }} asChild>
       <Pressable style={styles.card}>
+        {coverPhoto ? (
+          <Image
+            source={getPhotoSource(coverPhoto.thumbUrl ?? coverPhoto.url)}
+            style={styles.coverImage}
+          />
+        ) : null}
         <View style={styles.topLine}>
           <View style={styles.statusPill}>
             <View style={[styles.statusDot, { backgroundColor: statusColor }]} />
@@ -76,6 +84,14 @@ export function StoreCard({ isVisited = false, store }: StoreCardProps) {
             ))}
           </View>
         ) : null}
+        {visitDates.length > 0 ? (
+          <View style={styles.personalHistory}>
+            <Text style={styles.personalHistoryLabel}>{t("store.personalHistory")}</Text>
+            <Text style={styles.personalHistoryDates} numberOfLines={2}>
+              {visitDates.join(" · ")}
+            </Text>
+          </View>
+        ) : null}
       </Pressable>
     </Link>
   );
@@ -90,6 +106,14 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       borderRadius: radii.md,
       padding: spacing.lg,
       ...shadows.md
+    },
+    coverImage: {
+      backgroundColor: colors.line,
+      borderRadius: 8,
+      height: 148,
+      marginBottom: spacing.md,
+      resizeMode: "cover",
+      width: "100%"
     },
     topLine: {
       alignItems: "center",
@@ -126,7 +150,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       fontSize: typography.title2,
       fontWeight: "900",
-      letterSpacing: -0.5,
+      letterSpacing: 0,
       lineHeight: 28,
       marginTop: spacing.md
     },
@@ -182,6 +206,27 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       fontSize: typography.caption,
       fontWeight: "700"
+    },
+    personalHistory: {
+      backgroundColor: colors.canvas,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      gap: spacing.xs,
+      marginTop: spacing.md,
+      padding: spacing.md
+    },
+    personalHistoryLabel: {
+      color: colors.teal,
+      fontSize: typography.caption,
+      fontWeight: "900",
+      textTransform: "uppercase"
+    },
+    personalHistoryDates: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800",
+      lineHeight: 19
     }
   }), [colors, radii, shadows, spacing, typography]);
 }

@@ -6,7 +6,7 @@ import { getStoreName } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Lock, Send, Trash2, AlertTriangle, Palette } from "lucide-react-native";
+import { CalendarDays, Compass, Lock, Send, Trash2, AlertTriangle, Palette } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -41,6 +41,8 @@ export default function ProfileScreen() {
     [visits]
   );
   const recentVisits = visits.slice(0, 4);
+  const totalStores = stores.length > 0 ? stores.length : 1;
+  const progressPercent = Math.min(100, Math.round((visitedStoreIds.size / totalStores) * 100));
 
   async function handleDeleteData() {
     Alert.alert(
@@ -93,11 +95,22 @@ export default function ProfileScreen() {
           <Text style={styles.subtitle}>{t("profile.subtitle")}</Text>
         </View>
 
-        <View style={styles.statsRow}>
-          <View style={styles.stat}>
-            <CalendarDays color={theme.colors.teal} size={20} />
-            <Text style={styles.statValue}>{visitedStoreIds.size}</Text>
-            <Text style={styles.statLabel}>{t("profile.stats.visited")}</Text>
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Compass color={theme.colors.teal} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.progressTitle")}</Text>
+          </View>
+          <View style={styles.progressHeader}>
+            <Text style={styles.progressLabel}>{t("profile.progressLabel")}</Text>
+            <Text style={styles.progressCount}>
+              {t("profile.progressCount", {
+                total: stores.length,
+                visited: visitedStoreIds.size
+              })}
+            </Text>
+          </View>
+          <View style={styles.progressBarBg}>
+            <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
           </View>
         </View>
 
@@ -261,32 +274,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       lineHeight: 23,
       marginTop: spacing.sm
     },
-    statsRow: {
-      flexDirection: "row",
-      gap: spacing.sm,
-      paddingHorizontal: spacing.lg,
-      marginTop: spacing.md // Correction de la marge ici pour détacher de la section Admin
-    },
-    stat: {
-      backgroundColor: colors.paper,
-      borderColor: colors.line,
-      borderRadius: 8,
-      borderWidth: 1,
-      flex: 1,
-      gap: spacing.xs,
-      padding: spacing.md
-    },
-    statValue: {
-      color: colors.ink,
-      fontSize: 20,
-      fontWeight: "900"
-    },
-    statLabel: {
-      color: colors.muted,
-      fontSize: typography.caption,
-      fontWeight: "800",
-      textTransform: "uppercase"
-    },
     section: {
       backgroundColor: colors.paper,
       borderColor: colors.line,
@@ -318,6 +305,33 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       flex: 1,
       fontSize: typography.small,
       lineHeight: 20
+    },
+    progressHeader: {
+      alignItems: "flex-end",
+      flexDirection: "row",
+      justifyContent: "space-between"
+    },
+    progressLabel: {
+      color: colors.ink,
+      flex: 1,
+      fontSize: typography.body,
+      fontWeight: "800"
+    },
+    progressCount: {
+      color: colors.teal,
+      fontSize: typography.title3,
+      fontWeight: "900"
+    },
+    progressBarBg: {
+      backgroundColor: colors.canvas,
+      borderRadius: 999,
+      height: 10,
+      overflow: "hidden"
+    },
+    progressBarFill: {
+      backgroundColor: colors.teal,
+      borderRadius: 999,
+      height: "100%"
     },
     input: {
       backgroundColor: colors.canvas,

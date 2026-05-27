@@ -37,11 +37,12 @@ export default function MapScreen() {
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
-    closed: theme.colors.ink,
+    closed: theme.colors.rose,
     relocated: theme.colors.muted,
-    announced: theme.colors.copper,
-    temporary: theme.colors.gold
+    announced: theme.colors.gold,
+    temporary: theme.colors.moss
   };
+  const visitedPinColor = theme.colors.copper;
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
@@ -58,7 +59,7 @@ export default function MapScreen() {
           >
             {geocodedStores.map((store) => {
               const isVisited = visitedStoreIds.has(store.id);
-              const pinColor = isVisited ? theme.colors.moss : statusColors[store.status];
+              const pinColor = isVisited ? visitedPinColor : statusColors[store.status];
               const coordinate = store.coordinates!;
 
               return (
@@ -89,7 +90,7 @@ export default function MapScreen() {
             </View>
           ))}
           <View style={styles.legendItem}>
-            <View style={[styles.legendDot, { backgroundColor: theme.colors.moss }]} />
+            <View style={[styles.legendDot, { backgroundColor: visitedPinColor }]} />
             <Text style={styles.legendText}>{t("map.visited")}</Text>
           </View>
         </View>
@@ -126,7 +127,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       fontSize: typography.title3,
       fontWeight: "900",
-      letterSpacing: -0.5
+      letterSpacing: 0
     },
     copy: {
       color: colors.muted,

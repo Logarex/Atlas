@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
-import { useColorScheme, Platform, NativeModules } from "react-native";
+import { useColorScheme, Platform, NativeModules, type ColorSchemeName } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { spacing, typography, radii, shadows } from "./tokens";
 
@@ -11,7 +11,14 @@ export type ThemeSetting = "system" | "light" | "dark";
 
 type AppIconName = "AppIcon-Dark" | null;
 
-function iconNameForThemeSetting(setting: ThemeSetting): AppIconName {
+function iconNameForThemeSetting(
+  setting: ThemeSetting,
+  systemScheme: ColorSchemeName
+): AppIconName {
+  if (setting === "system") {
+    return systemScheme === "dark" ? "AppIcon-Dark" : null;
+  }
+
   return setting === "dark" ? "AppIcon-Dark" : null;
 }
 
@@ -76,6 +83,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const systemScheme = useColorScheme();
   const [themeSetting, setThemeSettingState] = useState<ThemeSetting>("system");
+  const [hasLoadedThemeSetting, setHasLoadedThemeSetting] = useState(false);
 
   // Load from AsyncStorage
   useEffect(() => {
@@ -87,6 +95,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         }
       } catch (error) {
         console.error("Failed to load theme setting:", error);
+      } finally {
+        setHasLoadedThemeSetting(true);
       }
     }
     void loadTheme();
@@ -94,7 +104,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const setThemeSetting = async (setting: ThemeSetting) => {
     setThemeSettingState(setting);
-    void setNativeAppIcon(iconNameForThemeSetting(setting));
 
     try {
       await AsyncStorage.setItem(STORAGE_KEY, setting);
@@ -111,6 +120,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [themeSetting, systemScheme]);
 
   const colors = isDark ? atlasDarkColors : atlasLightColors;
+
+  useEffect(() => {
+    if (!hasLoadedThemeSetting) return;
+
+    void setNativeAppIcon(iconNameForThemeSetting(themeSetting, systemScheme));
+  }, [hasLoadedThemeSetting, systemScheme, themeSetting]);
 
   const value = useMemo(
     () => ({

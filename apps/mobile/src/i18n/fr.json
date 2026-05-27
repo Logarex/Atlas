@@ -9,10 +9,9 @@
     "kicker": "Atlas communautaire",
     "title": "Explore les boutiques Apple.",
     "subtitle": "Retrouve les lieux, suis tes visites et consulte les données essentielles.",
-    "progressTitle": "Progression",
-    "progressLabel": "Boutiques visitées",
     "searchLabel": "Rechercher des boutiques",
     "searchPlaceholder": "Boutique, ville, pays, statut, attribut...",
+    "clearSearch": "Effacer la recherche",
     "resultCount": "{{count}} boutique(s)",
     "empty": "Aucune boutique ne correspond encore à cette recherche.",
     "loading": "Chargement de la base communautaire...",
@@ -25,6 +24,31 @@
       "open": "Ouvertes",
       "closed": "Fermées",
       "visited": "Vues"
+    },
+    "advancedFilters": {
+      "title": "Filtres avancés",
+      "subtitle": "Combine pays, régions, années, styles, fonctionnalités et extras.",
+      "button": "Filtres avancés",
+      "activeButton": "{{count}} filtre(s) avancé(s)",
+      "close": "Fermer les filtres",
+      "reset": "Réinitialiser",
+      "done": "Appliquer",
+      "eraValue": "Époque : {{value}}",
+      "typologyValue": "Style : {{value}}",
+      "groups": {
+        "countries": "Pays",
+        "regions": "Régions",
+        "years": "Années",
+        "designStyles": "Design style",
+        "features": "Store features",
+        "extras": "Extras"
+      },
+      "extras": {
+        "hasPhotos": "Avec photo",
+        "hasOfficialUrl": "Lien Apple",
+        "hasCoordinates": "Sur la carte",
+        "hasNotes": "Notes architecture"
+      }
     },
     "recentVisits": "Dernières visites",
     "stats": {
@@ -53,9 +77,9 @@
     "submittingStore": "Envoi de la boutique...",
     "storeSubmitted": "Boutique envoyée pour révision.",
     "failed": "Une erreur est survenue.",
-    "stats": {
-      "visited": "Boutiques vues"
-    },
+    "progressTitle": "Progression",
+    "progressLabel": "Boutiques visitées",
+    "progressCount": "{{visited}} / {{total}}",
     "privacy": {
       "noAds": "Pas de publicité, pas de mouchards de pistage comportemental, pas de revente de données personnelles.",
       "localLocation": "La localisation sert localement à trouver les boutiques proches, sauf sauvegarde explicite.",
@@ -85,6 +109,7 @@
     "hours": "Horaires",
     "photos": "Photos",
     "contribute": "Contribuer",
+    "status": "Statut",
     "opened": "Ouverture",
     "closed": "Fermeture",
     "verified": "Vérifié",
@@ -96,7 +121,7 @@
     "visitDateLabel": "Date de visite",
     "visitInvalidDate": "Utilise une date au format YYYY-MM-DD.",
     "visitSaved": "Visite enregistrée sur cet appareil.",
-    "yourVisits": "Tes visites",
+    "personalHistory": "Historique perso",
     "shareText": "J'ai visité {{name}} à {{place}} le {{date}}. Suivi avec Atlas.",
     "verifyOfficial": "Vérifier chez Apple",
     "noPhotos": "Aucune photo communautaire approuvée pour l'instant.",

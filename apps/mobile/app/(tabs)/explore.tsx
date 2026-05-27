@@ -1,13 +1,17 @@
 import { StoreCard } from "@/features/stores/StoreCard";
 import { matchesStoreSearch } from "@/features/stores/storeUtils";
+import type { ArchitectureAttribute, StoreRecord } from "@/features/stores/store.types";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
+import { Check, ListFilter, RotateCcw, X } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   FlatList,
+  Modal,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -17,6 +21,167 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const filterKeys = ["all", "open", "closed", "visited"] as const;
 
+const storeFeatureKeys: ArchitectureAttribute[] = [
+  "avenue",
+  "boardroom",
+  "forum",
+  "geniusBar",
+  "greenWall",
+  "pickup",
+  "plaza",
+  "trees",
+  "videoWall"
+];
+
+const architecturalExtraKeys: ArchitectureAttribute[] = [
+  "glassCube",
+  "historicFacade",
+  "outdoor"
+];
+
+const metadataExtraKeys = [
+  "hasPhotos",
+  "hasOfficialUrl",
+  "hasCoordinates",
+  "hasNotes"
+] as const;
+
+type AdvancedFilterGroup =
+  | "countries"
+  | "regions"
+  | "years"
+  | "designStyles"
+  | "features"
+  | "extras";
+
+type AdvancedFilters = Record<AdvancedFilterGroup, string[]>;
+
+type FilterOption = {
+  count: number;
+  label: string;
+  value: string;
+};
+
+function createEmptyAdvancedFilters(): AdvancedFilters {
+  return {
+    countries: [],
+    regions: [],
+    years: [],
+    designStyles: [],
+    features: [],
+    extras: []
+  };
+}
+
+function addOption(
+  options: Map<string, FilterOption>,
+  value: string | null | undefined,
+  label: string | null | undefined
+) {
+  const cleanValue = String(value ?? "").trim();
+  const cleanLabel = String(label ?? "").trim();
+  if (!cleanValue || !cleanLabel) return;
+
+  const option = options.get(cleanValue);
+  if (option) {
+    option.count += 1;
+    return;
+  }
+
+  options.set(cleanValue, {
+    count: 1,
+    label: cleanLabel,
+    value: cleanValue
+  });
+}
+
+function sortOptions(options: Map<string, FilterOption>, direction: "asc" | "desc" = "asc") {
+  return [...options.values()].sort((a, b) => {
+    const result = a.label.localeCompare(b.label, undefined, { numeric: true });
+    return direction === "asc" ? result : -result;
+  });
+}
+
+function regionFilterValue(store: StoreRecord) {
+  return store.region ? `${store.countryCode}:${store.region}` : null;
+}
+
+function countryLabel(store: StoreRecord) {
+  return store.countryName ? `${store.countryName} (${store.countryCode})` : store.countryCode;
+}
+
+function matchesDesignStyle(store: StoreRecord, value: string) {
+  if (value.startsWith("era:")) {
+    return store.architecture.era === value.slice(4);
+  }
+
+  if (value.startsWith("typology:")) {
+    return store.architecture.typology === value.slice(9);
+  }
+
+  return false;
+}
+
+function matchesExtra(store: StoreRecord, value: string) {
+  if ((architecturalExtraKeys as string[]).includes(value)) {
+    return store.architecture.attributes[value as ArchitectureAttribute] === "yes";
+  }
+
+  switch (value) {
+    case "hasPhotos":
+      return Boolean(store.photos?.length);
+    case "hasOfficialUrl":
+      return Boolean(store.officialUrl);
+    case "hasCoordinates":
+      return Boolean(store.coordinates);
+    case "hasNotes":
+      return Boolean(store.architecture.notes?.length);
+    default:
+      return false;
+  }
+}
+
+function matchesAdvancedFilters(store: StoreRecord, filters: AdvancedFilters) {
+  if (filters.countries.length > 0 && !filters.countries.includes(store.countryCode)) {
+    return false;
+  }
+
+  if (filters.regions.length > 0) {
+    const regionValue = regionFilterValue(store);
+    if (!regionValue || !filters.regions.includes(regionValue)) return false;
+  }
+
+  if (filters.years.length > 0) {
+    const year = store.openedOn?.slice(0, 4);
+    if (!year || !filters.years.includes(year)) return false;
+  }
+
+  if (
+    filters.designStyles.length > 0 &&
+    !filters.designStyles.some((value) => matchesDesignStyle(store, value))
+  ) {
+    return false;
+  }
+
+  if (
+    filters.features.length > 0 &&
+    !filters.features.every(
+      (value) => store.architecture.attributes[value as ArchitectureAttribute] === "yes"
+    )
+  ) {
+    return false;
+  }
+
+  if (
+    filters.extras.length > 0 &&
+    !filters.extras.every((value) => matchesExtra(store, value))
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
 export default function ExploreScreen() {
   const { t } = useTranslation();
   const theme = useAppTheme();
@@ -24,22 +189,156 @@ export default function ExploreScreen() {
   
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof filterKeys)[number]>("all");
+  const [advancedFilters, setAdvancedFilters] = useState(createEmptyAdvancedFilters);
+  const [advancedFiltersVisible, setAdvancedFiltersVisible] = useState(false);
   const { error, isLoading, stores } = useStores();
   const { visits } = useLocalVisits();
   
+  const visitsByStoreId = useMemo(() => {
+    const groupedVisits = new Map<string, string[]>();
+
+    for (const visit of visits) {
+      const storeVisits = groupedVisits.get(visit.storeId) ?? [];
+      storeVisits.push(visit.visitedOn);
+      groupedVisits.set(visit.storeId, storeVisits);
+    }
+
+    return groupedVisits;
+  }, [visits]);
+
   const visitedStoreIds = useMemo(
     () => new Set(visits.map((visit) => visit.storeId)),
     [visits]
   );
+
+  const advancedFilterCount = useMemo(
+    () => Object.values(advancedFilters).reduce((total, values) => total + values.length, 0),
+    [advancedFilters]
+  );
+
+  const advancedOptions = useMemo(() => {
+    const countries = new Map<string, FilterOption>();
+    const regions = new Map<string, FilterOption>();
+    const years = new Map<string, FilterOption>();
+    const designStyles = new Map<string, FilterOption>();
+
+    for (const store of stores) {
+      addOption(countries, store.countryCode, countryLabel(store));
+      addOption(
+        regions,
+        regionFilterValue(store),
+        store.region ? `${store.region} (${store.countryCode})` : null
+      );
+
+      const year = store.openedOn?.slice(0, 4);
+      addOption(years, year, year);
+
+      addOption(
+        designStyles,
+        `era:${store.architecture.era}`,
+        t("home.advancedFilters.eraValue", { value: store.architecture.era })
+      );
+      addOption(
+        designStyles,
+        store.architecture.typology ? `typology:${store.architecture.typology}` : null,
+        store.architecture.typology
+          ? t("home.advancedFilters.typologyValue", { value: store.architecture.typology })
+          : null
+      );
+    }
+
+    const countAttribute = (key: ArchitectureAttribute) =>
+      stores.filter((store) => store.architecture.attributes[key] === "yes").length;
+    const countExtra = (key: string) => stores.filter((store) => matchesExtra(store, key)).length;
+
+    return {
+      countries: sortOptions(countries),
+      designStyles: sortOptions(designStyles),
+      extras: [
+        ...architecturalExtraKeys.map((key) => ({
+          count: countAttribute(key),
+          label: t(`attributes.${key}`),
+          value: key
+        })),
+        ...metadataExtraKeys.map((key) => ({
+          count: countExtra(key),
+          label: t(`home.advancedFilters.extras.${key}`),
+          value: key
+        }))
+      ].filter((option) => option.count > 0),
+      features: storeFeatureKeys.map((key) => ({
+        count: countAttribute(key),
+        label: t(`attributes.${key}`),
+        value: key
+      })),
+      regions: sortOptions(regions),
+      years: sortOptions(years, "desc")
+    };
+  }, [stores, t]);
 
   const filteredStores = useMemo(() => {
     return stores.filter((store) => {
       if (filter === "open" && store.status !== "open") return false;
       if (filter === "closed" && store.status !== "closed") return false;
       if (filter === "visited" && !visitedStoreIds.has(store.id)) return false;
+      if (!matchesAdvancedFilters(store, advancedFilters)) return false;
       return matchesStoreSearch(store, query);
     });
-  }, [filter, query, stores, visitedStoreIds]);
+  }, [advancedFilters, filter, query, stores, visitedStoreIds]);
+
+  function toggleAdvancedFilter(group: AdvancedFilterGroup, value: string) {
+    setAdvancedFilters((currentFilters) => {
+      const values = currentFilters[group];
+      const nextValues = values.includes(value)
+        ? values.filter((item) => item !== value)
+        : [...values, value];
+
+      return {
+        ...currentFilters,
+        [group]: nextValues
+      };
+    });
+  }
+
+  function renderFilterGroup(
+    group: AdvancedFilterGroup,
+    label: string,
+    options: FilterOption[]
+  ) {
+    return (
+      <View style={styles.filterGroup}>
+        <Text style={styles.filterGroupTitle}>{label}</Text>
+        <View style={styles.filterChipGrid}>
+          {options.map((option) => {
+            const isSelected = advancedFilters[group].includes(option.value);
+
+            return (
+              <Pressable
+                key={option.value}
+                onPress={() => toggleAdvancedFilter(group, option.value)}
+                style={[styles.filterChip, isSelected && styles.filterChipActive]}
+              >
+                {isSelected ? (
+                  <Check color={theme.colors.paper} size={13} />
+                ) : null}
+                <Text
+                  numberOfLines={1}
+                  style={[styles.filterChipText, isSelected && styles.filterChipTextActive]}
+                >
+                  {option.label}
+                </Text>
+                <Text
+                  style={[styles.filterChipCount, isSelected && styles.filterChipTextActive]}
+                >
+                  {option.count}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
@@ -48,15 +347,27 @@ export default function ExploreScreen() {
       </View>
 
       <View style={styles.searchWrap}>
-        <TextInput
-          accessibilityLabel={t("home.searchLabel")}
-          autoCapitalize="none"
-          onChangeText={setQuery}
-          placeholder={t("home.searchPlaceholder")}
-          placeholderTextColor={theme.colors.muted}
-          style={styles.searchInput}
-          value={query}
-        />
+        <View style={styles.searchInputFrame}>
+          <TextInput
+            accessibilityLabel={t("home.searchLabel")}
+            autoCapitalize="none"
+            onChangeText={setQuery}
+            placeholder={t("home.searchPlaceholder")}
+            placeholderTextColor={theme.colors.muted}
+            style={styles.searchInput}
+            value={query}
+          />
+          {query.length > 0 ? (
+            <Pressable
+              accessibilityLabel={t("home.clearSearch")}
+              onPress={() => setQuery("")}
+              style={styles.clearSearchButton}
+            >
+              <X color={theme.colors.muted} size={18} />
+            </Pressable>
+          ) : null}
+        </View>
+
         <View style={styles.filters}>
           {filterKeys.map((key) => (
             <Pressable
@@ -64,12 +375,40 @@ export default function ExploreScreen() {
               onPress={() => setFilter(key)}
               style={[styles.filterButton, filter === key && styles.filterButtonActive]}
             >
-              <Text style={[styles.filterText, filter === key && styles.filterTextActive]}>
+              <Text
+                adjustsFontSizeToFit
+                numberOfLines={1}
+                style={[styles.filterText, filter === key && styles.filterTextActive]}
+              >
                 {t(`home.filters.${key}`)}
               </Text>
             </Pressable>
           ))}
         </View>
+
+        <Pressable
+          onPress={() => setAdvancedFiltersVisible(true)}
+          style={[
+            styles.advancedFilterButton,
+            advancedFilterCount > 0 && styles.advancedFilterButtonActive
+          ]}
+        >
+          <ListFilter
+            color={advancedFilterCount > 0 ? theme.colors.paper : theme.colors.teal}
+            size={18}
+          />
+          <Text
+            style={[
+              styles.advancedFilterText,
+              advancedFilterCount > 0 && styles.advancedFilterTextActive
+            ]}
+          >
+            {advancedFilterCount > 0
+              ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
+              : t("home.advancedFilters.button")}
+          </Text>
+        </Pressable>
+
         {error ? <Text style={styles.warning}>{t("home.remoteError")}</Text> : null}
         {isLoading ? <Text style={styles.warning}>{t("home.loading")}</Text> : null}
         <Text style={styles.resultCount}>
@@ -82,12 +421,97 @@ export default function ExploreScreen() {
         data={filteredStores}
         keyExtractor={(store) => store.id}
         renderItem={({ item }) => (
-          <StoreCard isVisited={visitedStoreIds.has(item.id)} store={item} />
+          <StoreCard
+            isVisited={visitedStoreIds.has(item.id)}
+            store={item}
+            visitDates={visitsByStoreId.get(item.id) ?? []}
+          />
         )}
         ListEmptyComponent={
           <Text style={styles.empty}>{t("home.empty")}</Text>
         }
       />
+
+      <Modal
+        animationType="slide"
+        onRequestClose={() => setAdvancedFiltersVisible(false)}
+        visible={advancedFiltersVisible}
+      >
+        <SafeAreaView style={styles.modalScreen} edges={["top", "left", "right", "bottom"]}>
+          <View style={styles.modalHeader}>
+            <View style={styles.modalHeaderCopy}>
+              <Text style={styles.modalTitle}>{t("home.advancedFilters.title")}</Text>
+              <Text style={styles.modalSubtitle}>
+                {t("home.advancedFilters.subtitle")}
+              </Text>
+            </View>
+            <Pressable
+              accessibilityLabel={t("home.advancedFilters.close")}
+              onPress={() => setAdvancedFiltersVisible(false)}
+              style={styles.modalCloseButton}
+            >
+              <X color={theme.colors.ink} size={22} />
+            </Pressable>
+          </View>
+
+          <ScrollView contentContainerStyle={styles.modalContent}>
+            {renderFilterGroup(
+              "countries",
+              t("home.advancedFilters.groups.countries"),
+              advancedOptions.countries
+            )}
+            {renderFilterGroup(
+              "regions",
+              t("home.advancedFilters.groups.regions"),
+              advancedOptions.regions
+            )}
+            {renderFilterGroup(
+              "years",
+              t("home.advancedFilters.groups.years"),
+              advancedOptions.years
+            )}
+            {renderFilterGroup(
+              "designStyles",
+              t("home.advancedFilters.groups.designStyles"),
+              advancedOptions.designStyles
+            )}
+            {renderFilterGroup(
+              "features",
+              t("home.advancedFilters.groups.features"),
+              advancedOptions.features
+            )}
+            {renderFilterGroup(
+              "extras",
+              t("home.advancedFilters.groups.extras"),
+              advancedOptions.extras
+            )}
+          </ScrollView>
+
+          <View style={styles.modalFooter}>
+            <Pressable
+              disabled={advancedFilterCount === 0}
+              onPress={() => setAdvancedFilters(createEmptyAdvancedFilters())}
+              style={[
+                styles.resetButton,
+                advancedFilterCount === 0 && styles.disabledButton
+              ]}
+            >
+              <RotateCcw color={theme.colors.teal} size={17} />
+              <Text style={styles.resetButtonText}>
+                {t("home.advancedFilters.reset")}
+              </Text>
+            </Pressable>
+            <Pressable
+              onPress={() => setAdvancedFiltersVisible(false)}
+              style={styles.doneButton}
+            >
+              <Text style={styles.doneButtonText}>
+                {t("home.advancedFilters.done")}
+              </Text>
+            </Pressable>
+          </View>
+        </SafeAreaView>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -109,43 +533,87 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       fontSize: typography.title1,
       fontWeight: "900",
-      letterSpacing: -0.5
+      letterSpacing: 0
     },
     searchWrap: {
       paddingHorizontal: spacing.lg,
-      paddingBottom: spacing.lg,
+      paddingBottom: spacing.lg
     },
-    searchInput: {
+    searchInputFrame: {
+      alignItems: "center",
       backgroundColor: colors.paper,
       borderRadius: radii.md,
-      color: colors.ink,
-      fontSize: typography.body,
+      flexDirection: "row",
       height: 56,
-      paddingHorizontal: spacing.lg,
+      paddingLeft: spacing.lg,
+      paddingRight: spacing.sm,
       ...shadows.md
+    },
+    searchInput: {
+      color: colors.ink,
+      flex: 1,
+      fontSize: typography.body,
+      height: "100%",
+      paddingRight: spacing.sm
+    },
+    clearSearchButton: {
+      alignItems: "center",
+      borderRadius: radii.full,
+      height: 36,
+      justifyContent: "center",
+      width: 36
     },
     filters: {
       flexDirection: "row",
-      flexWrap: "wrap",
-      gap: spacing.sm,
-      marginTop: spacing.lg
+      gap: spacing.xs,
+      marginTop: spacing.md
     },
     filterButton: {
+      alignItems: "center",
       backgroundColor: colors.paper,
       borderRadius: radii.full,
-      paddingHorizontal: spacing.md,
+      flex: 1,
+      justifyContent: "center",
+      minHeight: 38,
+      minWidth: 0,
+      paddingHorizontal: spacing.xs,
       paddingVertical: spacing.sm,
       ...shadows.sm
     },
     filterButtonActive: {
-      backgroundColor: colors.ink,
+      backgroundColor: colors.ink
     },
     filterText: {
       color: colors.muted,
-      fontSize: typography.small,
+      fontSize: typography.caption,
       fontWeight: "800"
     },
     filterTextActive: {
+      color: colors.paper
+    },
+    advancedFilterButton: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.sm,
+      justifyContent: "center",
+      marginTop: spacing.md,
+      minHeight: 46,
+      paddingHorizontal: spacing.md
+    },
+    advancedFilterButtonActive: {
+      backgroundColor: colors.teal,
+      borderColor: colors.teal
+    },
+    advancedFilterText: {
+      color: colors.teal,
+      fontSize: typography.small,
+      fontWeight: "900"
+    },
+    advancedFilterTextActive: {
       color: colors.paper
     },
     warning: {
@@ -171,6 +639,131 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontSize: typography.body,
       paddingTop: spacing.xxl,
       textAlign: "center"
+    },
+    modalScreen: {
+      backgroundColor: colors.canvas,
+      flex: 1
+    },
+    modalHeader: {
+      alignItems: "center",
+      borderBottomColor: colors.line,
+      borderBottomWidth: 1,
+      flexDirection: "row",
+      gap: spacing.md,
+      justifyContent: "space-between",
+      padding: spacing.lg
+    },
+    modalHeaderCopy: {
+      flex: 1
+    },
+    modalTitle: {
+      color: colors.ink,
+      fontSize: typography.title2,
+      fontWeight: "900"
+    },
+    modalSubtitle: {
+      color: colors.muted,
+      fontSize: typography.small,
+      lineHeight: 20,
+      marginTop: spacing.xs
+    },
+    modalCloseButton: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: radii.full,
+      borderWidth: 1,
+      height: 42,
+      justifyContent: "center",
+      width: 42
+    },
+    modalContent: {
+      gap: spacing.lg,
+      padding: spacing.lg,
+      paddingBottom: spacing.xxl
+    },
+    filterGroup: {
+      gap: spacing.sm
+    },
+    filterGroupTitle: {
+      color: colors.ink,
+      fontSize: typography.body,
+      fontWeight: "900"
+    },
+    filterChipGrid: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: spacing.sm
+    },
+    filterChip: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: radii.full,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.xs,
+      maxWidth: "100%",
+      minHeight: 36,
+      paddingHorizontal: spacing.md
+    },
+    filterChipActive: {
+      backgroundColor: colors.ink,
+      borderColor: colors.ink
+    },
+    filterChipText: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800",
+      maxWidth: 220
+    },
+    filterChipCount: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "900"
+    },
+    filterChipTextActive: {
+      color: colors.paper
+    },
+    modalFooter: {
+      backgroundColor: colors.paper,
+      borderTopColor: colors.line,
+      borderTopWidth: 1,
+      flexDirection: "row",
+      gap: spacing.sm,
+      padding: spacing.lg
+    },
+    resetButton: {
+      alignItems: "center",
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      flex: 1,
+      gap: spacing.sm,
+      justifyContent: "center",
+      minHeight: 48
+    },
+    resetButtonText: {
+      color: colors.teal,
+      fontSize: typography.small,
+      fontWeight: "900"
+    },
+    doneButton: {
+      alignItems: "center",
+      backgroundColor: colors.ink,
+      borderRadius: 8,
+      flex: 1,
+      justifyContent: "center",
+      minHeight: 48
+    },
+    doneButtonText: {
+      color: colors.paper,
+      fontSize: typography.small,
+      fontWeight: "900"
+    },
+    disabledButton: {
+      opacity: 0.45
     }
   }), [colors, radii, shadows, spacing, typography]);
 }
