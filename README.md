@@ -17,3 +17,8 @@ npm run mobile:start
 ## Structure
 - `apps/mobile`: The Expo mobile app.
 - `packages/data`: The JSON data and some scripts to manage it.
+
+## Disclaimer
+
+This is an unofficial student project. It is not affiliated with, sponsored by, or endorsed by Apple Inc. Apple, the Apple logo, and Apple Store are trademarks of Apple Inc., registered in the U.S. and other countries.
+
