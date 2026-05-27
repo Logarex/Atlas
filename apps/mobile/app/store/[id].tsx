@@ -252,12 +252,14 @@ export default function StoreDetailScreen() {
               {formatDate(store.openedOn, t("store.dateUnknown"))}
             </Text>
           </View>
-          <View style={styles.infoItem}>
-            <Text style={styles.infoLabel}>{t("store.closed")}</Text>
-            <Text style={styles.infoValue}>
-              {formatDate(store.closedOn, t("store.notClosed"))}
-            </Text>
-          </View>
+          {store.status !== 'open' && store.status !== 'announced' && (
+            <View style={styles.infoItem}>
+              <Text style={styles.infoLabel}>{t("store.closed")}</Text>
+              <Text style={styles.infoValue}>
+                {formatDate(store.closedOn, t("store.notClosed"))}
+              </Text>
+            </View>
+          )}
           <View style={styles.infoItem}>
             <Text style={styles.infoLabel}>{t("store.verified")}</Text>
             <Text style={styles.infoValue}>{store.lastVerifiedAt}</Text>

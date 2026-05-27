@@ -43,8 +43,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/canberra/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -90,8 +89,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/bondi/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -137,8 +135,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/broadway/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -184,8 +181,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/castletowers/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -231,8 +227,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/charlestown/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -278,8 +273,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/chatswoodchase/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -375,8 +369,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/miranda/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -422,8 +415,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/penrith/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -469,8 +461,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/sydney/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -516,8 +507,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/brisbane/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -563,8 +553,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/carindale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -610,8 +599,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/chermside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -657,8 +645,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/robina/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -704,8 +691,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/rundleplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -751,8 +737,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/chadstone/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -798,8 +783,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/southland/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -845,8 +829,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/doncaster/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -892,8 +875,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/fountaingate/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -939,8 +921,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/highpoint/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -986,8 +967,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/booragoon/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -1036,8 +1016,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/au/retail/perthcity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1083,8 +1062,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/at/retail/kaerntnerstrasse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -1134,8 +1112,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/benl/retail/brussels/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1181,8 +1158,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/br/retail/villagemall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1228,8 +1204,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/br/retail/morumbi/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1275,8 +1250,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/chinookcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1322,8 +1296,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/marketmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1369,8 +1342,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/southgatecentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1416,8 +1388,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/westedmonton/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1463,8 +1434,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/metrotown/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1510,8 +1480,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/coquitlamcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1557,8 +1526,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/richmondcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1604,8 +1572,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/guildfordtowncentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1701,8 +1668,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/pacificcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1748,8 +1714,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/polopark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1795,8 +1760,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/halifaxshoppingcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1842,8 +1806,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/mapleviewcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1889,8 +1852,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/masonville/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1936,8 +1898,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/markvilleshoppingcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -1983,8 +1944,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/squareone/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2030,8 +1990,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/uppercanadamall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2077,8 +2036,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/bayshoreshoppingcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2124,8 +2082,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/rideau/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2171,8 +2128,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/eatoncentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2218,8 +2174,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/fairview/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2265,8 +2220,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/sherwaygardens/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2312,8 +2266,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/yorkdale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2359,8 +2312,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/conestoga/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2406,8 +2358,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/dix30/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2453,8 +2404,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/carrefourlaval/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2500,8 +2450,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/saintecatherine/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2547,8 +2496,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/fairviewpointeclaire/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2594,8 +2542,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ca/retail/placestefoy/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -2695,8 +2642,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/qibao/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -2746,8 +2692,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/shanghaiiapm/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -2797,8 +2742,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/wujiaochang/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -2848,8 +2792,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/nanjingeast/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -2899,8 +2842,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/pudong/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -2950,8 +2892,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/globalharbor/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3001,8 +2942,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/jingan/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -3048,8 +2988,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/hongkongplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3099,8 +3038,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/kunming/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3150,8 +3088,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/sanlitun/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3201,8 +3138,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/livatbeijing/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -3248,8 +3184,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/chinacentralmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3299,8 +3234,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/chaoyangjoycity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3350,8 +3284,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/wangfujing/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3401,8 +3334,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/xidanjoycity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3452,8 +3384,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcchengdu/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3503,8 +3434,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/taikoolichengdu/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3554,8 +3484,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixctianjin/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3606,8 +3535,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/tianjinjoycity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3657,8 +3585,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/riverside66tianjin/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3708,8 +3635,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixchefei/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -3755,8 +3681,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/parc66jinan/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3806,8 +3731,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcqingdao/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3857,8 +3781,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/parccentral/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3908,8 +3831,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/zhujiangnewtown/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -3959,8 +3881,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/uniwalkqianhai/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -4006,8 +3927,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcshenzhen/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4057,8 +3977,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/holidayplazashenzhen/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4108,8 +4027,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcnanning/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4159,8 +4077,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/xinjiekou/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4210,8 +4127,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/xuanwulake/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4262,8 +4178,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/wondercity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4313,8 +4228,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/center66wuxi/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4364,8 +4278,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/suzhou/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4415,8 +4328,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixczhengzhou/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4466,8 +4378,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/tianyisquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4517,8 +4428,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixchangzhou/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4568,8 +4478,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/westlake/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4619,8 +4528,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcwenzhou/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4670,8 +4578,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/wuhan/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4721,8 +4628,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/changsha/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4772,8 +4678,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/xiamenlifestylecenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4823,8 +4728,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/tahoeplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4875,8 +4779,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/olympia66dalian/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4926,8 +4829,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/zhongjiejoycity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -4977,8 +4879,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcshenyang/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5028,8 +4929,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/jiefangbei/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5079,8 +4979,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/mixcchongqing/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5130,8 +5029,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com.cn/retail/paradisewalkchongqing/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5181,8 +5079,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/cap3000/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5228,8 +5125,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/strasbourg/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5275,8 +5171,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/aix-en-provence/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5322,8 +5217,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/marseille/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5369,8 +5263,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/latoisondor/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5419,8 +5312,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/sainte-catherine/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5466,8 +5358,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/lesquatretemps/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5513,8 +5404,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/odysseum/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5613,8 +5503,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/atlantis/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5660,8 +5549,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/lille/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5710,8 +5598,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/champs-elysees/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [
       {
@@ -5778,8 +5665,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/marchesaintgermain/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5829,8 +5715,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/opera/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -5931,8 +5816,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/confluence/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -5978,8 +5862,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/part-dieu/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6025,8 +5908,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/carresenart/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6076,8 +5958,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/valdeurope/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6126,8 +6007,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/rosny2/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6173,8 +6053,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/parly2/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6220,8 +6099,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/fr/retail/velizy2/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6271,8 +6149,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/sindelfingen/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6318,8 +6195,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/city-galerie/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6365,8 +6241,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/oez/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6412,8 +6287,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/rosenstrasse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6462,8 +6336,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/kurfuerstendamm/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6513,8 +6386,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/rosenthalerstrasse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6563,8 +6435,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/alstertal/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6610,8 +6481,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/jungfernstieg/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6657,8 +6527,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/grossebockenheimerstrasse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6707,8 +6576,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/mtz/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6754,8 +6622,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/hannover/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6801,8 +6668,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/duesseldorf/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -6852,8 +6718,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/rheincenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6899,8 +6764,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/schildergasse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6946,8 +6810,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/centro/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -6993,8 +6856,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/de/retail/altmarkt-galerie/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7040,8 +6902,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/hk/retail/apmhongkong/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7087,8 +6948,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/hk/retail/newtownplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7134,8 +6994,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/hk/retail/causewaybay/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7181,8 +7040,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/hk/retail/festivalwalk/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7227,8 +7085,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/hk/retail/cantonroad/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7273,8 +7130,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/hk/retail/ifcmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7320,8 +7176,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/in/retail/saket/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7367,8 +7222,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/in/retail/hebbal/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -7414,8 +7268,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/in/retail/bkc/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7461,8 +7314,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/in/retail/borivali/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -7508,8 +7360,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/in/retail/koregaonpark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -7555,8 +7406,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/in/retail/noida/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -7602,8 +7452,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/oriocenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7649,8 +7498,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/viarizzoli/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7696,8 +7544,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/illeone/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7743,8 +7590,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/campania/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7790,8 +7636,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/centrosicilia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7837,8 +7682,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/igigli/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7884,8 +7728,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/firenze/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7931,8 +7774,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/carosello/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -7978,8 +7820,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/piazzaliberty/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8025,8 +7866,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/fiordaliso/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8072,8 +7912,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/lebefane/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8119,8 +7958,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/portadiroma/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8166,8 +8004,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/euroma2/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8213,8 +8050,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/viadelcorso/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8309,8 +8145,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/legru/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8356,8 +8191,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/viaroma/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8403,8 +8237,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/it/retail/navedevero/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -8607,8 +8440,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/kyoto/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -8658,8 +8490,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/shinsaibashi/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -8709,8 +8540,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/umeda/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -8756,8 +8586,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/nagoyasakae/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -8807,8 +8636,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/ginza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -8858,8 +8686,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/marunouchi/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -8909,8 +8736,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/shinjuku/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -8960,8 +8786,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/shibuya/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9011,8 +8836,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/omotesando/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9062,8 +8886,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/kawasaki/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9113,8 +8936,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/jp/retail/fukuoka/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9165,8 +8987,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/mo-en/retail/cotaistrip/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9217,8 +9038,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/mo/retail/galaxymacau/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9268,8 +9088,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/my/retail/exchangetrx/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -9315,8 +9134,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/mx/retail/antara/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9362,8 +9180,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/mx/retail/viasantafe/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9413,8 +9230,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/nl/retail/amsterdam/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9460,8 +9276,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/nl/retail/haarlem/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9507,8 +9322,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/nl/retail/denhaag/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9553,8 +9367,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/sg/retail/jewelchangiairport/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9602,8 +9415,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/sg/retail/marinabaysands/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9648,8 +9460,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/sg/retail/orchardroad/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -9695,8 +9506,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/hanam/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9746,8 +9556,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/garosugil/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9797,8 +9606,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/gangnam/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9848,8 +9656,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/myeongdong/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9899,8 +9706,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/yeouido/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -9950,8 +9756,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/jamsil/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10001,8 +9806,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/kr/retail/hongdae/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10051,8 +9855,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/lamaquinista/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10098,8 +9901,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/passeigdegracia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10149,8 +9951,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/xanadu/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10200,8 +10001,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/parquesur/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10247,8 +10047,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/lavaguada/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -10294,8 +10093,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/puertadelsol/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10341,8 +10139,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/granplaza2/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10388,8 +10185,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/lacanada/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10439,8 +10235,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/nuevacondomina/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10486,8 +10281,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/valencia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10536,8 +10330,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/rioshopping/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10587,8 +10380,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/es/retail/puertovenecia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10687,8 +10479,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/se/retail/emporia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10734,8 +10525,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/se/retail/mallofscandinavia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -10781,8 +10571,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/se/retail/tabycentrum/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -10832,8 +10621,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/chfr/retail/freiestrasse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10879,8 +10667,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/chfr/retail/ruederive/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10926,8 +10713,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/chfr/retail/glattzentrum/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -10973,8 +10759,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/chfr/retail/rennweg/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -11023,8 +10808,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/tw/retail/xinyia13/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -11074,8 +10858,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/tw/retail/taipei101/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -11125,8 +10908,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/th/retail/centralworld/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11172,8 +10954,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/th/retail/iconsiam/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11219,8 +11000,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/tr/retail/zorlucenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11266,8 +11046,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/tr/retail/bagdatcaddesi/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -11317,8 +11096,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/tr/retail/akasya/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11364,8 +11142,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ae/retail/almaryahisland/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11411,8 +11188,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ae/retail/yasmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11458,8 +11234,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ae/retail/aljimimall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -11505,8 +11280,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ae/retail/dubaimall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11552,8 +11326,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/ae/retail/malloftheemirates/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11599,8 +11372,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/unionsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11646,8 +11418,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/theoracle/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11693,8 +11464,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/cribbscauseway/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11740,8 +11510,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/miltonkeynes/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11787,8 +11556,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/grandarcade/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11834,8 +11602,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/cardiff/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -11884,8 +11651,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/bromptonroad/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11931,8 +11697,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/coventgarden/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -11978,8 +11743,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/regentstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12076,8 +11840,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/princesshay/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12123,8 +11886,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/plymouth/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -12173,8 +11935,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/churchillsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12220,8 +11981,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/edinburgh/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -12323,8 +12083,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/lakeside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12370,8 +12129,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/braehead/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12417,8 +12175,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/glasgow/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -12467,8 +12224,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/bentallcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12514,8 +12270,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/battersea/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12561,8 +12316,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/brentcross/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12608,8 +12362,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/stratfordcity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12655,8 +12408,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/whitecity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12702,8 +12454,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/manchesterarndale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12749,8 +12500,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/traffordcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12796,8 +12546,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/festivalplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -12843,8 +12592,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/southampton/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -12893,8 +12641,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/watford/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -12943,8 +12690,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/bromley/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -12993,8 +12739,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/bluewater/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13040,8 +12785,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/highcross/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13087,8 +12831,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/liverpool/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -13137,8 +12880,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/norwich/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -13187,8 +12929,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/belfast/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -13284,8 +13025,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/southgate/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13331,8 +13071,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/meadowhall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13378,8 +13117,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/metrocentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13425,8 +13163,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/eldonsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13472,8 +13209,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/birmingham/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -13522,8 +13258,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/touchwoodcentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13569,8 +13304,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/uk/retail/trinityleeds/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13616,8 +13350,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thesummit/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13663,8 +13396,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bridgestreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13710,8 +13442,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/anchorage5thavenuemall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13757,8 +13488,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/chandlerfashioncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13804,8 +13534,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/santanvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13851,8 +13580,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/arrowhead/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -13945,8 +13673,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/scottsdalefashionsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -13995,8 +13722,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/scottsdalequarter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14042,8 +13768,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/laencantada/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14089,8 +13814,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thepromenadeatchenal/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14136,8 +13860,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/valleyplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14183,8 +13906,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/4thstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14230,8 +13952,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/breamall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14277,8 +13998,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/burlingame/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14324,8 +14044,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/topanga/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14371,8 +14090,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/carlsbad/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14418,8 +14136,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/loscerritos/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14465,8 +14182,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/otayranch/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14512,8 +14228,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/cortemadera/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14559,8 +14274,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southcoastplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14656,8 +14370,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/appleparkvisitorcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14703,8 +14416,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/baystreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14750,8 +14462,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/northcounty/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14797,8 +14508,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fashionfair/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14844,8 +14554,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/glendalegalleria/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14891,8 +14600,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/theamericanaatbrand/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14938,8 +14646,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/irvinespectrumcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -14985,8 +14692,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/beverlycenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15032,8 +14738,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/centurycity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15079,8 +14784,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thegrove/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15126,8 +14830,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/towertheatre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15173,8 +14876,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/losgatos/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15220,8 +14922,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/manhattanvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15267,8 +14968,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/missionviejo/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15314,8 +15014,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/vintagefaire/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15361,8 +15060,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/delmonte/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15408,8 +15106,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fashionisland/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15455,8 +15152,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/northridge/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15502,8 +15198,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/elpaseovillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15549,8 +15244,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/paloalto/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15596,8 +15290,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/stanfordshoppingcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -15646,8 +15339,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/pasadena/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15693,8 +15385,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/stoneridgemall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15740,8 +15431,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/victoriagardens/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15787,8 +15477,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/roseville/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15834,8 +15523,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/ardenfair/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15881,8 +15569,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fashionvalley/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15928,8 +15615,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/utc/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -15975,8 +15661,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/chestnutstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16022,8 +15707,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/stonestown/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16069,8 +15753,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/unionsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -16119,8 +15802,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/oakridge/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16166,8 +15848,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/higuerastreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16213,8 +15894,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/hillsdale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16260,8 +15940,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/statestreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16307,8 +15986,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/valleyfair/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16354,8 +16032,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thirdstreetpromenade/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16401,8 +16078,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/montgomeryvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16448,8 +16124,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/shermanoaks/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16545,8 +16220,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/promenadetemecula/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16592,8 +16266,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/theoaks/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16639,8 +16312,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/delamo/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -16686,8 +16358,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/valenciatowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16733,8 +16404,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/broadwayplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -16783,8 +16453,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/twentyninthstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16830,8 +16499,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/flatironcrossing/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16877,8 +16545,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thepromenadeshopsatbriargate/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16924,8 +16591,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/cherrycreek/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -16971,8 +16637,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/aspengrove/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17018,8 +16683,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/parkmeadows/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17065,8 +16729,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/danburyfairmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17112,8 +16775,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/westfarms/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17159,8 +16821,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/greenwichavenue/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17206,8 +16867,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/newhaven/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17253,8 +16913,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/sonocollection/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -17303,8 +16962,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/evergreenwalk/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17397,8 +17055,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/trumbull/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17444,8 +17101,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/christianamall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17491,8 +17147,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/carnegielibrary/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17538,8 +17193,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/georgetown/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17585,8 +17239,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/altamonte/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17632,8 +17285,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/aventura/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17679,8 +17331,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bocaraton/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17726,8 +17377,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/brandon/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17773,8 +17423,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/coconutpoint/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17820,8 +17469,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thegalleria/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17867,8 +17515,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/stjohnstowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17914,8 +17561,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lincolnroad/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -17961,8 +17607,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/brickellcitycentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18008,8 +17653,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/dadeland/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18055,8 +17699,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/miamiworldcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -18102,8 +17745,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thefalls/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18149,8 +17791,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/watersideshops/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18196,8 +17837,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/floridamall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18243,8 +17883,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/millenia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18290,8 +17929,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thegardensmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18337,8 +17975,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/universitytowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18384,8 +18021,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/internationalplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18431,8 +18067,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/wellingtongreen/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18478,8 +18113,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/avalon/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -18575,8 +18209,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/cumberlandmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18622,8 +18255,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lenoxsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18669,8 +18301,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/perimeter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18716,8 +18347,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/augusta/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18763,8 +18393,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/mallofgeorgia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18810,8 +18439,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/alamoana/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18857,8 +18485,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/kahala/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -18954,8 +18581,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/boisetownesquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19001,8 +18627,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lincolnpark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19048,8 +18673,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/michiganavenue/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -19098,8 +18722,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/deerpark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19145,8 +18768,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/mainplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19242,8 +18864,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/oakbrook/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19289,8 +18910,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/orlandsquaremall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19336,8 +18956,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/woodfield/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19383,8 +19002,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/oldorchard/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19430,8 +19048,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thefashionmallatkeystone/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -19480,8 +19097,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/universityparkmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19527,8 +19143,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/jordancreek/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19574,8 +19189,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/leawood/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19668,8 +19282,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fritzfarm/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -19718,8 +19331,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/oxmoor/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19765,8 +19377,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/malloflouisiana/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19812,8 +19423,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lakesideshoppingcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19859,8 +19469,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/mainemall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19906,8 +19515,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/annapolis/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -19953,8 +19561,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bethesdarow/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20000,8 +19607,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/montgomerymall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20047,8 +19653,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/columbia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20094,8 +19699,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/towsontowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20141,8 +19745,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/boylstonstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20188,8 +19791,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southshore/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20235,8 +19837,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/burlington/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20282,8 +19883,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/cambridgeside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20329,8 +19929,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/chestnuthill/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20376,8 +19975,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/legacyplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20423,8 +20021,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/derbystreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20470,8 +20067,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/holyoke/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20517,8 +20113,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/marketstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -20617,8 +20212,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/theshopsatblackstonevalley/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -20664,8 +20258,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/natick/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -20761,8 +20354,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/briarwood/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20858,8 +20450,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/downtowndetroit/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -20905,8 +20496,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/woodland/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20952,8 +20542,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/eastwoodtownecenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -20999,8 +20588,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/twelveoaks/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21046,8 +20634,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/somerset/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21093,8 +20680,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/mallofamerica/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21140,8 +20726,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southdale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21237,8 +20822,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/ridgedale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21284,8 +20868,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/rosedalecenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21331,8 +20914,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/renaissanceatcolonypark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21378,8 +20960,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/countryclubplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21425,8 +21006,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/saintlouisgalleria/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21472,8 +21052,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/westcounty/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21519,8 +21098,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/villagepointe/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21566,8 +21144,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fashionshow/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21613,8 +21190,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/summerlin/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21660,8 +21236,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/theforumshops/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21707,8 +21282,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/townsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21754,8 +21328,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/shaydensummit/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21801,8 +21374,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/themallofnewhampshire/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21848,8 +21420,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/pheasantlane/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21895,8 +21466,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/rockinghampark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -21992,8 +21562,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bridgewater/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22039,8 +21608,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/cherryhill/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22086,8 +21654,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/americandream/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22133,8 +21700,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/menlopark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22180,8 +21746,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/freeholdracewaymall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22227,8 +21792,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/quakerbridge/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22274,8 +21838,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/sagemore/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22321,8 +21884,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/gardenstateplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22368,8 +21930,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/rockaway/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22415,8 +21976,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/shorthills/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22462,8 +22022,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/willowbrook/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22509,8 +22068,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/ticescorner/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -22559,8 +22117,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/abquptown/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22606,8 +22163,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/crossgates/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22653,8 +22209,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/themallatbayplaza/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22700,8 +22255,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/downtownbrooklyn/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22747,8 +22301,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/williamsburg/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22794,8 +22347,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/waldengalleria/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22841,8 +22393,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/queenscenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22888,8 +22439,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/rooseveltfield/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22935,8 +22485,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/waltwhitman/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -22982,8 +22531,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/smithhaven/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23029,8 +22577,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/manhasset/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23076,8 +22623,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/nanuet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -23129,8 +22675,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fifthavenue/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23176,8 +22721,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/grandcentral/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23223,8 +22767,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/soho/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23270,8 +22813,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/uppereastside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23317,8 +22859,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/upperwestside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23364,8 +22905,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/west14thstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23411,8 +22951,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/worldtradecenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23458,8 +22997,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/statenisland/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23505,8 +23043,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/syracuse/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -23555,8 +23092,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/eastview/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23649,8 +23185,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thewestchester/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23696,8 +23231,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/ridgehill/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23793,8 +23327,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southpark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23840,8 +23373,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southpoint/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23887,8 +23419,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/friendlycenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23934,8 +23465,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/birkdalevillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -23981,8 +23511,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/crabtreevalleymall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24028,8 +23557,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/summitmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24075,8 +23603,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thegreene/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24122,8 +23649,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/kenwoodtownecentre/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24169,8 +23695,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/eastontowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24216,8 +23741,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/polarisfashionplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24310,8 +23834,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/franklinparkmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24357,8 +23880,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/crockerpark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24404,8 +23926,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/eton/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -24454,8 +23975,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/pennsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24501,8 +24021,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/woodlandhills/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24548,8 +24067,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/pioneerplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24595,8 +24113,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bridgeportvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24642,8 +24159,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/washingtonsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24689,8 +24205,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/suburbansquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24736,8 +24251,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/kingofprussia/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24783,8 +24297,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/parkcity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24830,8 +24343,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/walnutstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24877,8 +24389,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/rosspark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24924,8 +24435,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/shadyside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -24971,8 +24481,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southhillsvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25018,8 +24527,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lehighvalley/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25065,8 +24573,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/willowgrovepark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25112,8 +24619,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/providenceplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25159,8 +24665,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/charleston/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -25209,8 +24714,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/haywoodmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25256,8 +24760,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/coolspringsgalleria/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25303,8 +24806,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/saddlecreek/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25350,8 +24852,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/westtownmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25397,8 +24898,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/downtownnashville/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25444,8 +24944,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/greenhills/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25491,8 +24990,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bartoncreek/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25538,8 +25036,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/domainnorthside/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -25588,8 +25085,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/galleriadallas/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25635,8 +25131,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/knoxstreet/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25682,8 +25177,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/northparkcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25729,8 +25223,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/cielovistamall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25776,8 +25269,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/universityparkvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25823,8 +25315,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/baybrook/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25920,8 +25411,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/highlandvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -25967,8 +25457,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/houstongalleria/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26014,8 +25503,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/memorialcity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26061,8 +25549,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/willowbrookmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26158,8 +25645,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lacantera/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26205,8 +25691,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/northstar/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26252,8 +25737,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southlaketownsquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26299,8 +25783,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/firstcolonymall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26346,8 +25829,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/thewoodlands/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26393,8 +25875,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/stationpark/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26440,8 +25921,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fashionplace/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26487,8 +25967,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/citycreekcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -26584,8 +26063,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/clarendon/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26631,8 +26109,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/pentagoncity/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26728,8 +26205,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/fairfaxcorner/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-17"
@@ -26778,8 +26254,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/tysonscorner/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26875,8 +26350,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/reston/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26922,8 +26396,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/shortpumptowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -26969,8 +26442,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/lynnhavenmall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27016,8 +26488,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/stonebridgepotomactowncenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27063,8 +26534,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bellevuesquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27110,8 +26580,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/alderwood/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -27160,8 +26629,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/universityvillage/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27207,8 +26675,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/riverparksquare/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27254,8 +26721,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/tacomamall/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27301,8 +26767,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/southcenter/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27348,8 +26813,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/bayshore/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
@@ -27395,8 +26859,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/hilldale/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18",
@@ -27445,8 +26908,7 @@ export const generatedStores: StoreRecord[] = [
     "hours": {
       "policy": "official-link-only",
       "officialUrl": "https://www.apple.com/retail/mayfair/",
-      "lastVerifiedAt": null,
-      "note": "Hours change often. Verify on the official Apple page before visiting."
+      "lastVerifiedAt": null
     },
     "photos": [],
     "lastVerifiedAt": "2026-05-18"
