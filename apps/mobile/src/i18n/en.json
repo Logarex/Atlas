@@ -14,7 +14,7 @@
   },
   "home": {
     "kicker": "Atlas",
-    "title": "Map and visit notebook",
+    "title": "Apple Store\nworld tour",
     "subtitle": "A map and notebook for finding Apple stores, logging visits, and tracking your collection.",
     "searchLabel": "Search stores",
     "searchPlaceholder": "Search by store, city, country, status, feature...",
@@ -134,6 +134,8 @@
   },
   "store": {
     "back": "Back to explore",
+    "notFoundTitle": "Store not found",
+    "notFoundBody": "This store is no longer available in the local dataset.",
     "visitedBadge": "Visited",
     "history": "History",
     "architecture": "Architecture",
@@ -163,10 +165,18 @@
     "shareMail": "Mail",
     "shareSocial": "Social",
     "shareCard": "Image card",
+    "sharePreparing": "Preparing the image card...",
+    "shareFailed": "Sharing could not be opened. Try again in a moment.",
+    "shareCardFailed": "The image card could not be generated. The text message is still available.",
+    "shareNoImage": "No shareable image is available for this store. The text message will open instead.",
     "shareCardVisited": "Visited on {{date}}",
     "shareCardTagline": "Collect Apple Stores with Atlas.",
     "architectureEra": "Era: {{era}}",
     "architectureEmpty": "No verified architectural signature yet.",
+    "architectureNote": "Architecture note",
+    "architectureLocalContext": "Store context",
+    "architectureAddImage": "Add image",
+    "architecturePhotoCaption": "Architectural detail of {{name}}",
     "verifyOfficial": "Verify on Apple",
     "noPhotos": "No approved community photos yet.",
     "privatePhotos": "Private photos",
@@ -225,6 +235,97 @@
     "plaza": "Plaza",
     "trees": "Trees",
     "videoWall": "Video wall"
+  },
+  "architectureDetails": {
+    "eraFallback": "{{value}} describes a design period or family used in the Atlas dataset. The record can still be expanded with sources, renovation dates, and detail photos.",
+    "typologyFallback": "{{value}} describes the store's overall form: its setting, relationship to the street or mall, and the kind of retail experience it supports.",
+    "eras": {
+      "glassCubeFlagship": {
+        "body": "This era covers landmark flagships where the structure itself becomes an urban signal. Glass, transparency, and monumental stairs turn the entrance into both a public marker and a store threshold."
+      },
+      "originalRetail": {
+        "body": "Apple's earliest stores established the core retail language: simple circulation, product tables, Genius Bar service, and a highly readable interior. They mark Apple's move into a tightly controlled physical experience."
+      },
+      "townSquare": {
+        "body": "The Town Square era reframes the store as a civic place: Forum, video wall, planting, seating, and Today at Apple. Recent flagships aim less for pure display and more for integration with the city, heritage buildings, or public space."
+      },
+      "unknown": {
+        "body": "The exact design era is not documented in Atlas yet. The record keeps verified elements and can be improved with a reliable source or a photo that clarifies the design generation."
+      }
+    },
+    "typologies": {
+      "classic": {
+        "body": "A historical Apple Store type, often in a mall or shopping street, with a simple facade, product tables, and service toward the back or side. Its priority is clear customer flow."
+      },
+      "classicUpgrade": {
+        "body": "A classic store updated with newer cues: warmer materials, clearer service zones, and sometimes a Forum or video wall. It keeps the original footprint while moving the experience closer to current formats."
+      },
+      "historicUrbanFlagship": {
+        "body": "An urban flagship inserted into a heritage building. The architectural task is to preserve facade, volumes, or decorative details while introducing Apple's contemporary language in a legible and reversible way."
+      },
+      "mallStore": {
+        "body": "A store embedded in a shopping center. Its architecture must attract people from a busy gallery, organize entry quickly, and remain legible within a constrained width and depth."
+      },
+      "nsd": {
+        "body": "NSD points to new-generation stores: more open facades, Avenue, Forum, natural materials, and clearer separation between discovery, service, and Today at Apple sessions."
+      },
+      "standalonePavilion": {
+        "body": "A freestanding pavilion conceived as a complete architectural object. It can use transparency, roof form, views, and surrounding public space with a more iconic presence than a mall unit."
+      },
+      "urbanFlagship": {
+        "body": "A large city store designed as a destination. It combines visibility, capacity, service areas, and sometimes multiple levels to become a marker in its district."
+      },
+      "unknown": {
+        "body": "The typology is not fully qualified yet. The displayed attributes and notes still help interpret the record, but a correction can refine the exact format."
+      },
+      "vintageD2": {
+        "body": "An older format tied to intermediate generations of Apple Retail design. It remains very functional, before Forums, Avenues, and recent video walls became widespread."
+      },
+      "vintageE": {
+        "body": "An older or transitional store type, useful for spotting locations that have not fully adopted the vocabulary of contemporary Apple Stores."
+      },
+      "watchShop": {
+        "body": "A format dedicated to Apple Watch, usually more compact and closer to a jewelry or accessories space. It emphasizes presentation, try-on, and direct advisor interaction."
+      }
+    },
+    "attributes": {
+      "avenue": {
+        "body": "The Avenue is the wall-based display zone introduced with new-generation stores. It presents accessories, services, and collections like an interior street, with a more editorial rhythm than a simple shelf."
+      },
+      "boardroom": {
+        "body": "The Boardroom is a quieter space for business customers, training, or appointments. It reflects Apple's move toward longer service relationships, not only product sales."
+      },
+      "forum": {
+        "body": "The Forum hosts Today at Apple and group demonstrations. Historically, it shifts part of the store from showroom logic toward cultural programming and learning."
+      },
+      "geniusBar": {
+        "body": "The Genius Bar is the historic marker of Apple Store service. Even when the specific furniture disappears in newer formats, Atlas flags it when the location offers or offered an identifiable support zone."
+      },
+      "glassCube": {
+        "body": "The glass cube is one of Apple Retail's best-known signatures. It turns the entrance into a minimal urban object, often above a below-grade or highly transparent sales floor."
+      },
+      "greenWall": {
+        "body": "The green wall softens the interior and belongs to the Town Square vocabulary. It creates a visual landmark, improves atmosphere, and connects the store to the idea of an indoor plaza or garden."
+      },
+      "historicFacade": {
+        "body": "A historic facade means the store is inserted into an existing building of heritage interest. The project balances conservation, restoration, and contrast between older details and contemporary intervention."
+      },
+      "outdoor": {
+        "body": "An outdoor entrance connects the store directly to a street, plaza, or forecourt. It changes the experience: the store becomes an urban address rather than only a gallery unit."
+      },
+      "pickup": {
+        "body": "Pickup marks the rise of online order collection. It clarifies an increasingly important logistics flow without turning the whole store into a pickup counter."
+      },
+      "plaza": {
+        "body": "The plaza is the public or semi-public space associated with the store. It extends the Town Square idea: waiting, meeting, attending an event, or simply passing through."
+      },
+      "trees": {
+        "body": "Trees inside or around the store humanize large volumes and create continuity with the street. In recent stores, they are part of the public-place vocabulary rather than isolated decoration."
+      },
+      "videoWall": {
+        "body": "The video wall structures the Forum and makes sessions, launches, and demonstrations visible. It is a key element in the move from product store to event and learning space."
+      }
+    }
   },
   "values": {
     "yes": "Yes",

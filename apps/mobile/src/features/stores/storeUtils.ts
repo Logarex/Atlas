@@ -180,8 +180,7 @@ export function getPhotoSource(url: string) {
 }
 
 export function getStorePlace(store: StoreRecord) {
-  return [store.city, store.region, store.countryName ?? store.countryCode]
-    .filter(Boolean)
+  return compactSearchParts([store.city, store.region, store.countryName ?? store.countryCode])
     .join(", ");
 }
 

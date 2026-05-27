@@ -14,7 +14,7 @@
   },
   "home": {
     "kicker": "Atlas",
-    "title": "Tour du monde des Apple Store",
+    "title": "Tour du monde\ndes Apple Store",
     "subtitle": "Une carte et un carnet pour retrouver les boutiques Apple, noter tes visites et suivre ta collection.",
     "searchLabel": "Rechercher des boutiques",
     "searchPlaceholder": "Boutique, ville, pays, statut, attribut...",
@@ -134,6 +134,8 @@
   },
   "store": {
     "back": "Retour à l'exploration",
+    "notFoundTitle": "Boutique introuvable",
+    "notFoundBody": "Cette fiche n'existe plus dans la base locale.",
     "visitedBadge": "Vue",
     "history": "Histoire",
     "architecture": "Architecture",
@@ -163,10 +165,18 @@
     "shareMail": "Mail",
     "shareSocial": "Réseaux",
     "shareCard": "Carte image",
+    "sharePreparing": "Préparation de la carte image...",
+    "shareFailed": "Le partage n'a pas pu s'ouvrir. Réessaie dans un instant.",
+    "shareCardFailed": "La carte image n'a pas pu être générée. Le message texte reste disponible.",
+    "shareNoImage": "Aucune image partageable pour cette fiche. Le message texte va s'ouvrir.",
     "shareCardVisited": "Visité le {{date}}",
     "shareCardTagline": "Collectionne les Apple Store avec Atlas.",
     "architectureEra": "Époque : {{era}}",
     "architectureEmpty": "Aucune signature architecturale vérifiée pour l'instant.",
+    "architectureNote": "Note d'architecture",
+    "architectureLocalContext": "Contexte de la fiche",
+    "architectureAddImage": "Ajouter une image",
+    "architecturePhotoCaption": "Détail architectural de {{name}}",
     "verifyOfficial": "Vérifier chez Apple",
     "noPhotos": "Aucune photo communautaire approuvée pour l'instant.",
     "privatePhotos": "Photos privées",
@@ -225,6 +235,97 @@
     "plaza": "Plaza",
     "trees": "Arbres",
     "videoWall": "Mur vidéo"
+  },
+  "architectureDetails": {
+    "eraFallback": "{{value}} désigne une période ou une famille de design utilisée dans la base Atlas. La fiche peut encore être enrichie avec des sources, des dates de rénovation et des photos de détails.",
+    "typologyFallback": "{{value}} décrit la forme générale de la boutique : son implantation, sa relation à la rue ou au centre commercial, et le type d'expérience retail qu'elle propose.",
+    "eras": {
+      "glassCubeFlagship": {
+        "body": "Cette période correspond aux flagships spectaculaires où la structure devient un signal urbain. Le verre, la transparence et les escaliers monumentaux servent à transformer l'entrée en repère public autant qu'en boutique."
+      },
+      "originalRetail": {
+        "body": "Les premières boutiques Apple installent les bases du retail de la marque : circulation simple, tables de démonstration, service Genius Bar et langage intérieur très lisible. Elles documentent le passage d'Apple vers une expérience physique maîtrisée."
+      },
+      "townSquare": {
+        "body": "L'époque Town Square replace la boutique comme lieu civique : forum, mur vidéo, végétation, assises et Today at Apple. Les flagships récents cherchent moins l'effet vitrine pure que l'intégration à la ville, au patrimoine ou à une place publique."
+      },
+      "unknown": {
+        "body": "L'époque exacte n'est pas encore documentée dans Atlas. La fiche conserve les éléments vérifiés et peut être enrichie avec une source fiable ou une photo permettant de préciser la génération du design."
+      }
+    },
+    "typologies": {
+      "classic": {
+        "body": "Typologie historique de boutique Apple, souvent en centre commercial ou rue commerçante, avec façade simple, tables de produits et service au fond ou sur le côté. Elle met surtout l'accent sur la clarté du parcours client."
+      },
+      "classicUpgrade": {
+        "body": "Boutique classique modernisée avec certains codes récents : matériaux plus chauds, meilleure lisibilité des zones de service et parfois forum ou mur vidéo. Elle garde l'implantation d'origine tout en rapprochant l'expérience des formats actuels."
+      },
+      "historicUrbanFlagship": {
+        "body": "Flagship urbain installé dans un bâtiment patrimonial. L'enjeu architectural est de conserver la façade, les volumes ou les décors existants tout en insérant le langage Apple contemporain de façon réversible et lisible."
+      },
+      "mallStore": {
+        "body": "Boutique intégrée à un centre commercial. L'architecture doit attirer depuis une galerie très fréquentée, organiser rapidement l'accueil et maintenir une lecture claire malgré une largeur et une profondeur souvent contraintes."
+      },
+      "nsd": {
+        "body": "NSD renvoie aux boutiques de nouvelle génération : façades plus ouvertes, Avenue, Forum, matériaux naturels et meilleure séparation entre découverte, service et sessions Today at Apple."
+      },
+      "standalonePavilion": {
+        "body": "Pavillon autonome pensé comme objet architectural complet. Le bâtiment peut travailler la transparence, le toit, les vues et l'espace public autour de la boutique, avec une présence plus iconique qu'une cellule de centre commercial."
+      },
+      "urbanFlagship": {
+        "body": "Grand magasin urbain conçu comme destination. Il combine visibilité, forte capacité d'accueil, espaces de service et parfois niveaux multiples pour devenir un repère dans son quartier."
+      },
+      "unknown": {
+        "body": "La typologie n'est pas encore suffisamment qualifiée. Les attributs et notes affichés restent utiles pour comprendre la fiche, mais une correction peut préciser le format exact."
+      },
+      "vintageD2": {
+        "body": "Format plus ancien lié aux générations intermédiaires du design Apple Retail. Il garde une organisation très fonctionnelle, avant la généralisation des forums, avenues et murs vidéo récents."
+      },
+      "vintageE": {
+        "body": "Typologie ancienne ou transitoire de boutique, utile pour repérer les lieux qui n'ont pas encore adopté tout le vocabulaire des Apple Store contemporains."
+      },
+      "watchShop": {
+        "body": "Format consacré à Apple Watch, souvent plus compact et plus proche d'un espace de joaillerie ou d'accessoires. Le design privilégie la présentation, l'essayage et la relation directe avec le conseiller."
+      }
+    },
+    "attributes": {
+      "avenue": {
+        "body": "L'Avenue est la zone d'exposition murale introduite avec les boutiques de nouvelle génération. Elle présente accessoires, services et collections comme une rue intérieure, avec un rythme plus éditorial qu'un simple rayon."
+      },
+      "boardroom": {
+        "body": "Le Boardroom est un espace plus calme pour les professionnels, formations ou rendez-vous. Il traduit la volonté d'Apple de faire de certaines boutiques des lieux de service et de relation longue, pas seulement de vente."
+      },
+      "forum": {
+        "body": "Le Forum accueille Today at Apple et les démonstrations collectives. Historiquement, il remplace une partie de la logique de showroom par une logique de programmation culturelle et d'apprentissage."
+      },
+      "geniusBar": {
+        "body": "Le Genius Bar est le marqueur historique du service en boutique Apple. Même quand son mobilier disparaît dans les formats récents, la fiche le signale lorsque le lieu propose ou a proposé une zone de support identifiable."
+      },
+      "glassCube": {
+        "body": "Le cube en verre est l'une des signatures les plus célèbres d'Apple Retail. Il transforme l'entrée en objet urbain minimal, souvent au-dessus d'un espace de vente enterré ou très transparent."
+      },
+      "greenWall": {
+        "body": "Le mur végétal adoucit l'espace intérieur et accompagne la période Town Square. Il sert à créer un repère visuel, améliorer l'atmosphère et relier la boutique à une idée de place ou de jardin intérieur."
+      },
+      "historicFacade": {
+        "body": "Une façade historique indique que la boutique s'insère dans un bâtiment existant d'intérêt patrimonial. Le projet doit composer avec conservation, restauration et contraste entre détails anciens et intervention contemporaine."
+      },
+      "outdoor": {
+        "body": "Une entrée extérieure relie directement la boutique à la rue, une place ou un parvis. Cela change l'expérience : le magasin devient une adresse urbaine plutôt qu'une simple cellule de galerie."
+      },
+      "pickup": {
+        "body": "Le comptoir Pickup matérialise la montée du retrait de commandes en ligne. Il clarifie un flux logistique devenu central sans transformer toute la boutique en point de retrait."
+      },
+      "plaza": {
+        "body": "La plaza est l'espace public ou semi-public associé à la boutique. Elle prolonge la logique Town Square : attendre, se retrouver, assister à un événement ou simplement traverser le lieu."
+      },
+      "trees": {
+        "body": "Les arbres intérieurs ou extérieurs humanisent les grands volumes et créent une continuité avec la rue. Dans les boutiques récentes, ils font partie du vocabulaire de place publique plutôt que d'une décoration isolée."
+      },
+      "videoWall": {
+        "body": "Le mur vidéo structure le Forum et rend visibles les sessions, lancements et démonstrations. C'est un élément clé du passage d'une boutique produit à un lieu d'événements et d'apprentissage."
+      }
+    }
   },
   "values": {
     "yes": "Oui",

@@ -38,7 +38,13 @@ export default function HomeScreen() {
         ]}
       >
         <View style={styles.header}>
-          <Text style={styles.kicker}>{t("home.kicker")}</Text>
+          <View style={styles.headerTopLine}>
+            <Text style={styles.kicker}>{t("home.kicker")}</Text>
+            <View style={styles.progressPill}>
+              <Compass color={theme.colors.teal} size={15} />
+              <Text style={styles.progressPillText}>{progressPercent}%</Text>
+            </View>
+          </View>
           <Text style={styles.title}>{t("home.title")}</Text>
           <Text style={styles.subtitle}>{t("home.subtitle")}</Text>
           <View style={styles.statsRow}>
@@ -139,8 +145,14 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     header: {
       paddingHorizontal: spacing.lg,
-      paddingTop: spacing.xxl,
+      paddingTop: spacing.xl,
       paddingBottom: spacing.md
+    },
+    headerTopLine: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: spacing.sm
     },
     kicker: {
       color: colors.muted,
@@ -149,19 +161,34 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       letterSpacing: 1,
       textTransform: "uppercase"
     },
+    progressPill: {
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.xs,
+      minHeight: 32,
+      paddingHorizontal: spacing.sm
+    },
+    progressPillText: {
+      color: colors.ink,
+      fontSize: typography.caption,
+      fontWeight: "900"
+    },
     title: {
       color: colors.ink,
-      fontSize: 40,
+      fontSize: 36,
       fontWeight: "900",
       letterSpacing: 0,
-      lineHeight: 44,
-      marginTop: spacing.xs
+      lineHeight: 39
     },
     subtitle: {
       color: colors.muted,
-      fontSize: typography.title3,
-      lineHeight: 28,
-      marginTop: spacing.md
+      fontSize: typography.body,
+      lineHeight: 23,
+      marginTop: spacing.sm
     },
     statsRow: {
       flexDirection: "row",
