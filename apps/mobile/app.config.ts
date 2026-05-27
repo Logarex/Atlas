@@ -20,7 +20,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       NSLocationWhenInUseUsageDescription:
         "Atlas uses your location locally to show nearby stores.",
       NSPhotoLibraryUsageDescription:
-        "Atlas lets you choose photos you own before submitting them for review."
+        "Atlas lets you choose photos you own to save them locally or submit them for review.",
+      NSPhotoLibraryAddUsageDescription:
+        "Atlas may save exported visit photos when you choose to share or back up your local data.",
+      NSCameraUsageDescription:
+        "Atlas can use the camera if you choose to add a personal store photo."
     }
   },
   android: {
@@ -44,7 +48,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       "expo-image-picker",
       {
         photosPermission:
-          "Atlas lets you choose photos you own before submitting them for review."
+          "Atlas lets you choose photos you own to save them locally or submit them for review."
       }
     ]
   ],

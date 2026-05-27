@@ -51,6 +51,12 @@
 	<string>Allow $(PRODUCT_NAME) to access your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Atlas uses your location locally to show nearby stores.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Atlas lets you choose photos you own to save them locally or submit them for review.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Atlas may save exported visit photos when you choose to share or back up your local data.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Atlas can use the camera if you choose to add a personal store photo.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>

@@ -4184,7 +4184,7 @@ export const generatedStores: StoreRecord[] = [
       {
         "id": "apple-wondercity-1",
         "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-wonder-city.webp?raw=true",
-        "credit": "Louis Chabert",
+        "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple 虹悦城 facade",
         "takenOn": "2026-05-27"
@@ -5613,7 +5613,7 @@ export const generatedStores: StoreRecord[] = [
       {
         "id": "apple-champs-elysees-1",
         "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-champs-elysees-1.webp?raw=true",
-        "credit": "Louis Chabert",
+        "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Champs-Élysées facade",
         "takenOn": "2026-05-27"
@@ -5621,7 +5621,7 @@ export const generatedStores: StoreRecord[] = [
       {
         "id": "apple-champs-elysees-2",
         "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-champs-elysees-2.webp?raw=true",
-        "credit": "Louis Chabert",
+        "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Champs-Élysées interior",
         "takenOn": "2026-05-27"
@@ -5680,7 +5680,7 @@ export const generatedStores: StoreRecord[] = [
       {
         "id": "apple-marche-saint-germain-1",
         "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-marche-saint-germain.webp?raw=true",
-        "credit": "Louis Chabert",
+        "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Marché Saint-Germain facade",
         "takenOn": "2026-05-27"
@@ -5739,7 +5739,7 @@ export const generatedStores: StoreRecord[] = [
       {
         "id": "apple-opera-1",
         "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-opera.webp?raw=true",
-        "credit": "Louis Chabert",
+        "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Opéra facade",
         "takenOn": "2026-05-27"
