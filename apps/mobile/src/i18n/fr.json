@@ -7,9 +7,9 @@
     "profile": "Profil"
   },
   "home": {
-    "kicker": "Atlas communautaire",
-    "title": "Explore les boutiques Apple.",
-    "subtitle": "Retrouve les lieux, suis tes visites et consulte les données essentielles.",
+    "kicker": "Atlas",
+    "title": "Tour du monde des Apple Store",
+    "subtitle": "Une carte et un carnet pour retrouver les boutiques Apple, noter tes visites et suivre ta collection.",
     "searchLabel": "Rechercher des boutiques",
     "searchPlaceholder": "Boutique, ville, pays, statut, attribut...",
     "clearSearch": "Effacer la recherche",
@@ -52,6 +52,11 @@
       }
     },
     "recentVisits": "Dernières visites",
+    "progressTitle": "Progression",
+    "progressLabel": "Boutiques visitées",
+    "progressCount": "{{visited}} / {{total}}",
+    "visits": "Boutiques vues",
+    "noVisits": "Aucune visite enregistrée sur cet appareil pour l'instant.",
     "stats": {
       "open": "Ouvertes",
       "closed": "Fermées",
@@ -65,7 +70,7 @@
   },
   "profile": {
     "kicker": "Espace personnel",
-    "title": "Tes visites.",
+    "title": "Tes visites",
     "subtitle": "Consulte les boutiques vues, propose une boutique manquante et règle l'apparence de l'app.",
     "visits": "Boutiques vues",
     "noVisits": "Aucune visite enregistrée sur cet appareil pour l'instant.",
@@ -73,7 +78,7 @@
     "newStorePlaceholder": "Nom ou emplacement",
     "newStoreNote": "Information utile pour la révision",
     "submitStore": "Proposer la boutique",
-    "privacyTitle": "Confidentialité",
+    "privacyTitle": "Sur ton appareil",
     "saving": "Enregistrement...",
     "submittingStore": "Envoi de la boutique...",
     "storeSubmitted": "Boutique envoyée pour révision.",
@@ -82,10 +87,10 @@
     "progressLabel": "Boutiques visitées",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "Pas de publicité, pas de mouchards de pistage comportemental, pas de revente de données personnelles.",
-      "localLocation": "La localisation sert localement à trouver les boutiques proches, sauf sauvegarde explicite.",
-      "optionalAccount": "Les visites restent sur l'appareil ; les contributions partent en issues GitHub.",
-      "openData": "Les contributions factuelles acceptées peuvent rejoindre la base locale avec un historique de révision."
+      "noAds": "Pas de pub ni de suivi caché : Atlas sert à collectionner des lieux, pas à te profiler.",
+      "localLocation": "Atlas ne demande pas ta localisation : tu explores la carte et les boutiques à ton rythme.",
+      "optionalAccount": "Tes visites et tes notes restent sur cet appareil.",
+      "openData": "Quand tu proposes une correction, elle sert à améliorer la base commune après relecture."
     },
     "dangerZone": "Zone de danger",
     "deleteAccount": "Supprimer mes données locales",
@@ -119,6 +124,8 @@
     "openedShort": "Ouverture {{date}}",
     "markVisited": "Marquer comme vue",
     "visitDateLabel": "Date de visite",
+    "visitNoteLabel": "Note de visite",
+    "visitNotePlaceholder": "Note personnelle, souvenir, contexte...",
     "visitInvalidDate": "Utilise une date au format YYYY-MM-DD.",
     "visitSaved": "Visite enregistrée sur cet appareil.",
     "personalHistory": "Historique perso",

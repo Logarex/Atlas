@@ -400,7 +400,7 @@ export default function ExploreScreen() {
             >
               <View style={styles.filterCategoryTitleRow}>
                 <Icon
-                  color={isActive ? theme.colors.paper : theme.colors.teal}
+                  color={isActive ? theme.colors.paper : theme.colors.copper}
                   size={17}
                 />
                 <Text
@@ -501,7 +501,7 @@ export default function ExploreScreen() {
           ]}
         >
           <ListFilter
-            color={advancedFilterCount > 0 ? theme.colors.paper : theme.colors.teal}
+            color={advancedFilterCount > 0 ? theme.colors.paper : theme.colors.copper}
             size={18}
           />
           <Text
@@ -587,7 +587,7 @@ export default function ExploreScreen() {
                 advancedFilterCount === 0 && styles.disabledButton
               ]}
             >
-              <RotateCcw color={theme.colors.teal} size={17} />
+              <RotateCcw color={theme.colors.copper} size={17} />
               <Text style={styles.resetButtonText}>
                 {t("home.advancedFilters.reset")}
               </Text>
@@ -696,11 +696,11 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       paddingHorizontal: spacing.md
     },
     advancedFilterButtonActive: {
-      backgroundColor: colors.teal,
-      borderColor: colors.teal
+      backgroundColor: colors.copper,
+      borderColor: colors.copper
     },
     advancedFilterText: {
-      color: colors.teal,
+      color: colors.copper,
       fontSize: typography.small,
       fontWeight: "900"
     },
@@ -832,7 +832,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       paddingVertical: 2
     },
     filterCategoryBadgeActive: {
-      backgroundColor: colors.teal
+      backgroundColor: colors.copper
     },
     filterCategoryBadgeText: {
       color: colors.ink,
@@ -905,7 +905,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       minHeight: 48
     },
     resetButtonText: {
-      color: colors.teal,
+      color: colors.copper,
       fontSize: typography.small,
       fontWeight: "900"
     },

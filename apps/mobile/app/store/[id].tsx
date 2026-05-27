@@ -56,6 +56,7 @@ export default function StoreDetailScreen() {
   const { stores } = useStores();
   const store = stores.find((item) => item.id === id) ?? stores[0];
   const [visitDate, setVisitDate] = useState(todayISO());
+  const [visitNote, setVisitNote] = useState("");
   const [visitMessage, setVisitMessage] = useState<string | null>(null);
   const [changeModalVisible, setChangeModalVisible] = useState(false);
   const [photoModalVisible, setPhotoModalVisible] = useState(false);
@@ -92,7 +93,8 @@ export default function StoreDetailScreen() {
       return;
     }
 
-    await addVisit(store.id, visitDate);
+    await addVisit(store.id, visitDate, visitNote);
+    setVisitNote("");
     setVisitMessage(t("store.visitSaved"));
   }
 
@@ -275,6 +277,15 @@ export default function StoreDetailScreen() {
           value={visitDate}
         />
       </View>
+      <TextInput
+        accessibilityLabel={t("store.visitNoteLabel")}
+        multiline
+        onChangeText={setVisitNote}
+        placeholder={t("store.visitNotePlaceholder")}
+        placeholderTextColor={theme.colors.muted}
+        style={styles.visitNoteInput}
+        value={visitNote}
+      />
       {visitMessage ? <Text style={styles.message}>{visitMessage}</Text> : null}
 
       {storeVisits.length > 0 ? (
@@ -282,7 +293,12 @@ export default function StoreDetailScreen() {
           <Text style={styles.sectionTitle}>{t("store.personalHistory")}</Text>
           {storeVisits.map((visit) => (
             <View key={visit.id} style={styles.visitRow}>
-              <Text style={styles.visitDate}>{visit.visitedOn}</Text>
+              <View style={styles.visitRowCopy}>
+                <Text style={styles.visitDate}>{visit.visitedOn}</Text>
+                {visit.note ? (
+                  <Text style={styles.visitNote}>{visit.note}</Text>
+                ) : null}
+              </View>
               <Pressable onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
                 <X color={theme.colors.danger} size={16} />
               </Pressable>
@@ -727,6 +743,20 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontSize: typography.body,
       height: 48
     },
+    visitNoteInput: {
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      color: colors.ink,
+      fontSize: typography.body,
+      lineHeight: 22,
+      marginTop: spacing.sm,
+      minHeight: 76,
+      paddingHorizontal: spacing.md,
+      paddingTop: spacing.md,
+      textAlignVertical: "top"
+    },
     message: {
       color: colors.copper,
       fontSize: typography.small,
@@ -808,9 +838,17 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     visitDate: {
       color: colors.ink,
-      flex: 1,
       fontSize: typography.body,
       fontWeight: "800"
+    },
+    visitRowCopy: {
+      flex: 1,
+      gap: spacing.xs
+    },
+    visitNote: {
+      color: colors.muted,
+      fontSize: typography.small,
+      lineHeight: 20
     },
     visitVisibility: {
       color: colors.muted,

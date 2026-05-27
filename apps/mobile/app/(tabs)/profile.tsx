@@ -2,11 +2,9 @@ import {
   submitStoreChange,
 } from "@/features/contributions/contributionApi";
 import { clearLocalProfile } from "@/features/social/socialApi";
-import { getStoreName } from "@/features/stores/storeUtils";
-import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Compass, Lock, Send, Trash2, AlertTriangle, Palette } from "lucide-react-native";
+import { Lock, Send, Trash2, AlertTriangle, Palette } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -21,29 +19,16 @@ import {
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ProfileScreen() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const theme = useAppTheme();
   const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
 
-  const { stores } = useStores();
-  const { visits, clearAllVisits } = useLocalVisits();
+  const { clearAllVisits } = useLocalVisits();
 
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
   const [message, setMessage] = useState<string | null>(null);
-
-  const storeById = useMemo(
-    () => new Map(stores.map((store) => [store.id, store])),
-    [stores]
-  );
-  const visitedStoreIds = useMemo(
-    () => new Set(visits.map((visit) => visit.storeId)),
-    [visits]
-  );
-  const recentVisits = visits.slice(0, 4);
-  const totalStores = stores.length > 0 ? stores.length : 1;
-  const progressPercent = Math.min(100, Math.round((visitedStoreIds.size / totalStores) * 100));
 
   async function handleDeleteData() {
     Alert.alert(
@@ -103,48 +88,7 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Compass color={theme.colors.teal} size={22} />
-            <Text style={styles.sectionTitle}>{t("profile.progressTitle")}</Text>
-          </View>
-          <View style={styles.progressHeader}>
-            <Text style={styles.progressLabel}>{t("profile.progressLabel")}</Text>
-            <Text style={styles.progressCount}>
-              {t("profile.progressCount", {
-                total: stores.length,
-                visited: visitedStoreIds.size
-              })}
-            </Text>
-          </View>
-          <View style={styles.progressBarBg}>
-            <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
-          </View>
-        </View>
-
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <CalendarDays color={theme.colors.teal} size={22} />
-            <Text style={styles.sectionTitle}>{t("profile.visits")}</Text>
-          </View>
-          {recentVisits.length === 0 ? (
-            <Text style={styles.itemText}>{t("profile.noVisits")}</Text>
-          ) : (
-            recentVisits.map((visit) => {
-              const store = storeById.get(visit.storeId);
-              return (
-                <View key={visit.id} style={styles.visitRow}>
-                  <Text style={styles.visitName}>
-                    {store ? getStoreName(store, i18n.language, { noLocal: true }) : visit.storeId}
-                  </Text>
-                  <Text style={styles.visitDate}>{visit.visitedOn}</Text>
-                </View>
-              );
-            })
-          )}
-        </View>
-
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Send color={theme.colors.teal} size={22} />
+            <Send color={theme.colors.copper} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.newStore")}</Text>
           </View>
           <TextInput
@@ -170,14 +114,14 @@ export default function ProfileScreen() {
               newStoreName.trim().length === 0 && styles.disabledButton
             ]}
           >
-            <Send color={theme.colors.teal} size={18} />
+            <Send color={theme.colors.copper} size={18} />
             <Text style={styles.secondaryButtonText}>{t("profile.submitStore")}</Text>
           </Pressable>
         </View>
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Palette color={theme.colors.teal} size={22} />
+            <Palette color={theme.colors.copper} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.theme.title")}</Text>
           </View>
 
@@ -209,7 +153,7 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Lock color={theme.colors.teal} size={22} />
+            <Lock color={theme.colors.copper} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.privacyTitle")}</Text>
           </View>
           {(["noAds", "localLocation", "optionalAccount", "openData"] as const).map((key) => (
@@ -311,33 +255,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontSize: typography.small,
       lineHeight: 20
     },
-    progressHeader: {
-      alignItems: "flex-end",
-      flexDirection: "row",
-      justifyContent: "space-between"
-    },
-    progressLabel: {
-      color: colors.ink,
-      flex: 1,
-      fontSize: typography.body,
-      fontWeight: "800"
-    },
-    progressCount: {
-      color: colors.teal,
-      fontSize: typography.title3,
-      fontWeight: "900"
-    },
-    progressBarBg: {
-      backgroundColor: colors.canvas,
-      borderRadius: 999,
-      height: 10,
-      overflow: "hidden"
-    },
-    progressBarFill: {
-      backgroundColor: colors.teal,
-      borderRadius: 999,
-      height: "100%"
-    },
     input: {
       backgroundColor: colors.canvas,
       borderColor: colors.line,
@@ -366,41 +283,12 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       paddingHorizontal: spacing.md
     },
     secondaryButtonText: {
-      color: colors.teal,
+      color: colors.copper,
       fontSize: typography.small,
       fontWeight: "900"
     },
     disabledButton: {
       opacity: 0.45
-    },
-    switchRow: {
-      alignItems: "center",
-      flexDirection: "row",
-      gap: spacing.md,
-      justifyContent: "space-between"
-    },
-    switchCopy: {
-      flex: 1
-    },
-    visitRow: {
-      alignItems: "center",
-      borderTopColor: colors.line,
-      borderTopWidth: 1,
-      flexDirection: "row",
-      gap: spacing.sm,
-      justifyContent: "space-between",
-      paddingTop: spacing.sm
-    },
-    visitName: {
-      color: colors.ink,
-      flex: 1,
-      fontSize: typography.small,
-      fontWeight: "800"
-    },
-    visitDate: {
-      color: colors.muted,
-      fontSize: typography.caption,
-      fontWeight: "800"
     },
     privacyRow: {
       alignItems: "flex-start",
@@ -408,7 +296,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       gap: spacing.sm
     },
     privacyIcon: {
-      color: colors.teal,
+      color: colors.copper,
       fontSize: typography.body,
       fontWeight: "900"
     },

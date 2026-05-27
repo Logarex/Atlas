@@ -115,7 +115,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       paddingVertical: spacing.xs
     },
     country: {
-      color: colors.teal,
+      color: colors.copper,
       fontSize: typography.small,
       fontWeight: "800"
     },
@@ -149,7 +149,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       padding: spacing.md
     },
     personalHistoryLabel: {
-      color: colors.teal,
+      color: colors.copper,
       fontSize: typography.caption,
       fontWeight: "900",
       textTransform: "uppercase"

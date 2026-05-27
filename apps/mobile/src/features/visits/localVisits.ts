@@ -17,13 +17,14 @@ function notifyListeners(nextVisits: LocalVisit[]) {
   }
 }
 
-function createVisit(storeId: string, visitedOn: string): LocalVisit {
+function createVisit(storeId: string, visitedOn: string, note?: string): LocalVisit {
   const now = new Date().toISOString();
 
   return {
     id: `${storeId}:${visitedOn}:${now}`,
     storeId,
     visitedOn,
+    ...(note ? { note } : {}),
     createdAt: now,
     updatedAt: now
   };
@@ -87,9 +88,10 @@ export function useLocalVisits(storeId?: string) {
   }, [storeId, visits]);
 
   const addVisit = useCallback(
-    async (nextStoreId: string, visitedOn = todayISO()) => {
+    async (nextStoreId: string, visitedOn = todayISO(), note?: string) => {
+      const trimmedNote = note?.trim();
       const nextVisits = [
-        createVisit(nextStoreId, visitedOn),
+        createVisit(nextStoreId, visitedOn, trimmedNote),
         ...visits.filter(
           (visit) => !(visit.storeId === nextStoreId && visit.visitedOn === visitedOn)
         )

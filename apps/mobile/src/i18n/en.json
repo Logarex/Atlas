@@ -7,9 +7,9 @@
     "profile": "Profile"
   },
   "home": {
-    "kicker": "Community Atlas",
-    "title": "Explore Apple stores.",
-    "subtitle": "Find locations, track visits, and check the essentials.",
+    "kicker": "Atlas",
+    "title": "Map and visit notebook",
+    "subtitle": "A map and notebook for finding Apple stores, logging visits, and tracking your collection.",
     "searchLabel": "Search stores",
     "searchPlaceholder": "Search by store, city, country, status, feature...",
     "clearSearch": "Clear search",
@@ -51,6 +51,11 @@
         "hasNotes": "Architecture notes"
       }
     },
+    "progressTitle": "Progress",
+    "progressLabel": "Visited stores",
+    "progressCount": "{{visited}} / {{total}}",
+    "visits": "Visited stores",
+    "noVisits": "No visits saved on this device yet.",
     "stats": {
       "open": "Open",
       "closed": "Closed",
@@ -65,7 +70,7 @@
   },
   "profile": {
     "kicker": "Personal space",
-    "title": "Your visits.",
+    "title": "Your visits",
     "subtitle": "Review visited stores, suggest a missing store, and adjust the app appearance.",
     "visits": "Visited stores",
     "noVisits": "No visits saved on this device yet.",
@@ -73,7 +78,7 @@
     "newStorePlaceholder": "Store name or location",
     "newStoreNote": "What should reviewers know?",
     "submitStore": "Submit missing store",
-    "privacyTitle": "Privacy",
+    "privacyTitle": "On your device",
     "saving": "Saving...",
     "submittingStore": "Submitting missing store...",
     "storeSubmitted": "Missing store submitted for review.",
@@ -82,10 +87,10 @@
     "progressLabel": "Visited stores",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "No ads, no behavioral tracking SDKs, no resale of personal data.",
-      "localLocation": "Location is used locally for nearby search unless a feature explicitly asks to save it.",
-      "optionalAccount": "Visits stay on-device; contributions are sent as GitHub issues.",
-      "openData": "Accepted factual contributions can enter the local dataset with review history."
+      "noAds": "No ads or hidden tracking: Atlas is for collecting places, not profiling you.",
+      "localLocation": "Atlas does not ask for your location: you explore the map and stores at your own pace.",
+      "optionalAccount": "Your visits and notes stay on this device.",
+      "openData": "When you suggest a correction, it can improve the shared dataset after review."
     },
     "dangerZone": "Danger zone",
     "deleteAccount": "Delete my local data",
@@ -119,6 +124,8 @@
     "openedShort": "Opened {{date}}",
     "markVisited": "Mark visited",
     "visitDateLabel": "Visit date",
+    "visitNoteLabel": "Visit note",
+    "visitNotePlaceholder": "Personal note, memory, context...",
     "visitInvalidDate": "Use a date formatted as YYYY-MM-DD.",
     "visitSaved": "Visit saved on this device.",
     "personalHistory": "Personal history",
