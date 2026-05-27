@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
-import { AppState, useColorScheme, Platform, NativeModules } from "react-native";
+import { useColorScheme, Platform, NativeModules } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { spacing, typography, radii, shadows } from "./tokens";
 
@@ -11,109 +11,21 @@ export type ThemeSetting = "system" | "light" | "dark";
 
 type AppIconName = "AppIcon-Dark" | null;
 
-let requestedIconName: AppIconName = null;
-let hasPendingIconRequest = false;
-let currentIconSync: Promise<void> | null = null;
-let temporaryIconRetryCount = 0;
-
-function iconNameForTheme(isDark: boolean): AppIconName {
-  return isDark ? "AppIcon-Dark" : null;
-}
-
-function isTemporaryIconError(error: unknown) {
-  const code = (error as { code?: string }).code;
-  const message = error instanceof Error ? error.message.toLowerCase() : "";
-
-  return code === "APP_INACTIVE"
-    || message.includes("temporarily unavailable")
-    || message.includes("ressources temporairement indisponibles");
-}
-
-function isCancelledIconError(error: unknown) {
-  const code = (error as { code?: string }).code;
-  const message = error instanceof Error ? error.message.toLowerCase() : "";
-
-  return code === "CANCELLED"
-    || message.includes("cancelled")
-    || message.includes("canceled")
-    || message.includes("annul");
-}
-
-function wait(ms: number) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
+function iconNameForThemeSetting(setting: ThemeSetting): AppIconName {
+  return setting === "dark" ? "AppIcon-Dark" : null;
 }
 
 async function setNativeAppIcon(iconName: AppIconName) {
   if (Platform.OS !== "ios" || !AppIconModule) return;
 
-  const currentIconName = await AppIconModule.getAlternateIconName();
-  if (currentIconName === iconName) return;
+  try {
+    const currentIconName = await AppIconModule.getAlternateIconName();
+    if (currentIconName === iconName) return;
 
-  await AppIconModule.setAlternateIconName(iconName ?? "");
-}
-
-async function drainIconSyncQueue() {
-  if (currentIconSync) return currentIconSync;
-
-  currentIconSync = (async () => {
-    while (hasPendingIconRequest) {
-      const iconName = requestedIconName;
-      hasPendingIconRequest = false;
-
-      if (AppState.currentState !== "active") {
-        requestedIconName = iconName;
-        hasPendingIconRequest = true;
-        break;
-      }
-
-      try {
-        await wait(350);
-        await setNativeAppIcon(iconName);
-        temporaryIconRetryCount = 0;
-      } catch (error) {
-        if ((error as { code?: string }).code === "NOT_SUPPORTED") {
-          continue;
-        }
-
-        if (isTemporaryIconError(error)) {
-          if (temporaryIconRetryCount < 3) {
-            temporaryIconRetryCount += 1;
-            requestedIconName = iconName;
-            hasPendingIconRequest = true;
-            await wait(1200);
-            continue;
-          }
-
-          temporaryIconRetryCount = 0;
-          return;
-        }
-
-        if (isCancelledIconError(error)) {
-          temporaryIconRetryCount = 0;
-          return;
-        }
-
-        console.error("Failed to sync app icon:", error);
-      }
-    }
-  })().finally(() => {
-    currentIconSync = null;
-    if (hasPendingIconRequest && AppState.currentState === "active") {
-      void drainIconSyncQueue();
-    }
-  });
-
-  return currentIconSync;
-}
-
-function syncAppIcon(isDark: boolean) {
-  if (Platform.OS !== "ios" || !AppIconModule) return;
-
-  requestedIconName = iconNameForTheme(isDark);
-  hasPendingIconRequest = true;
-  void drainIconSyncQueue();
+    await AppIconModule.setAlternateIconName(iconName ?? "");
+  } catch {
+    // iOS may reject runtime icon changes; the primary asset catalog still provides system dark icons.
+  }
 }
 
 const atlasLightColors = {
@@ -164,7 +76,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const systemScheme = useColorScheme();
   const [themeSetting, setThemeSettingState] = useState<ThemeSetting>("system");
-  const [hasLoadedThemeSetting, setHasLoadedThemeSetting] = useState(false);
 
   // Load from AsyncStorage
   useEffect(() => {
@@ -176,8 +87,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         }
       } catch (error) {
         console.error("Failed to load theme setting:", error);
-      } finally {
-        setHasLoadedThemeSetting(true);
       }
     }
     void loadTheme();
@@ -185,6 +94,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const setThemeSetting = async (setting: ThemeSetting) => {
     setThemeSettingState(setting);
+    void setNativeAppIcon(iconNameForThemeSetting(setting));
+
     try {
       await AsyncStorage.setItem(STORAGE_KEY, setting);
     } catch (error) {
@@ -200,22 +111,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [themeSetting, systemScheme]);
 
   const colors = isDark ? atlasDarkColors : atlasLightColors;
-
-  useEffect(() => {
-    if (!hasLoadedThemeSetting) return;
-
-    syncAppIcon(isDark);
-  }, [hasLoadedThemeSetting, isDark]);
-
-  useEffect(() => {
-    const subscription = AppState.addEventListener("change", (state) => {
-      if (state === "active") {
-        syncAppIcon(isDark);
-      }
-    });
-
-    return () => subscription.remove();
-  }, [isDark]);
 
   const value = useMemo(
     () => ({

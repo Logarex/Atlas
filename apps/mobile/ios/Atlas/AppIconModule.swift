@@ -46,6 +46,8 @@ class AppIconModule: NSObject {
         let nsError = error as NSError
         if nsError.code == NSUserCancelledError {
           reject("CANCELLED", error.localizedDescription, error)
+        } else if nsError.code == Int(POSIXErrorCode.EIO.rawValue) {
+          reject("ICON_UNAVAILABLE", error.localizedDescription, error)
         } else {
           reject("ERROR", error.localizedDescription, error)
         }
