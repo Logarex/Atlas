@@ -38,7 +38,7 @@ Use the app store detail page:
 4. Pick CC BY 4.0 or CC0.
 5. Submit it for review.
 
-The app uploads to the private `photo-submissions` bucket and creates a pending `photo_submissions` row. A reviewer must approve it before it moves into the public `photos` table.
+The app creates a GitHub issue with the photo metadata. Atlas does not upload or remotely store the image file; maintainers should request the original file from the contributor before approving it.
 
 ## Add Marker and Architecture Indicators
 

@@ -2,14 +2,12 @@
 
 ## Overview
 
-Atlas uses a mobile-first architecture with a versioned community dataset and a hosted backend for accounts, social features, submissions, and moderation.
+Atlas uses a mobile-first architecture with a versioned community dataset, local profile/visit storage, and GitHub issues for submissions.
 
 ```text
 Expo mobile app
-  -> Supabase Auth for accounts
-  -> Supabase Postgres for profiles, visits, friendships, submissions
-  -> Supabase Storage for pending and approved photos
-  -> Edge Functions for Discord notifications and review automation
+  -> AsyncStorage for local profile, theme, and visits
+  -> GitHub Issues for corrections, new stores, and photo review requests
   -> Versioned data package for seed/import/export
 ```
 
@@ -22,34 +20,18 @@ Key modules:
 - `app/`: Expo Router screens.
 - `src/features/stores`: store list, cards, map, detail.
 - `src/i18n`: English/French localization.
-- `src/lib`: Supabase, telemetry-free utilities, sharing, source formatting.
+- `src/lib`: GitHub issue submission, telemetry-free utilities, sharing, source formatting.
 - `src/theme`: design tokens.
 
-## Backend
+## Local State
 
-Supabase is the default backend because it provides robust infrastructure, Postgres, row-level security, auth, storage, and Edge Functions without building a custom backend too early.
-
-Core tables:
-
-- `stores`: canonical published records.
-- `store_sources`: field-level provenance.
-- `profiles`: usernames and public profile settings.
-- `visits`: user store visits.
-- `friendships`: friend requests and accepted friendships.
-- `change_requests`: proposed store edits and new store submissions.
-- `photo_submissions`: pending and approved photos.
-- `reviews`: moderator decisions.
+Atlas does not use a hosted backend. The app stores the local profile, theme choice, and visited stores on-device with AsyncStorage. Contributions are sent to GitHub issues and reviewed by maintainers before the JSON dataset changes.
 
 ## Data Source of Truth
 
-During early development, `packages/data/stores` is the reviewed seed dataset. Supabase imports this dataset for app use.
+During early development, `packages/data/stores` is the reviewed seed dataset and app source of truth.
 
-As community submissions grow, accepted changes should either:
-
-1. update Supabase and be exported back to JSON, or
-2. create a GitHub pull request that updates the data package.
-
-The second option is better for long-term transparency.
+Accepted changes should create a GitHub pull request that updates the data package.
 
 ## Maps
 
@@ -64,11 +46,10 @@ All user edits are proposed changes, not direct writes to published records.
 Flow:
 
 1. User submits a correction, new store, or photo.
-2. App writes to `change_requests` or `photo_submissions`.
-3. Edge Function sends a Discord message to maintainers.
-4. Maintainer opens the review UI, checks sources, approves or rejects.
-5. Approved changes update published data and create an audit record.
+2. App creates a GitHub issue with the proposed change and source.
+3. Maintainer checks sources, approves or rejects.
+4. Approved changes update the versioned JSON dataset through a pull request.
 
 ## Privacy
 
-The app should be useful without social features. Account-based features are opt-in. Location should be processed locally for nearby search unless a feature explicitly needs server-side data.
+The app should be useful without accounts or social features. Location should be processed locally for nearby search.

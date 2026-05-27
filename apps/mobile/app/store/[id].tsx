@@ -237,7 +237,6 @@ export default function StoreDetailScreen() {
           {storeVisits.map((visit) => (
             <View key={visit.id} style={styles.visitRow}>
               <Text style={styles.visitDate}>{visit.visitedOn}</Text>
-              <Text style={styles.visitVisibility}>{t(`visibility.${visit.visibility}`)}</Text>
               <Pressable onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
                 <X color={theme.colors.danger} size={16} />
               </Pressable>

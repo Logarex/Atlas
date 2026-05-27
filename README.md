@@ -11,8 +11,8 @@ The project is not affiliated with, endorsed by, or sponsored by Apple Inc. It i
 - Make stores discoverable through search, filters, and a map.
 - Support English and French from day one.
 - Let the community submit corrections, new records, and photos from inside the app.
-- Keep moderation simple for maintainers through a review queue and Discord notifications.
-- Let users track stores they have visited, add visit dates, follow friends, and share visits.
+- Keep moderation simple for maintainers through GitHub issues.
+- Let users track stores they have visited and add visit dates locally.
 - Maintain a curated factual dataset with clear provenance and privacy rules.
 
 ## Name
@@ -22,17 +22,15 @@ The project uses Atlas as its working product and repository name. The exact App
 ## Stack
 
 - Mobile app: Expo, React Native, TypeScript, Expo Router.
-- Backend: Supabase Postgres, Auth, Storage, Row Level Security, Edge Functions.
 - Maps: an app-level map abstraction, starting with native maps in the Expo app and leaving room for MapLibre/vector tiles later.
 - Data: versioned JSON records with field-level source provenance and validation.
-- Moderation: in-app submissions to Supabase, Discord webhook notifications, maintainer review before publication.
+- Moderation: in-app submissions create GitHub issues for maintainer review before publication.
 
 ## Repository Layout
 
 ```text
 apps/mobile        Expo React Native app
 packages/data      Store schemas, sample data, validation scripts
-supabase           Database schema and Edge Function starter
 docs               Product, architecture, data, moderation, and roadmap docs
 ```
 
@@ -43,7 +41,7 @@ npm install
 npm run mobile:start
 ```
 
-Create `apps/mobile/.env` from `apps/mobile/.env.example` before connecting Supabase or map providers.
+Create `apps/mobile/.env` from `apps/mobile/.env.example` before enabling map providers or GitHub issue submissions.
 
 ## Data Principles
 

@@ -6,15 +6,13 @@
 - Publish README, privacy policy, contribution guide, data policy.
 - Create mobile app shell.
 - Create data schema and first sourced sample record.
-- Create Supabase schema.
 
 ## Phase 1: App MVP
 
 - Store list and detail pages.
 - Map screen with markers.
 - English/French language switching from device locale.
-- Supabase connection.
-- Username profiles.
+- Local username profiles.
 - Mark store as visited with date, including local-only use without an account.
 - Basic search and filters.
 
@@ -22,17 +20,13 @@
 
 - In-app correction form.
 - New store proposal form.
-- Pending photo uploads.
-- Discord webhook notifications.
-- Reviewer dashboard.
-- Accepted changes audit trail.
+- Photo review issues.
+- GitHub issue submissions.
+- Accepted changes through dataset pull requests.
 - Data validation in CI.
 
 ## Phase 3: Community
 
-- Friend requests.
-- Public/private profile settings.
-- Shared visited-store lists.
 - Contributor credits.
 - Trust levels for frequent contributors.
 

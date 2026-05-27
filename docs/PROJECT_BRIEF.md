@@ -27,8 +27,8 @@ The app should feel premium and calm, but the value is trust: complete coverage,
 - Map with store markers, clustering, filtering, and nearby discovery.
 - English and French interface.
 - In-app data corrections and photo submissions.
-- Moderation queue with Discord notifications.
-- User profile with username, visited stores, visit dates, optional notes, and friend sharing.
+- Moderation through GitHub issues.
+- Local user profile with username, visited stores, and visit dates.
 - Native share card for Instagram Stories and the system share sheet.
 
 ## Store Attributes
@@ -50,11 +50,11 @@ The first credible public release should include:
 - Bilingual app shell.
 - Store list, search, detail pages, and map.
 - Seed dataset for a small number of well-sourced stores.
-- Supabase auth with username profiles.
+- Local username profile.
 - Mark as visited with optional date.
 - Submit correction from the app.
-- Discord notification for new submissions.
-- Maintainer approval flow.
+- GitHub issue creation for new submissions.
+- Maintainer approval through dataset pull requests.
 - Privacy page and detailed README.
 
 ## Later
@@ -62,9 +62,7 @@ The first credible public release should include:
 - Full worldwide dataset.
 - Closed and relocated store history.
 - Photo moderation and contributor galleries.
-- Friend graph and profile privacy controls.
 - Instagram Story share cards.
 - Offline cache.
-- Web admin dashboard.
 - Import pipeline from compatible open data.
 - Public API for the curated dataset.

@@ -2,18 +2,16 @@ import {
   submitStoreChange,
 } from "@/features/contributions/contributionApi";
 import {
+  clearLocalProfile,
   ensureCommunityProfile,
   getCurrentProfile,
-  setPublicProfile,
   type CommunityProfile
 } from "@/features/social/socialApi";
 import { getStoreName } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
-import { isSupabaseConfigured } from "@/lib/supabase";
-import { deleteAccount, signInWithUsername, signOut, signUpWithUsername } from "@/features/auth/authApi";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { CalendarDays, Lock, Send, ShieldCheck, Key, UserRound, Trash2, AlertTriangle, Palette, UserPlus } from "lucide-react-native";
+import { CalendarDays, Lock, Send, UserRound, Trash2, AlertTriangle, Palette, BadgeCheck } from "lucide-react-native";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -21,7 +19,6 @@ import {
   Pressable,
   ScrollView,
   StyleSheet,
-  Switch,
   Text,
   TextInput,
   View,
@@ -36,18 +33,14 @@ export default function ProfileScreen() {
   const { stores } = useStores();
   const { visits, clearAllVisits } = useLocalVisits();
   
-  // Auth state
-  const [authUsername, setAuthUsername] = useState("");
-  const [code, setCode] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAuthLoading, setIsAuthLoading] = useState(false);
+  const [localUsername, setLocalUsername] = useState("");
+  const [isProfileSaving, setIsProfileSaving] = useState(false);
 
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreSource, setNewStoreSource] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
   const [profile, setProfile] = useState<CommunityProfile | null>(null);
   const [message, setMessage] = useState<string | null>(null);
-  const [isPublic, setIsPublic] = useState(false);
   
   const storeById = useMemo(
     () => new Map(stores.map((store) => [store.id, store])),
@@ -58,83 +51,30 @@ export default function ProfileScreen() {
     [visits]
   );
   const recentVisits = visits.slice(0, 4);
-  const canUseAuth = isSupabaseConfigured
-    && authUsername.trim().length >= 3
-    && code.length >= 6
-    && !isAuthLoading;
+  const canSaveProfile = localUsername.trim().length >= 3 && !isProfileSaving;
 
   useEffect(() => {
-    if (!isSupabaseConfigured) return;
-
     void getCurrentProfile()
       .then((currentProfile) => {
         setProfile(currentProfile);
-        setIsLoggedIn(!!currentProfile);
-        setIsPublic(currentProfile?.publicProfile ?? false);
-        setAuthUsername(currentProfile?.username ?? "");
+        setLocalUsername(currentProfile?.username ?? "");
       })
       .catch((error) => setMessage(error instanceof Error ? error.message : null));
   }, []);
 
-  async function handleLogin() {
+  async function handleSaveProfile() {
     try {
-      setIsAuthLoading(true);
-      setMessage(t("profile.signingIn"));
-      await signInWithUsername(authUsername, code);
-
-      const currentProfile = await ensureCommunityProfile(authUsername);
-      setProfile(currentProfile);
-      setAuthUsername(currentProfile.username);
-      setIsPublic(currentProfile.publicProfile);
-      setIsLoggedIn(true);
-      setMessage(t("profile.loginSuccess"));
-    } catch (e) {
-      setMessage(e instanceof Error ? e.message : "Erreur de connexion");
-    } finally {
-      setIsAuthLoading(false);
-    }
-  }
-
-  async function handleCreateAccount() {
-    try {
-      setIsAuthLoading(true);
-      setMessage(t("profile.creatingAccount"));
-      const authData = await signUpWithUsername(authUsername, code);
-
-      if (!authData.session) {
-        throw new Error(t("profile.confirmationRequired"));
-      }
-
-      const nextProfile = await ensureCommunityProfile(authUsername);
+      setIsProfileSaving(true);
+      setMessage(t("profile.saving"));
+      const nextProfile = await ensureCommunityProfile(localUsername);
+      if (!nextProfile) throw new Error(t("profile.failed"));
       setProfile(nextProfile);
-      setAuthUsername(nextProfile.username);
-      setIsPublic(nextProfile.publicProfile);
-      setIsLoggedIn(true);
-      setMessage(t("profile.accountCreated"));
+      setLocalUsername(nextProfile.username);
+      setMessage(t("profile.profileReady"));
     } catch (e) {
       setMessage(e instanceof Error ? e.message : t("profile.failed"));
     } finally {
-      setIsAuthLoading(false);
-    }
-  }
-
-  async function handleLogout() {
-    await signOut();
-    setIsLoggedIn(false);
-    setProfile(null);
-    setCode("");
-    setMessage(t("profile.loggedOut"));
-  }
-
-  async function handleTogglePublic(value: boolean) {
-    setIsPublic(value);
-    try {
-      const nextProfile = await setPublicProfile(value);
-      setProfile(nextProfile);
-      setMessage(t("profile.privacySaved"));
-    } catch (error) {
-      setIsPublic(!value);
-      setMessage(error instanceof Error ? error.message : t("profile.failed"));
+      setIsProfileSaving(false);
     }
   }
 
@@ -150,16 +90,12 @@ export default function ProfileScreen() {
           onPress: async () => {
             try {
               setMessage(t("profile.saving"));
-              // 1. Delete remote account if exists
-              if (isLoggedIn) {
-                await deleteAccount();
-              }
-              // 2. Clear local data
+              await clearLocalProfile();
               await clearAllVisits();
-              
-              setIsLoggedIn(false);
+
               setProfile(null);
-              setMessage("Toutes les données ont été supprimées.");
+              setLocalUsername("");
+              setMessage(t("profile.deleted"));
             } catch (error) {
               setMessage(error instanceof Error ? error.message : t("profile.failed"));
             }
@@ -199,70 +135,32 @@ export default function ProfileScreen() {
           <Text style={styles.subtitle}>{t("profile.subtitle")}</Text>
         </View>
 
-        {/* AUTH SECTION */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Key color={theme.colors.copper} size={22} />
-            <Text style={styles.sectionTitle}>{t("profile.secureAccess")}</Text>
+            <BadgeCheck color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.localProfile")}</Text>
           </View>
-          {isLoggedIn ? (
-            <>
-              <Text style={styles.itemText}>{t("profile.connectedSecurely")}</Text>
-              <View style={styles.switchRow}>
-                <View style={styles.switchCopy}>
-                  <Text style={styles.itemTitle}>{t("profile.publicProfile")}</Text>
-                  <Text style={styles.itemText}>{t("profile.publicProfileCopy")}</Text>
-                </View>
-                <Switch disabled={!profile} value={isPublic} onValueChange={handleTogglePublic} />
-              </View>
-              <Pressable onPress={handleLogout} style={styles.secondaryButton}>
-                <Text style={styles.secondaryButtonText}>{t("profile.logout")}</Text>
-              </Pressable>
-            </>
-          ) : (
-            <>
-              <Text style={styles.itemText}>{t("profile.loginCopy")}</Text>
-              <TextInput
-                autoCapitalize="none"
-                onChangeText={setAuthUsername}
-                placeholder={t("profile.username")}
-                placeholderTextColor={theme.colors.muted}
-                style={styles.input}
-                value={authUsername}
-              />
-              <TextInput
-                secureTextEntry
-                onChangeText={setCode}
-                placeholder={t("profile.code")}
-                placeholderTextColor={theme.colors.muted}
-                style={styles.input}
-                value={code}
-              />
-              <Pressable
-                disabled={!canUseAuth}
-                onPress={handleLogin}
-                style={[
-                  styles.primaryButton,
-                  { backgroundColor: theme.colors.copper },
-                  !canUseAuth && styles.disabledButton
-                ]}
-              >
-                <ShieldCheck color={theme.colors.paper} size={18} />
-                <Text style={styles.primaryButtonText}>{t("profile.login")}</Text>
-              </Pressable>
-              <Pressable
-                disabled={!canUseAuth}
-                onPress={handleCreateAccount}
-                style={[
-                  styles.secondaryButton,
-                  !canUseAuth && styles.disabledButton
-                ]}
-              >
-                <UserPlus color={theme.colors.teal} size={18} />
-                <Text style={styles.secondaryButtonText}>{t("profile.createAccount")}</Text>
-              </Pressable>
-            </>
-          )}
+          <Text style={styles.itemText}>{t("profile.localProfileCopy")}</Text>
+          <TextInput
+            autoCapitalize="none"
+            onChangeText={setLocalUsername}
+            placeholder={t("profile.username")}
+            placeholderTextColor={theme.colors.muted}
+            style={styles.input}
+            value={localUsername}
+          />
+          <Pressable
+            disabled={!canSaveProfile}
+            onPress={handleSaveProfile}
+            style={[
+              styles.primaryButton,
+              { backgroundColor: theme.colors.copper },
+              !canSaveProfile && styles.disabledButton
+            ]}
+          >
+            <BadgeCheck color={theme.colors.paper} size={18} />
+            <Text style={styles.primaryButtonText}>{t("profile.saveProfile")}</Text>
+          </Pressable>
         </View>
 
         <View style={styles.statsRow}>
@@ -331,11 +229,11 @@ export default function ProfileScreen() {
             value={newStoreNote}
           />
           <Pressable
-            disabled={!isSupabaseConfigured || newStoreName.trim().length === 0}
+            disabled={newStoreName.trim().length === 0}
             onPress={handleNewStoreProposal}
             style={[
               styles.secondaryButton,
-              (!isSupabaseConfigured || newStoreName.trim().length === 0) && styles.disabledButton
+              newStoreName.trim().length === 0 && styles.disabledButton
             ]}
           >
             <Send color={theme.colors.teal} size={18} />

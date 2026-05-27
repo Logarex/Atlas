@@ -3,11 +3,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { todayISO } from "@/lib/date";
 
-import type { LocalVisit, VisitVisibility } from "./visit.types";
+import type { LocalVisit } from "./visit.types";
 
 const STORAGE_KEY = "@atlas/local-visits/v1";
 
-// Simple pub-sub mechanism for synchronization
+// Simple pub-sub mechanism to keep local screens in sync.
 type LocalVisitsListener = (visits: LocalVisit[]) => void;
 const listeners = new Set<LocalVisitsListener>();
 
@@ -17,14 +17,13 @@ function notifyListeners(nextVisits: LocalVisit[]) {
   }
 }
 
-function createVisit(storeId: string, visitedOn: string, visibility: VisitVisibility): LocalVisit {
+function createVisit(storeId: string, visitedOn: string): LocalVisit {
   const now = new Date().toISOString();
 
   return {
     id: `${storeId}:${visitedOn}:${now}`,
     storeId,
     visitedOn,
-    visibility,
     createdAt: now,
     updatedAt: now
   };
@@ -88,9 +87,9 @@ export function useLocalVisits(storeId?: string) {
   }, [storeId, visits]);
 
   const addVisit = useCallback(
-    async (nextStoreId: string, visitedOn = todayISO(), visibility: VisitVisibility = "private") => {
+    async (nextStoreId: string, visitedOn = todayISO()) => {
       const nextVisits = [
-        createVisit(nextStoreId, visitedOn, visibility),
+        createVisit(nextStoreId, visitedOn),
         ...visits.filter(
           (visit) => !(visit.storeId === nextStoreId && visit.visitedOn === visitedOn)
         )
@@ -105,19 +104,6 @@ export function useLocalVisits(storeId?: string) {
   const removeVisit = useCallback(
     async (visitId: string) => {
       const nextVisits = visits.filter((visit) => visit.id !== visitId);
-      setVisits(nextVisits);
-      await writeLocalVisits(nextVisits);
-      notifyListeners(nextVisits);
-    },
-    [visits]
-  );
-
-  const updateVisitVisibility = useCallback(
-    async (visitId: string, visibility: VisitVisibility) => {
-      const now = new Date().toISOString();
-      const nextVisits = visits.map((visit) =>
-        visit.id === visitId ? { ...visit, visibility, updatedAt: now } : visit
-      );
       setVisits(nextVisits);
       await writeLocalVisits(nextVisits);
       notifyListeners(nextVisits);
@@ -142,7 +128,6 @@ export function useLocalVisits(storeId?: string) {
     refresh,
     removeVisit,
     storeVisits,
-    updateVisitVisibility,
     visits
   };
 }

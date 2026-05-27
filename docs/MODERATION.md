@@ -16,38 +16,29 @@ The contribution system should feel easy for users and strict for published data
 1. User opens a store page.
 2. User taps "Suggest edit" or "Add photo".
 3. App asks for the changed field, proposed value, source URL, optional note, and license confirmation.
-4. Submission is saved as pending.
-5. User sees a pending status.
+4. The app creates a GitHub issue.
+5. User sees a submission status.
 
 ## Maintainer Flow
 
-1. A Discord message appears in the maintainer channel.
-2. Maintainer opens the review link.
-3. Review page shows before/after values, source links, contributor history, and risk flags.
-4. Maintainer approves, requests changes, or rejects.
-5. Decision is logged in `reviews`.
+1. Maintainer opens the GitHub issue.
+2. Issue body shows before/after values, source links, contributor username, and notes.
+3. Maintainer approves, requests changes, or rejects.
+4. Accepted changes are applied through a dataset pull request.
 
-## Discord Message
+## GitHub Issue
 
-Discord webhooks are enough for V1 notifications. For one-click approve/reject buttons, use a Discord bot or signed links to a web review page.
+Suggested V1 issue body:
 
-Suggested V1 message:
+```text
+### Contribution from @username
 
-```json
-{
-  "content": "New Atlas submission",
-  "embeds": [
-    {
-      "title": "Correction: Apple Fifth Avenue",
-      "fields": [
-        { "name": "Field", "value": "attributes.forum" },
-        { "name": "Proposed value", "value": "yes" },
-        { "name": "Source", "value": "https://www.apple.com/newsroom/2019/09/apple-fifth-avenue-the-cube-is-back/" },
-        { "name": "Submitted by", "value": "@username" }
-      ]
-    }
-  ]
-}
+- Store ID: apple-fifth-avenue
+- Type: store_correction
+- Field: architecture.attributes.forum
+- Proposed Value: yes
+- Source: https://www.apple.com/newsroom/2019/09/apple-fifth-avenue-the-cube-is-back/
+- Note: Optional reviewer context
 ```
 
 ## Review Rules
@@ -56,12 +47,12 @@ Suggested V1 message:
 - Reject copied descriptions or copyrighted photos.
 - Prefer "unknown" over guessed attributes.
 - Mark volatile information with `lastVerifiedAt`.
-- Keep rejected submissions for audit, but do not expose them publicly.
+- Close rejected issues with a short reason.
 - Rate-limit repeated low-quality submissions.
 
 ## Roles
 
 - Contributor: can submit edits and photos.
 - Trusted contributor: lower friction, still reviewed.
-- Reviewer: can approve/reject.
-- Admin: can manage users, roles, and emergency takedowns.
+- Reviewer: can approve/reject issues.
+- Admin: can manage repository settings and emergency takedowns.

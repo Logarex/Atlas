@@ -10,7 +10,6 @@
     "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {
-    "@supabase/supabase-js": "^2.105.4",
     "dotenv": "^17.4.2"
   }
 }
