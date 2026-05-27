@@ -1,6 +1,8 @@
 import { createGithubIssue } from "@/lib/github";
 import { getCurrentProfile } from "../social/socialApi";
 
+export const DEFAULT_PHOTO_LICENSE = "CC-BY-4.0" as const;
+
 export type StoreChangeDraft = {
   storeId?: string | null;
   type?: "store_correction" | "new_store";
@@ -15,8 +17,9 @@ export type PhotoSubmissionDraft = {
   mimeType?: string | null;
   fileName?: string | null;
   caption?: string;
+  creditName?: string;
   takenOn?: string;
-  license: "CC-BY-4.0" | "CC0-1.0";
+  license?: typeof DEFAULT_PHOTO_LICENSE;
   peopleVisible: boolean;
 };
 
@@ -45,15 +48,17 @@ export async function submitStoreChange(draft: StoreChangeDraft) {
 export async function submitPhoto(draft: PhotoSubmissionDraft) {
   const profile = await getCurrentProfile();
   const username = profile?.username || "anonymous";
+  const license = draft.license ?? DEFAULT_PHOTO_LICENSE;
 
   const title = `[PHOTO] Store ${draft.storeId}`;
   const body = `
 ### Photo contribution from @${username}
 
 - **Store ID**: ${draft.storeId}
+- **Credit / display name**: ${draft.creditName || username}
 - **Caption**: ${draft.caption || "None"}
 - **Date Taken**: ${draft.takenOn || "Unknown"}
-- **License**: ${draft.license}
+- **License**: ${license}
 - **People Visible**: ${draft.peopleVisible ? "Yes" : "No"}
 - **Original file name**: ${draft.fileName || "Unknown"}
 - **MIME type**: ${draft.mimeType || "Unknown"}

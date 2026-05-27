@@ -450,7 +450,7 @@ export default function ExploreScreen() {
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <View style={styles.header}>
-        <Text style={styles.title}>Explorer</Text>
+        <Text style={styles.title}>{t("tabs.explore")}</Text>
       </View>
 
       <View style={styles.searchWrap}>
@@ -524,7 +524,10 @@ export default function ExploreScreen() {
       </View>
 
       <FlatList
-        contentContainerStyle={styles.list}
+        contentContainerStyle={[
+          styles.list,
+          { paddingBottom: insets.bottom + theme.spacing.lg }
+        ]}
         data={filteredStores}
         keyExtractor={(store) => store.id}
         renderItem={({ item }) => (

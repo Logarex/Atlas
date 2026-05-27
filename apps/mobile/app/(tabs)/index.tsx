@@ -4,7 +4,7 @@ import { useAppTheme } from "@/theme/useAppTheme";
 import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useMemo } from "react";
 import { Clock, History } from "lucide-react-native";
 import { getStoreName } from "@/features/stores/storeUtils";
@@ -12,6 +12,7 @@ import { getStoreName } from "@/features/stores/storeUtils";
 export default function HomeScreen() {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
+  const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
 
   const { stats, stores } = useStores();
@@ -19,7 +20,12 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <ScrollView
+        contentContainerStyle={[
+          styles.content,
+          { paddingBottom: insets.bottom + theme.spacing.lg }
+        ]}
+      >
         <View style={styles.header}>
           <Text style={styles.kicker}>{t("home.kicker")}</Text>
           <Text style={styles.title}>{t("home.title")}</Text>

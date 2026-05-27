@@ -1,5 +1,6 @@
 {
   "tabs": {
+    "home": "Home",
     "explore": "Explore",
     "map": "Map",
     "review": "Review",
@@ -127,20 +128,33 @@
     "noPhotos": "No approved community photos yet.",
     "suggestEdit": "Suggest edit",
     "addPhoto": "Add photo",
-    "submitting": "Submitting for review...",
-    "submitFailed": "Could not submit right now.",
-    "changeSubmitted": "Correction submitted for review.",
-    "photoPermissionDenied": "Photo library permission is needed to choose an image.",
-    "photoRequired": "Choose a photo first.",
-    "photoSubmitted": "Photo submitted for review.",
-    "fieldPath": "Field path, for example architecture.attributes.greenWall",
-    "proposedValue": "Proposed value",
-    "note": "Optional note",
+    "submitting": "Sending...",
+    "submitFailed": "The submission failed. Please try again in a moment.",
+    "changeSubmitted": "Thanks, the correction was sent for review.",
+    "changeRequired": "Tell us what needs changing and the correct information to use.",
+    "suggestEditHelp": "Describe the information to correct in plain language. You do not need to know the technical field name.",
+    "photoPermissionDenied": "Allow photo access to choose an image.",
+    "photoRequired": "Choose a photo before sending.",
+    "photoSubmitted": "Thanks, the photo was proposed. It will be reviewed before appearing in Atlas.",
+    "photoHelp": "Add a photo you took. Your name or nickname can be shown with the photo if it is accepted.",
+    "fieldPath": "What to correct",
+    "fieldPathPlaceholder": "E.g. address, hours, name, status, architecture...",
+    "proposedValue": "Suggested correction",
+    "proposedValuePlaceholder": "Write the correct information",
+    "note": "Helpful details",
+    "notePlaceholder": "Source, context, or useful link",
     "submit": "Submit",
+    "submitCorrection": "Send correction",
+    "submitPhoto": "Send photo",
     "pickPhoto": "Choose photo",
     "photoSelected": "Photo selected",
+    "photoCreditName": "Name or nickname",
+    "photoCreditPlaceholder": "E.g. first name, nickname, or group",
     "caption": "Caption",
-    "peopleVisible": "People are visible"
+    "captionPlaceholder": "E.g. Main facade at sunset",
+    "takenOn": "Date taken",
+    "takenOnPlaceholder": "YYYY-MM-DD",
+    "peopleVisible": "Recognizable people are visible"
   },
   "status": {
     "open": "Open",
@@ -179,6 +193,26 @@
     "success": "Changes saved successfully!",
     "error": "Error saving changes.",
     "details": "Store Details",
-    "verifyOnMap": "Verify on Map"
+    "verifyOnMap": "Verify on Map",
+    "editor": {
+      "createStore": "Create store",
+      "editStore": "Edit store",
+      "requiredFields": "Please fill all required fields: ID, name, city, country, and address.",
+      "saveFailed": "Failed to save store.",
+      "saving": "Saving...",
+      "saveStore": "Save store",
+      "fields": {
+        "id": "ID (slug) *",
+        "nameEn": "Name (EN) *",
+        "nameFr": "Name (FR)",
+        "city": "City *",
+        "country": "Country *",
+        "address": "Address *",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "officialUrl": "Official URL",
+        "status": "Status"
+      }
+    }
   }
 }

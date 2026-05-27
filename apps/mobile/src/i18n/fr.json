@@ -1,5 +1,6 @@
 {
   "tabs": {
+    "home": "Accueil",
     "explore": "Explorer",
     "map": "Carte",
     "review": "Révision",
@@ -39,9 +40,9 @@
         "countries": "Pays",
         "regions": "Régions",
         "years": "Années",
-        "designStyles": "Design style",
-        "features": "Store features",
-        "extras": "Extras"
+        "designStyles": "Style architectural",
+        "features": "Fonctionnalités",
+        "extras": "Compléments"
       },
       "extras": {
         "hasPhotos": "Avec photo",
@@ -127,20 +128,33 @@
     "noPhotos": "Aucune photo communautaire approuvée pour l'instant.",
     "suggestEdit": "Proposer une correction",
     "addPhoto": "Ajouter une photo",
-    "submitting": "Envoi pour révision...",
-    "submitFailed": "Impossible d'envoyer pour l'instant.",
-    "changeSubmitted": "Correction envoyée pour révision.",
-    "photoPermissionDenied": "L'accès aux photos est nécessaire pour choisir une image.",
-    "photoRequired": "Choisis une photo d'abord.",
-    "photoSubmitted": "Photo envoyée pour révision.",
-    "fieldPath": "Champ, par exemple architecture.attributes.greenWall",
-    "proposedValue": "Valeur proposée",
-    "note": "Note optionnelle",
+    "submitting": "Envoi en cours...",
+    "submitFailed": "L'envoi a échoué. Réessaie dans un instant.",
+    "changeSubmitted": "Merci, la correction a été envoyée pour révision.",
+    "changeRequired": "Indique ce qu'il faut corriger et la bonne information à utiliser.",
+    "suggestEditHelp": "Décris simplement l'information à corriger. Pas besoin de connaître le nom technique du champ.",
+    "photoPermissionDenied": "Autorise l'accès aux photos pour choisir une image.",
+    "photoRequired": "Choisis une photo avant d'envoyer.",
+    "photoSubmitted": "Merci, la photo a été proposée. Elle sera relue avant d'apparaître dans Atlas.",
+    "photoHelp": "Ajoute une photo prise par toi. Ton nom ou pseudo pourra être affiché avec la photo si elle est acceptée.",
+    "fieldPath": "À corriger",
+    "fieldPathPlaceholder": "Ex. adresse, horaires, nom, statut, architecture...",
+    "proposedValue": "Correction proposée",
+    "proposedValuePlaceholder": "Écris la bonne information",
+    "note": "Détails utiles",
+    "notePlaceholder": "Source, contexte ou lien utile",
     "submit": "Envoyer",
+    "submitCorrection": "Envoyer la correction",
+    "submitPhoto": "Envoyer la photo",
     "pickPhoto": "Choisir une photo",
     "photoSelected": "Photo sélectionnée",
+    "photoCreditName": "Nom ou pseudo",
+    "photoCreditPlaceholder": "Ex. prénom, pseudo ou collectif",
     "caption": "Légende",
-    "peopleVisible": "Des personnes sont visibles"
+    "captionPlaceholder": "Ex. Façade principale au coucher du soleil",
+    "takenOn": "Date de prise",
+    "takenOnPlaceholder": "YYYY-MM-DD",
+    "peopleVisible": "Des personnes reconnaissables sont visibles"
   },
   "status": {
     "open": "Ouvert",
@@ -179,6 +193,26 @@
     "success": "Modifications enregistrées !",
     "error": "Erreur lors de l'enregistrement.",
     "details": "Détails de la boutique",
-    "verifyOnMap": "Voir sur la carte"
+    "verifyOnMap": "Voir sur la carte",
+    "editor": {
+      "createStore": "Créer une boutique",
+      "editStore": "Modifier la boutique",
+      "requiredFields": "Renseigne tous les champs obligatoires : ID, nom, ville, pays et adresse.",
+      "saveFailed": "Impossible d'enregistrer la boutique.",
+      "saving": "Enregistrement...",
+      "saveStore": "Enregistrer",
+      "fields": {
+        "id": "ID (slug) *",
+        "nameEn": "Nom (EN) *",
+        "nameFr": "Nom (FR)",
+        "city": "Ville *",
+        "country": "Pays *",
+        "address": "Adresse *",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "officialUrl": "URL officielle",
+        "status": "Statut"
+      }
+    }
   }
 }

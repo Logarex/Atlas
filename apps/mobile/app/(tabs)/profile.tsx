@@ -18,11 +18,12 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ProfileScreen() {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
+  const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
 
   const { stores } = useStores();
@@ -88,7 +89,12 @@ export default function ProfileScreen() {
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <ScrollView
+        contentContainerStyle={[
+          styles.content,
+          { paddingBottom: insets.bottom + theme.spacing.lg }
+        ]}
+      >
         <View style={styles.header}>
           <Text style={styles.kicker}>{t("profile.kicker")}</Text>
           <Text style={styles.title}>{t("profile.title")}</Text>

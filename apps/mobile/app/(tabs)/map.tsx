@@ -5,7 +5,7 @@ import { useAppTheme } from "@/theme/useAppTheme";
 import { useTranslation } from "react-i18next";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useMemo, useState } from "react";
 import type { StoreStatus } from "@/features/stores/store.types";
 import type { LayoutChangeEvent } from "react-native";
@@ -13,6 +13,7 @@ import type { LayoutChangeEvent } from "react-native";
 export default function MapScreen() {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
+  const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
   const [mapSize, setMapSize] = useState({ height: 0, width: 0 });
   
@@ -79,8 +80,8 @@ export default function MapScreen() {
         ) : null}
       </View>
 
-      <View style={styles.panel}>
-        <Text style={styles.title}>Carte mondiale</Text>
+      <View style={[styles.panel, { bottom: insets.bottom + theme.spacing.md }]}>
+        <Text style={styles.title}>{t("map.title")}</Text>
 
         <View style={styles.legend}>
           {(["open", "closed", "relocated"] as const).map((status) => (

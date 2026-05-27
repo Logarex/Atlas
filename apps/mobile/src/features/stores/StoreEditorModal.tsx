@@ -1,6 +1,17 @@
 import React, { useState, useMemo } from "react";
-import { Modal, StyleSheet, Text, TextInput, View, Pressable, ScrollView, Switch } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  Alert,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
+} from "react-native";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useAppTheme } from "@/theme/useAppTheme";
 import type { StoreRecord } from "./store.types";
 import { useTranslation } from "react-i18next";
@@ -13,9 +24,12 @@ type StoreEditorModalProps = {
   onSave: (store: StoreRecord) => Promise<void>;
 };
 
+const editableStatusKeys = ["open", "closed", "relocated", "announced", "temporary"] as const;
+
 export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEditorModalProps) {
   const { t } = useTranslation();
   const theme = useAppTheme();
+  const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
   
   const [loading, setLoading] = useState(false);
@@ -35,7 +49,7 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
 
   const handleSave = async () => {
     if (!id || !nameEn || !city || !countryCode || !address) {
-      alert("Please fill all required fields (ID, Name, City, Country, Address)");
+      Alert.alert(t("review.editor.requiredFields"));
       return;
     }
 
@@ -68,7 +82,7 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
       onClose();
     } catch (e) {
       console.error(e);
-      alert("Failed to save store");
+      Alert.alert(t("review.editor.saveFailed"));
     } finally {
       setLoading(false);
     }
@@ -76,91 +90,105 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
 
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.title}>{isNew ? "Create Store" : "Edit Store"}</Text>
-          <Pressable onPress={onClose} style={styles.closeBtn}>
-            <X color={theme.colors.ink} size={24} />
-          </Pressable>
-        </View>
-
-        <ScrollView contentContainerStyle={styles.form}>
-          <View style={styles.field}>
-            <Text style={styles.label}>ID (slug) *</Text>
-            <TextInput 
-              style={styles.input} 
-              value={id} 
-              onChangeText={setId} 
-              editable={isNew} 
-              placeholder="apple-fifth-avenue"
-              placeholderTextColor={theme.colors.muted}
-            />
+      <SafeAreaView style={styles.container} edges={["left", "right"]}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : undefined}
+          style={styles.keyboardView}
+        >
+          <View style={[styles.header, { paddingTop: insets.top + theme.spacing.lg }]}>
+            <Text style={styles.title}>
+              {isNew ? t("review.editor.createStore") : t("review.editor.editStore")}
+            </Text>
+            <Pressable onPress={onClose} style={styles.closeBtn}>
+              <X color={theme.colors.ink} size={24} />
+            </Pressable>
           </View>
 
-          <View style={styles.field}>
-            <Text style={styles.label}>Name (EN) *</Text>
-            <TextInput style={styles.input} value={nameEn} onChangeText={setNameEn} />
-          </View>
-          
-          <View style={styles.field}>
-            <Text style={styles.label}>Name (FR)</Text>
-            <TextInput style={styles.input} value={nameFr} onChangeText={setNameFr} />
-          </View>
-
-          <View style={styles.row}>
-            <View style={[styles.field, { flex: 1 }]}>
-              <Text style={styles.label}>City *</Text>
-              <TextInput style={styles.input} value={city} onChangeText={setCity} />
+          <ScrollView
+            contentContainerStyle={styles.form}
+            keyboardShouldPersistTaps="handled"
+          >
+            <View style={styles.field}>
+              <Text style={styles.label}>{t("review.editor.fields.id")}</Text>
+              <TextInput
+                editable={isNew}
+                onChangeText={setId}
+                placeholder="apple-fifth-avenue"
+                placeholderTextColor={theme.colors.muted}
+                style={styles.input}
+                value={id}
+              />
             </View>
-            <View style={[styles.field, { flex: 0.5 }]}>
-              <Text style={styles.label}>Country *</Text>
-              <TextInput style={styles.input} value={countryCode} onChangeText={setCountryCode} maxLength={2} autoCapitalize="characters" />
+
+            <View style={styles.field}>
+              <Text style={styles.label}>{t("review.editor.fields.nameEn")}</Text>
+              <TextInput style={styles.input} value={nameEn} onChangeText={setNameEn} />
             </View>
-          </View>
 
-          <View style={styles.field}>
-            <Text style={styles.label}>Address *</Text>
-            <TextInput style={styles.input} value={address} onChangeText={setAddress} multiline />
-          </View>
-
-          <View style={styles.row}>
-            <View style={[styles.field, { flex: 1 }]}>
-              <Text style={styles.label}>Latitude</Text>
-              <TextInput style={styles.input} value={latitude} onChangeText={setLatitude} keyboardType="numeric" />
+            <View style={styles.field}>
+              <Text style={styles.label}>{t("review.editor.fields.nameFr")}</Text>
+              <TextInput style={styles.input} value={nameFr} onChangeText={setNameFr} />
             </View>
-            <View style={[styles.field, { flex: 1 }]}>
-              <Text style={styles.label}>Longitude</Text>
-              <TextInput style={styles.input} value={longitude} onChangeText={setLongitude} keyboardType="numeric" />
+
+            <View style={styles.row}>
+              <View style={[styles.field, { flex: 1 }]}>
+                <Text style={styles.label}>{t("review.editor.fields.city")}</Text>
+                <TextInput style={styles.input} value={city} onChangeText={setCity} />
+              </View>
+              <View style={[styles.field, { flex: 0.5 }]}>
+                <Text style={styles.label}>{t("review.editor.fields.country")}</Text>
+                <TextInput style={styles.input} value={countryCode} onChangeText={setCountryCode} maxLength={2} autoCapitalize="characters" />
+              </View>
             </View>
-          </View>
 
-          <View style={styles.field}>
-            <Text style={styles.label}>Official URL</Text>
-            <TextInput style={styles.input} value={officialUrl} onChangeText={setOfficialUrl} keyboardType="url" autoCapitalize="none" />
-          </View>
-          
-          <View style={styles.field}>
-            <Text style={styles.label}>Status</Text>
-            <View style={styles.statusWrap}>
-              {["open", "closed", "relocated", "announced", "temporary"].map(s => (
-                <Pressable 
-                  key={s} 
-                  onPress={() => setStatus(s as any)}
-                  style={[styles.statusBtn, status === s && styles.statusBtnActive]}
-                >
-                  <Text style={[styles.statusText, status === s && styles.statusTextActive]}>{s}</Text>
-                </Pressable>
-              ))}
+            <View style={styles.field}>
+              <Text style={styles.label}>{t("review.editor.fields.address")}</Text>
+              <TextInput style={styles.input} value={address} onChangeText={setAddress} multiline />
             </View>
+
+            <View style={styles.row}>
+              <View style={[styles.field, { flex: 1 }]}>
+                <Text style={styles.label}>{t("review.editor.fields.latitude")}</Text>
+                <TextInput style={styles.input} value={latitude} onChangeText={setLatitude} keyboardType="numeric" />
+              </View>
+              <View style={[styles.field, { flex: 1 }]}>
+                <Text style={styles.label}>{t("review.editor.fields.longitude")}</Text>
+                <TextInput style={styles.input} value={longitude} onChangeText={setLongitude} keyboardType="numeric" />
+              </View>
+            </View>
+
+            <View style={styles.field}>
+              <Text style={styles.label}>{t("review.editor.fields.officialUrl")}</Text>
+              <TextInput style={styles.input} value={officialUrl} onChangeText={setOfficialUrl} keyboardType="url" autoCapitalize="none" />
+            </View>
+
+            <View style={styles.field}>
+              <Text style={styles.label}>{t("review.editor.fields.status")}</Text>
+              <View style={styles.statusWrap}>
+                {editableStatusKeys.map(s => (
+                  <Pressable
+                    key={s}
+                    onPress={() => setStatus(s)}
+                    style={[styles.statusBtn, status === s && styles.statusBtnActive]}
+                  >
+                    <Text style={[styles.statusText, status === s && styles.statusTextActive]}>
+                      {t(`status.${s}`)}
+                    </Text>
+                  </Pressable>
+                ))}
+              </View>
+            </View>
+
+          </ScrollView>
+
+          <View style={[styles.footer, { paddingBottom: insets.bottom + theme.spacing.lg }]}>
+            <Pressable style={styles.saveBtn} onPress={handleSave} disabled={loading}>
+              <Text style={styles.saveBtnText}>
+                {loading ? t("review.editor.saving") : t("review.editor.saveStore")}
+              </Text>
+            </Pressable>
           </View>
-
-        </ScrollView>
-
-        <View style={styles.footer}>
-          <Pressable style={styles.saveBtn} onPress={handleSave} disabled={loading}>
-            <Text style={styles.saveBtnText}>{loading ? "Saving..." : "Save Store"}</Text>
-          </Pressable>
-        </View>
+        </KeyboardAvoidingView>
       </SafeAreaView>
     </Modal>
   );
@@ -173,6 +201,9 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     container: {
       flex: 1,
       backgroundColor: colors.canvas
+    },
+    keyboardView: {
+      flex: 1
     },
     header: {
       flexDirection: "row",

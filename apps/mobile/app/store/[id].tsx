@@ -29,8 +29,10 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Image,
+  KeyboardAvoidingView,
   Linking,
   Modal,
+  Platform,
   Pressable,
   ScrollView,
   Share,
@@ -58,14 +60,17 @@ export default function StoreDetailScreen() {
   const [changeModalVisible, setChangeModalVisible] = useState(false);
   const [photoModalVisible, setPhotoModalVisible] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<StorePhoto | null>(null);
-  const [fieldPath, setFieldPath] = useState("architecture.attributes.");
+  const [fieldPath, setFieldPath] = useState("");
   const [proposedValue, setProposedValue] = useState("");
   const [note, setNote] = useState("");
-  const [contributionMessage, setContributionMessage] = useState<string | null>(null);
+  const [contributionFeedback, setContributionFeedback] = useState<{
+    message: string;
+    tone: "error" | "info" | "success";
+  } | null>(null);
   const [photoAsset, setPhotoAsset] = useState<ImagePicker.ImagePickerAsset | null>(null);
+  const [photoCreditName, setPhotoCreditName] = useState("");
   const [photoCaption, setPhotoCaption] = useState("");
   const [photoTakenOn, setPhotoTakenOn] = useState(todayISO());
-  const [photoLicense, setPhotoLicense] = useState<"CC-BY-4.0" | "CC0-1.0">("CC-BY-4.0");
   const [peopleVisible, setPeopleVisible] = useState(false);
   const { addVisit, removeVisit, storeVisits } = useLocalVisits(store?.id);
   const name = store ? getStoreName(store, i18n.language) : "";
@@ -103,27 +108,41 @@ export default function StoreDetailScreen() {
   }
 
   async function handleSubmitChange() {
+    const trimmedFieldPath = fieldPath.trim();
+    const trimmedProposedValue = proposedValue.trim();
+
+    if (!trimmedFieldPath || !trimmedProposedValue) {
+      setContributionFeedback({
+        message: t("store.changeRequired"),
+        tone: "error"
+      });
+      return;
+    }
+
     try {
-      setContributionMessage(t("store.submitting"));
+      setContributionFeedback({ message: t("store.submitting"), tone: "info" });
       await submitStoreChange({
         storeId: store.id,
-        fieldPath,
-        proposedValue,
-        note
+        fieldPath: trimmedFieldPath,
+        proposedValue: trimmedProposedValue,
+        note: note.trim()
       });
-      setContributionMessage(t("store.changeSubmitted"));
-      setFieldPath("architecture.attributes.");
+      setContributionFeedback({ message: t("store.changeSubmitted"), tone: "success" });
+      setFieldPath("");
       setProposedValue("");
       setNote("");
     } catch (error) {
-      setContributionMessage(error instanceof Error ? error.message : t("store.submitFailed"));
+      setContributionFeedback({
+        message: error instanceof Error ? error.message : t("store.submitFailed"),
+        tone: "error"
+      });
     }
   }
 
   async function handlePickPhoto() {
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!permission.granted) {
-      setContributionMessage(t("store.photoPermissionDenied"));
+      setContributionFeedback({ message: t("store.photoPermissionDenied"), tone: "error" });
       return;
     }
 
@@ -136,40 +155,72 @@ export default function StoreDetailScreen() {
 
     if (!result.canceled) {
       setPhotoAsset(result.assets[0]);
+      setContributionFeedback(null);
     }
   }
 
   async function handleSubmitPhoto() {
     if (!photoAsset) {
-      setContributionMessage(t("store.photoRequired"));
+      setContributionFeedback({ message: t("store.photoRequired"), tone: "error" });
       return;
     }
 
     if (photoTakenOn && !isISODate(photoTakenOn)) {
-      setContributionMessage(t("store.visitInvalidDate"));
+      setContributionFeedback({ message: t("store.visitInvalidDate"), tone: "error" });
       return;
     }
 
     try {
-      setContributionMessage(t("store.submitting"));
+      setContributionFeedback({ message: t("store.submitting"), tone: "info" });
       await submitPhoto({
         storeId: store.id,
         localUri: photoAsset.uri,
         mimeType: photoAsset.mimeType,
         fileName: photoAsset.fileName,
-        caption: photoCaption,
+        caption: photoCaption.trim(),
+        creditName: photoCreditName.trim(),
         takenOn: photoTakenOn,
-        license: photoLicense,
         peopleVisible
       });
-      setContributionMessage(t("store.photoSubmitted"));
+      setContributionFeedback({ message: t("store.photoSubmitted"), tone: "success" });
       setPhotoAsset(null);
+      setPhotoCreditName("");
       setPhotoCaption("");
       setPhotoTakenOn(todayISO());
       setPeopleVisible(false);
     } catch (error) {
-      setContributionMessage(error instanceof Error ? error.message : t("store.submitFailed"));
+      setContributionFeedback({
+        message: error instanceof Error ? error.message : t("store.submitFailed"),
+        tone: "error"
+      });
     }
+  }
+
+  function openChangeModal() {
+    setContributionFeedback(null);
+    setChangeModalVisible(true);
+  }
+
+  function openPhotoModal() {
+    setContributionFeedback(null);
+    setPhotoModalVisible(true);
+  }
+
+  function renderContributionFeedback() {
+    if (!contributionFeedback) return null;
+
+    const toneStyle =
+      contributionFeedback.tone === "success"
+        ? styles.feedbackSuccess
+        : contributionFeedback.tone === "error"
+          ? styles.feedbackError
+          : styles.feedbackInfo;
+
+    return (
+      <View style={[styles.feedbackBox, toneStyle]}>
+        <Text style={styles.feedbackText}>{contributionFeedback.message}</Text>
+      </View>
+    );
   }
 
   return (
@@ -184,7 +235,15 @@ export default function StoreDetailScreen() {
         <ChevronLeft color={theme.colors.teal} size={28} />
       </Pressable>
 
-      <ScrollView contentContainerStyle={[styles.content, { paddingTop: insets.top + 60 }]}>
+      <ScrollView
+        contentContainerStyle={[
+          styles.content,
+          {
+            paddingBottom: insets.bottom + theme.spacing.xl,
+            paddingTop: insets.top + 60
+          }
+        ]}
+      >
 
       <View style={styles.hero}>
         <Text style={styles.title}>{name}</Text>
@@ -341,11 +400,11 @@ export default function StoreDetailScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.contribute")}</Text>
         <View style={styles.actionRow}>
-          <Pressable style={styles.secondaryButton} onPress={() => setChangeModalVisible(true)}>
+          <Pressable style={styles.secondaryButton} onPress={openChangeModal}>
             <Flag color={theme.colors.teal} size={18} />
             <Text style={styles.secondaryButtonText}>{t("store.suggestEdit")}</Text>
           </Pressable>
-          <Pressable style={styles.secondaryButton} onPress={() => setPhotoModalVisible(true)}>
+          <Pressable style={styles.secondaryButton} onPress={openPhotoModal}>
             <Camera color={theme.colors.teal} size={18} />
             <Text style={styles.secondaryButtonText}>{t("store.addPhoto")}</Text>
           </Pressable>
@@ -395,45 +454,66 @@ export default function StoreDetailScreen() {
         transparent
         visible={changeModalVisible}
       >
-        <View style={styles.modalBackdrop}>
-          <View style={styles.modalSheet}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : undefined}
+          style={styles.modalBackdrop}
+        >
+          <View
+            style={[
+              styles.modalSheet,
+              { paddingBottom: insets.bottom + theme.spacing.lg }
+            ]}
+          >
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t("store.suggestEdit")}</Text>
               <Pressable onPress={() => setChangeModalVisible(false)}>
                 <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
-            <TextInput
-              onChangeText={setFieldPath}
-              placeholder={t("store.fieldPath")}
-              placeholderTextColor={theme.colors.muted}
-              style={styles.input}
-              value={fieldPath}
-            />
-            <TextInput
-              onChangeText={setProposedValue}
-              placeholder={t("store.proposedValue")}
-              placeholderTextColor={theme.colors.muted}
-              style={styles.input}
-              value={proposedValue}
-            />
-            <TextInput
-              multiline
-              onChangeText={setNote}
-              placeholder={t("store.note")}
-              placeholderTextColor={theme.colors.muted}
-              style={[styles.input, styles.textArea]}
-              value={note}
-            />
-            <Pressable style={styles.primaryButton} onPress={handleSubmitChange}>
-              <Send color={theme.colors.paper} size={18} />
-              <Text style={styles.primaryButtonText}>{t("store.submit")}</Text>
-            </Pressable>
-            {contributionMessage ? (
-              <Text style={styles.message}>{contributionMessage}</Text>
-            ) : null}
+            <ScrollView
+              contentContainerStyle={styles.modalSheetContent}
+              keyboardShouldPersistTaps="handled"
+            >
+              <Text style={styles.modalIntro}>{t("store.suggestEditHelp")}</Text>
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.fieldPath")}</Text>
+                <TextInput
+                  onChangeText={setFieldPath}
+                  placeholder={t("store.fieldPathPlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={styles.input}
+                  value={fieldPath}
+                />
+              </View>
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.proposedValue")}</Text>
+                <TextInput
+                  onChangeText={setProposedValue}
+                  placeholder={t("store.proposedValuePlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={styles.input}
+                  value={proposedValue}
+                />
+              </View>
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.note")}</Text>
+                <TextInput
+                  multiline
+                  onChangeText={setNote}
+                  placeholder={t("store.notePlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={[styles.input, styles.textArea]}
+                  value={note}
+                />
+              </View>
+              <Pressable style={styles.primaryButton} onPress={handleSubmitChange}>
+                <Send color={theme.colors.paper} size={18} />
+                <Text style={styles.primaryButtonText}>{t("store.submitCorrection")}</Text>
+              </Pressable>
+              {renderContributionFeedback()}
+            </ScrollView>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
 
       <Modal
@@ -442,68 +522,78 @@ export default function StoreDetailScreen() {
         transparent
         visible={photoModalVisible}
       >
-        <View style={styles.modalBackdrop}>
-          <View style={styles.modalSheet}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : undefined}
+          style={styles.modalBackdrop}
+        >
+          <View
+            style={[
+              styles.modalSheet,
+              { paddingBottom: insets.bottom + theme.spacing.lg }
+            ]}
+          >
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t("store.addPhoto")}</Text>
               <Pressable onPress={() => setPhotoModalVisible(false)}>
                 <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
-            <Pressable style={styles.secondaryButton} onPress={handlePickPhoto}>
-              <Camera color={theme.colors.teal} size={18} />
-              <Text style={styles.secondaryButtonText}>
-                {photoAsset ? t("store.photoSelected") : t("store.pickPhoto")}
-              </Text>
-            </Pressable>
-            {photoAsset ? (
-              <Image source={{ uri: photoAsset.uri }} style={styles.photoPreview} />
-            ) : null}
-            <TextInput
-              onChangeText={setPhotoCaption}
-              placeholder={t("store.caption")}
-              placeholderTextColor={theme.colors.muted}
-              style={styles.input}
-              value={photoCaption}
-            />
-            <TextInput
-              onChangeText={setPhotoTakenOn}
-              placeholder="YYYY-MM-DD"
-              placeholderTextColor={theme.colors.muted}
-              style={styles.input}
-              value={photoTakenOn}
-            />
-            <View style={styles.licenseRow}>
-              {(["CC-BY-4.0", "CC0-1.0"] as const).map((license) => (
-                <Pressable
-                  key={license}
-                  onPress={() => setPhotoLicense(license)}
-                  style={[styles.licenseButton, photoLicense === license && styles.licenseActive]}
-                >
-                  <Text
-                    style={[
-                      styles.licenseText,
-                      photoLicense === license && styles.licenseTextActive
-                    ]}
-                  >
-                    {license}
-                  </Text>
-                </Pressable>
-              ))}
-            </View>
-            <View style={styles.switchRow}>
-              <Text style={styles.body}>{t("store.peopleVisible")}</Text>
-              <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
-            </View>
-            <Pressable style={styles.primaryButton} onPress={handleSubmitPhoto}>
-              <Send color={theme.colors.paper} size={18} />
-              <Text style={styles.primaryButtonText}>{t("store.submit")}</Text>
-            </Pressable>
-            {contributionMessage ? (
-              <Text style={styles.message}>{contributionMessage}</Text>
-            ) : null}
+            <ScrollView
+              contentContainerStyle={styles.modalSheetContent}
+              keyboardShouldPersistTaps="handled"
+            >
+              <Text style={styles.modalIntro}>{t("store.photoHelp")}</Text>
+              <Pressable style={styles.secondaryButton} onPress={handlePickPhoto}>
+                <Camera color={theme.colors.teal} size={18} />
+                <Text style={styles.secondaryButtonText}>
+                  {photoAsset ? t("store.photoSelected") : t("store.pickPhoto")}
+                </Text>
+              </Pressable>
+              {photoAsset ? (
+                <Image source={{ uri: photoAsset.uri }} style={styles.photoPreview} />
+              ) : null}
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.photoCreditName")}</Text>
+                <TextInput
+                  onChangeText={setPhotoCreditName}
+                  placeholder={t("store.photoCreditPlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={styles.input}
+                  value={photoCreditName}
+                />
+              </View>
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.caption")}</Text>
+                <TextInput
+                  onChangeText={setPhotoCaption}
+                  placeholder={t("store.captionPlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={styles.input}
+                  value={photoCaption}
+                />
+              </View>
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.takenOn")}</Text>
+                <TextInput
+                  onChangeText={setPhotoTakenOn}
+                  placeholder={t("store.takenOnPlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={styles.input}
+                  value={photoTakenOn}
+                />
+              </View>
+              <View style={styles.switchRow}>
+                <Text style={styles.body}>{t("store.peopleVisible")}</Text>
+                <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
+              </View>
+              <Pressable style={styles.primaryButton} onPress={handleSubmitPhoto}>
+                <Send color={theme.colors.paper} size={18} />
+                <Text style={styles.primaryButtonText}>{t("store.submitPhoto")}</Text>
+              </Pressable>
+              {renderContributionFeedback()}
+            </ScrollView>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
     </View>
   );
@@ -886,6 +976,10 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       maxHeight: "88%",
       padding: spacing.lg
     },
+    modalSheetContent: {
+      gap: spacing.sm,
+      paddingBottom: spacing.xs
+    },
     modalHeader: {
       alignItems: "center",
       flexDirection: "row",
@@ -896,6 +990,20 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       fontSize: 22,
       fontWeight: "900"
+    },
+    modalIntro: {
+      color: colors.muted,
+      fontSize: typography.small,
+      lineHeight: 20
+    },
+    inputGroup: {
+      gap: spacing.xs
+    },
+    inputLabel: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "900",
+      textTransform: "uppercase"
     },
     input: {
       backgroundColor: colors.paper,
@@ -912,35 +1020,33 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       minHeight: 96,
       textAlignVertical: "top"
     },
-    licenseRow: {
-      flexDirection: "row",
-      gap: spacing.sm
-    },
-    licenseButton: {
-      backgroundColor: colors.paper,
-      borderColor: colors.line,
-      borderRadius: 8,
-      borderWidth: 1,
-      flex: 1,
-      padding: spacing.md
-    },
-    licenseActive: {
-      backgroundColor: colors.ink,
-      borderColor: colors.ink
-    },
-    licenseText: {
-      color: colors.muted,
-      fontSize: typography.small,
-      fontWeight: "800",
-      textAlign: "center"
-    },
-    licenseTextActive: {
-      color: colors.paper
-    },
     switchRow: {
       alignItems: "center",
       flexDirection: "row",
       justifyContent: "space-between"
+    },
+    feedbackBox: {
+      borderRadius: 8,
+      borderWidth: 1,
+      padding: spacing.md
+    },
+    feedbackInfo: {
+      backgroundColor: colors.sky,
+      borderColor: colors.line
+    },
+    feedbackSuccess: {
+      backgroundColor: colors.mint,
+      borderColor: colors.teal
+    },
+    feedbackError: {
+      backgroundColor: colors.paper,
+      borderColor: colors.danger
+    },
+    feedbackText: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800",
+      lineHeight: 20
     }
-  }), [colors, radii, spacing, typography]);
+  }), [colors, radii, shadows, spacing, typography]);
 }

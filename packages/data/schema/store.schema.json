@@ -236,8 +236,9 @@
             "minLength": 1
           },
           "license": {
-            "type": "string",
-            "minLength": 1
+            "enum": [
+              "CC-BY-4.0"
+            ]
           },
           "caption": {
             "type": "string"
