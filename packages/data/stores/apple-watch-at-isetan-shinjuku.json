@@ -47,49 +47,5 @@
     "note": "This store is closed. No current hours are available."
   },
   "photos": [],
-  "sources": [
-    {
-      "type": "user_provided_retail_metadata",
-      "label": "User-provided Apple retail metadata supplement",
-      "url": "https://github.com/Logarex/Atlas/blob/main/packages/data/imports/user/apple-retail-storelist-2026-05-18.json",
-      "license": "user-provided factual metadata",
-      "fields": [
-        "storeNumber",
-        "name",
-        "status",
-        "city",
-        "region",
-        "countryCode",
-        "countryName",
-        "address",
-        "coordinates",
-        "openedOn",
-        "closedOn",
-        "officialUrl",
-        "architecture.typology",
-        "architecture.attributes.avenue",
-        "architecture.attributes.boardroom",
-        "architecture.attributes.forum",
-        "architecture.attributes.geniusBar",
-        "architecture.attributes.greenWall",
-        "architecture.attributes.outdoor",
-        "architecture.attributes.pickup",
-        "architecture.attributes.plaza",
-        "architecture.attributes.trees"
-      ],
-      "verifiedAt": "2026-05-18"
-    },
-    {
-      "type": "retail_press",
-      "label": "9to5Mac: World's last Apple Watch shop at Isetan Shinjuku closing May 13th",
-      "url": "https://9to5mac.com/2018/04/21/apple-watch-isetan-shinjuku-closing-may-13/",
-      "license": "reference_only",
-      "fields": [
-        "status",
-        "closedOn"
-      ],
-      "verifiedAt": "2026-05-18"
-    }
-  ],
   "lastVerifiedAt": "2026-05-18"
 }

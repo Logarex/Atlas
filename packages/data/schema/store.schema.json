@@ -16,7 +16,6 @@
     "officialUrl",
     "architecture",
     "hours",
-    "sources",
     "lastVerifiedAt"
   ],
   "properties": {
@@ -207,52 +206,6 @@
         },
         "note": {
           "type": "string"
-        }
-      }
-    },
-    "sources": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "type",
-          "label",
-          "url",
-          "license",
-          "fields",
-          "verifiedAt"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "minLength": 1
-          },
-          "label": {
-            "type": "string",
-            "minLength": 1
-          },
-          "url": {
-            "type": "string",
-            "pattern": "^https://"
-          },
-          "license": {
-            "type": "string",
-            "minLength": 1
-          },
-          "fields": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "type": "string",
-              "minLength": 1
-            }
-          },
-          "verifiedAt": {
-            "type": "string",
-            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-          }
         }
       }
     },
