@@ -7,6 +7,7 @@
     "import:apple": "node scripts/import-apple-from-alltheplaces.mjs",
     "import:apple-history": "node scripts/import-apple-history-from-fandom.mjs",
     "apply:apple-supplement": "node scripts/apply-apple-retail-supplement.mjs",
+    "generate:mobile-stores": "node scripts/generate-mobile-stores.mjs",
     "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {

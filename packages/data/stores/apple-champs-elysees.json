@@ -45,7 +45,24 @@
     "lastVerifiedAt": null,
     "note": "Hours change often. Verify on the official Apple page before visiting."
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-champs-elysees-1",
+      "url": "./assets/stores/apple-champs-elysees-1.jpeg",
+      "credit": "Louis Chabert",
+      "license": "CC-BY-4.0",
+      "caption": "Apple Champs-Élysées facade.",
+      "takenOn": "2026-05-27"
+    },
+    {
+      "id": "apple-champs-elysees-2",
+      "url": "./assets/stores/apple-champs-elysees-2.jpeg",
+      "credit": "Louis Chabert",
+      "license": "CC-BY-4.0",
+      "caption": "Apple Champs-Élysées interior.",
+      "takenOn": "2026-05-27"
+    }
+  ],
   "sources": [
     {
       "type": "apple_official_page",

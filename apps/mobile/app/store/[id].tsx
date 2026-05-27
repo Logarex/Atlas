@@ -301,7 +301,11 @@ export default function StoreDetailScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.photos")}</Text>
         {store.photos?.length ? (
-          <View style={styles.photosList}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.photosList}
+          >
             {store.photos.map((photo) => {
               const hasCredit = !!photo.credit;
               const hasLicense = !!photo.license;
@@ -327,7 +331,7 @@ export default function StoreDetailScreen() {
                 </View>
               );
             })}
-          </View>
+          </ScrollView>
         ) : (
           <Text style={styles.muted}>{t("store.noPhotos")}</Text>
         )}
@@ -740,7 +744,8 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       gap: spacing.xs
     },
     photosList: {
-      gap: spacing.md,
+      flexDirection: "row",
+      gap: spacing.sm,
       marginTop: spacing.sm
     },
     photoCard: {
@@ -749,22 +754,24 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       borderRadius: radii.md,
       borderWidth: 1,
       overflow: "hidden",
+      width: 112,
       ...shadows.sm
     },
     photoImage: {
-      aspectRatio: 16 / 9,
       backgroundColor: colors.line,
-      width: "100%"
+      height: 74,
+      resizeMode: "cover",
+      width: 112
     },
     photoMeta: {
-      padding: spacing.md,
-      gap: spacing.xs
+      padding: spacing.sm,
+      gap: 2
     },
     photoCaption: {
       color: colors.ink,
-      fontSize: typography.small,
+      fontSize: typography.caption,
       fontWeight: "700",
-      lineHeight: 18
+      lineHeight: 16
     },
     photoCredit: {
       color: colors.muted,

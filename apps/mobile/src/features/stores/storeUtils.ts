@@ -1,4 +1,5 @@
 import type { ArchitectureAttribute, StoreRecord, StoreStatus } from "./store.types";
+import { localPhotosMap } from "./generatedPhotoAssets";
 
 const combiningMarksPattern = /[\u0300-\u036f]/g;
 const retailSlugPattern = /\/retail\/([^/?#]+)/i;
@@ -167,8 +168,6 @@ export function getStoreName(
 
   return baseName;
 }
-
-const localPhotosMap: Record<string, any> = {};
 
 export function getPhotoSource(url: string) {
   if (url.startsWith("http://") || url.startsWith("https://")) {
