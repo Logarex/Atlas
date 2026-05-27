@@ -78,15 +78,15 @@
   },
   "profile": {
     "kicker": "Personal space",
-    "title": "Your visits",
-    "subtitle": "Review visited stores, suggest a missing store, and adjust the app appearance.",
+    "title": "Visits",
+    "subtitle": "Visited stores, missing store suggestions, and app appearance settings.",
     "visits": "Visited stores",
     "noVisits": "No visits saved on this device yet.",
     "newStore": "Missing store",
     "newStorePlaceholder": "Store name or location",
-    "newStoreNote": "What should reviewers know?",
+    "newStoreNote": "Useful details for review",
     "submitStore": "Submit missing store",
-    "privacyTitle": "On your device",
+    "privacyTitle": "Local data",
     "saving": "Saving...",
     "exporting": "Preparing export...",
     "importing": "Importing...",
@@ -97,10 +97,10 @@
     "progressLabel": "Visited stores",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "No ads or hidden tracking: Atlas is for collecting places, not profiling you.",
+      "noAds": "No ads or hidden tracking: Atlas is for collecting places, without profiling.",
       "localLocation": "Atlas is open source: the code is public, reviewable, and improvable by the community.",
-      "optionalAccount": "Your visits and notes stay on this device.",
-      "openData": "When you suggest a correction, it can improve the shared dataset after review."
+      "optionalAccount": "Visits and notes stay on this device.",
+      "openData": "Suggested corrections can improve the shared dataset after review."
     },
     "export": {
       "title": "Export and import",
@@ -116,12 +116,12 @@
     "community": {
       "title": "Community and license",
       "body": "Atlas is a community project built to last. The app will live as long as users help enrich stores, correct details, add photos, and keep the dataset useful for everyone.",
-      "license": "Public code under the MIT license: you can review, contribute, learn, and reuse."
+      "license": "Public code under the MIT license: review, contribution, learning, and reuse are possible."
     },
     "dangerZone": "Danger zone",
-    "deleteAccount": "Delete my local data",
-    "deleteWarningTitle": "Are you sure?",
-    "deleteWarningMessage": "This action is irreversible. Your visits and local settings will be cleared from this device.",
+    "deleteAccount": "Delete local data",
+    "deleteWarningTitle": "Confirm deletion?",
+    "deleteWarningMessage": "This action is irreversible. Visits and local settings will be cleared from this device.",
     "cancel": "Cancel",
     "confirmDelete": "Delete everything",
     "deleted": "All local data has been deleted.",
