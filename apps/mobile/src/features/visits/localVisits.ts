@@ -46,6 +46,16 @@ async function writeLocalVisits(visits: LocalVisit[]) {
   await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(visits));
 }
 
+export async function replaceLocalVisits(visits: LocalVisit[]) {
+  await writeLocalVisits(visits);
+  notifyListeners(visits);
+}
+
+export async function clearStoredLocalVisits() {
+  await AsyncStorage.removeItem(STORAGE_KEY);
+  notifyListeners([]);
+}
+
 export function useLocalVisits(storeId?: string) {
   const [visits, setVisits] = useState<LocalVisit[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -115,9 +125,8 @@ export function useLocalVisits(storeId?: string) {
 
   const clearAllVisits = useCallback(async () => {
     try {
-      await AsyncStorage.removeItem(STORAGE_KEY);
+      await clearStoredLocalVisits();
       setVisits([]);
-      notifyListeners([]);
     } catch (e) {
       console.error("Failed to clear visits", e);
     }

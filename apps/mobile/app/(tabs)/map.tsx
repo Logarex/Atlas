@@ -3,6 +3,7 @@ import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "expo-router";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -13,6 +14,7 @@ import type { LayoutChangeEvent } from "react-native";
 export default function MapScreen() {
   const { t, i18n } = useTranslation();
   const theme = useAppTheme();
+  const router = useRouter();
   const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
   const [mapSize, setMapSize] = useState({ height: 0, width: 0 });
@@ -68,6 +70,7 @@ export default function MapScreen() {
                   coordinate={coordinate}
                   description={getStorePlace(store)}
                   key={store.id}
+                  onPress={() => router.push({ pathname: "/store/[id]", params: { id: store.id } })}
                   title={getStoreName(store, i18n.language)}
                 >
                   <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>

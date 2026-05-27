@@ -2,9 +2,26 @@ import {
   submitStoreChange,
 } from "@/features/contributions/contributionApi";
 import { clearLocalProfile } from "@/features/social/socialApi";
+import {
+  clearLocalUserPhotos,
+  exportLocalUserData,
+  importLocalUserDataFromPickedFile,
+  useLocalUserPhotos
+} from "@/features/user/localUserData";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { Lock, Send, Trash2, AlertTriangle, Palette } from "lucide-react-native";
+import * as Sharing from "expo-sharing";
+import {
+  AlertTriangle,
+  Download,
+  Lock,
+  Palette,
+  Scale,
+  Send,
+  Trash2,
+  Upload,
+  Users
+} from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -24,11 +41,20 @@ export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
 
-  const { clearAllVisits } = useLocalVisits();
+  const { clearAllVisits, visits } = useLocalVisits();
+  const { photos } = useLocalUserPhotos();
 
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+
+  function visitCountLabel(count: number) {
+    return t("counts.visit", { count });
+  }
+
+  function privatePhotoCountLabel(count: number) {
+    return t("counts.privatePhoto", { count });
+  }
 
   async function handleDeleteData() {
     Alert.alert(
@@ -44,6 +70,7 @@ export default function ProfileScreen() {
               setMessage(t("profile.saving"));
               await clearLocalProfile();
               await clearAllVisits();
+              await clearLocalUserPhotos();
 
               setMessage(t("profile.deleted"));
             } catch (error) {
@@ -67,6 +94,39 @@ export default function ProfileScreen() {
       setNewStoreName("");
       setNewStoreNote("");
       setMessage(t("profile.storeSubmitted"));
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : t("profile.failed"));
+    }
+  }
+
+  async function handleExportData() {
+    try {
+      setMessage(t("profile.exporting"));
+      const exportResult = await exportLocalUserData();
+      if (await Sharing.isAvailableAsync()) {
+        await Sharing.shareAsync(exportResult.manifestUri, {
+          dialogTitle: t("profile.export.shareTitle"),
+          mimeType: "application/json",
+          UTI: "public.json"
+        });
+      }
+      setMessage(t("profile.export.done", {
+        photosLabel: privatePhotoCountLabel(exportResult.privatePhotoCount),
+        visitsLabel: visitCountLabel(exportResult.visitCount)
+      }));
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : t("profile.failed"));
+    }
+  }
+
+  async function handleImportData() {
+    try {
+      setMessage(t("profile.importing"));
+      const importResult = await importLocalUserDataFromPickedFile();
+      setMessage(t("profile.import.done", {
+        photosLabel: privatePhotoCountLabel(importResult.privatePhotoCount),
+        visitsLabel: visitCountLabel(importResult.visitCount)
+      }));
     } catch (error) {
       setMessage(error instanceof Error ? error.message : t("profile.failed"));
     }
@@ -153,6 +213,29 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
+            <Download color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.export.title")}</Text>
+          </View>
+          <Text style={styles.itemText}>
+            {t("profile.export.subtitle", {
+              photosLabel: privatePhotoCountLabel(photos.length),
+              visitsLabel: visitCountLabel(visits.length)
+            })}
+          </Text>
+          <View style={styles.inlineActions}>
+            <Pressable onPress={handleExportData} style={styles.secondaryButton}>
+              <Download color={theme.colors.copper} size={18} />
+              <Text style={styles.secondaryButtonText}>{t("profile.export.button")}</Text>
+            </Pressable>
+            <Pressable onPress={handleImportData} style={styles.secondaryButton}>
+              <Upload color={theme.colors.copper} size={18} />
+              <Text style={styles.secondaryButtonText}>{t("profile.import.button")}</Text>
+            </Pressable>
+          </View>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
             <Lock color={theme.colors.copper} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.privacyTitle")}</Text>
           </View>
@@ -162,6 +245,18 @@ export default function ProfileScreen() {
               <Text style={styles.itemText}>{t(`profile.privacy.${key}`)}</Text>
             </View>
           ))}
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Users color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.community.title")}</Text>
+          </View>
+          <Text style={styles.itemText}>{t("profile.community.body")}</Text>
+          <View style={styles.licenseRow}>
+            <Scale color={theme.colors.teal} size={18} />
+            <Text style={styles.licenseText}>{t("profile.community.license")}</Text>
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -305,6 +400,10 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       gap: spacing.sm,
       marginTop: spacing.xs
     },
+    inlineActions: {
+      flexDirection: "row",
+      gap: spacing.sm
+    },
     themeButton: {
       alignItems: "center",
       backgroundColor: colors.canvas,
@@ -336,6 +435,23 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       lineHeight: 20,
       marginHorizontal: spacing.lg,
       marginTop: spacing.md
+    },
+    licenseRow: {
+      alignItems: "center",
+      backgroundColor: colors.mint,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      gap: spacing.sm,
+      padding: spacing.md
+    },
+    licenseText: {
+      color: colors.ink,
+      flex: 1,
+      fontSize: typography.small,
+      fontWeight: "800",
+      lineHeight: 20
     }
   }), [colors, typography, spacing]);
 }
