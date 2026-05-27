@@ -116,46 +116,46 @@ function syncAppIcon(isDark: boolean) {
   void drainIconSyncQueue();
 }
 
-const solarizedLightColors = {
-  canvas: "#fdf6e3", // base3
-  paper: "#eee8d5", // base2
-  ink: "#002b36", // base03 (for strong contrast) or #657b83 (base00) - let's use base03 for readability
-  muted: "#657b83", // base00
-  line: "#93a1a1", // base1
-  copper: "#cb4b16", // orange
-  teal: "#2aa198", // cyan
-  moss: "#859900", // green
-  rose: "#dc322f", // red
-  mint: "#e8f2e6",
-  sky: "#e5eff5",
-  gold: "#b58900", // yellow
-  danger: "#dc322f",
-  overlay: "rgba(0,43,54,0.5)",
+const atlasLightColors = {
+  canvas: "#F7F1E5",
+  paper: "#FFFDF8",
+  ink: "#263322",
+  muted: "#766D5A",
+  line: "#DED3BF",
+  copper: "#C85B36",
+  teal: "#5F9F47",
+  moss: "#789B3D",
+  rose: "#B94A40",
+  mint: "#E8F3DE",
+  sky: "#EFE8D7",
+  gold: "#D3A51F",
+  danger: "#C23A33",
+  overlay: "rgba(32,32,32,0.48)",
   transparent: "transparent"
 };
 
-const solarizedDarkColors = {
-  canvas: "#002b36", // base03
-  paper: "#073642", // base02
-  ink: "#93a1a1", // base1
-  muted: "#586e75", // base01
-  line: "#586e75", // base01
-  copper: "#cb4b16", // orange
-  teal: "#2aa198", // cyan
-  moss: "#859900", // green
-  rose: "#dc322f", // red
-  mint: "#0f3a3c",
-  sky: "#0a3642",
-  gold: "#b58900", // yellow
-  danger: "#dc322f",
-  overlay: "rgba(0,43,54,0.8)",
+const atlasDarkColors = {
+  canvas: "#1D1D1F",
+  paper: "#28251D",
+  ink: "#F4EFE4",
+  muted: "#B9AE97",
+  line: "#47412F",
+  copper: "#EA6A3D",
+  teal: "#7BC35D",
+  moss: "#9BD45A",
+  rose: "#E06A63",
+  mint: "#223A1C",
+  sky: "#37301F",
+  gold: "#F0C542",
+  danger: "#FF6B5D",
+  overlay: "rgba(0,0,0,0.72)",
   transparent: "transparent"
 };
 
 interface ThemeContextType {
   themeSetting: ThemeSetting;
   setThemeSetting: (setting: ThemeSetting) => void;
-  colors: typeof solarizedLightColors;
+  colors: typeof atlasLightColors;
   isDark: boolean;
 }
 
@@ -199,7 +199,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return themeSetting === "dark";
   }, [themeSetting, systemScheme]);
 
-  const colors = isDark ? solarizedDarkColors : solarizedLightColors;
+  const colors = isDark ? atlasDarkColors : atlasLightColors;
 
   useEffect(() => {
     if (!hasLoadedThemeSetting) return;
@@ -236,7 +236,7 @@ export function useAppTheme() {
   // Fallback to system if used outside provider
   const systemScheme = useColorScheme();
   const isDarkFallback = systemScheme === "dark";
-  const colorsFallback = isDarkFallback ? solarizedDarkColors : solarizedLightColors;
+  const colorsFallback = isDarkFallback ? atlasDarkColors : atlasLightColors;
 
   const themeSetting = context ? context.themeSetting : "system";
   const setThemeSetting = context ? context.setThemeSetting : () => {};
@@ -255,4 +255,4 @@ export function useAppTheme() {
   };
 }
 
-export const defaultColors = solarizedLightColors;
+export const defaultColors = atlasLightColors;

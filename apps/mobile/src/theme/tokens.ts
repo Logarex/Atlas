@@ -1,18 +1,19 @@
 export const colors = {
-  canvas: "#F7F7F8", // Plus clair, style Apple
-  paper: "#FFFFFF",
-  ink: "#000000",
-  muted: "#8E8E93", // Gris standard iOS
-  line: "#E5E5EA",
-  copper: "#007AFF", // Bleu iOS pour les actions
-  teal: "#34C759", // Vert iOS
-  moss: "#34C759",
-  rose: "#FF3B30",
-  mint: "#E8F2E6",
-  sky: "#F2F2F7",
-  gold: "#FFCC00",
-  danger: "#FF3B30",
-  overlay: "rgba(0,0,0,0.5)"
+  canvas: "#F7F1E5",
+  paper: "#FFFDF8",
+  ink: "#263322",
+  muted: "#766D5A",
+  line: "#DED3BF",
+  copper: "#C85B36",
+  teal: "#5F9F47",
+  moss: "#789B3D",
+  rose: "#B94A40",
+  mint: "#E8F3DE",
+  sky: "#EFE8D7",
+  gold: "#D3A51F",
+  danger: "#C23A33",
+  overlay: "rgba(32,32,32,0.48)",
+  transparent: "transparent"
 } as const;
 
 export const spacing = {
