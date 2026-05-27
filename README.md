@@ -1,61 +1,19 @@
 # Atlas
 
-Atlas is a community-built mobile atlas of Apple retail stores around the world, including open stores, relocated stores, and permanently closed stores.
+This is my student project to map Apple Stores. It's a mobile app built with React Native (Expo) and it uses local JSON files to store the data about the stores.
 
-The project is not affiliated with, endorsed by, or sponsored by Apple Inc. It is inspired by the care given to retail architecture, not by copying any app, dataset, photos, branding, or visual identity.
+## How to run
 
-## Goals
-
-- Build a serious iOS and Android app for exploring every Apple retail store worldwide.
-- Preserve store history: openings, relocations, closures, remodels, architectural eras, and notable features.
-- Make stores discoverable through search, filters, and a map.
-- Support English and French from day one.
-- Let the community submit corrections, new records, and photos from inside the app.
-- Keep moderation simple for maintainers through GitHub issues.
-- Let users track stores they have visited and add visit dates locally.
-- Maintain a curated factual dataset with clear provenance and privacy rules.
-
-## Name
-
-The project uses Atlas as its working product and repository name. The exact App Store and Google Play listing name must still be reserved in the developer consoles. See [docs/NAMING.md](docs/NAMING.md).
-
-## Stack
-
-- Mobile app: Expo, React Native, TypeScript, Expo Router.
-- Maps: an app-level map abstraction, starting with native maps in the Expo app and leaving room for MapLibre/vector tiles later.
-- Data: versioned JSON records with field-level source provenance and validation.
-- Moderation: in-app submissions create GitHub issues for maintainer review before publication.
-
-## Repository Layout
-
-```text
-apps/mobile        Expo React Native app
-packages/data      Store schemas, sample data, validation scripts
-docs               Product, architecture, data, moderation, and roadmap docs
-```
-
-## Getting Started
-
+1. Install dependencies
 ```bash
 npm install
+```
+
+2. Start the mobile app
+```bash
 npm run mobile:start
 ```
 
-Create `apps/mobile/.env` from `apps/mobile/.env.example` before enabling map providers or GitHub issue submissions.
-
-## Data Principles
-
-Atlas does not scrape apple.com and does not reuse Apple-owned photos or marketing copy. The canonical dataset is built from compatible data, manual research, field-level citations, and user contributions.
-
-See [docs/DATA_STRATEGY.md](docs/DATA_STRATEGY.md) for the detailed source policy.
-See [docs/ADDING_STORES.md](docs/ADDING_STORES.md) for the practical workflow to add stores, photos, and marker attributes.
-
-Useful commands:
-
-```bash
-npm run data:validate
-```
-
-Curated factual metadata is intended to be available for community use. User photos are accepted only with an explicit reusable license. See [DATA_LICENSE.md](DATA_LICENSE.md).
-
-Apple, Apple Store, and other Apple marks are trademarks of Apple Inc. This project uses them only descriptively.
+## Structure
+- `apps/mobile`: The Expo mobile app.
+- `packages/data`: The JSON data and some scripts to manage it.
