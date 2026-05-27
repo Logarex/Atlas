@@ -5603,7 +5603,7 @@ export const generatedStores: StoreRecord[] = [
     "photos": [
       {
         "id": "apple-champs-elysees-1",
-        "url": "./assets/stores/apple-champs-elysees-1.jpeg",
+        "url": "./assets/stores/apple-champs-elysees-1.webp",
         "credit": "Louis Chabert",
         "license": "CC-BY-4.0",
         "caption": "Apple Champs-Élysées facade.",
@@ -5611,7 +5611,7 @@ export const generatedStores: StoreRecord[] = [
       },
       {
         "id": "apple-champs-elysees-2",
-        "url": "./assets/stores/apple-champs-elysees-2.jpeg",
+        "url": "./assets/stores/apple-champs-elysees-2.webp",
         "credit": "Louis Chabert",
         "license": "CC-BY-4.0",
         "caption": "Apple Champs-Élysées interior.",
