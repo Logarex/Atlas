@@ -4,7 +4,18 @@ import type { ArchitectureAttribute, StoreRecord } from "@/features/stores/store
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
-import { Check, ListFilter, RotateCcw, X } from "lucide-react-native";
+import {
+  CalendarDays,
+  Check,
+  Globe2,
+  Landmark,
+  ListFilter,
+  Map as MapIcon,
+  Paintbrush,
+  RotateCcw,
+  Sparkles,
+  X
+} from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -17,7 +28,7 @@ import {
   TextInput,
   View
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 const filterKeys = ["all", "open", "closed", "visited"] as const;
 
@@ -61,6 +72,15 @@ type FilterOption = {
   label: string;
   value: string;
 };
+
+const advancedFilterGroupOrder: AdvancedFilterGroup[] = [
+  "countries",
+  "regions",
+  "years",
+  "designStyles",
+  "features",
+  "extras"
+];
 
 function createEmptyAdvancedFilters(): AdvancedFilters {
   return {
@@ -182,14 +202,34 @@ function matchesAdvancedFilters(store: StoreRecord, filters: AdvancedFilters) {
   return true;
 }
 
+function getAdvancedFilterGroupIcon(group: AdvancedFilterGroup) {
+  switch (group) {
+    case "countries":
+      return Globe2;
+    case "regions":
+      return MapIcon;
+    case "years":
+      return CalendarDays;
+    case "designStyles":
+      return Paintbrush;
+    case "features":
+      return Landmark;
+    case "extras":
+      return Sparkles;
+  }
+}
+
 export default function ExploreScreen() {
   const { t } = useTranslation();
   const theme = useAppTheme();
+  const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
   
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof filterKeys)[number]>("all");
   const [advancedFilters, setAdvancedFilters] = useState(createEmptyAdvancedFilters);
+  const [activeAdvancedFilterGroup, setActiveAdvancedFilterGroup] =
+    useState<AdvancedFilterGroup>("countries");
   const [advancedFiltersVisible, setAdvancedFiltersVisible] = useState(false);
   const { error, isLoading, stores } = useStores();
   const { visits } = useLocalVisits();
@@ -340,6 +380,73 @@ export default function ExploreScreen() {
     );
   }
 
+  function renderFilterGroupPicker() {
+    return (
+      <View style={styles.filterCategoryGrid}>
+        {advancedFilterGroupOrder.map((group) => {
+          const isActive = activeAdvancedFilterGroup === group;
+          const selectedCount = advancedFilters[group].length;
+          const optionsCount = advancedOptions[group].length;
+          const Icon = getAdvancedFilterGroupIcon(group);
+
+          return (
+            <Pressable
+              key={group}
+              onPress={() => setActiveAdvancedFilterGroup(group)}
+              style={[
+                styles.filterCategoryButton,
+                isActive && styles.filterCategoryButtonActive
+              ]}
+            >
+              <View style={styles.filterCategoryTitleRow}>
+                <Icon
+                  color={isActive ? theme.colors.paper : theme.colors.teal}
+                  size={17}
+                />
+                <Text
+                  numberOfLines={1}
+                  style={[
+                    styles.filterCategoryTitle,
+                    isActive && styles.filterCategoryTitleActive
+                  ]}
+                >
+                  {t(`home.advancedFilters.groups.${group}`)}
+                </Text>
+              </View>
+              <View style={styles.filterCategoryMetaRow}>
+                <Text
+                  style={[
+                    styles.filterCategoryMeta,
+                    isActive && styles.filterCategoryMetaActive
+                  ]}
+                >
+                  {optionsCount}
+                </Text>
+                {selectedCount > 0 ? (
+                  <View
+                    style={[
+                      styles.filterCategoryBadge,
+                      isActive && styles.filterCategoryBadgeActive
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.filterCategoryBadgeText,
+                        isActive && styles.filterCategoryBadgeTextActive
+                      ]}
+                    >
+                      {selectedCount}
+                    </Text>
+                  </View>
+                ) : null}
+              </View>
+            </Pressable>
+          );
+        })}
+      </View>
+    );
+  }
+
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <View style={styles.header}>
@@ -437,8 +544,13 @@ export default function ExploreScreen() {
         onRequestClose={() => setAdvancedFiltersVisible(false)}
         visible={advancedFiltersVisible}
       >
-        <SafeAreaView style={styles.modalScreen} edges={["top", "left", "right", "bottom"]}>
-          <View style={styles.modalHeader}>
+        <SafeAreaView style={styles.modalScreen} edges={["left", "right", "bottom"]}>
+          <View
+            style={[
+              styles.modalHeader,
+              { paddingTop: insets.top + theme.spacing.xl }
+            ]}
+          >
             <View style={styles.modalHeaderCopy}>
               <Text style={styles.modalTitle}>{t("home.advancedFilters.title")}</Text>
               <Text style={styles.modalSubtitle}>
@@ -455,35 +567,11 @@ export default function ExploreScreen() {
           </View>
 
           <ScrollView contentContainerStyle={styles.modalContent}>
+            {renderFilterGroupPicker()}
             {renderFilterGroup(
-              "countries",
-              t("home.advancedFilters.groups.countries"),
-              advancedOptions.countries
-            )}
-            {renderFilterGroup(
-              "regions",
-              t("home.advancedFilters.groups.regions"),
-              advancedOptions.regions
-            )}
-            {renderFilterGroup(
-              "years",
-              t("home.advancedFilters.groups.years"),
-              advancedOptions.years
-            )}
-            {renderFilterGroup(
-              "designStyles",
-              t("home.advancedFilters.groups.designStyles"),
-              advancedOptions.designStyles
-            )}
-            {renderFilterGroup(
-              "features",
-              t("home.advancedFilters.groups.features"),
-              advancedOptions.features
-            )}
-            {renderFilterGroup(
-              "extras",
-              t("home.advancedFilters.groups.extras"),
-              advancedOptions.extras
+              activeAdvancedFilterGroup,
+              t(`home.advancedFilters.groups.${activeAdvancedFilterGroup}`),
+              advancedOptions[activeAdvancedFilterGroup]
             )}
           </ScrollView>
 
@@ -681,6 +769,75 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       gap: spacing.lg,
       padding: spacing.lg,
       paddingBottom: spacing.xxl
+    },
+    filterCategoryGrid: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: spacing.sm
+    },
+    filterCategoryButton: {
+      backgroundColor: colors.paper,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexBasis: "48%",
+      flexGrow: 1,
+      gap: spacing.sm,
+      justifyContent: "space-between",
+      minHeight: 78,
+      minWidth: 138,
+      padding: spacing.md
+    },
+    filterCategoryButtonActive: {
+      backgroundColor: colors.ink,
+      borderColor: colors.ink
+    },
+    filterCategoryTitleRow: {
+      alignItems: "center",
+      flexDirection: "row",
+      gap: spacing.xs,
+      minWidth: 0
+    },
+    filterCategoryTitle: {
+      color: colors.ink,
+      flex: 1,
+      fontSize: typography.small,
+      fontWeight: "900"
+    },
+    filterCategoryTitleActive: {
+      color: colors.paper
+    },
+    filterCategoryMetaRow: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between"
+    },
+    filterCategoryMeta: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      fontWeight: "900"
+    },
+    filterCategoryMetaActive: {
+      color: colors.sky
+    },
+    filterCategoryBadge: {
+      alignItems: "center",
+      backgroundColor: colors.mint,
+      borderRadius: radii.full,
+      minWidth: 24,
+      paddingHorizontal: spacing.xs,
+      paddingVertical: 2
+    },
+    filterCategoryBadgeActive: {
+      backgroundColor: colors.teal
+    },
+    filterCategoryBadgeText: {
+      color: colors.ink,
+      fontSize: typography.caption,
+      fontWeight: "900"
+    },
+    filterCategoryBadgeTextActive: {
+      color: colors.paper
     },
     filterGroup: {
       gap: spacing.sm
