@@ -78,15 +78,15 @@
   },
   "profile": {
     "kicker": "Espace personnel",
-    "title": "Tes visites",
-    "subtitle": "Consulte les boutiques vues, propose une boutique manquante et règle l'apparence de l'app.",
+    "title": "Visites",
+    "subtitle": "Boutiques vues, proposition de boutique manquante et réglage de l'apparence de l'app.",
     "visits": "Boutiques vues",
     "noVisits": "Aucune visite enregistrée sur cet appareil pour l'instant.",
     "newStore": "Boutique manquante",
     "newStorePlaceholder": "Nom ou emplacement",
     "newStoreNote": "Information utile pour la révision",
     "submitStore": "Proposer la boutique",
-    "privacyTitle": "Sur ton appareil",
+    "privacyTitle": "Confidentialité",
     "saving": "Enregistrement...",
     "exporting": "Préparation de l'export...",
     "importing": "Importation en cours...",
@@ -97,10 +97,10 @@
     "progressLabel": "Boutiques visitées",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "Pas de pub ni de suivi caché : Atlas sert à collectionner des lieux, pas à te profiler.",
+      "noAds": "Pas de pub ni de suivi caché : Atlas sert à collectionner des lieux, sans profilage.",
       "localLocation": "Atlas est open source : le code est public, vérifiable et améliorable par la communauté.",
-      "optionalAccount": "Tes visites et tes notes restent sur cet appareil.",
-      "openData": "Quand tu proposes une correction, elle sert à améliorer la base commune après relecture."
+      "optionalAccount": "Les visites et les notes restent sur cet appareil.",
+      "openData": "Les corrections proposées servent à améliorer la base commune après relecture."
     },
     "export": {
       "title": "Exporter et importer",
@@ -116,12 +116,12 @@
     "community": {
       "title": "Communauté et licence",
       "body": "Atlas est un projet communautaire pensé pour durer. L'app vivra tant que des utilisateurs aideront à enrichir les boutiques, corriger les détails, ajouter des photos et garder la base utile pour tout le monde.",
-      "license": "Code public sous licence MIT : tu peux vérifier, contribuer, apprendre et réutiliser."
+      "license": "Code public sous licence MIT : vérification, contribution, apprentissage et réutilisation possibles."
     },
     "dangerZone": "Zone de danger",
-    "deleteAccount": "Supprimer mes données locales",
-    "deleteWarningTitle": "Es-tu sûr ?",
-    "deleteWarningMessage": "Cette action est irréversible. Tes visites et réglages locaux seront effacés de cet appareil.",
+    "deleteAccount": "Supprimer les données locales",
+    "deleteWarningTitle": "Confirmer la suppression ?",
+    "deleteWarningMessage": "Cette action est irréversible. Les visites et réglages locaux seront effacés de cet appareil.",
     "cancel": "Annuler",
     "confirmDelete": "Tout supprimer",
     "deleted": "Toutes les données locales ont été supprimées.",
