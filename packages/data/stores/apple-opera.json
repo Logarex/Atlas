@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com/fr/retail/opera/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-opera-1",
+      "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-opera.webp?raw=true",
+      "credit": "Louis Chabert",
+      "license": "CC-BY-4.0",
+      "caption": "Apple Opéra facade",
+      "takenOn": "2026-05-27"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Opera",

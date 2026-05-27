@@ -4180,7 +4180,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/wondercity/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-wondercity-1",
+        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-wonder-city.webp?raw=true",
+        "credit": "Louis Chabert",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 虹悦城 facade",
+        "takenOn": "2026-05-27"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Wonder City",
@@ -5603,18 +5612,18 @@ export const generatedStores: StoreRecord[] = [
     "photos": [
       {
         "id": "apple-champs-elysees-1",
-        "url": "./assets/stores/apple-champs-elysees-1.webp",
+        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-champs-elysees-1.webp?raw=true",
         "credit": "Louis Chabert",
         "license": "CC-BY-4.0",
-        "caption": "Apple Champs-Élysées facade.",
+        "caption": "Apple Champs-Élysées facade",
         "takenOn": "2026-05-27"
       },
       {
         "id": "apple-champs-elysees-2",
-        "url": "./assets/stores/apple-champs-elysees-2.webp",
+        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-champs-elysees-2.webp?raw=true",
         "credit": "Louis Chabert",
         "license": "CC-BY-4.0",
-        "caption": "Apple Champs-Élysées interior.",
+        "caption": "Apple Champs-Élysées interior",
         "takenOn": "2026-05-27"
       }
     ],
@@ -5667,7 +5676,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com/fr/retail/marchesaintgermain/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-marche-saint-germain-1",
+        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-marche-saint-germain.webp?raw=true",
+        "credit": "Louis Chabert",
+        "license": "CC-BY-4.0",
+        "caption": "Apple Marché Saint-Germain facade",
+        "takenOn": "2026-05-27"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Marche Saint-Germain",
@@ -5717,7 +5735,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com/fr/retail/opera/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-opera-1",
+        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-opera.webp?raw=true",
+        "credit": "Louis Chabert",
+        "license": "CC-BY-4.0",
+        "caption": "Apple Opéra facade",
+        "takenOn": "2026-05-27"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Opera",
