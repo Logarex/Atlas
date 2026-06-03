@@ -3,6 +3,8 @@ import { localPhotosMap } from "./generatedPhotoAssets";
 
 const combiningMarksPattern = /[\u0300-\u036f]/g;
 const retailSlugPattern = /\/retail\/([^/?#]+)/i;
+const githubBlobAssetPattern =
+  /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+?)(?:\?raw=true)?$/i;
 
 export const statusEmojis: Record<StoreStatus, string> = {
   announced: "",
@@ -170,13 +172,23 @@ export function getStoreName(
 }
 
 export function getPhotoSource(url: string) {
+  const normalizedUrl = normalizePhotoUri(url);
+
   if (url.startsWith("http://") || url.startsWith("https://")) {
-    return { uri: url };
+    return { cacheKey: normalizedUrl, uri: normalizedUrl };
   }
   if (localPhotosMap[url]) {
     return localPhotosMap[url];
   }
-  return { uri: url };
+  return { uri: normalizedUrl };
+}
+
+export function normalizePhotoUri(url: string) {
+  const match = url.match(githubBlobAssetPattern);
+  if (!match) return url;
+
+  const [, owner, repo, branch, path] = match;
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
 }
 
 export function getStorePlace(store: StoreRecord) {

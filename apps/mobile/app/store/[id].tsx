@@ -7,6 +7,7 @@ import {
   getStorePlace,
   getPhotoSource,
   getPositiveAttributeKeys,
+  normalizePhotoUri,
 } from "@/features/stores/storeUtils";
 import { createShareCardJpegBase64 } from "@/features/stores/shareCardImage";
 import { useStores } from "@/features/stores/useStores";
@@ -18,6 +19,7 @@ import {
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { formatDate, isISODate, todayISO } from "@/lib/date";
 import { useAppTheme } from "@/theme/useAppTheme";
+import { Image as ExpoImage } from "expo-image";
 import * as FileSystem from "expo-file-system/legacy";
 import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
@@ -40,10 +42,9 @@ import {
   Sparkles,
   X
 } from "lucide-react-native";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
-  Image,
   KeyboardAvoidingView,
   Linking,
   Modal,
@@ -57,6 +58,7 @@ import {
   TextInput,
   View
 } from "react-native";
+import { captureRef } from "react-native-view-shot";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type {
   ArchitectureAttribute,
@@ -70,6 +72,8 @@ type InlineFeedback = {
   message: string;
   tone: FeedbackTone;
 };
+
+type ShareTarget = "card" | "mail" | "messages" | "social";
 
 type ArchitectureDetailSelection =
   | {
@@ -87,6 +91,16 @@ type ArchitectureDetailSelection =
       label: string;
       value: string;
     };
+
+const shareCardColors = {
+  canvas: "#F7F1E5",
+  copper: "#C85B36",
+  ink: "#243420",
+  line: "#DED3BF",
+  muted: "#6F6656",
+  paper: "#FFFDF8",
+  teal: "#486B3C"
+};
 
 const architectureEraDetailKeys: Record<string, string> = {
   "Glass Cube Flagship": "glassCubeFlagship",
@@ -130,17 +144,27 @@ export default function StoreDetailScreen() {
   const [fieldPath, setFieldPath] = useState("");
   const [proposedValue, setProposedValue] = useState("");
   const [note, setNote] = useState("");
+  const [contributorName, setContributorName] = useState("");
   const [contributionFeedback, setContributionFeedback] = useState<InlineFeedback | null>(null);
   const [photoAsset, setPhotoAsset] = useState<ImagePicker.ImagePickerAsset | null>(null);
   const [photoCreditName, setPhotoCreditName] = useState("");
   const [photoCaption, setPhotoCaption] = useState("");
   const [photoTakenOn, setPhotoTakenOn] = useState(todayISO());
   const [peopleVisible, setPeopleVisible] = useState(false);
+  const [photoPickerOpen, setPhotoPickerOpen] = useState(false);
   const [shareModalVisible, setShareModalVisible] = useState(false);
   const [shareFeedback, setShareFeedback] = useState<InlineFeedback | null>(null);
+  const photoPickerOpenRef = useRef(false);
+  const shareCardRef = useRef<View>(null);
   const { addVisit, removeVisit, storeVisits } = useLocalVisits(store?.id);
   const { storePhotos: privatePhotos } = useLocalUserPhotos(store?.id);
   const name = store ? getStoreName(store, i18n.language) : "";
+  const storePhotoUrls = useMemo(() => {
+    return (store?.photos ?? [])
+      .flatMap((photo) => [photo.thumbUrl, photo.url])
+      .filter((url): url is string => !!url && /^https?:\/\//i.test(url))
+      .map(normalizePhotoUri);
+  }, [store]);
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
     closed: theme.colors.rose,
@@ -148,6 +172,13 @@ export default function StoreDetailScreen() {
     announced: theme.colors.gold,
     temporary: theme.colors.moss
   };
+
+  useEffect(() => {
+    const urls = [...new Set(storePhotoUrls)].slice(0, 6);
+    if (urls.length === 0) return;
+
+    void ExpoImage.prefetch(urls, "memory-disk").catch(() => false);
+  }, [storePhotoUrls]);
 
   if (!store) {
     return (
@@ -260,54 +291,79 @@ export default function StoreDetailScreen() {
     }
   }
 
-  async function handleShareLink(target: "mail" | "messages") {
-    const subject = encodeURIComponent(t("store.shareTitle", { name }));
-    const body = encodeURIComponent(shareMessageWithUrl);
-    const url =
-      target === "mail"
-        ? `mailto:?subject=${subject}&body=${body}`
-        : `sms:${Platform.OS === "ios" ? "&" : "?"}body=${body}`;
-
+  async function createShareCardImageUri() {
     try {
-      const canOpen = await Linking.canOpenURL(url);
-      if (canOpen) {
-        await Linking.openURL(url);
-        setShareFeedback(null);
-        setShareModalVisible(false);
-      } else {
-        await handleShareVisit({ closeModal: true });
+      if (shareCardRef.current) {
+        const capturedUri = await captureRef(shareCardRef, {
+          format: "jpg",
+          quality: 0.92,
+          result: "tmpfile"
+        });
+        if (capturedUri) return capturedUri;
       }
     } catch {
-      await handleShareVisit({ closeModal: true });
+      // The pure JS fallback below keeps sharing available if native capture fails.
     }
-  }
 
-  async function handleShareCard() {
     const directory = FileSystem.cacheDirectory ?? FileSystem.documentDirectory;
 
     if (!directory) {
-      await handleShareVisit({ closeModal: true });
-      return;
+      return null;
     }
 
+    const cardUri = `${directory}atlas-share-card-${storeId}-${Date.now()}.jpg`;
+    const cardBase64 = createShareCardJpegBase64({
+      brand: "Atlas",
+      place,
+      tagline: t("store.shareCardTagline"),
+      title: name,
+      visitedLabel: t("store.shareCardVisited", { date: shareDate })
+    });
+
+    await FileSystem.writeAsStringAsync(cardUri, cardBase64, {
+      encoding: FileSystem.EncodingType.Base64
+    });
+
+    return cardUri;
+  }
+
+  async function handleShareCard(target: ShareTarget = "card") {
     try {
       setShareFeedback({ message: t("store.sharePreparing"), tone: "info" });
-      const cardUri = `${directory}atlas-share-card-${storeId}-${Date.now()}.jpg`;
-      const cardBase64 = createShareCardJpegBase64({
-        brand: "Atlas",
-        place,
-        tagline: t("store.shareCardTagline"),
-        title: name,
-        visitedLabel: t("store.shareCardVisited", { date: shareDate })
-      });
+      const cardUri = await createShareCardImageUri();
 
-      await FileSystem.writeAsStringAsync(cardUri, cardBase64, {
-        encoding: FileSystem.EncodingType.Base64
-      });
+      if (!cardUri) {
+        await handleShareVisit({ closeModal: true, silentError: true });
+        return;
+      }
+
+      if (Platform.OS === "ios") {
+        await Share.share(
+          {
+            message: shareMessageWithUrl,
+            title: t("store.shareTitle", { name }),
+            url: cardUri
+          },
+          {
+            subject: t("store.shareTitle", { name })
+          }
+        );
+        setShareFeedback(null);
+        setShareModalVisible(false);
+        return;
+      }
 
       if (await Sharing.isAvailableAsync()) {
         await Sharing.shareAsync(cardUri, {
-          dialogTitle: t("store.shareCard"),
+          dialogTitle: t(
+            target === "mail"
+              ? "store.shareMail"
+              : target === "messages"
+                ? "store.shareMessages"
+                : target === "social"
+                  ? "store.shareSocial"
+                  : "store.shareCard"
+          ),
           mimeType: "image/jpeg",
           UTI: "public.jpeg"
         });
@@ -321,6 +377,19 @@ export default function StoreDetailScreen() {
       setShareFeedback({ message: t("store.shareCardFailed"), tone: "error" });
       await handleShareVisit({ silentError: true });
     }
+  }
+
+  function isSameArchitectureDetail(
+    current: ArchitectureDetailSelection | null,
+    next: ArchitectureDetailSelection
+  ) {
+    return current?.kind === next.kind && current.label === next.label && current.value === next.value;
+  }
+
+  function toggleArchitectureDetail(next: ArchitectureDetailSelection) {
+    setSelectedArchitectureDetail((current) =>
+      isSameArchitectureDetail(current, next) ? null : next
+    );
   }
 
   function openArchitecturePhotoModal() {
@@ -348,12 +417,14 @@ export default function StoreDetailScreen() {
         storeId,
         fieldPath: trimmedFieldPath,
         proposedValue: trimmedProposedValue,
-        note: note.trim()
+        note: note.trim(),
+        contributorName: contributorName.trim()
       });
       setContributionFeedback({ message: t("store.changeSubmitted"), tone: "success" });
       setFieldPath("");
       setProposedValue("");
       setNote("");
+      setContributorName("");
     } catch (error) {
       setContributionFeedback({
         message: error instanceof Error ? error.message : t("store.submitFailed"),
@@ -363,22 +434,29 @@ export default function StoreDetailScreen() {
   }
 
   async function handlePickPhoto() {
-    const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!permission.granted) {
-      setContributionFeedback({ message: t("store.photoPermissionDenied"), tone: "error" });
+    if (photoPickerOpenRef.current) {
       return;
     }
 
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: false,
-      exif: false,
-      mediaTypes: ["images"],
-      quality: 0.86
-    });
+    try {
+      photoPickerOpenRef.current = true;
+      setPhotoPickerOpen(true);
+      const result = await ImagePicker.launchImageLibraryAsync({
+        allowsEditing: false,
+        exif: false,
+        mediaTypes: ["images"],
+        quality: 0.86
+      });
 
-    if (!result.canceled) {
-      setPhotoAsset(result.assets[0]);
-      setContributionFeedback(null);
+      if (!result.canceled) {
+        setPhotoAsset(result.assets[0]);
+        setContributionFeedback(null);
+      }
+    } catch {
+      setContributionFeedback({ message: t("store.photoPermissionDenied"), tone: "error" });
+    } finally {
+      photoPickerOpenRef.current = false;
+      setPhotoPickerOpen(false);
     }
   }
 
@@ -436,6 +514,9 @@ export default function StoreDetailScreen() {
         fileName: photoAsset.fileName,
         caption: photoCaption.trim(),
         creditName: photoCreditName.trim(),
+        contributorName: photoCreditName.trim(),
+        width: photoAsset.width,
+        height: photoAsset.height,
         takenOn: photoTakenOn,
         peopleVisible
       });
@@ -463,16 +544,54 @@ export default function StoreDetailScreen() {
     setPhotoModalVisible(true);
   }
 
+  function renderShareCard() {
+    return (
+      <View style={styles.shareCardSurface}>
+        <View style={styles.shareCardAccent} />
+        <View style={styles.shareCardHeader}>
+          <View style={styles.shareCardBrandRow}>
+            <View style={styles.shareCardMark}>
+              <Text style={styles.shareCardMarkText}>A</Text>
+            </View>
+            <Text style={styles.shareCardBrand}>Atlas</Text>
+          </View>
+          <Text style={styles.shareCardDate}>
+            {t("store.shareCardVisited", { date: shareDate })}
+          </Text>
+        </View>
+        <View style={styles.shareCardBody}>
+          <Text numberOfLines={2} style={styles.shareCardTitle}>
+            {name}
+          </Text>
+          <Text numberOfLines={1} style={styles.shareCardPlace}>
+            {place}
+          </Text>
+        </View>
+        <View style={styles.shareCardFooter}>
+          <Text numberOfLines={1} style={styles.shareCardTagline}>
+            {t("store.shareCardTagline")}
+          </Text>
+          <View style={styles.shareCardFooterRule} />
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.screen}>
       <Stack.Screen options={{ title: name }} />
+      <View pointerEvents="none" style={styles.shareCardCaptureHost}>
+        <View collapsable={false} ref={shareCardRef} style={styles.shareCardCapture}>
+          {renderShareCard()}
+        </View>
+      </View>
 
       <ScrollView
         contentContainerStyle={[
           styles.content,
           {
             paddingBottom: insets.bottom + theme.spacing.xl,
-            paddingTop: insets.top + theme.spacing.lg
+            paddingTop: insets.top + theme.spacing.sm
           }
         ]}
       >
@@ -596,7 +715,7 @@ export default function StoreDetailScreen() {
             <Pressable
               accessibilityRole="button"
               onPress={() =>
-                setSelectedArchitectureDetail({
+                toggleArchitectureDetail({
                   kind: "typology",
                   label: architectureSummary,
                   value: architectureSummary
@@ -610,7 +729,7 @@ export default function StoreDetailScreen() {
             <Pressable
               accessibilityRole="button"
               onPress={() =>
-                setSelectedArchitectureDetail({
+                toggleArchitectureDetail({
                   kind: "era",
                   label: store.architecture.era,
                   value: store.architecture.era
@@ -632,7 +751,7 @@ export default function StoreDetailScreen() {
                 accessibilityRole="button"
                 key={key}
                 onPress={() =>
-                  setSelectedArchitectureDetail({
+                  toggleArchitectureDetail({
                     kind: "attribute",
                     label: t(`attributes.${key}`),
                     value: key
@@ -669,7 +788,7 @@ export default function StoreDetailScreen() {
                 accessibilityRole="button"
                 key={architectureNote}
                 onPress={() =>
-                  setSelectedArchitectureDetail({
+                  toggleArchitectureDetail({
                     kind: "note",
                     label: t("store.architectureNote"),
                     value: architectureNote
@@ -686,10 +805,12 @@ export default function StoreDetailScreen() {
         {selectedArchitectureDetail ? (
           <View style={styles.architectureDetailCard}>
             {architectureDetailImageSource ? (
-              <Image
-                resizeMode="cover"
+              <ExpoImage
+                cachePolicy="memory-disk"
+                contentFit="cover"
                 source={architectureDetailImageSource}
                 style={styles.architectureDetailImage}
+                transition={180}
               />
             ) : null}
             <View style={styles.architectureDetailCopy}>
@@ -766,7 +887,14 @@ export default function StoreDetailScreen() {
                   onPress={() => setSelectedPhoto(photo)}
                   style={styles.photoCard}
                 >
-                  <Image source={getPhotoSource(photo.thumbUrl ?? photo.url)} style={styles.photoImage} />
+                  <ExpoImage
+                    cachePolicy="memory-disk"
+                    contentFit="cover"
+                    priority="high"
+                    source={getPhotoSource(photo.thumbUrl ?? photo.url)}
+                    style={styles.photoImage}
+                    transition={160}
+                  />
                   {(hasCaption || hasCredit) && (
                     <View style={styles.photoMeta}>
                       {hasCaption && (
@@ -796,7 +924,12 @@ export default function StoreDetailScreen() {
             >
               {privatePhotos.map((photo) => (
                 <View key={photo.id} style={styles.photoCard}>
-                  <Image source={{ uri: photo.uri }} style={styles.photoImage} />
+                  <ExpoImage
+                    contentFit="cover"
+                    source={{ uri: photo.uri }}
+                    style={styles.photoImage}
+                    transition={160}
+                  />
                   <View style={styles.photoMeta}>
                     <Text style={styles.photoCaption} numberOfLines={2}>
                       {photo.caption || t("store.privatePhoto")}
@@ -867,39 +1000,26 @@ export default function StoreDetailScreen() {
             </View>
 
             <View style={styles.sharePreview}>
-              {shareCoverPhoto ? (
-                <Image
-                  source={getPhotoSource(shareCoverPhoto.thumbUrl ?? shareCoverPhoto.url)}
-                  style={styles.sharePreviewImage}
-                />
-              ) : null}
-              <View style={styles.sharePreviewCopy}>
-                <Text style={styles.sharePreviewKicker}>Atlas</Text>
-                <Text style={styles.sharePreviewTitle}>{name}</Text>
-                <Text style={styles.sharePreviewBody}>{getStorePlace(store)}</Text>
-                <Text style={styles.sharePreviewDate}>
-                  {t("store.shareCardVisited", { date: shareDate })}
-                </Text>
-              </View>
+              {renderShareCard()}
             </View>
 
             <View style={styles.shareGrid}>
-              <Pressable style={styles.shareOption} onPress={() => handleShareLink("messages")}>
+              <Pressable style={styles.shareOption} onPress={() => handleShareCard("messages")}>
                 <MessageCircle color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareMessages")}</Text>
               </Pressable>
-              <Pressable style={styles.shareOption} onPress={() => handleShareLink("mail")}>
+              <Pressable style={styles.shareOption} onPress={() => handleShareCard("mail")}>
                 <Mail color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareMail")}</Text>
               </Pressable>
               <Pressable
                 style={styles.shareOption}
-                onPress={() => handleShareVisit({ closeModal: true })}
+                onPress={() => handleShareCard("social")}
               >
                 <Share2 color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareSocial")}</Text>
               </Pressable>
-              <Pressable style={styles.shareOption} onPress={handleShareCard}>
+              <Pressable style={styles.shareOption} onPress={() => handleShareCard("card")}>
                 <ImageIcon color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareCard")}</Text>
               </Pressable>
@@ -924,10 +1044,12 @@ export default function StoreDetailScreen() {
           </View>
           {selectedPhoto ? (
             <>
-              <Image
+              <ExpoImage
+                cachePolicy="memory-disk"
+                contentFit="contain"
                 source={getPhotoSource(selectedPhoto.url)}
                 style={styles.photoViewerImage}
-                resizeMode="contain"
+                transition={160}
               />
               <View style={[styles.photoViewerMeta, { paddingBottom: insets.bottom + 20 }]}>
                 {selectedPhoto.caption ? (
@@ -1002,6 +1124,16 @@ export default function StoreDetailScreen() {
                   value={note}
                 />
               </View>
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{t("store.contributorName")}</Text>
+                <TextInput
+                  onChangeText={setContributorName}
+                  placeholder={t("store.contributorNamePlaceholder")}
+                  placeholderTextColor={theme.colors.muted}
+                  style={styles.input}
+                  value={contributorName}
+                />
+              </View>
               <Pressable style={styles.primaryButton} onPress={handleSubmitChange}>
                 <Send color={theme.colors.paper} size={18} />
                 <Text style={styles.primaryButtonText}>{t("store.submitCorrection")}</Text>
@@ -1039,14 +1171,25 @@ export default function StoreDetailScreen() {
               keyboardShouldPersistTaps="handled"
             >
               <Text style={styles.modalIntro}>{t("store.photoHelp")}</Text>
-              <Pressable style={styles.secondaryButton} onPress={handlePickPhoto}>
+              <Pressable
+                disabled={photoPickerOpen}
+                style={[
+                  styles.secondaryButton,
+                  photoPickerOpen ? styles.buttonDisabled : null
+                ]}
+                onPress={handlePickPhoto}
+              >
                 <Camera color={theme.colors.teal} size={18} />
                 <Text style={styles.secondaryButtonText}>
                   {photoAsset ? t("store.photoSelected") : t("store.pickPhoto")}
                 </Text>
               </Pressable>
               {photoAsset ? (
-                <Image source={{ uri: photoAsset.uri }} style={styles.photoPreview} />
+                <ExpoImage
+                  contentFit="cover"
+                  source={{ uri: photoAsset.uri }}
+                  style={styles.photoPreview}
+                />
               ) : null}
               <View style={styles.inputGroup}>
                 <Text style={styles.inputLabel}>{t("store.photoCreditName")}</Text>
@@ -1079,7 +1222,7 @@ export default function StoreDetailScreen() {
                 />
               </View>
               <View style={styles.switchRow}>
-                <Text style={styles.body}>{t("store.peopleVisible")}</Text>
+                <Text style={styles.switchLabel}>{t("store.peopleVisible")}</Text>
                 <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
               </View>
               <Pressable style={styles.primaryButton} onPress={handleSubmitPhoto}>
@@ -1102,6 +1245,17 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     screen: {
       backgroundColor: colors.canvas,
       flex: 1
+    },
+    shareCardCaptureHost: {
+      height: 315,
+      left: -10000,
+      position: "absolute",
+      top: 0,
+      width: 600
+    },
+    shareCardCapture: {
+      height: 315,
+      width: 600
     },
     content: {
       padding: spacing.lg,
@@ -1198,6 +1352,9 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.teal,
       fontSize: typography.small,
       fontWeight: "900"
+    },
+    buttonDisabled: {
+      opacity: 0.62
     },
     iconButton: {
       alignItems: "center",
@@ -1592,7 +1749,6 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     photoImage: {
       backgroundColor: colors.line,
       height: 74,
-      resizeMode: "cover",
       width: 112
     },
     photoMeta: {
@@ -1739,51 +1895,98 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     sharePreview: {
       alignItems: "stretch",
-      backgroundColor: colors.paper,
-      borderColor: colors.line,
+      aspectRatio: 1200 / 630,
+      overflow: "hidden"
+    },
+    shareCardSurface: {
+      backgroundColor: shareCardColors.paper,
+      borderColor: shareCardColors.line,
       borderRadius: 8,
       borderWidth: 1,
-      flexDirection: "row",
-      gap: spacing.md,
-      overflow: "hidden",
-      padding: spacing.sm
-    },
-    sharePreviewImage: {
-      backgroundColor: colors.line,
-      borderRadius: 6,
-      height: 104,
-      width: 96
-    },
-    sharePreviewCopy: {
       flex: 1,
-      gap: spacing.xs,
-      justifyContent: "center",
-      minWidth: 0,
-      paddingVertical: spacing.xs
+      gap: 18,
+      overflow: "hidden",
+      padding: 24,
+      position: "relative"
     },
-    sharePreviewKicker: {
-      color: colors.copper,
-      fontSize: typography.caption,
+    shareCardAccent: {
+      backgroundColor: shareCardColors.teal,
+      height: 7,
+      left: 0,
+      position: "absolute",
+      right: 0,
+      top: 0
+    },
+    shareCardHeader: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginTop: 8
+    },
+    shareCardBrandRow: {
+      alignItems: "center",
+      flexDirection: "row",
+      gap: 10
+    },
+    shareCardMark: {
+      alignItems: "center",
+      backgroundColor: shareCardColors.ink,
+      borderRadius: 18,
+      height: 36,
+      justifyContent: "center",
+      width: 36
+    },
+    shareCardMarkText: {
+      color: shareCardColors.paper,
+      fontSize: 20,
+      fontWeight: "900"
+    },
+    shareCardBrand: {
+      color: shareCardColors.teal,
+      fontSize: 18,
+      fontWeight: "900",
+      letterSpacing: 0
+    },
+    shareCardDate: {
+      color: shareCardColors.copper,
+      flexShrink: 1,
+      fontSize: 13,
+      fontWeight: "800",
+      textAlign: "right"
+    },
+    shareCardBody: {
+      flex: 1,
+      justifyContent: "center"
+    },
+    shareCardTitle: {
+      color: shareCardColors.ink,
+      fontSize: 30,
       fontWeight: "900",
       letterSpacing: 0,
-      textTransform: "uppercase"
+      lineHeight: 34
     },
-    sharePreviewTitle: {
-      color: colors.ink,
-      fontSize: typography.title3,
-      fontWeight: "900",
-      lineHeight: 24
+    shareCardPlace: {
+      color: shareCardColors.muted,
+      fontSize: 15,
+      fontWeight: "700",
+      lineHeight: 20,
+      marginTop: 8
     },
-    sharePreviewBody: {
-      color: colors.muted,
-      fontSize: typography.small,
-      lineHeight: 20
+    shareCardFooter: {
+      alignItems: "center",
+      flexDirection: "row",
+      gap: 12
     },
-    sharePreviewDate: {
-      color: colors.copper,
-      fontSize: typography.small,
-      fontWeight: "900",
-      marginTop: spacing.xs
+    shareCardTagline: {
+      color: shareCardColors.ink,
+      flexShrink: 1,
+      fontSize: 13,
+      fontWeight: "800"
+    },
+    shareCardFooterRule: {
+      backgroundColor: shareCardColors.line,
+      flex: 1,
+      height: 1
     },
     shareGrid: {
       flexDirection: "row",
@@ -1841,7 +2044,15 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     switchRow: {
       alignItems: "center",
       flexDirection: "row",
+      gap: spacing.md,
       justifyContent: "space-between"
+    },
+    switchLabel: {
+      color: colors.ink,
+      flex: 1,
+      flexShrink: 1,
+      fontSize: typography.body,
+      lineHeight: 23
     },
     feedbackBox: {
       borderRadius: 8,

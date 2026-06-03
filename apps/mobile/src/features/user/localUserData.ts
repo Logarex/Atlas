@@ -4,12 +4,14 @@ import * as FileSystem from "expo-file-system/legacy";
 import { useEffect, useMemo, useState } from "react";
 
 import { readLocalVisits, replaceLocalVisits } from "@/features/visits/localVisits";
+import { APP_LANGUAGE_STORAGE_KEY, isAppLanguagePreference } from "@/lib/appLanguage";
 
 import type { LocalVisit } from "@/features/visits/visit.types";
 
 const LOCAL_PHOTOS_KEY = "@atlas/local-user-photos/v1";
 const PROFILE_KEY = "@atlas/local-profile/v1";
 const THEME_KEY = "@atlas/theme-setting/v1";
+const IMAGE_CACHE_KEY = "@atlas/image-cache-preference/v1";
 const EXPORT_SCHEMA_VERSION = 1;
 
 export type LocalUserPhoto = {
@@ -34,6 +36,8 @@ type AtlasUserDataExport = {
   schemaVersion: number;
   profile: unknown | null;
   settings: {
+    imageCache: string | null;
+    language: string | null;
     theme: string | null;
   };
   visits: LocalVisit[];
@@ -181,11 +185,13 @@ export async function exportLocalUserData() {
   const exportDirectory = joinUri(safeDocumentDirectory(), `atlas-export-${exportId}`);
   const exportPhotosDirectory = joinUri(exportDirectory, "photos");
   const manifestUri = joinUri(exportDirectory, "atlas-user-data.json");
-  const [visits, privatePhotos, profileRaw, theme] = await Promise.all([
+  const [visits, privatePhotos, profileRaw, theme, imageCache, language] = await Promise.all([
     readLocalVisits(),
     readLocalUserPhotos(),
     AsyncStorage.getItem(PROFILE_KEY),
-    AsyncStorage.getItem(THEME_KEY)
+    AsyncStorage.getItem(THEME_KEY),
+    AsyncStorage.getItem(IMAGE_CACHE_KEY),
+    AsyncStorage.getItem(APP_LANGUAGE_STORAGE_KEY)
   ]);
 
   await ensureDirectory(exportDirectory);
@@ -204,7 +210,7 @@ export async function exportLocalUserData() {
     exportedAt,
     schemaVersion: EXPORT_SCHEMA_VERSION,
     profile: parseStoredJson(profileRaw),
-    settings: { theme },
+    settings: { imageCache, language, theme },
     visits,
     privatePhotos: exportedPhotos,
     summary: {
@@ -294,6 +300,12 @@ export async function importLocalUserDataFromJson(
   }
   if (parsed.settings?.theme) {
     await AsyncStorage.setItem(THEME_KEY, parsed.settings.theme);
+  }
+  if (parsed.settings?.imageCache) {
+    await AsyncStorage.setItem(IMAGE_CACHE_KEY, parsed.settings.imageCache);
+  }
+  if (isAppLanguagePreference(parsed.settings?.language)) {
+    await AsyncStorage.setItem(APP_LANGUAGE_STORAGE_KEY, parsed.settings.language);
   }
 
   return {

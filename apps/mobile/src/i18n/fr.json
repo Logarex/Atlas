@@ -79,7 +79,7 @@
   "profile": {
     "kicker": "Espace personnel",
     "title": "Visites",
-    "subtitle": "Boutiques vues, proposition de boutique manquante et réglage de l'apparence de l'app.",
+    "subtitle": "Boutiques vues, propositions, langue et réglages de l'app.",
     "visits": "Boutiques vues",
     "noVisits": "Aucune visite enregistrée sur cet appareil pour l'instant.",
     "newStore": "Boutique manquante",
@@ -130,6 +130,20 @@
       "system": "Par défaut",
       "light": "Clair",
       "dark": "Sombre"
+    },
+    "language": {
+      "title": "Langue",
+      "system": "Système",
+      "fr": "Français",
+      "en": "English"
+    },
+    "cache": {
+      "title": "Cache images",
+      "light": "Léger",
+      "balanced": "Équilibré",
+      "large": "Grand",
+      "clear": "Vider le cache",
+      "cleared": "Cache images vidé."
     }
   },
   "store": {
@@ -207,6 +221,8 @@
     "submitPhoto": "Envoyer la photo",
     "pickPhoto": "Choisir une photo",
     "photoSelected": "Photo sélectionnée",
+    "contributorName": "Nom ou pseudo (facultatif)",
+    "contributorNamePlaceholder": "Ex. prénom, pseudo ou collectif",
     "photoCreditName": "Nom ou pseudo",
     "photoCreditPlaceholder": "Ex. prénom, pseudo ou collectif",
     "caption": "Légende",

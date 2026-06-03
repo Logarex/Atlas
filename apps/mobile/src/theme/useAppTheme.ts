@@ -9,17 +9,17 @@ const { AppIconModule } = NativeModules;
 
 export type ThemeSetting = "system" | "light" | "dark";
 
-type AppIconName = "AppIcon-Dark" | null;
+type AppIconName = "AppIcon-Light" | "AppIcon-Dark";
 
 function iconNameForThemeSetting(
   setting: ThemeSetting,
   systemScheme: ColorSchemeName
 ): AppIconName {
   if (setting === "system") {
-    return systemScheme === "dark" ? "AppIcon-Dark" : null;
+    return systemScheme === "dark" ? "AppIcon-Dark" : "AppIcon-Light";
   }
 
-  return setting === "dark" ? "AppIcon-Dark" : null;
+  return setting === "dark" ? "AppIcon-Dark" : "AppIcon-Light";
 }
 
 async function setNativeAppIcon(iconName: AppIconName) {
@@ -29,9 +29,9 @@ async function setNativeAppIcon(iconName: AppIconName) {
     const currentIconName = await AppIconModule.getAlternateIconName();
     if (currentIconName === iconName) return;
 
-    await AppIconModule.setAlternateIconName(iconName ?? "");
+    await AppIconModule.setAlternateIconName(iconName);
   } catch {
-    // iOS may reject runtime icon changes; the primary asset catalog still provides system dark icons.
+    // iOS may reject runtime icon changes while inactive; the next foreground theme pass retries it.
   }
 }
 

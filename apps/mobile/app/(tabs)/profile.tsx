@@ -8,14 +8,24 @@ import {
   importLocalUserDataFromPickedFile,
   useLocalUserPhotos
 } from "@/features/user/localUserData";
+import {
+  clearImageCache,
+  useImageCachePreference,
+  type ImageCachePreference
+} from "@/features/stores/imageCache";
 import { useLocalVisits } from "@/features/visits/localVisits";
+import { appLanguagePreferences, type AppLanguagePreference } from "@/lib/appLanguage";
+import { useLanguagePreference } from "@/lib/languagePreference";
 import { useAppTheme } from "@/theme/useAppTheme";
 import * as Sharing from "expo-sharing";
 import {
   AlertTriangle,
   Download,
+  HardDrive,
+  Languages,
   Lock,
   Palette,
+  RotateCcw,
   Scale,
   Send,
   Trash2,
@@ -43,9 +53,14 @@ export default function ProfileScreen() {
 
   const { clearAllVisits, visits } = useLocalVisits();
   const { photos } = useLocalUserPhotos();
+  const { preference: imageCachePreference, setPreference: setImageCachePreference } =
+    useImageCachePreference();
+  const { preference: languagePreference, setPreference: setLanguagePreference } =
+    useLanguagePreference();
 
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
+  const [newStoreContributorName, setNewStoreContributorName] = useState("");
   const [message, setMessage] = useState<string | null>(null);
 
   function visitCountLabel(count: number) {
@@ -89,10 +104,12 @@ export default function ProfileScreen() {
         storeId: null,
         type: "new_store",
         proposedValue: newStoreName,
-        note: newStoreNote
+        note: newStoreNote,
+        contributorName: newStoreContributorName
       });
       setNewStoreName("");
       setNewStoreNote("");
+      setNewStoreContributorName("");
       setMessage(t("profile.storeSubmitted"));
     } catch (error) {
       setMessage(error instanceof Error ? error.message : t("profile.failed"));
@@ -132,6 +149,31 @@ export default function ProfileScreen() {
     }
   }
 
+  async function handleImageCachePreference(nextPreference: ImageCachePreference) {
+    try {
+      await setImageCachePreference(nextPreference);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : t("profile.failed"));
+    }
+  }
+
+  async function handleLanguagePreference(nextPreference: AppLanguagePreference) {
+    try {
+      await setLanguagePreference(nextPreference);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : t("profile.failed"));
+    }
+  }
+
+  async function handleClearImageCache() {
+    try {
+      await clearImageCache();
+      setMessage(t("profile.cache.cleared"));
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : t("profile.failed"));
+    }
+  }
+
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <ScrollView
@@ -165,6 +207,13 @@ export default function ProfileScreen() {
             placeholderTextColor={theme.colors.muted}
             style={[styles.input, styles.textArea]}
             value={newStoreNote}
+          />
+          <TextInput
+            onChangeText={setNewStoreContributorName}
+            placeholder={t("store.contributorNamePlaceholder")}
+            placeholderTextColor={theme.colors.muted}
+            style={styles.input}
+            value={newStoreContributorName}
           />
           <Pressable
             disabled={newStoreName.trim().length === 0}
@@ -213,6 +262,75 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
+            <Languages color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.language.title")}</Text>
+          </View>
+
+          <View style={styles.themeSelectorRow}>
+            {appLanguagePreferences.map((language) => {
+              const isActive = languagePreference === language;
+              return (
+                <Pressable
+                  key={language}
+                  onPress={() => handleLanguagePreference(language)}
+                  style={[
+                    styles.themeButton,
+                    isActive && styles.themeButtonActive
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.themeButtonText,
+                      isActive && styles.themeButtonTextActive
+                    ]}
+                  >
+                    {t(`profile.language.${language}`)}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <HardDrive color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.cache.title")}</Text>
+          </View>
+
+          <View style={styles.themeSelectorRow}>
+            {(["light", "balanced", "large"] as const).map((cacheSize) => {
+              const isActive = imageCachePreference === cacheSize;
+              return (
+                <Pressable
+                  key={cacheSize}
+                  onPress={() => handleImageCachePreference(cacheSize)}
+                  style={[
+                    styles.themeButton,
+                    isActive && styles.themeButtonActive
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.themeButtonText,
+                      isActive && styles.themeButtonTextActive
+                    ]}
+                  >
+                    {t(`profile.cache.${cacheSize}`)}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+
+          <Pressable onPress={handleClearImageCache} style={styles.secondaryButton}>
+            <RotateCcw color={theme.colors.copper} size={18} />
+            <Text style={styles.secondaryButtonText}>{t("profile.cache.clear")}</Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
             <Download color={theme.colors.copper} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.export.title")}</Text>
           </View>
@@ -223,11 +341,17 @@ export default function ProfileScreen() {
             })}
           </Text>
           <View style={styles.inlineActions}>
-            <Pressable onPress={handleExportData} style={styles.secondaryButton}>
+            <Pressable
+              onPress={handleExportData}
+              style={[styles.secondaryButton, styles.inlineActionButton]}
+            >
               <Download color={theme.colors.copper} size={18} />
               <Text style={styles.secondaryButtonText}>{t("profile.export.button")}</Text>
             </Pressable>
-            <Pressable onPress={handleImportData} style={styles.secondaryButton}>
+            <Pressable
+              onPress={handleImportData}
+              style={[styles.secondaryButton, styles.inlineActionButton]}
+            >
               <Upload color={theme.colors.copper} size={18} />
               <Text style={styles.secondaryButtonText}>{t("profile.import.button")}</Text>
             </Pressable>
@@ -377,6 +501,9 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       minHeight: 48,
       paddingHorizontal: spacing.md
     },
+    inlineActionButton: {
+      flex: 1
+    },
     secondaryButtonText: {
       color: colors.copper,
       fontSize: typography.small,
@@ -402,7 +529,8 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     inlineActions: {
       flexDirection: "row",
-      gap: spacing.sm
+      gap: spacing.sm,
+      justifyContent: "center"
     },
     themeButton: {
       alignItems: "center",

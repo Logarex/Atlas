@@ -79,7 +79,7 @@
   "profile": {
     "kicker": "Personal space",
     "title": "Visits",
-    "subtitle": "Visited stores, missing store suggestions, and app appearance settings.",
+    "subtitle": "Visited stores, suggestions, language, and app settings.",
     "visits": "Visited stores",
     "noVisits": "No visits saved on this device yet.",
     "newStore": "Missing store",
@@ -130,6 +130,20 @@
       "system": "Default",
       "light": "Light",
       "dark": "Dark"
+    },
+    "language": {
+      "title": "Language",
+      "system": "System",
+      "fr": "Français",
+      "en": "English"
+    },
+    "cache": {
+      "title": "Image cache",
+      "light": "Light",
+      "balanced": "Balanced",
+      "large": "Large",
+      "clear": "Clear cache",
+      "cleared": "Image cache cleared."
     }
   },
   "store": {
@@ -207,6 +221,8 @@
     "submitPhoto": "Send photo",
     "pickPhoto": "Choose photo",
     "photoSelected": "Photo selected",
+    "contributorName": "Name or nickname (optional)",
+    "contributorNamePlaceholder": "E.g. first name, nickname, or group",
     "photoCreditName": "Name or nickname",
     "photoCreditPlaceholder": "E.g. first name, nickname, or group",
     "caption": "Caption",

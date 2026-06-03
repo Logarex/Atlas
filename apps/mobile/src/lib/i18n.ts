@@ -1,12 +1,9 @@
-import { getLocales } from "expo-localization";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import en from "../i18n/en.json";
 import fr from "../i18n/fr.json";
-
-const deviceLanguage = getLocales()[0]?.languageCode ?? "en";
-const supportedLanguage = deviceLanguage === "fr" ? "fr" : "en";
+import { getDeviceAppLanguage } from "./appLanguage";
 
 void i18n.use(initReactI18next).init({
   compatibilityJSON: "v4",
@@ -14,7 +11,7 @@ void i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false
   },
-  lng: supportedLanguage,
+  lng: getDeviceAppLanguage(),
   resources: {
     en: { translation: en },
     fr: { translation: fr }
