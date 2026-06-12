@@ -1,0 +1,5 @@
+{
+  "NSPhotoLibraryUsageDescription": "Atlas te permite elegir fotos de tu propiedad para guardarlas localmente o enviarlas para revisión.",
+  "NSPhotoLibraryAddUsageDescription": "Atlas puede guardar fotos de visitas exportadas cuando eliges compartir o hacer una copia de seguridad de tus datos locales.",
+  "NSCameraUsageDescription": "Atlas puede usar la cámara si decides agregar una foto personal de la tienda."
+}

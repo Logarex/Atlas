@@ -10,7 +10,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   userInterfaceStyle: "automatic",
   locales: {
     en: "./src/i18n/infoPlist/en.json",
-    fr: "./src/i18n/infoPlist/fr.json"
+    fr: "./src/i18n/infoPlist/fr.json",
+    es: "./src/i18n/infoPlist/es.json",
+    it: "./src/i18n/infoPlist/it.json",
+    de: "./src/i18n/infoPlist/de.json"
   },
   icon: "./assets/icon.png",
   ios: {

@@ -135,7 +135,10 @@
       "title": "Langue",
       "system": "Système",
       "fr": "Français",
-      "en": "English"
+      "en": "English",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
     },
     "cache": {
       "title": "Cache images",

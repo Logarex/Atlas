@@ -1,0 +1,391 @@
+{
+  "tabs": {
+    "home": "Inicio",
+    "explore": "Explorar",
+    "map": "Mapa",
+    "review": "Revisar",
+    "profile": "Perfil"
+  },
+  "counts": {
+    "visit_one": "{{count}} visita",
+    "visit_other": "{{count}} visitas",
+    "privatePhoto_one": "{{count}} foto privada",
+    "privatePhoto_other": "{{count}} fotos privadas"
+  },
+  "home": {
+    "kicker": "Atlas",
+    "title": "Gira mundial\nde Apple Store",
+    "subtitle": "Un mapa y cuaderno para encontrar tiendas Apple, registrar visitas y seguir tu colección.",
+    "searchLabel": "Buscar tiendas",
+    "searchPlaceholder": "Buscar por tienda, ciudad, país, estado, característica...",
+    "clearSearch": "Borrar búsqueda",
+    "resultCount_one": "{{count}} tienda",
+    "resultCount_other": "{{count}} tiendas",
+    "empty": "Aún no hay tiendas que coincidan con esta búsqueda.",
+    "loading": "Cargando los datos en vivo de la comunidad...",
+    "remoteError": "Los datos en vivo no están disponibles, mostrando datos locales.",
+    "liveDataset": "Tiendas en vivo",
+    "seedDataset": "Tiendas base",
+    "visitedCount": "Visitadas",
+    "filters": {
+      "all": "Todas",
+      "open": "Abiertas",
+      "closed": "Cerradas",
+      "visited": "Visitadas"
+    },
+    "advancedFilters": {
+      "title": "Filtros avanzados",
+      "subtitle": "Combina países, regiones, años, estilos, características y extras.",
+      "button": "Filtros avanzados",
+      "activeButton_one": "{{count}} filtro avanzado",
+      "activeButton_other": "{{count}} filtros avanzados",
+      "close": "Cerrar filtros",
+      "reset": "Restablecer",
+      "done": "Aplicar",
+      "eraValue": "Época: {{value}}",
+      "typologyValue": "Estilo: {{value}}",
+      "groups": {
+        "countries": "Países",
+        "regions": "Regiones",
+        "years": "Años",
+        "designStyles": "Estilo de diseño",
+        "features": "Características",
+        "extras": "Extras"
+      },
+      "extras": {
+        "hasPhotos": "Con foto",
+        "hasOfficialUrl": "Enlace a Apple",
+        "hasCoordinates": "En el mapa",
+        "hasNotes": "Notas de arquitectura"
+      }
+    },
+    "progressTitle": "Progreso",
+    "progressLabel": "Tiendas visitadas",
+    "progressCount": "{{visited}} / {{total}}",
+    "visits": "Tiendas visitadas",
+    "noVisits": "Aún no hay visitas guardadas en este dispositivo.",
+    "stats": {
+      "open": "Abiertas",
+      "closed": "Cerradas",
+      "relocated": "Antiguas"
+    },
+    "recentVisits": "Visitas recientes"
+  },
+  "map": {
+    "title": "Mapa mundial",
+    "copy": "{{count}} tiendas cargadas, {{visited}} marcadas como visitadas en este dispositivo.",
+    "visited": "Visitadas"
+  },
+  "profile": {
+    "kicker": "Espacio personal",
+    "title": "Visitas",
+    "subtitle": "Tiendas visitadas, sugerencias, idioma y ajustes.",
+    "visits": "Tiendas visitadas",
+    "noVisits": "Aún no hay visitas guardadas en este dispositivo.",
+    "newStore": "Tienda faltante",
+    "newStorePlaceholder": "Nombre o ubicación de la tienda",
+    "newStoreNote": "Detalles útiles para la revisión",
+    "submitStore": "Enviar tienda faltante",
+    "privacyTitle": "Datos locales",
+    "saving": "Guardando...",
+    "exporting": "Preparando exportación...",
+    "importing": "Importando...",
+    "submittingStore": "Enviando tienda faltante...",
+    "storeSubmitted": "Tienda enviada para revisión.",
+    "failed": "Algo salió mal.",
+    "progressTitle": "Progreso",
+    "progressLabel": "Tiendas visitadas",
+    "progressCount": "{{visited}} / {{total}}",
+    "privacy": {
+      "noAds": "Sin anuncios ni rastreo: Atlas es para coleccionar lugares, sin crear perfiles.",
+      "localLocation": "Atlas es de código abierto: el código es público y la comunidad puede mejorarlo.",
+      "optionalAccount": "Las visitas y notas se quedan en este dispositivo.",
+      "openData": "Las correcciones sugeridas pueden mejorar el conjunto de datos tras su revisión."
+    },
+    "export": {
+      "title": "Exportar e importar",
+      "subtitle": "{{visitsLabel}} y {{photosLabel}} listas para respaldar con Atlas.",
+      "button": "Exportar",
+      "shareTitle": "Exportación de Atlas",
+      "done": "Exportación lista: {{visitsLabel}} y {{photosLabel}}."
+    },
+    "import": {
+      "button": "Importar",
+      "done": "Importación terminada: {{visitsLabel}} y {{photosLabel}} restauradas."
+    },
+    "community": {
+      "title": "Comunidad y licencia",
+      "body": "Atlas es un proyecto comunitario creado para perdurar. La app vivirá mientras los usuarios ayuden a enriquecer tiendas, corregir detalles, añadir fotos y mantener los datos útiles para todos.",
+      "license": "Código público bajo la licencia GPLv3."
+    },
+    "dangerZone": "Zona de peligro",
+    "deleteAccount": "Borrar datos locales",
+    "deleteWarningTitle": "¿Confirmar borrado?",
+    "deleteWarningMessage": "Esta acción es irreversible. Las visitas y ajustes locales se borrarán de este dispositivo.",
+    "cancel": "Cancelar",
+    "confirmDelete": "Borrar todo",
+    "deleted": "Todos los datos locales han sido borrados.",
+    "theme": {
+      "title": "Tema",
+      "system": "Por defecto",
+      "light": "Claro",
+      "dark": "Oscuro"
+    },
+    "language": {
+      "title": "Idioma",
+      "system": "Sistema",
+      "fr": "Français",
+      "en": "English",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    },
+    "cache": {
+      "title": "Caché de imágenes",
+      "light": "Ligero",
+      "lightDesc": "32 MB en disco",
+      "balanced": "Equilibrado",
+      "balancedDesc": "128 MB en disco",
+      "large": "Grande",
+      "largeDesc": "384 MB en disco",
+      "hint": "Controla cuántas fotos se guardan en el disco entre sesiones. Una caché más grande significa menos solicitudes de red al volver a visitar tiendas.",
+      "clear": "Borrar caché",
+      "cleared": "Caché de imágenes borrada."
+    }
+  },
+  "store": {
+    "back": "Volver a explorar",
+    "notFoundTitle": "Tienda no encontrada",
+    "notFoundBody": "Esta tienda ya no está disponible en los datos locales.",
+    "visitedBadge": "Visitada",
+    "history": "Historia",
+    "architecture": "Arquitectura",
+    "hours": "Horario",
+    "photos": "Fotos",
+    "contribute": "Contribuir",
+    "status": "Estado",
+    "opened": "Inaugurada",
+    "closed": "Cerrada",
+    "verified": "Verificada",
+    "notClosed": "No cerrada",
+    "dateUnknown": "Fecha desconocida",
+    "era": "Época",
+    "openedShort": "Abierta en {{date}}",
+    "markVisited": "Marcar como visitada",
+    "visitDateLabel": "Fecha de visita",
+    "visitNoteLabel": "Nota de visita",
+    "visitNotePlaceholder": "Nota personal, recuerdo, contexto...",
+    "visitInvalidDate": "Usa una fecha con formato AAAA-MM-DD.",
+    "visitSaved": "Visita guardada en este dispositivo.",
+    "personalHistory": "Historial personal",
+    "shareText": "Visité {{name}} en {{place}} el {{date}}. Registrado con Atlas.",
+    "shareTitle": "Visita Atlas: {{name}}",
+    "shareVisit": "Compartir la visita",
+    "shareIntro": "Envía una tarjeta de Atlas, un enlace o un mensaje listo para planificar la visita con un amigo.",
+    "shareMessages": "Mensaje",
+    "shareMail": "Correo",
+    "shareSocial": "Social",
+    "shareCard": "Tarjeta de imagen",
+    "sharePreparing": "Preparando la tarjeta de imagen...",
+    "shareFailed": "No se pudo abrir el uso compartido. Inténtalo de nuevo en un momento.",
+    "shareCardFailed": "No se pudo generar la tarjeta de imagen. El mensaje de texto sigue disponible.",
+    "shareNoImage": "No hay imagen compartible para esta tienda. Se abrirá el mensaje de texto en su lugar.",
+    "shareCardVisited": "Visitada el {{date}}",
+    "shareCardTagline": "Colecciona tiendas Apple con Atlas.",
+    "architectureEra": "Época: {{era}}",
+    "architectureEmpty": "Aún no hay firma arquitectónica verificada.",
+    "architectureNote": "Nota de arquitectura",
+    "architectureLocalContext": "Contexto de la tienda",
+    "architectureAddImage": "Añadir imagen",
+    "architecturePhotoCaption": "Detalle arquitectónico de {{name}}",
+    "verifyOfficial": "Verificar en Apple",
+    "noPhotos": "Aún no hay fotos aprobadas de la comunidad.",
+    "privatePhotos": "Fotos privadas",
+    "privatePhoto": "Foto personal",
+    "localOnly": "Local",
+    "savePrivatePhoto": "Guardar foto privada",
+    "privatePhotoSaved": "Foto guardada localmente en Atlas.",
+    "removePrivatePhoto": "Eliminar esta foto privada",
+    "suggestEdit": "Sugerir edición",
+    "addPhoto": "Añadir foto",
+    "submitting": "Enviando...",
+    "submitFailed": "El envío falló. Por favor, inténtalo de nuevo en un momento.",
+    "changeSubmitted": "Gracias, la corrección fue enviada para revisión.",
+    "changeRequired": "Dinos qué necesita cambiar y la información correcta a usar.",
+    "suggestEditHelp": "Describe la información a corregir en un lenguaje sencillo. No necesitas conocer el nombre técnico del campo.",
+    "photoPermissionDenied": "Permite el acceso a fotos para elegir una imagen.",
+    "photoRequired": "Elige una foto antes de enviar.",
+    "photoSubmitted": "Gracias, la foto fue propuesta. Será revisada antes de aparecer en Atlas.",
+    "photoHelp": "Añade una foto que tomaste. Tu nombre o apodo puede mostrarse con la foto si es aceptada.",
+    "fieldPath": "Qué corregir",
+    "fieldPathPlaceholder": "Ej. dirección, horario, nombre, estado, arquitectura...",
+    "proposedValue": "Corrección sugerida",
+    "proposedValuePlaceholder": "Escribe la información correcta",
+    "note": "Detalles útiles",
+    "notePlaceholder": "Fuente, contexto o enlace útil",
+    "submit": "Enviar",
+    "submitCorrection": "Enviar corrección",
+    "submitPhoto": "Enviar foto",
+    "pickPhoto": "Elegir foto",
+    "photoSelected": "Foto seleccionada",
+    "contributorName": "Nombre o apodo (opcional)",
+    "contributorNamePlaceholder": "Ej. primer nombre, apodo o grupo",
+    "photoCreditName": "Nombre o apodo",
+    "photoCreditPlaceholder": "Ej. primer nombre, apodo o grupo",
+    "caption": "Leyenda",
+    "captionPlaceholder": "Ej. Fachada principal al atardecer",
+    "takenOn": "Fecha de la foto",
+    "takenOnPlaceholder": "AAAA-MM-DD",
+    "peopleVisible": "Se ven personas reconocibles"
+  },
+  "status": {
+    "open": "Abierta",
+    "closed": "Cerrada",
+    "relocated": "Reubicada",
+    "announced": "Anunciada",
+    "temporary": "Temporal"
+  },
+  "attributes": {
+    "avenue": "Avenue",
+    "boardroom": "Boardroom",
+    "forum": "Forum",
+    "geniusBar": "Genius Bar",
+    "glassCube": "Cubo de cristal",
+    "greenWall": "Muro verde",
+    "historicFacade": "Fachada histórica",
+    "outdoor": "Entrada exterior",
+    "pickup": "Mostrador de recogida",
+    "plaza": "Plaza",
+    "trees": "Árboles",
+    "videoWall": "Muro de video"
+  },
+  "architectureDetails": {
+    "eraFallback": "{{value}} describe un período o familia de diseño utilizado en Atlas. El registro aún puede ampliarse con fuentes, fechas de renovación y fotos de detalles.",
+    "typologyFallback": "{{value}} describe la forma general de la tienda: su entorno, relación con la calle o centro comercial, y el tipo de experiencia minorista que apoya.",
+    "eras": {
+      "glassCubeFlagship": {
+        "body": "Esta época abarca tiendas emblemáticas donde la estructura misma se convierte en una señal urbana. El cristal, la transparencia y las escaleras monumentales convierten la entrada en un marcador público y un umbral."
+      },
+      "originalRetail": {
+        "body": "Las primeras tiendas de Apple establecieron el lenguaje comercial central: circulación simple, mesas de productos, servicio Genius Bar y un interior muy legible."
+      },
+      "townSquare": {
+        "body": "La época Town Square replantea la tienda como un lugar cívico: Forum, muro de video, plantas, asientos y Today at Apple. Las recientes tiendas insignia apuntan a integrarse con la ciudad, edificios patrimoniales o espacios públicos."
+      },
+      "unknown": {
+        "body": "La época exacta del diseño aún no está documentada en Atlas. El registro mantiene elementos verificados y puede mejorarse con una fuente confiable o una foto."
+      }
+    },
+    "typologies": {
+      "classic": {
+        "body": "Un tipo de tienda histórica de Apple, a menudo en un centro comercial, con una fachada simple, mesas de productos y servicio hacia la parte trasera. Su prioridad es el flujo claro."
+      },
+      "classicUpgrade": {
+        "body": "Una tienda clásica actualizada con detalles nuevos: materiales más cálidos, zonas de servicio más claras y, a veces, un Forum o muro de video."
+      },
+      "historicUrbanFlagship": {
+        "body": "Una tienda insignia urbana insertada en un edificio patrimonial. La tarea arquitectónica es preservar la fachada, volúmenes o detalles decorativos mientras se introduce el lenguaje contemporáneo."
+      },
+      "mallStore": {
+        "body": "Una tienda integrada en un centro comercial. Su arquitectura debe atraer a la gente, organizar la entrada rápidamente y seguir siendo legible dentro de un espacio limitado."
+      },
+      "nsd": {
+        "body": "NSD apunta a tiendas de nueva generación: fachadas más abiertas, Avenue, Forum, materiales naturales y una separación más clara entre descubrimiento y servicio."
+      },
+      "standalonePavilion": {
+        "body": "Un pabellón independiente concebido como un objeto arquitectónico completo. Puede usar transparencia, vistas y el espacio público circundante."
+      },
+      "urbanFlagship": {
+        "body": "Una gran tienda en la ciudad diseñada como un destino. Combina visibilidad, capacidad, áreas de servicio y a veces múltiples niveles para convertirse en un marcador en su distrito."
+      },
+      "unknown": {
+        "body": "La tipología aún no está completamente calificada. Los atributos mostrados y las notas aún ayudan a interpretar el registro, pero una corrección puede refinar el formato exacto."
+      },
+      "vintageD2": {
+        "body": "Un formato antiguo vinculado a generaciones intermedias del diseño minorista de Apple. Sigue siendo muy funcional, antes de que los Forums, Avenues y los recientes muros de video se generalizaran."
+      },
+      "vintageE": {
+        "body": "Un tipo de tienda antigua o de transición, útil para identificar ubicaciones que no han adoptado completamente el vocabulario de las tiendas Apple contemporáneas."
+      },
+      "watchShop": {
+        "body": "Un formato dedicado a Apple Watch, generalmente más compacto y cercano a una joyería. Destaca la presentación y la interacción directa con el asesor."
+      }
+    },
+    "attributes": {
+      "avenue": {
+        "body": "Avenue es la zona de exhibición en la pared introducida en tiendas de nueva generación. Presenta accesorios y colecciones como una calle interior."
+      },
+      "boardroom": {
+        "body": "Boardroom es un espacio más tranquilo para clientes corporativos, capacitación o citas. Refleja el movimiento de Apple hacia relaciones de servicio más largas."
+      },
+      "forum": {
+        "body": "Forum alberga Today at Apple y demostraciones grupales. Históricamente, cambia parte de la lógica de exposición hacia programación cultural y aprendizaje."
+      },
+      "geniusBar": {
+        "body": "El Genius Bar es el marcador histórico del servicio de Apple Store. Incluso cuando los muebles específicos desaparecen, Atlas lo marca si la ubicación ofreció una zona de soporte identificable."
+      },
+      "glassCube": {
+        "body": "El cubo de cristal es una de las firmas más conocidas. Convierte la entrada en un objeto urbano minimalista, a menudo por encima de una planta de ventas bajo nivel o muy transparente."
+      },
+      "greenWall": {
+        "body": "El muro verde suaviza el interior y pertenece al vocabulario de Town Square. Crea un punto de referencia visual, mejora la atmósfera y conecta la tienda con la idea de una plaza interior."
+      },
+      "historicFacade": {
+        "body": "Una fachada histórica significa que la tienda está insertada en un edificio de interés patrimonial. El proyecto equilibra conservación, restauración y contraste."
+      },
+      "outdoor": {
+        "body": "Una entrada exterior conecta la tienda directamente a una calle o plaza. Cambia la experiencia: la tienda se convierte en una dirección urbana en lugar de solo una unidad de galería."
+      },
+      "pickup": {
+        "body": "Pickup marca el aumento de la recolección de pedidos en línea. Clarifica un flujo logístico cada vez más importante."
+      },
+      "plaza": {
+        "body": "La plaza es el espacio público o semi-público asociado con la tienda. Extiende la idea de Town Square: esperar, reunirse, asistir a un evento o simplemente pasar."
+      },
+      "trees": {
+        "body": "Los árboles humanizan grandes volúmenes y crean continuidad con la calle. En tiendas recientes, son parte del vocabulario de un lugar público."
+      },
+      "videoWall": {
+        "body": "El muro de video estructura el Forum y hace visibles las sesiones, lanzamientos y demostraciones."
+      }
+    }
+  },
+  "values": {
+    "yes": "Sí",
+    "no": "No",
+    "unknown": "Desconocido"
+  },
+  "hours": {
+    "official-link-only": "Los horarios no se copian en Atlas porque cambian frecuentemente.",
+    "community-verified": "Los horarios verificados por la comunidad están disponibles."
+  },
+  "review": {
+    "title": "Gestión de Tiendas",
+    "subtitle": "Administrar cambios propuestos.",
+    "editing": "Editando...",
+    "success": "¡Cambios guardados con éxito!",
+    "error": "Error al guardar los cambios.",
+    "details": "Detalles de la tienda",
+    "verifyOnMap": "Verificar en el mapa",
+    "editor": {
+      "createStore": "Crear tienda",
+      "editStore": "Editar tienda",
+      "requiredFields": "Por favor completa todos los campos requeridos: ID, nombre, ciudad, país y dirección.",
+      "saveFailed": "Error al guardar la tienda.",
+      "saving": "Guardando...",
+      "saveStore": "Guardar tienda",
+      "fields": {
+        "id": "ID (slug) *",
+        "nameEn": "Nombre (EN) *",
+        "nameFr": "Nombre (FR)",
+        "city": "Ciudad *",
+        "country": "País *",
+        "address": "Dirección *",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "officialUrl": "URL Oficial",
+        "status": "Estado"
+      }
+    }
+  }
+}
