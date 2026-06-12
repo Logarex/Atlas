@@ -1,37 +1,11 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
-import { useColorScheme, Platform, NativeModules, AppState } from "react-native";
+import { useColorScheme } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { spacing, typography, radii, shadows } from "./tokens";
 
 const STORAGE_KEY = "@atlas/theme-setting/v1";
 
-const { AppIconModule } = NativeModules;
-
 export type ThemeSetting = "system" | "light" | "dark";
-
-type AppIconName = "AppIcon-Light" | "AppIcon-Dark" | null;
-
-function iconNameForThemeSetting(setting: ThemeSetting): AppIconName {
-  // When set to "system", restore the primary icon so iOS can apply
-  // its native automatic light/dark icon from the xcassets.
-  if (setting === "system") return null;
-
-  return setting === "dark" ? "AppIcon-Dark" : "AppIcon-Light";
-}
-
-async function setNativeAppIcon(iconName: AppIconName) {
-  if (Platform.OS !== "ios" || !AppIconModule) return;
-
-  try {
-    const currentIconName: string | null = await AppIconModule.getAlternateIconName();
-    if (currentIconName === iconName) return;
-
-    // null = restore primary icon (iOS handles light/dark automatically via xcassets)
-    await AppIconModule.setAlternateIconName(iconName);
-  } catch {
-    // iOS may reject runtime icon changes while inactive; the next foreground theme pass retries it.
-  }
-}
 
 const atlasLightColors = {
   canvas: "#F7F1E5",
@@ -81,7 +55,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const systemScheme = useColorScheme();
   const [themeSetting, setThemeSettingState] = useState<ThemeSetting>("system");
-  const [hasLoadedThemeSetting, setHasLoadedThemeSetting] = useState(false);
 
   // Load from AsyncStorage
   useEffect(() => {
@@ -93,8 +66,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         }
       } catch (error) {
         console.error("Failed to load theme setting:", error);
-      } finally {
-        setHasLoadedThemeSetting(true);
       }
     }
     void loadTheme();
@@ -118,27 +89,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [themeSetting, systemScheme]);
 
   const colors = isDark ? atlasDarkColors : atlasLightColors;
-
-  useEffect(() => {
-    if (!hasLoadedThemeSetting) return;
-
-    void setNativeAppIcon(iconNameForThemeSetting(themeSetting));
-  }, [hasLoadedThemeSetting, systemScheme, themeSetting]);
-
-  // Re-apply the icon when the app comes back to the foreground.
-  // iOS may have rejected the icon change while the app was inactive
-  // (e.g. a system theme change happened in the background).
-  useEffect(() => {
-    if (!hasLoadedThemeSetting) return;
-
-    const subscription = AppState.addEventListener("change", (nextState) => {
-      if (nextState === "active") {
-        void setNativeAppIcon(iconNameForThemeSetting(themeSetting));
-      }
-    });
-
-    return () => subscription.remove();
-  }, [hasLoadedThemeSetting, themeSetting, systemScheme]);
 
   const value = useMemo(
     () => ({
