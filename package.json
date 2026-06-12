@@ -22,5 +22,6 @@
     "@expo/metro-config@55.0.21": {
       "postcss": "8.5.14"
     }
-  }
+  },
+  "license": "GPL-3.0"
 }

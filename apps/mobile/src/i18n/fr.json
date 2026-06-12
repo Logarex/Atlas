@@ -116,7 +116,7 @@
     "community": {
       "title": "Communauté et licence",
       "body": "Atlas est un projet communautaire pensé pour durer. L'app vivra tant que des utilisateurs aideront à enrichir les boutiques, corriger les détails, ajouter des photos et garder la base utile pour tout le monde.",
-      "license": "Code public sous licence MIT."
+      "license": "Code public sous licence GPLv3."
     },
     "dangerZone": "Zone de danger",
     "deleteAccount": "Supprimer les données locales",
