@@ -40,7 +40,7 @@ export default function MapScreen() {
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
-    closed: theme.colors.rose,
+    closed: theme.colors.ink,
     relocated: theme.colors.muted,
     announced: theme.colors.gold,
     temporary: theme.colors.moss

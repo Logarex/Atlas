@@ -29,7 +29,7 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
-    closed: theme.colors.rose,
+    closed: theme.colors.ink,
     relocated: theme.colors.muted,
     announced: theme.colors.copper,
     temporary: theme.colors.gold
