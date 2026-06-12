@@ -1,26 +1,16 @@
-const GITHUB_TOKEN = process.env.EXPO_PUBLIC_GITHUB_TOKEN;
-const GITHUB_OWNER = process.env.EXPO_PUBLIC_GITHUB_OWNER || "Logarex";
-const GITHUB_REPO = process.env.EXPO_PUBLIC_GITHUB_REPO || "Atlas";
-const GITHUB_BRANCH = process.env.EXPO_PUBLIC_GITHUB_BRANCH || "main";
-
-function encodeContentPath(path: string) {
-  return path
-    .split("/")
-    .map((part) => encodeURIComponent(part))
-    .join("/");
-}
+const API_URL = process.env.EXPO_PUBLIC_API_URL;
+const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
 
 export async function createGithubIssue(title: string, body: string, labels: string[] = ["contribution"]) {
-  if (!GITHUB_TOKEN) {
+  if (!API_URL || !API_KEY) {
     throw new Error("Contributions are not configured on this build. Please contact the maintainer.");
   }
 
-  const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/issues`, {
+  const response = await fetch(`${API_URL}/issues`, {
     method: "POST",
     headers: {
-      Authorization: `token ${GITHUB_TOKEN}`,
+      "x-atlas-api-key": API_KEY,
       "Content-Type": "application/json",
-      Accept: "application/vnd.github.v3+json",
     },
     body: JSON.stringify({
       title,
@@ -30,8 +20,8 @@ export async function createGithubIssue(title: string, body: string, labels: str
   });
 
   if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.message || "Failed to create GitHub issue");
+    const error = await response.json().catch(() => ({}));
+    throw new Error(error.message || "Failed to create contribution issue");
   }
 
   return response.json();
@@ -40,24 +30,21 @@ export async function createGithubIssue(title: string, body: string, labels: str
 export async function uploadGithubFile(
   path: string,
   contentBase64: string,
-  message: string,
-  branch = GITHUB_BRANCH
+  message: string
 ) {
-  if (!GITHUB_TOKEN) {
+  if (!API_URL || !API_KEY) {
     throw new Error("Contributions are not configured on this build. Please contact the maintainer.");
   }
 
   const response = await fetch(
-    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${encodeContentPath(path)}`,
+    `${API_URL}/contents/${path}`,
     {
       method: "PUT",
       headers: {
-        Authorization: `token ${GITHUB_TOKEN}`,
+        "x-atlas-api-key": API_KEY,
         "Content-Type": "application/json",
-        Accept: "application/vnd.github.v3+json",
       },
       body: JSON.stringify({
-        branch,
         content: contentBase64,
         message
       }),
@@ -65,8 +52,8 @@ export async function uploadGithubFile(
   );
 
   if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.message || "Failed to upload file to GitHub");
+    const error = await response.json().catch(() => ({}));
+    throw new Error(error.message || "Failed to upload file");
   }
 
   return response.json();

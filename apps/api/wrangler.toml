@@ -1,0 +1,9 @@
+name = "atlas-api"
+main = "src/index.ts"
+compatibility_date = "2024-05-29"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ATLAS_API_KEY = "atlas-secret-dev-key"
+GITHUB_OWNER = "Logarex"
+GITHUB_REPO = "Atlas"
