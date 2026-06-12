@@ -16,7 +16,6 @@
     "expo": "~55.0.26",
     "expo-constants": "~55.0.16",
     "expo-file-system": "~55.0.22",
-    "expo-glass-effect": "^56.0.4",
     "expo-image": "~55.0.10",
     "expo-image-manipulator": "~55.0.17",
     "expo-image-picker": "~55.0.20",
