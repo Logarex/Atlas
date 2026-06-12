@@ -20,6 +20,8 @@ import { useAppTheme } from "@/theme/useAppTheme";
 import * as Sharing from "expo-sharing";
 import {
   AlertTriangle,
+  Check,
+  ChevronDown,
   Download,
   HardDrive,
   Languages,
@@ -36,6 +38,7 @@ import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Alert,
+  Modal,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -58,6 +61,7 @@ export default function ProfileScreen() {
   const { preference: languagePreference, setPreference: setLanguagePreference } =
     useLanguagePreference();
 
+  const [isLanguageModalVisible, setIsLanguageModalVisible] = useState(false);
   const [newStoreName, setNewStoreName] = useState("");
   const [newStoreNote, setNewStoreNote] = useState("");
   const [newStoreContributorName, setNewStoreContributorName] = useState("");
@@ -271,30 +275,15 @@ export default function ProfileScreen() {
             <Text style={styles.sectionTitle}>{t("profile.language.title")}</Text>
           </View>
 
-          <View style={styles.themeSelectorRow}>
-            {appLanguagePreferences.map((language) => {
-              const isActive = languagePreference === language;
-              return (
-                <Pressable
-                  key={language}
-                  onPress={() => handleLanguagePreference(language)}
-                  style={[
-                    styles.themeButton,
-                    isActive && styles.themeButtonActive
-                  ]}
-                >
-                  <Text
-                    style={[
-                      styles.themeButtonText,
-                      isActive && styles.themeButtonTextActive
-                    ]}
-                  >
-                    {t(`profile.language.${language}`)}
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
+          <Pressable
+            onPress={() => setIsLanguageModalVisible(true)}
+            style={styles.dropdownButton}
+          >
+            <Text style={styles.dropdownButtonText}>
+              {t(`profile.language.${languagePreference}`)}
+            </Text>
+            <ChevronDown color={theme.colors.muted} size={20} />
+          </Pressable>
         </View>
 
         <View style={styles.section}>
@@ -417,6 +406,50 @@ export default function ProfileScreen() {
 
         {message ? <Text style={styles.message}>{message}</Text> : null}
       </ScrollView>
+
+      <Modal
+        animationType="fade"
+        onRequestClose={() => setIsLanguageModalVisible(false)}
+        transparent={true}
+        visible={isLanguageModalVisible}
+      >
+        <Pressable
+          onPress={() => setIsLanguageModalVisible(false)}
+          style={styles.modalOverlay}
+        >
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>{t("profile.language.title")}</Text>
+            <ScrollView bounces={false}>
+              {appLanguagePreferences.map((language) => {
+                const isActive = languagePreference === language;
+                return (
+                  <Pressable
+                    key={language}
+                    onPress={() => {
+                      handleLanguagePreference(language);
+                      setIsLanguageModalVisible(false);
+                    }}
+                    style={[
+                      styles.modalOption,
+                      isActive && styles.modalOptionActive
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.modalOptionText,
+                        isActive && styles.modalOptionTextActive
+                      ]}
+                    >
+                      {t(`profile.language.${language}`)}
+                    </Text>
+                    {isActive && <Check color={theme.colors.copper} size={20} />}
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          </View>
+        </Pressable>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -609,6 +642,60 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontSize: typography.small,
       fontWeight: "800",
       lineHeight: 20
+    },
+    dropdownButton: {
+      alignItems: "center",
+      backgroundColor: colors.canvas,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      minHeight: 48,
+      marginTop: spacing.xs,
+      paddingHorizontal: spacing.md
+    },
+    dropdownButtonText: {
+      color: colors.ink,
+      fontSize: typography.body,
+      fontWeight: "600"
+    },
+    modalOverlay: {
+      backgroundColor: "rgba(0,0,0,0.5)",
+      flex: 1,
+      justifyContent: "flex-end"
+    },
+    modalContent: {
+      backgroundColor: colors.paper,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+      maxHeight: "80%",
+      padding: spacing.lg,
+      paddingBottom: spacing.lg * 2
+    },
+    modalTitle: {
+      color: colors.ink,
+      fontSize: 20,
+      fontWeight: "800",
+      marginBottom: spacing.md
+    },
+    modalOption: {
+      alignItems: "center",
+      borderBottomColor: colors.line,
+      borderBottomWidth: 1,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      paddingVertical: spacing.md
+    },
+    modalOptionActive: {},
+    modalOptionText: {
+      color: colors.ink,
+      fontSize: typography.body,
+      fontWeight: "500"
+    },
+    modalOptionTextActive: {
+      color: colors.copper,
+      fontWeight: "800"
     }
   }), [colors, typography, spacing]);
 }
