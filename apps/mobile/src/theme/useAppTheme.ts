@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
-import { useColorScheme, Platform, NativeModules, AppState, type ColorSchemeName } from "react-native";
+import { useColorScheme, Platform, NativeModules, AppState } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { spacing, typography, radii, shadows } from "./tokens";
 
@@ -9,15 +9,12 @@ const { AppIconModule } = NativeModules;
 
 export type ThemeSetting = "system" | "light" | "dark";
 
-type AppIconName = "AppIcon-Light" | "AppIcon-Dark";
+type AppIconName = "AppIcon-Light" | "AppIcon-Dark" | null;
 
-function iconNameForThemeSetting(
-  setting: ThemeSetting,
-  systemScheme: ColorSchemeName
-): AppIconName {
-  if (setting === "system") {
-    return systemScheme === "dark" ? "AppIcon-Dark" : "AppIcon-Light";
-  }
+function iconNameForThemeSetting(setting: ThemeSetting): AppIconName {
+  // When set to "system", restore the primary icon so iOS can apply
+  // its native automatic light/dark icon from the xcassets.
+  if (setting === "system") return null;
 
   return setting === "dark" ? "AppIcon-Dark" : "AppIcon-Light";
 }
@@ -26,9 +23,10 @@ async function setNativeAppIcon(iconName: AppIconName) {
   if (Platform.OS !== "ios" || !AppIconModule) return;
 
   try {
-    const currentIconName = await AppIconModule.getAlternateIconName();
+    const currentIconName: string | null = await AppIconModule.getAlternateIconName();
     if (currentIconName === iconName) return;
 
+    // null = restore primary icon (iOS handles light/dark automatically via xcassets)
     await AppIconModule.setAlternateIconName(iconName);
   } catch {
     // iOS may reject runtime icon changes while inactive; the next foreground theme pass retries it.
@@ -124,7 +122,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!hasLoadedThemeSetting) return;
 
-    void setNativeAppIcon(iconNameForThemeSetting(themeSetting, systemScheme));
+    void setNativeAppIcon(iconNameForThemeSetting(themeSetting));
   }, [hasLoadedThemeSetting, systemScheme, themeSetting]);
 
   // Re-apply the icon when the app comes back to the foreground.
@@ -135,7 +133,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     const subscription = AppState.addEventListener("change", (nextState) => {
       if (nextState === "active") {
-        void setNativeAppIcon(iconNameForThemeSetting(themeSetting, systemScheme));
+        void setNativeAppIcon(iconNameForThemeSetting(themeSetting));
       }
     });
 
