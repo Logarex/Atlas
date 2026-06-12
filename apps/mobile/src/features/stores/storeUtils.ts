@@ -195,10 +195,10 @@ export function getPhotoFullUrl(photo?: { url: string; thumbUrl?: string }) {
   if (!photo?.url) return "";
   const url = photo.url;
   
-  if (url.includes("res.cloudinary.com") && !url.includes("q_auto")) {
+  if (url.includes("res.cloudinary.com") && !url.includes("q_auto") && !url.includes("t_atlas_hd")) {
     const parts = url.split("/upload/");
     if (parts.length === 2) {
-      return `${parts[0]}/upload/q_auto,f_auto/${parts[1]}`;
+      return `${parts[0]}/upload/t_atlas_hd/${parts[1]}`;
     }
   }
   return url;
@@ -209,12 +209,10 @@ export function getPhotoThumbUrl(photo?: { url: string; thumbUrl?: string }) {
   if (photo.thumbUrl) return photo.thumbUrl;
   
   const url = photo.url;
-  if (url.includes("res.cloudinary.com")) {
+  if (url.includes("res.cloudinary.com") && !url.includes("t_atlas_thumb")) {
     const parts = url.split("/upload/");
     if (parts.length === 2) {
-      // Inject thumbnail transformations right after /upload/
-      // This will convert the image to 500px width, auto quality, and WebP format
-      return `${parts[0]}/upload/c_limit,w_500,q_auto,f_auto/${parts[1]}`;
+      return `${parts[0]}/upload/t_atlas_thumb/${parts[1]}`;
     }
   }
   return url;

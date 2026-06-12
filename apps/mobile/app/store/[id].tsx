@@ -1108,7 +1108,7 @@ export default function StoreDetailScreen() {
                       cachePolicy="memory-disk"
                       contentFit="contain"
                       source={getPhotoSource(getPhotoFullUrl(item))}
-                      style={styles.photoViewerImage}
+                      style={{ flex: 1, width: "100%" }}
                       transition={160}
                     />
                     <View style={[styles.photoViewerMeta, { paddingBottom: insets.bottom + 20 }]}>
@@ -1895,27 +1895,26 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       width: 36
     },
     photoViewerImage: {
-      alignSelf: "center",
       flex: 1,
-      maxHeight: "78%",
       width: "100%"
     },
     photoViewerMeta: {
-      backgroundColor: colors.paper,
-      borderRadius: 8,
-      gap: spacing.xs,
-      marginTop: spacing.md,
-      padding: spacing.md,
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.6)",
+      padding: spacing.lg,
       paddingTop: spacing.md
     },
     photoViewerCaption: {
-      color: colors.ink,
+      color: colors.paper,
       fontSize: typography.body,
       fontWeight: "800",
       lineHeight: 22
     },
     photoViewerCredit: {
-      color: colors.muted,
+      color: "rgba(255, 255, 255, 0.7)",
       fontSize: typography.small,
       fontWeight: "800",
       letterSpacing: 0,
