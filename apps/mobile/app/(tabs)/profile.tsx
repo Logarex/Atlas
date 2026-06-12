@@ -233,7 +233,7 @@ export default function ProfileScreen() {
             ]}
           >
             <Send color={theme.colors.copper} size={18} />
-            <Text style={styles.secondaryButtonText}>{t("profile.submitStore")}</Text>
+            <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.submitStore")}</Text>
           </Pressable>
         </View>
 
@@ -256,6 +256,8 @@ export default function ProfileScreen() {
                   ]}
                 >
                   <Text
+                    adjustsFontSizeToFit
+                    numberOfLines={1}
                     style={[
                       styles.themeButtonText,
                       isActive && styles.themeButtonTextActive
@@ -279,7 +281,7 @@ export default function ProfileScreen() {
             onPress={() => setIsLanguageModalVisible(true)}
             style={styles.dropdownButton}
           >
-            <Text style={styles.dropdownButtonText}>
+            <Text adjustsFontSizeToFit numberOfLines={1} style={styles.dropdownButtonText}>
               {t(`profile.language.${languagePreference}`)}
             </Text>
             <ChevronDown color={theme.colors.muted} size={20} />
@@ -305,6 +307,8 @@ export default function ProfileScreen() {
                   ]}
                 >
                   <Text
+                    adjustsFontSizeToFit
+                    numberOfLines={1}
                     style={[
                       styles.themeButtonText,
                       isActive && styles.themeButtonTextActive
@@ -313,6 +317,8 @@ export default function ProfileScreen() {
                     {t(`profile.cache.${cacheSize}`)}
                   </Text>
                   <Text
+                    adjustsFontSizeToFit
+                    numberOfLines={1}
                     style={[
                       styles.cacheButtonSub,
                       isActive && styles.themeButtonTextActive
@@ -328,7 +334,7 @@ export default function ProfileScreen() {
 
           <Pressable onPress={handleClearImageCache} style={styles.secondaryButton}>
             <RotateCcw color={theme.colors.copper} size={18} />
-            <Text style={styles.secondaryButtonText}>{t("profile.cache.clear")}</Text>
+            <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.cache.clear")}</Text>
           </Pressable>
         </View>
 
@@ -349,14 +355,14 @@ export default function ProfileScreen() {
               style={[styles.secondaryButton, styles.inlineActionButton]}
             >
               <Download color={theme.colors.copper} size={18} />
-              <Text style={styles.secondaryButtonText}>{t("profile.export.button")}</Text>
+              <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.export.button")}</Text>
             </Pressable>
             <Pressable
               onPress={handleImportData}
               style={[styles.secondaryButton, styles.inlineActionButton]}
             >
               <Upload color={theme.colors.copper} size={18} />
-              <Text style={styles.secondaryButtonText}>{t("profile.import.button")}</Text>
+              <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.import.button")}</Text>
             </Pressable>
           </View>
         </View>
@@ -398,7 +404,7 @@ export default function ProfileScreen() {
             style={[styles.secondaryButton, { borderColor: theme.colors.copper }]}
           >
             <Trash2 color={theme.colors.copper} size={18} />
-            <Text style={[styles.secondaryButtonText, { color: theme.colors.copper }]}>
+            <Text adjustsFontSizeToFit numberOfLines={1} style={[styles.secondaryButtonText, { color: theme.colors.copper }]}>
               {t("profile.deleteAccount")}
             </Text>
           </Pressable>
@@ -435,6 +441,8 @@ export default function ProfileScreen() {
                     ]}
                   >
                     <Text
+                      adjustsFontSizeToFit
+                      numberOfLines={1}
                       style={[
                         styles.modalOptionText,
                         isActive && styles.modalOptionTextActive
