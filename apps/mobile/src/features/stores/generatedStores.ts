@@ -2644,7 +2644,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/qibao/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-qibao-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286143/apple-qibao_p8q9ja.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 七宝",
+        "takenOn": "2026-04-19"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Qibao",
@@ -2694,7 +2703,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/shanghaiiapm/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-iapm-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286139/apple-shanghai-iapm_zbv1x5.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 上海环贸 iapm",
+        "takenOn": "2026-04-17"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Shanghai iapm",
@@ -2744,7 +2762,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/wujiaochang/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-wujiaochang-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286141/apple-wujiaochang_v5n8bw.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 五角场",
+        "takenOn": "2026-04-19"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Wujiaochang",
@@ -2794,7 +2821,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/nanjingeast/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-nanjingeast-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286140/apple-nanjing-east_c82joc.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 南京东路",
+        "takenOn": "2026-04-18"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Nanjing East",
@@ -2844,7 +2880,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/pudong/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-pudong-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286141/apple-pudong_ujsuhp.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 浦东",
+        "takenOn": "2026-04-18"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Pudong",
@@ -2894,7 +2939,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/globalharbor/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-globalharbor-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286142/apple-global-harbor_lumuuk.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 环球港",
+        "takenOn": "2026-04-19"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Global Harbor",
@@ -2944,7 +2998,24 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/jingan/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-jingan-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286138/apple-jing_an-1_ym7kht.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 静安",
+        "takenOn": "2026-04-17"
+      },
+      {
+        "id": "apple-jingan-2",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286139/apple-jing_an-2_srqhu4.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 静安",
+        "takenOn": "2026-04-17"
+      }
+    ],
     "lastVerifiedAt": "2026-05-17"
   },
   {
@@ -2990,7 +3061,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/hongkongplaza/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-hongkongplaza-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286139/apple-honk-kong-plaza_mouyzl.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 香港广场",
+        "takenOn": "2026-04-18"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Hong Kong Plaza",
@@ -3090,7 +3170,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/sanlitun/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-sanlitun-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-sanlitun_tc2jyr.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 三里屯",
+        "takenOn": "2026-04-14"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Sanlitun",
@@ -3140,7 +3229,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/livatbeijing/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-livatbeijing-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781287343/apple-beijing-livat_lceftm.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 北京荟聚",
+        "takenOn": "2026-04-15"
+      }
+    ],
     "lastVerifiedAt": "2026-05-17"
   },
   {
@@ -3186,7 +3284,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/chinacentralmall/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-chinacentralmall-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286136/apple-china-central-mall_ul2xaq.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 华贸购物中心",
+        "takenOn": "2026-04-15"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "China Central Mall",
@@ -3236,7 +3343,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/chaoyangjoycity/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-chaoyangjoycity-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286136/apple-chaoyang-joy-city_u7fcxh.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 朝阳大悦城",
+        "takenOn": "2026-04-15"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Chaoyang Joy City",
@@ -3286,7 +3402,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/wangfujing/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-wangfujing-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286137/apple-wangfujing_gnchaq.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 王府井",
+        "takenOn": "2026-04-15"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Wangfujing",
@@ -3336,7 +3461,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/xidanjoycity/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-xidanjoycity-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286137/apple-xidan-joy-city_ootc5t.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 西单大悦城",
+        "takenOn": "2026-04-15"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Xidan Joy City",
@@ -4079,7 +4213,24 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/xinjiekou/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-xinjiekou-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-xinjiekou-1_sgmtjm.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 新街口",
+        "takenOn": "2026-03-08"
+      },
+      {
+        "id": "apple-xinjiekou-2",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-xinjiekou-2_zeawuw.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 新街口",
+        "takenOn": "2026-03-08"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Nanjing IST",
@@ -4129,7 +4280,24 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/xuanwulake/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-xuanwulake-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286134/apple-xuanwu-lake-1_sq3s9t.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 玄武湖",
+        "takenOn": "2026-03-26"
+      },
+      {
+        "id": "apple-xuanwulake-2",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286134/apple-xuanwu-lake-2_ns4xyh.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 玄武湖",
+        "takenOn": "2026-03-26"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Nanjing Jinmao Place",
@@ -4239,7 +4407,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/center66wuxi/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-center66wuxi-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-center-66-wuxi_v8kpp7.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 无锡恒隆广场",
+        "takenOn": "2026-03-21"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Center 66 Wuxi",
@@ -4289,7 +4466,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com.cn/retail/suzhou/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-suzhou-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286145/apple-suzhou_sbbxqi.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple 苏州",
+        "takenOn": "2026-05-10"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18",
     "aliases": [
       "Suzhou",
@@ -5182,7 +5368,24 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com/fr/retail/aix-en-provence/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-aix-en-provence-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-aix-en-provence-2_ywengm.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple Aix-en-Provence",
+        "takenOn": "2024-08-22"
+      },
+      {
+        "id": "apple-aix-en-provence-2",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286136/apple-aix-en-provence_jimnmt.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple Aix-en-Provence",
+        "takenOn": "2024-08-22"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18"
   },
   {
@@ -10696,7 +10899,16 @@ export const generatedStores: StoreRecord[] = [
       "officialUrl": "https://www.apple.com/chfr/retail/ruederive/",
       "lastVerifiedAt": null
     },
-    "photos": [],
+    "photos": [
+      {
+        "id": "apple-rue-de-rive-1",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286133/apple-rue-de-rive_seyqpv.jpg",
+        "credit": "Louis",
+        "license": "CC-BY-4.0",
+        "caption": "Apple Rue de Rive",
+        "takenOn": "2022-02-26"
+      }
+    ],
     "lastVerifiedAt": "2026-05-18"
   },
   {
