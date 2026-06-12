@@ -360,6 +360,15 @@
       "videoWall": {
         "body": "El muro de video estructura el Forum y hace visibles las sesiones, lanzamientos y demostraciones."
       }
+    },
+    "notes": {
+      "closedAppleStoreImportedFromTheAppleWikiHistoricalOpeningDateTable": "Antigua Apple Store importada de la tabla histórica de fechas de apertura de Apple Wiki.",
+      "closedAppleWatchShopImportedFromTheUserProvidedAppleRetailStorelist": "Tienda de Apple Watch cerrada importada de la lista de tiendas proporcionada por los usuarios.",
+      "distinctiveSphericalStoreOnMarinaBay": "Tienda esférica distintiva en Marina Bay.",
+      "flagshipBelowAPublicPlazaWithTheDistinctiveFifthAvenueGlassCubeEntrance": "Tienda insignia bajo una plaza pública con la distintiva entrada en forma de cubo de cristal de la Quinta Avenida.",
+      "formerAppleStoreLocationImportedFromTheAppleWikiHistoricalRelocationMarkers": "Antigua ubicación de Apple Store importada de los marcadores históricos de reubicación de Apple Wiki.",
+      "oneOfTheFirstTwoAppleRetailStoresOpenedIn2001": "Una de las dos primeras Apple Stores abiertas en 2001.",
+      "parisFlagshipInARestoredHaussmannEraBuilding": "Tienda insignia parisina en un edificio de la época de Haussmann restaurado."
     }
   },
   "values": {

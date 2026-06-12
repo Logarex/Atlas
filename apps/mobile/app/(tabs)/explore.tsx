@@ -1,5 +1,5 @@
 import { StoreCard } from "@/features/stores/StoreCard";
-import { matchesStoreSearch } from "@/features/stores/storeUtils";
+import { matchesStoreSearch, normalizeI18nKey } from "@/features/stores/storeUtils";
 import type { ArchitectureAttribute, StoreRecord } from "@/features/stores/store.types";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
@@ -278,13 +278,13 @@ export default function ExploreScreen() {
       addOption(
         designStyles,
         `era:${store.architecture.era}`,
-        t("home.advancedFilters.eraValue", { value: store.architecture.era })
+        t("home.advancedFilters.eraValue", { value: t(`architectureDetails.eras.${normalizeI18nKey(store.architecture.era)}.title`, { defaultValue: store.architecture.era }) })
       );
       addOption(
         designStyles,
         store.architecture.typology ? `typology:${store.architecture.typology}` : null,
         store.architecture.typology
-          ? t("home.advancedFilters.typologyValue", { value: store.architecture.typology })
+          ? t("home.advancedFilters.typologyValue", { value: t(`architectureDetails.typologies.${normalizeI18nKey(store.architecture.typology)}.title`, { defaultValue: store.architecture.typology }) })
           : null
       );
     }
@@ -508,7 +508,7 @@ export default function ExploreScreen() {
 
         <Pressable
           accessibilityRole="button"
-          accessibilityExpanded={advancedFiltersVisible}
+          accessibilityState={{ expanded: advancedFiltersVisible }}
           accessibilityLabel={advancedFilterCount > 0
             ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
             : t("home.advancedFilters.button")}

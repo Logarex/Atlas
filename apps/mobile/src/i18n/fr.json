@@ -360,6 +360,15 @@
       "videoWall": {
         "body": "Le mur vidéo structure le Forum et rend visibles les sessions, lancements et démonstrations. C'est un élément clé du passage d'une boutique produit à un lieu d'événements et d'apprentissage."
       }
+    },
+    "notes": {
+      "closedAppleStoreImportedFromTheAppleWikiHistoricalOpeningDateTable": "Ancien Apple Store importé du tableau historique des ouvertures d'Apple Wiki.",
+      "closedAppleWatchShopImportedFromTheUserProvidedAppleRetailStorelist": "Boutique Apple Watch fermée importée de la liste de magasins fournie par les utilisateurs.",
+      "distinctiveSphericalStoreOnMarinaBay": "Boutique sphérique distincte sur Marina Bay.",
+      "flagshipBelowAPublicPlazaWithTheDistinctiveFifthAvenueGlassCubeEntrance": "Flagship situé sous une place publique, avec la célèbre entrée en cube de verre de la Cinquième Avenue.",
+      "formerAppleStoreLocationImportedFromTheAppleWikiHistoricalRelocationMarkers": "Ancien emplacement d'Apple Store importé des marqueurs historiques de déménagement d'Apple Wiki.",
+      "oneOfTheFirstTwoAppleRetailStoresOpenedIn2001": "L'un des deux premiers Apple Stores ouverts en 2001.",
+      "parisFlagshipInARestoredHaussmannEraBuilding": "Flagship parisien situé dans un bâtiment haussmannien restauré."
     }
   },
   "values": {

@@ -221,6 +221,17 @@ export function getPhotoThumbUrl(photo?: { url: string; thumbUrl?: string }) {
   return url;
 }
 
+export function normalizeI18nKey(str: string | undefined): string {
+  if (!str) return '';
+  return str
+    .split(/[^a-zA-Z0-9]+/)
+    .map((word, index) => {
+      if (index === 0) return word.toLowerCase();
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join('');
+}
+
 export function getStorePlace(store: StoreRecord) {
   return compactSearchParts([store.city, store.region, store.countryName ?? store.countryCode])
     .join(", ");

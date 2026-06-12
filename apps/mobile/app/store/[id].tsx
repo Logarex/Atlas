@@ -11,6 +11,7 @@ import {
   getStoreName,
   getStorePlace,
   normalizePhotoUri,
+  normalizeI18nKey,
   statusEmojis
 } from "@/features/stores/storeUtils";
 import { createShareCardJpegBase64 } from "@/features/stores/shareCardImage";
@@ -767,14 +768,14 @@ export default function StoreDetailScreen() {
               onPress={() =>
                 toggleArchitectureDetail({
                   kind: store.architecture.typology ? "typology" : "era",
-                  label: t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${architectureSummary}.title`, { defaultValue: architectureSummary }),
-                  value: architectureSummary
+                  label: t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${normalizeI18nKey(architectureSummary)}.title`, { defaultValue: architectureSummary }),
+                  value: normalizeI18nKey(architectureSummary)
                 })
               }
               style={styles.architectureTitleButton}
             >
               <Text style={styles.architectureTitle}>
-                {t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${architectureSummary}.title`, { defaultValue: architectureSummary })}
+                {t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${normalizeI18nKey(architectureSummary)}.title`, { defaultValue: architectureSummary })}
               </Text>
               <Info color={theme.colors.muted} size={15} />
             </Pressable>
@@ -783,14 +784,14 @@ export default function StoreDetailScreen() {
               onPress={() =>
                 toggleArchitectureDetail({
                   kind: "era",
-                  label: t(`architectureDetails.eras.${store.architecture.era}.title`, { defaultValue: store.architecture.era }),
-                  value: store.architecture.era
+                  label: t(`architectureDetails.eras.${normalizeI18nKey(store.architecture.era)}.title`, { defaultValue: store.architecture.era }),
+                  value: normalizeI18nKey(store.architecture.era)
                 })
               }
               style={styles.architectureEraButton}
             >
               <Text style={styles.architectureEraText}>
-                {t("store.architectureEra", { era: t(`architectureDetails.eras.${store.architecture.era}.title`, { defaultValue: store.architecture.era }) })}
+                {t("store.architectureEra", { era: t(`architectureDetails.eras.${normalizeI18nKey(store.architecture.era)}.title`, { defaultValue: store.architecture.era }) })}
               </Text>
             </Pressable>
           </View>
@@ -849,7 +850,9 @@ export default function StoreDetailScreen() {
                 }
                 style={styles.architectureNoteButton}
               >
-                <Text style={styles.architectureNote}>{architectureNote}</Text>
+                <Text style={styles.architectureNote}>
+                  {t(`architectureDetails.notes.${normalizeI18nKey(architectureNote)}`, { defaultValue: architectureNote })}
+                </Text>
               </Pressable>
             ))}
           </View>
@@ -883,7 +886,7 @@ export default function StoreDetailScreen() {
                   </Text>
                   {store.architecture.notes.map((architectureNote) => (
                     <Text key={architectureNote} style={styles.architectureContextText}>
-                      {architectureNote}
+                      {t(`architectureDetails.notes.${normalizeI18nKey(architectureNote)}`, { defaultValue: architectureNote })}
                     </Text>
                   ))}
                 </View>
