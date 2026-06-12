@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
-import { useColorScheme, Platform, NativeModules, type ColorSchemeName } from "react-native";
+import { useColorScheme, Platform, NativeModules, AppState, type ColorSchemeName } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { spacing, typography, radii, shadows } from "./tokens";
 
@@ -126,6 +126,21 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     void setNativeAppIcon(iconNameForThemeSetting(themeSetting, systemScheme));
   }, [hasLoadedThemeSetting, systemScheme, themeSetting]);
+
+  // Re-apply the icon when the app comes back to the foreground.
+  // iOS may have rejected the icon change while the app was inactive
+  // (e.g. a system theme change happened in the background).
+  useEffect(() => {
+    if (!hasLoadedThemeSetting) return;
+
+    const subscription = AppState.addEventListener("change", (nextState) => {
+      if (nextState === "active") {
+        void setNativeAppIcon(iconNameForThemeSetting(themeSetting, systemScheme));
+      }
+    });
+
+    return () => subscription.remove();
+  }, [hasLoadedThemeSetting, themeSetting, systemScheme]);
 
   const value = useMemo(
     () => ({

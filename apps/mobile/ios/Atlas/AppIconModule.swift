@@ -28,11 +28,6 @@ class AppIconModule: NSObject {
       return
     }
 
-    guard UIApplication.shared.applicationState == .active else {
-      reject("APP_INACTIVE", "App icon changes require an active application.", nil)
-      return
-    }
-    
     let currentIconName = UIApplication.shared.alternateIconName
     let targetIconName = (iconName == "" || iconName == nil) ? nil : iconName
     
