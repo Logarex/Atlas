@@ -154,6 +154,8 @@ export default function StoreDetailScreen() {
   const [photoPickerOpen, setPhotoPickerOpen] = useState(false);
   const [shareModalVisible, setShareModalVisible] = useState(false);
   const [shareFeedback, setShareFeedback] = useState<InlineFeedback | null>(null);
+  const [isSubmittingChange, setIsSubmittingChange] = useState(false);
+  const [isSubmittingPhoto, setIsSubmittingPhoto] = useState(false);
   const photoPickerOpenRef = useRef(false);
   const shareCardRef = useRef<View>(null);
   const { addVisit, removeVisit, storeVisits } = useLocalVisits(store?.id);
@@ -400,6 +402,7 @@ export default function StoreDetailScreen() {
   }
 
   async function handleSubmitChange() {
+    if (isSubmittingChange) return;
     const trimmedFieldPath = fieldPath.trim();
     const trimmedProposedValue = proposedValue.trim();
 
@@ -412,6 +415,7 @@ export default function StoreDetailScreen() {
     }
 
     try {
+      setIsSubmittingChange(true);
       setContributionFeedback({ message: t("store.submitting"), tone: "info" });
       await submitStoreChange({
         storeId,
@@ -430,6 +434,8 @@ export default function StoreDetailScreen() {
         message: error instanceof Error ? error.message : t("store.submitFailed"),
         tone: "error"
       });
+    } finally {
+      setIsSubmittingChange(false);
     }
   }
 
@@ -461,10 +467,16 @@ export default function StoreDetailScreen() {
   }
 
   async function handleSavePrivatePhoto() {
-    const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!permission.granted) {
-      setContributionFeedback({ message: t("store.photoPermissionDenied"), tone: "error" });
-      return;
+    // Check permission status first without showing a dialog.
+    // This way, if permission is already granted the picker opens immediately
+    // on the first tap. The dialog is only shown when truly needed.
+    const existingPermission = await ImagePicker.getMediaLibraryPermissionsAsync();
+    if (!existingPermission.granted) {
+      const requested = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!requested.granted) {
+        setContributionFeedback({ message: t("store.photoPermissionDenied"), tone: "error" });
+        return;
+      }
     }
 
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -495,6 +507,7 @@ export default function StoreDetailScreen() {
   }
 
   async function handleSubmitPhoto() {
+    if (isSubmittingPhoto) return;
     if (!photoAsset) {
       setContributionFeedback({ message: t("store.photoRequired"), tone: "error" });
       return;
@@ -506,6 +519,7 @@ export default function StoreDetailScreen() {
     }
 
     try {
+      setIsSubmittingPhoto(true);
       setContributionFeedback({ message: t("store.submitting"), tone: "info" });
       await submitPhoto({
         storeId,
@@ -531,6 +545,8 @@ export default function StoreDetailScreen() {
         message: error instanceof Error ? error.message : t("store.submitFailed"),
         tone: "error"
       });
+    } finally {
+      setIsSubmittingPhoto(false);
     }
   }
 
@@ -1134,7 +1150,11 @@ export default function StoreDetailScreen() {
                   value={contributorName}
                 />
               </View>
-              <Pressable style={styles.primaryButton} onPress={handleSubmitChange}>
+              <Pressable
+                disabled={isSubmittingChange}
+                style={[styles.primaryButton, isSubmittingChange && styles.buttonDisabled]}
+                onPress={handleSubmitChange}
+              >
                 <Send color={theme.colors.paper} size={18} />
                 <Text style={styles.primaryButtonText}>{t("store.submitCorrection")}</Text>
               </Pressable>
@@ -1225,7 +1245,11 @@ export default function StoreDetailScreen() {
                 <Text style={styles.switchLabel}>{t("store.peopleVisible")}</Text>
                 <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
               </View>
-              <Pressable style={styles.primaryButton} onPress={handleSubmitPhoto}>
+              <Pressable
+                disabled={isSubmittingPhoto}
+                style={[styles.primaryButton, isSubmittingPhoto && styles.buttonDisabled]}
+                onPress={handleSubmitPhoto}
+              >
                 <Send color={theme.colors.paper} size={18} />
                 <Text style={styles.primaryButtonText}>{t("store.submitPhoto")}</Text>
               </Pressable>

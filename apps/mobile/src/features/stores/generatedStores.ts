@@ -4183,7 +4183,7 @@ export const generatedStores: StoreRecord[] = [
     "photos": [
       {
         "id": "apple-wondercity-1",
-        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-wonder-city.webp?raw=true",
+        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-wonder-city.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple 虹悦城 facade",
@@ -5612,7 +5612,7 @@ export const generatedStores: StoreRecord[] = [
     "photos": [
       {
         "id": "apple-champs-elysees-1",
-        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-champs-elysees-1.webp?raw=true",
+        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-champs-elysees-1.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Champs-Élysées facade",
@@ -5620,7 +5620,7 @@ export const generatedStores: StoreRecord[] = [
       },
       {
         "id": "apple-champs-elysees-2",
-        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-champs-elysees-2.webp?raw=true",
+        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-champs-elysees-2.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Champs-Élysées interior",
@@ -5679,7 +5679,7 @@ export const generatedStores: StoreRecord[] = [
     "photos": [
       {
         "id": "apple-marche-saint-germain-1",
-        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-marche-saint-germain.webp?raw=true",
+        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-marche-saint-germain.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Marché Saint-Germain facade",
@@ -5738,7 +5738,7 @@ export const generatedStores: StoreRecord[] = [
     "photos": [
       {
         "id": "apple-opera-1",
-        "url": "https://github.com/Logarex/Atlas/blob/main/apps/mobile/assets/stores/apple-opera.webp?raw=true",
+        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-opera.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple Opéra facade",

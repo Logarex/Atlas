@@ -140,8 +140,12 @@
     "cache": {
       "title": "Cache images",
       "light": "Léger",
+      "lightDesc": "32 Mo disque",
       "balanced": "Équilibré",
+      "balancedDesc": "128 Mo disque",
       "large": "Grand",
+      "largeDesc": "384 Mo disque",
+      "hint": "Définit combien de photos de boutiques sont gardées sur le disque entre les sessions. Un cache plus grand réduit les téléchargements quand tu revisites des boutiques.",
       "clear": "Vider le cache",
       "cleared": "Cache images vidé."
     }

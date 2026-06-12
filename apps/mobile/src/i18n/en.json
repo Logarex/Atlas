@@ -140,8 +140,12 @@
     "cache": {
       "title": "Image cache",
       "light": "Light",
+      "lightDesc": "32 MB disk",
       "balanced": "Balanced",
+      "balancedDesc": "128 MB disk",
       "large": "Large",
+      "largeDesc": "384 MB disk",
+      "hint": "Controls how many store photos are kept on disk between sessions. A larger cache means fewer network requests when revisiting stores.",
       "clear": "Clear cache",
       "cleared": "Image cache cleared."
     }

@@ -62,6 +62,7 @@ export default function ProfileScreen() {
   const [newStoreNote, setNewStoreNote] = useState("");
   const [newStoreContributorName, setNewStoreContributorName] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+  const [isSubmittingStore, setIsSubmittingStore] = useState(false);
 
   function visitCountLabel(count: number) {
     return t("counts.visit", { count });
@@ -98,7 +99,9 @@ export default function ProfileScreen() {
   }
 
   async function handleNewStoreProposal() {
+    if (isSubmittingStore) return;
     try {
+      setIsSubmittingStore(true);
       setMessage(t("profile.submittingStore"));
       await submitStoreChange({
         storeId: null,
@@ -113,6 +116,8 @@ export default function ProfileScreen() {
       setMessage(t("profile.storeSubmitted"));
     } catch (error) {
       setMessage(error instanceof Error ? error.message : t("profile.failed"));
+    } finally {
+      setIsSubmittingStore(false);
     }
   }
 
@@ -216,11 +221,11 @@ export default function ProfileScreen() {
             value={newStoreContributorName}
           />
           <Pressable
-            disabled={newStoreName.trim().length === 0}
+            disabled={newStoreName.trim().length === 0 || isSubmittingStore}
             onPress={handleNewStoreProposal}
             style={[
               styles.secondaryButton,
-              newStoreName.trim().length === 0 && styles.disabledButton
+              (newStoreName.trim().length === 0 || isSubmittingStore) && styles.disabledButton
             ]}
           >
             <Send color={theme.colors.copper} size={18} />
@@ -318,10 +323,19 @@ export default function ProfileScreen() {
                   >
                     {t(`profile.cache.${cacheSize}`)}
                   </Text>
+                  <Text
+                    style={[
+                      styles.cacheButtonSub,
+                      isActive && styles.themeButtonTextActive
+                    ]}
+                  >
+                    {t(`profile.cache.${cacheSize}Desc`)}
+                  </Text>
                 </Pressable>
               );
             })}
           </View>
+          <Text style={styles.cacheHint}>{t("profile.cache.hint")}</Text>
 
           <Pressable onPress={handleClearImageCache} style={styles.secondaryButton}>
             <RotateCcw color={theme.colors.copper} size={18} />
@@ -539,9 +553,11 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       borderRadius: 8,
       borderWidth: 1,
       flex: 1,
+      gap: 2,
       justifyContent: "center",
-      minHeight: 40,
-      paddingHorizontal: spacing.sm
+      minHeight: 48,
+      paddingHorizontal: spacing.sm,
+      paddingVertical: spacing.sm
     },
     themeButtonActive: {
       backgroundColor: colors.copper,
@@ -555,6 +571,19 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     themeButtonTextActive: {
       color: colors.paper,
       fontWeight: "900"
+    },
+    cacheButtonSub: {
+      color: colors.muted,
+      fontSize: 10,
+      fontWeight: "700",
+      letterSpacing: 0.2,
+      textAlign: "center"
+    },
+    cacheHint: {
+      color: colors.muted,
+      fontSize: typography.caption,
+      lineHeight: 18,
+      marginTop: spacing.xs
     },
     message: {
       color: colors.copper,

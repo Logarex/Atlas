@@ -12,8 +12,7 @@ function encodeContentPath(path: string) {
 
 export async function createGithubIssue(title: string, body: string, labels: string[] = ["contribution"]) {
   if (!GITHUB_TOKEN) {
-    console.warn("GitHub token not configured. Contribution will not be sent.");
-    return null;
+    throw new Error("Contributions are not configured on this build. Please contact the maintainer.");
   }
 
   const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/issues`, {
@@ -45,8 +44,7 @@ export async function uploadGithubFile(
   branch = GITHUB_BRANCH
 ) {
   if (!GITHUB_TOKEN) {
-    console.warn("GitHub token not configured. File upload will not be sent.");
-    return null;
+    throw new Error("Contributions are not configured on this build. Please contact the maintainer.");
   }
 
   const response = await fetch(
