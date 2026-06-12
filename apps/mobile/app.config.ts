@@ -8,6 +8,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   version: "0.0.1",
   orientation: "portrait",
   userInterfaceStyle: "automatic",
+  locales: {
+    en: "./src/i18n/infoPlist/en.json",
+    fr: "./src/i18n/infoPlist/fr.json"
+  },
   icon: "./assets/icon.png",
   ios: {
     supportsTablet: true,
