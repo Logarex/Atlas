@@ -41,6 +41,15 @@
     "officialUrl": "https://www.apple.com.cn/retail/livatbeijing/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-livatbeijing-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781287343/apple-beijing-livat_lceftm.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 北京荟聚",
+      "takenOn": "2026-04-15"
+    }
+  ],
   "lastVerifiedAt": "2026-05-17"
 }

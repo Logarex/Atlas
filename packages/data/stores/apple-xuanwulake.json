@@ -41,7 +41,24 @@
     "officialUrl": "https://www.apple.com.cn/retail/xuanwulake/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-xuanwulake-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286134/apple-xuanwu-lake-1_sq3s9t.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 玄武湖",
+      "takenOn": "2026-03-26"
+    },
+    {
+      "id": "apple-xuanwulake-2",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286134/apple-xuanwu-lake-2_ns4xyh.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 玄武湖",
+      "takenOn": "2026-03-26"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Nanjing Jinmao Place",

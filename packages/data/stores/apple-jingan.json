@@ -41,6 +41,23 @@
     "officialUrl": "https://www.apple.com.cn/retail/jingan/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-jingan-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286138/apple-jing_an-1_ym7kht.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 静安",
+      "takenOn": "2026-04-17"
+    },
+    {
+      "id": "apple-jingan-2",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286139/apple-jing_an-2_srqhu4.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 静安",
+      "takenOn": "2026-04-17"
+    }
+  ],
   "lastVerifiedAt": "2026-05-17"
 }

@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/xidanjoycity/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-xidanjoycity-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286137/apple-xidan-joy-city_ootc5t.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 西单大悦城",
+      "takenOn": "2026-04-15"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Xidan Joy City",

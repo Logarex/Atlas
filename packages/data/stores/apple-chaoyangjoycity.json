@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/chaoyangjoycity/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-chaoyangjoycity-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286136/apple-chaoyang-joy-city_u7fcxh.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 朝阳大悦城",
+      "takenOn": "2026-04-15"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Chaoyang Joy City",

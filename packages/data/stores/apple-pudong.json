@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/pudong/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-pudong-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286141/apple-pudong_ujsuhp.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 浦东",
+      "takenOn": "2026-04-18"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Pudong",

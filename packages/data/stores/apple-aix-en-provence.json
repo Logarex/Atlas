@@ -41,6 +41,23 @@
     "officialUrl": "https://www.apple.com/fr/retail/aix-en-provence/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-aix-en-provence-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-aix-en-provence-2_ywengm.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple Aix-en-Provence",
+      "takenOn": "2024-08-22"
+    },
+    {
+      "id": "apple-aix-en-provence-2",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286136/apple-aix-en-provence_jimnmt.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple Aix-en-Provence",
+      "takenOn": "2024-08-22"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18"
 }

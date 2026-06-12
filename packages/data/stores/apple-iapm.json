@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/shanghaiiapm/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-iapm-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286139/apple-shanghai-iapm_zbv1x5.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 上海环贸 iapm",
+      "takenOn": "2026-04-17"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Shanghai iapm",

@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/qibao/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-qibao-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286143/apple-qibao_p8q9ja.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 七宝",
+      "takenOn": "2026-04-19"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Qibao",

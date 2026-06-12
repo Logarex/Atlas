@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/center66wuxi/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-center66wuxi-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-center-66-wuxi_v8kpp7.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 无锡恒隆广场",
+      "takenOn": "2026-03-21"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Center 66 Wuxi",

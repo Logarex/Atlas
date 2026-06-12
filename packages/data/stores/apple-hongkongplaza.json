@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/hongkongplaza/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-hongkongplaza-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286139/apple-honk-kong-plaza_mouyzl.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 香港广场",
+      "takenOn": "2026-04-18"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Hong Kong Plaza",

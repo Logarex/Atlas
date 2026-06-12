@@ -41,6 +41,15 @@
     "officialUrl": "https://www.apple.com/chfr/retail/ruederive/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-rue-de-rive-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286133/apple-rue-de-rive_seyqpv.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple Rue de Rive",
+      "takenOn": "2022-02-26"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18"
 }

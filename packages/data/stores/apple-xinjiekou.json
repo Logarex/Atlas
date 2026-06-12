@@ -41,7 +41,24 @@
     "officialUrl": "https://www.apple.com.cn/retail/xinjiekou/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-xinjiekou-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-xinjiekou-1_sgmtjm.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 新街口",
+      "takenOn": "2026-03-08"
+    },
+    {
+      "id": "apple-xinjiekou-2",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286135/apple-xinjiekou-2_zeawuw.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 新街口",
+      "takenOn": "2026-03-08"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Nanjing IST",

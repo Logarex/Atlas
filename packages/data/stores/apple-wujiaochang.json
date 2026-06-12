@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/wujiaochang/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-wujiaochang-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286141/apple-wujiaochang_v5n8bw.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 五角场",
+      "takenOn": "2026-04-19"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Wujiaochang",

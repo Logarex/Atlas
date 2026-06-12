@@ -41,7 +41,16 @@
     "officialUrl": "https://www.apple.com.cn/retail/wangfujing/",
     "lastVerifiedAt": null
   },
-  "photos": [],
+  "photos": [
+    {
+      "id": "apple-wangfujing-1",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781286137/apple-wangfujing_gnchaq.jpg",
+      "credit": "Louis",
+      "license": "CC-BY-4.0",
+      "caption": "Apple 王府井",
+      "takenOn": "2026-04-15"
+    }
+  ],
   "lastVerifiedAt": "2026-05-18",
   "aliases": [
     "Wangfujing",
