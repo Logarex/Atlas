@@ -194,11 +194,12 @@ export function normalizePhotoUri(url: string) {
 export function getPhotoFullUrl(photo?: { url: string; thumbUrl?: string }) {
   if (!photo?.url) return "";
   const url = photo.url;
-  
+
   if (url.includes("res.cloudinary.com") && !url.includes("q_auto") && !url.includes("t_atlas_hd")) {
     const parts = url.split("/upload/");
     if (parts.length === 2) {
-      return `${parts[0]}/upload/t_atlas_hd/${parts[1]}`;
+      const cleanPath = parts[1].replace(/^v\d+\//, "");
+      return `${parts[0]}/upload/t_atlas_hd/${cleanPath}`;
     }
   }
   return url;
@@ -207,12 +208,14 @@ export function getPhotoFullUrl(photo?: { url: string; thumbUrl?: string }) {
 export function getPhotoThumbUrl(photo?: { url: string; thumbUrl?: string }) {
   if (!photo?.url) return "";
   if (photo.thumbUrl) return photo.thumbUrl;
-  
+
   const url = photo.url;
   if (url.includes("res.cloudinary.com") && !url.includes("t_atlas_thumb")) {
     const parts = url.split("/upload/");
     if (parts.length === 2) {
-      return `${parts[0]}/upload/t_atlas_thumb/${parts[1]}`;
+      // Strip the version (e.g., v1781282008/) to bypass CDN cache of previous 400 errors
+      const cleanPath = parts[1].replace(/^v\d+\//, "");
+      return `${parts[0]}/upload/t_atlas_thumb/${cleanPath}`;
     }
   }
   return url;
