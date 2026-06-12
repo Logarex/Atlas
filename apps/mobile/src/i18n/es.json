@@ -264,42 +264,54 @@
     "typologyFallback": "{{value}} describe la forma general de la tienda: su entorno, relación con la calle o centro comercial, y el tipo de experiencia minorista que apoya.",
     "eras": {
       "glassCubeFlagship": {
-        "body": "Esta época abarca tiendas emblemáticas donde la estructura misma se convierte en una señal urbana. El cristal, la transparencia y las escaleras monumentales convierten la entrada en un marcador público y un umbral."
+        "body": "Esta época abarca tiendas emblemáticas donde la estructura misma se convierte en una señal urbana. El cristal, la transparencia y las escaleras monumentales convierten la entrada en un marcador público y un umbral.",
+        "title": "Flagship Cubo de Cristal"
       },
       "originalRetail": {
-        "body": "Las primeras tiendas de Apple establecieron el lenguaje comercial central: circulación simple, mesas de productos, servicio Genius Bar y un interior muy legible."
+        "body": "Las primeras tiendas de Apple establecieron el lenguaje comercial central: circulación simple, mesas de productos, servicio Genius Bar y un interior muy legible.",
+        "title": "Diseño Original"
       },
       "townSquare": {
-        "body": "La época Town Square replantea la tienda como un lugar cívico: Forum, muro de video, plantas, asientos y Today at Apple. Las recientes tiendas insignia apuntan a integrarse con la ciudad, edificios patrimoniales o espacios públicos."
+        "body": "La época Town Square replantea la tienda como un lugar cívico: Forum, muro de video, plantas, asientos y Today at Apple. Las recientes tiendas insignia apuntan a integrarse con la ciudad, edificios patrimoniales o espacios públicos.",
+        "title": "Town Square"
       },
       "unknown": {
-        "body": "La época exacta del diseño aún no está documentada en Atlas Places. El registro mantiene elementos verificados y puede mejorarse con una fuente confiable o una foto."
+        "body": "La época exacta del diseño aún no está documentada en Atlas Places. El registro mantiene elementos verificados y puede mejorarse con una fuente confiable o una foto.",
+        "title": "Desconocido"
       }
     },
     "typologies": {
       "classic": {
-        "body": "Un tipo de tienda histórica de Apple, a menudo en un centro comercial, con una fachada simple, mesas de productos y servicio hacia la parte trasera. Su prioridad es el flujo claro."
+        "body": "Un tipo de tienda histórica de Apple, a menudo en un centro comercial, con una fachada simple, mesas de productos y servicio hacia la parte trasera. Su prioridad es el flujo claro.",
+        "title": "Clásico"
       },
       "classicUpgrade": {
-        "body": "Una tienda clásica actualizada con detalles nuevos: materiales más cálidos, zonas de servicio más claras y, a veces, un Forum o muro de video."
+        "body": "Una tienda clásica actualizada con detalles nuevos: materiales más cálidos, zonas de servicio más claras y, a veces, un Forum o muro de video.",
+        "title": "Clásico Mejorado"
       },
       "historicUrbanFlagship": {
-        "body": "Una tienda insignia urbana insertada en un edificio patrimonial. La tarea arquitectónica es preservar la fachada, volúmenes o detalles decorativos mientras se introduce el lenguaje contemporáneo."
+        "body": "Una tienda insignia urbana insertada en un edificio patrimonial. La tarea arquitectónica es preservar la fachada, volúmenes o detalles decorativos mientras se introduce el lenguaje contemporáneo.",
+        "title": "Flagship Urbano Histórico"
       },
       "mallStore": {
-        "body": "Una tienda integrada en un centro comercial. Su arquitectura debe atraer a la gente, organizar la entrada rápidamente y seguir siendo legible dentro de un espacio limitado."
+        "body": "Una tienda integrada en un centro comercial. Su arquitectura debe atraer a la gente, organizar la entrada rápidamente y seguir siendo legible dentro de un espacio limitado.",
+        "title": "Tienda de Centro Comercial"
       },
       "nsd": {
-        "body": "NSD apunta a tiendas de nueva generación: fachadas más abiertas, Avenue, Forum, materiales naturales y una separación más clara entre descubrimiento y servicio."
+        "body": "NSD apunta a tiendas de nueva generación: fachadas más abiertas, Avenue, Forum, materiales naturales y una separación más clara entre descubrimiento y servicio.",
+        "title": "Nuevo Diseño"
       },
       "standalonePavilion": {
-        "body": "Un pabellón independiente concebido como un objeto arquitectónico completo. Puede usar transparencia, vistas y el espacio público circundante."
+        "body": "Un pabellón independiente concebido como un objeto arquitectónico completo. Puede usar transparencia, vistas y el espacio público circundante.",
+        "title": "Pabellón Independiente"
       },
       "urbanFlagship": {
-        "body": "Una gran tienda en la ciudad diseñada como un destino. Combina visibilidad, capacidad, áreas de servicio y a veces múltiples niveles para convertirse en un marcador en su distrito."
+        "body": "Una gran tienda en la ciudad diseñada como un destino. Combina visibilidad, capacidad, áreas de servicio y a veces múltiples niveles para convertirse en un marcador en su distrito.",
+        "title": "Flagship Urbano"
       },
       "unknown": {
-        "body": "La tipología aún no está completamente calificada. Los atributos mostrados y las notas aún ayudan a interpretar el registro, pero una corrección puede refinar el formato exacto."
+        "body": "La tipología aún no está completamente calificada. Los atributos mostrados y las notas aún ayudan a interpretar el registro, pero una corrección puede refinar el formato exacto.",
+        "title": "Desconocido"
       },
       "vintageD2": {
         "body": "Un formato antiguo vinculado a generaciones intermedias del diseño minorista de Apple. Sigue siendo muy funcional, antes de que los Forums, Avenues y los recientes muros de video se generalizaran."

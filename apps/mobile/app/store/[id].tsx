@@ -15,14 +15,16 @@ import {
 } from "@/features/stores/storeUtils";
 import { createShareCardJpegBase64 } from "@/features/stores/shareCardImage";
 import { useStores } from "@/features/stores/useStores";
+import { getArchitectureDetailImage } from "@/features/architecture/architectureImages";
 import {
   removeLocalUserPhoto,
   saveLocalUserPhoto,
   useLocalUserPhotos
 } from "@/features/user/localUserData";
 import { useLocalVisits } from "@/features/visits/localVisits";
-import { formatDate, isISODate, todayISO } from "@/lib/date";
+import { formatDate, isISODate, parseISODate, todayISO } from "@/lib/date";
 import { useAppTheme } from "@/theme/useAppTheme";
+import DateTimePicker from "@react-native-community/datetimepicker";
 import { Image as ExpoImage } from "expo-image";
 import * as FileSystem from "expo-file-system/legacy";
 import * as ImagePicker from "expo-image-picker";
@@ -143,6 +145,7 @@ export default function StoreDetailScreen() {
   const { stores } = useStores();
   const store = stores.find((item) => item.id === id) ?? null;
   const [visitDate, setVisitDate] = useState(todayISO());
+  const [showDatePicker, setShowDatePicker] = useState(false);
   const [visitNote, setVisitNote] = useState("");
   const [visitFeedback, setVisitFeedback] = useState<InlineFeedback | null>(null);
   const [changeModalVisible, setChangeModalVisible] = useState(false);
@@ -236,11 +239,9 @@ export default function StoreDetailScreen() {
     place
   });
   const shareMessageWithUrl = officialUrl ? `${shareMessage}\n${officialUrl}` : shareMessage;
-  const architectureDetailImageSource = shareCoverPhoto
-    ? getPhotoSource(getPhotoThumbUrl(shareCoverPhoto))
-    : privatePhotos[0]
-      ? { uri: privatePhotos[0].uri }
-      : null;
+  const architectureDetailImageSource = selectedArchitectureDetail 
+    ? getArchitectureDetailImage(selectedArchitectureDetail.value)
+    : undefined;
 
   function getArchitectureDetailBody(detail: ArchitectureDetailSelection) {
     if (detail.kind === "note") return detail.value;
@@ -656,14 +657,33 @@ export default function StoreDetailScreen() {
 
       <View style={styles.visitBox}>
         <CalendarDays color={theme.colors.teal} size={20} />
-        <TextInput
-          accessibilityLabel={t("store.visitDateLabel")}
-          onChangeText={setVisitDate}
-          placeholder="YYYY-MM-DD"
-          placeholderTextColor={theme.colors.muted}
-          style={styles.dateInput}
-          value={visitDate}
-        />
+        {Platform.OS === "ios" ? (
+          <DateTimePicker
+            value={parseISODate(visitDate)}
+            mode="date"
+            display="compact"
+            onChange={(_, date) => {
+              if (date) setVisitDate(date.toISOString().split("T")[0]);
+            }}
+          />
+        ) : (
+          <Pressable onPress={() => setShowDatePicker(true)}>
+            <Text style={[styles.dateInput, { paddingVertical: 8 }]}>{visitDate}</Text>
+          </Pressable>
+        )}
+        {Platform.OS !== "ios" && showDatePicker && (
+          <DateTimePicker
+            value={parseISODate(visitDate)}
+            mode="date"
+            display="default"
+            onChange={(event, date) => {
+              setShowDatePicker(false);
+              if (event.type === "set" && date) {
+                setVisitDate(date.toISOString().split("T")[0]);
+              }
+            }}
+          />
+        )}
       </View>
       <TextInput
         accessibilityLabel={t("store.visitNoteLabel")}
@@ -746,14 +766,16 @@ export default function StoreDetailScreen() {
               accessibilityRole="button"
               onPress={() =>
                 toggleArchitectureDetail({
-                  kind: "typology",
-                  label: architectureSummary,
+                  kind: store.architecture.typology ? "typology" : "era",
+                  label: t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${architectureSummary}.title`, { defaultValue: architectureSummary }),
                   value: architectureSummary
                 })
               }
               style={styles.architectureTitleButton}
             >
-              <Text style={styles.architectureTitle}>{architectureSummary}</Text>
+              <Text style={styles.architectureTitle}>
+                {t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${architectureSummary}.title`, { defaultValue: architectureSummary })}
+              </Text>
               <Info color={theme.colors.muted} size={15} />
             </Pressable>
             <Pressable
@@ -761,14 +783,14 @@ export default function StoreDetailScreen() {
               onPress={() =>
                 toggleArchitectureDetail({
                   kind: "era",
-                  label: store.architecture.era,
+                  label: t(`architectureDetails.eras.${store.architecture.era}.title`, { defaultValue: store.architecture.era }),
                   value: store.architecture.era
                 })
               }
               style={styles.architectureEraButton}
             >
               <Text style={styles.architectureEraText}>
-                {t("store.architectureEra", { era: store.architecture.era })}
+                {t("store.architectureEra", { era: t(`architectureDetails.eras.${store.architecture.era}.title`, { defaultValue: store.architecture.era }) })}
               </Text>
             </Pressable>
           </View>

@@ -48,6 +48,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   plugins: [
     "expo-router",
     "expo-localization",
+    "@react-native-community/datetimepicker",
     [
       "expo-image-picker",
       {

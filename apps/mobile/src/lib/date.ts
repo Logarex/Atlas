@@ -8,6 +8,12 @@ export function isISODate(value: string) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 
+export function parseISODate(value: string) {
+  if (!isISODate(value)) return new Date();
+  const [y, m, d] = value.split('-');
+  return new Date(parseInt(y, 10), parseInt(m, 10) - 1, parseInt(d, 10));
+}
+
 export function formatDate(value: string | null | undefined, fallback: string) {
   if (!value) return fallback;
   return value;

@@ -264,42 +264,54 @@
     "typologyFallback": "{{value}} describes the store's overall form: its setting, relationship to the street or mall, and the kind of retail experience it supports.",
     "eras": {
       "glassCubeFlagship": {
-        "body": "This era covers landmark flagships where the structure itself becomes an urban signal. Glass, transparency, and monumental stairs turn the entrance into both a public marker and a store threshold."
+        "body": "This era covers landmark flagships where the structure itself becomes an urban signal. Glass, transparency, and monumental stairs turn the entrance into both a public marker and a store threshold.",
+        "title": "Glass Cube Flagship"
       },
       "originalRetail": {
-        "body": "Apple's earliest stores established the core retail language: simple circulation, product tables, Genius Bar service, and a highly readable interior. They mark Apple's move into a tightly controlled physical experience."
+        "body": "Apple's earliest stores established the core retail language: simple circulation, product tables, Genius Bar service, and a highly readable interior. They mark Apple's move into a tightly controlled physical experience.",
+        "title": "Original Retail"
       },
       "townSquare": {
-        "body": "The Town Square era reframes the store as a civic place: Forum, video wall, planting, seating, and Today at Apple. Recent flagships aim less for pure display and more for integration with the city, heritage buildings, or public space."
+        "body": "The Town Square era reframes the store as a civic place: Forum, video wall, planting, seating, and Today at Apple. Recent flagships aim less for pure display and more for integration with the city, heritage buildings, or public space.",
+        "title": "Town Square"
       },
       "unknown": {
-        "body": "The exact design era is not documented in Atlas Places yet. The record keeps verified elements and can be improved with a reliable source or a photo that clarifies the design generation."
+        "body": "The exact design era is not documented in Atlas Places yet. The record keeps verified elements and can be improved with a reliable source or a photo that clarifies the design generation.",
+        "title": "Unknown"
       }
     },
     "typologies": {
       "classic": {
-        "body": "A historical Apple Store type, often in a mall or shopping street, with a simple facade, product tables, and service toward the back or side. Its priority is clear customer flow."
+        "body": "A historical Apple Store type, often in a mall or shopping street, with a simple facade, product tables, and service toward the back or side. Its priority is clear customer flow.",
+        "title": "Classic"
       },
       "classicUpgrade": {
-        "body": "A classic store updated with newer cues: warmer materials, clearer service zones, and sometimes a Forum or video wall. It keeps the original footprint while moving the experience closer to current formats."
+        "body": "A classic store updated with newer cues: warmer materials, clearer service zones, and sometimes a Forum or video wall. It keeps the original footprint while moving the experience closer to current formats.",
+        "title": "Classic Upgrade"
       },
       "historicUrbanFlagship": {
-        "body": "An urban flagship inserted into a heritage building. The architectural task is to preserve facade, volumes, or decorative details while introducing Apple's contemporary language in a legible and reversible way."
+        "body": "An urban flagship inserted into a heritage building. The architectural task is to preserve facade, volumes, or decorative details while introducing Apple's contemporary language in a legible and reversible way.",
+        "title": "Historic Urban Flagship"
       },
       "mallStore": {
-        "body": "A store embedded in a shopping center. Its architecture must attract people from a busy gallery, organize entry quickly, and remain legible within a constrained width and depth."
+        "body": "A store embedded in a shopping center. Its architecture must attract people from a busy gallery, organize entry quickly, and remain legible within a constrained width and depth.",
+        "title": "Mall Store"
       },
       "nsd": {
-        "body": "NSD points to new-generation stores: more open facades, Avenue, Forum, natural materials, and clearer separation between discovery, service, and Today at Apple sessions."
+        "body": "NSD points to new-generation stores: more open facades, Avenue, Forum, natural materials, and clearer separation between discovery, service, and Today at Apple sessions.",
+        "title": "New Store Design"
       },
       "standalonePavilion": {
-        "body": "A freestanding pavilion conceived as a complete architectural object. It can use transparency, roof form, views, and surrounding public space with a more iconic presence than a mall unit."
+        "body": "A freestanding pavilion conceived as a complete architectural object. It can use transparency, roof form, views, and surrounding public space with a more iconic presence than a mall unit.",
+        "title": "Standalone Pavilion"
       },
       "urbanFlagship": {
-        "body": "A large city store designed as a destination. It combines visibility, capacity, service areas, and sometimes multiple levels to become a marker in its district."
+        "body": "A large city store designed as a destination. It combines visibility, capacity, service areas, and sometimes multiple levels to become a marker in its district.",
+        "title": "Urban Flagship"
       },
       "unknown": {
-        "body": "The typology is not fully qualified yet. The displayed attributes and notes still help interpret the record, but a correction can refine the exact format."
+        "body": "The typology is not fully qualified yet. The displayed attributes and notes still help interpret the record, but a correction can refine the exact format.",
+        "title": "Unknown"
       },
       "vintageD2": {
         "body": "An older format tied to intermediate generations of Apple Retail design. It remains very functional, before Forums, Avenues, and recent video walls became widespread."

@@ -264,42 +264,54 @@
     "typologyFallback": "{{value}} beschreibt die allgemeine Form des Stores: seine Umgebung, Beziehung zur Straße oder zum Einkaufszentrum.",
     "eras": {
       "glassCubeFlagship": {
-        "body": "Diese Ära umfasst markante Flaggschiffe, bei denen die Struktur selbst zu einem städtischen Signal wird."
+        "body": "Diese Ära umfasst markante Flaggschiffe, bei denen die Struktur selbst zu einem städtischen Signal wird.",
+        "title": "Glaskubus-Flagship"
       },
       "originalRetail": {
-        "body": "Apples früheste Stores etablierten die grundlegende Einzelhandelssprache: Produkttische, Genius Bar-Service und ein sehr gut lesbares Interieur."
+        "body": "Apples früheste Stores etablierten die grundlegende Einzelhandelssprache: Produkttische, Genius Bar-Service und ein sehr gut lesbares Interieur.",
+        "title": "Ursprüngliches Design"
       },
       "townSquare": {
-        "body": "Die Town Square-Ära betrachtet den Store als zivilen Ort: Forum, Video Wall, Bepflanzung und Today at Apple."
+        "body": "Die Town Square-Ära betrachtet den Store als zivilen Ort: Forum, Video Wall, Bepflanzung und Today at Apple.",
+        "title": "Town Square"
       },
       "unknown": {
-        "body": "Die genaue Design-Ära ist in Atlas Places noch nicht dokumentiert."
+        "body": "Die genaue Design-Ära ist in Atlas Places noch nicht dokumentiert.",
+        "title": "Unbekannt"
       }
     },
     "typologies": {
       "classic": {
-        "body": "Ein historischer Apple Store-Typ, oft in einem Einkaufszentrum oder einer Einkaufsstraße, mit einer einfachen Fassade."
+        "body": "Ein historischer Apple Store-Typ, oft in einem Einkaufszentrum oder einer Einkaufsstraße, mit einer einfachen Fassade.",
+        "title": "Klassisch"
       },
       "classicUpgrade": {
-        "body": "Ein klassischer Store, aktualisiert mit neueren Elementen: wärmere Materialien, klarere Servicezonen und manchmal ein Forum."
+        "body": "Ein klassischer Store, aktualisiert mit neueren Elementen: wärmere Materialien, klarere Servicezonen und manchmal ein Forum.",
+        "title": "Klassisches Upgrade"
       },
       "historicUrbanFlagship": {
-        "body": "Ein städtisches Flaggschiff in einem denkmalgeschützten Gebäude."
+        "body": "Ein städtisches Flaggschiff in einem denkmalgeschützten Gebäude.",
+        "title": "Historisches Urbanes Flagship"
       },
       "mallStore": {
-        "body": "Ein Store in einem Einkaufszentrum. Seine Architektur muss Menschen aus einer belebten Galerie anziehen."
+        "body": "Ein Store in einem Einkaufszentrum. Seine Architektur muss Menschen aus einer belebten Galerie anziehen.",
+        "title": "Einkaufszentrum Store"
       },
       "nsd": {
-        "body": "NSD weist auf Stores der neuen Generation hin: offenere Fassaden, Avenue, Forum, natürliche Materialien."
+        "body": "NSD weist auf Stores der neuen Generation hin: offenere Fassaden, Avenue, Forum, natürliche Materialien.",
+        "title": "Neues Store-Design"
       },
       "standalonePavilion": {
-        "body": "Ein freistehender Pavillon, als architektonisches Objekt konzipiert."
+        "body": "Ein freistehender Pavillon, als architektonisches Objekt konzipiert.",
+        "title": "Freistehender Pavillon"
       },
       "urbanFlagship": {
-        "body": "Ein großer Store in der Stadt, der als Ziel konzipiert ist."
+        "body": "Ein großer Store in der Stadt, der als Ziel konzipiert ist.",
+        "title": "Urbanes Flagship"
       },
       "unknown": {
-        "body": "Die Typologie ist noch nicht vollständig bestimmt."
+        "body": "Die Typologie ist noch nicht vollständig bestimmt.",
+        "title": "Unbekannt"
       },
       "vintageD2": {
         "body": "Ein älteres Format aus mittleren Generationen von Apple Retail Design."

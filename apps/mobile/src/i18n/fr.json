@@ -264,42 +264,54 @@
     "typologyFallback": "{{value}} décrit la forme générale de la boutique : son implantation, sa relation à la rue ou au centre commercial, et le type d'expérience retail qu'elle propose.",
     "eras": {
       "glassCubeFlagship": {
-        "body": "Cette période correspond aux flagships spectaculaires où la structure devient un signal urbain. Le verre, la transparence et les escaliers monumentaux servent à transformer l'entrée en repère public autant qu'en boutique."
+        "body": "Cette période correspond aux flagships spectaculaires où la structure devient un signal urbain. Le verre, la transparence et les escaliers monumentaux servent à transformer l'entrée en repère public autant qu'en boutique.",
+        "title": "Flagship Cube de Verre"
       },
       "originalRetail": {
-        "body": "Les premières boutiques Apple installent les bases du retail de la marque : circulation simple, tables de démonstration, service Genius Bar et langage intérieur très lisible. Elles documentent le passage d'Apple vers une expérience physique maîtrisée."
+        "body": "Les premières boutiques Apple installent les bases du retail de la marque : circulation simple, tables de démonstration, service Genius Bar et langage intérieur très lisible. Elles documentent le passage d'Apple vers une expérience physique maîtrisée.",
+        "title": "Design Original"
       },
       "townSquare": {
-        "body": "L'époque Town Square replace la boutique comme lieu civique : forum, mur vidéo, végétation, assises et Today at Apple. Les flagships récents cherchent moins l'effet vitrine pure que l'intégration à la ville, au patrimoine ou à une place publique."
+        "body": "L'époque Town Square replace la boutique comme lieu civique : forum, mur vidéo, végétation, assises et Today at Apple. Les flagships récents cherchent moins l'effet vitrine pure que l'intégration à la ville, au patrimoine ou à une place publique.",
+        "title": "Town Square"
       },
       "unknown": {
-        "body": "L'époque exacte n'est pas encore documentée dans Atlas Places. La fiche conserve les éléments vérifiés et peut être enrichie avec une source fiable ou une photo permettant de préciser la génération du design."
+        "body": "L'époque exacte n'est pas encore documentée dans Atlas Places. La fiche conserve les éléments vérifiés et peut être enrichie avec une source fiable ou une photo permettant de préciser la génération du design.",
+        "title": "Inconnu"
       }
     },
     "typologies": {
       "classic": {
-        "body": "Typologie historique de boutique Apple, souvent en centre commercial ou rue commerçante, avec façade simple, tables de produits et service au fond ou sur le côté. Elle met surtout l'accent sur la clarté du parcours client."
+        "body": "Typologie historique de boutique Apple, souvent en centre commercial ou rue commerçante, avec façade simple, tables de produits et service au fond ou sur le côté. Elle met surtout l'accent sur la clarté du parcours client.",
+        "title": "Classique"
       },
       "classicUpgrade": {
-        "body": "Boutique classique modernisée avec certains codes récents : matériaux plus chauds, meilleure lisibilité des zones de service et parfois forum ou mur vidéo. Elle garde l'implantation d'origine tout en rapprochant l'expérience des formats actuels."
+        "body": "Boutique classique modernisée avec certains codes récents : matériaux plus chauds, meilleure lisibilité des zones de service et parfois forum ou mur vidéo. Elle garde l'implantation d'origine tout en rapprochant l'expérience des formats actuels.",
+        "title": "Classique Amélioré"
       },
       "historicUrbanFlagship": {
-        "body": "Flagship urbain installé dans un bâtiment patrimonial. L'enjeu architectural est de conserver la façade, les volumes ou les décors existants tout en insérant le langage Apple contemporain de façon réversible et lisible."
+        "body": "Flagship urbain installé dans un bâtiment patrimonial. L'enjeu architectural est de conserver la façade, les volumes ou les décors existants tout en insérant le langage Apple contemporain de façon réversible et lisible.",
+        "title": "Flagship Urbain Historique"
       },
       "mallStore": {
-        "body": "Boutique intégrée à un centre commercial. L'architecture doit attirer depuis une galerie très fréquentée, organiser rapidement l'accueil et maintenir une lecture claire malgré une largeur et une profondeur souvent contraintes."
+        "body": "Boutique intégrée à un centre commercial. L'architecture doit attirer depuis une galerie très fréquentée, organiser rapidement l'accueil et maintenir une lecture claire malgré une largeur et une profondeur souvent contraintes.",
+        "title": "Boutique en Centre Commercial"
       },
       "nsd": {
-        "body": "NSD renvoie aux boutiques de nouvelle génération : façades plus ouvertes, Avenue, Forum, matériaux naturels et meilleure séparation entre découverte, service et sessions Today at Apple."
+        "body": "NSD renvoie aux boutiques de nouvelle génération : façades plus ouvertes, Avenue, Forum, matériaux naturels et meilleure séparation entre découverte, service et sessions Today at Apple.",
+        "title": "Nouveau Design"
       },
       "standalonePavilion": {
-        "body": "Pavillon autonome pensé comme objet architectural complet. Le bâtiment peut travailler la transparence, le toit, les vues et l'espace public autour de la boutique, avec une présence plus iconique qu'une cellule de centre commercial."
+        "body": "Pavillon autonome pensé comme objet architectural complet. Le bâtiment peut travailler la transparence, le toit, les vues et l'espace public autour de la boutique, avec une présence plus iconique qu'une cellule de centre commercial.",
+        "title": "Pavillon Indépendant"
       },
       "urbanFlagship": {
-        "body": "Grand magasin urbain conçu comme destination. Il combine visibilité, forte capacité d'accueil, espaces de service et parfois niveaux multiples pour devenir un repère dans son quartier."
+        "body": "Grand magasin urbain conçu comme destination. Il combine visibilité, forte capacité d'accueil, espaces de service et parfois niveaux multiples pour devenir un repère dans son quartier.",
+        "title": "Flagship Urbain"
       },
       "unknown": {
-        "body": "La typologie n'est pas encore suffisamment qualifiée. Les attributs et notes affichés restent utiles pour comprendre la fiche, mais une correction peut préciser le format exact."
+        "body": "La typologie n'est pas encore suffisamment qualifiée. Les attributs et notes affichés restent utiles pour comprendre la fiche, mais une correction peut préciser le format exact.",
+        "title": "Inconnu"
       },
       "vintageD2": {
         "body": "Format plus ancien lié aux générations intermédiaires du design Apple Retail. Il garde une organisation très fonctionnelle, avant la généralisation des forums, avenues et murs vidéo récents."
