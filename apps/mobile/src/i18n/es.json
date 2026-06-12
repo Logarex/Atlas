@@ -13,7 +13,7 @@
     "privatePhoto_other": "{{count}} fotos privadas"
   },
   "home": {
-    "kicker": "Atlas",
+    "kicker": "Atlas Places",
     "title": "Gira mundial\nde Apple Store",
     "subtitle": "Un mapa y cuaderno para encontrar tiendas Apple, registrar visitas y seguir tu colección.",
     "searchLabel": "Buscar tiendas",
@@ -97,16 +97,16 @@
     "progressLabel": "Tiendas visitadas",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "Sin anuncios ni rastreo: Atlas es para coleccionar lugares, sin crear perfiles.",
-      "localLocation": "Atlas es de código abierto: el código es público y la comunidad puede mejorarlo.",
+      "noAds": "Sin anuncios ni rastreo: Atlas Places es para coleccionar lugares, sin crear perfiles.",
+      "localLocation": "Atlas Places es de código abierto: el código es público y la comunidad puede mejorarlo.",
       "optionalAccount": "Las visitas y notas se quedan en este dispositivo.",
       "openData": "Las correcciones sugeridas pueden mejorar el conjunto de datos tras su revisión."
     },
     "export": {
       "title": "Exportar e importar",
-      "subtitle": "{{visitsLabel}} y {{photosLabel}} listas para respaldar con Atlas.",
+      "subtitle": "{{visitsLabel}} y {{photosLabel}} listas para respaldar con Atlas Places.",
       "button": "Exportar",
-      "shareTitle": "Exportación de Atlas",
+      "shareTitle": "Exportación de Atlas Places",
       "done": "Exportación lista: {{visitsLabel}} y {{photosLabel}}."
     },
     "import": {
@@ -115,7 +115,7 @@
     },
     "community": {
       "title": "Comunidad y licencia",
-      "body": "Atlas es un proyecto comunitario creado para perdurar. La app vivirá mientras los usuarios ayuden a enriquecer tiendas, corregir detalles, añadir fotos y mantener los datos útiles para todos.",
+      "body": "Atlas Places es un proyecto comunitario creado para perdurar. La app vivirá mientras los usuarios ayuden a enriquecer tiendas, corregir detalles, añadir fotos y mantener los datos útiles para todos.",
       "license": "Código público bajo la licencia GPLv3."
     },
     "dangerZone": "Zona de peligro",
@@ -178,10 +178,10 @@
     "visitInvalidDate": "Usa una fecha con formato AAAA-MM-DD.",
     "visitSaved": "Visita guardada en este dispositivo.",
     "personalHistory": "Historial personal",
-    "shareText": "Visité {{name}} en {{place}} el {{date}}. Registrado con Atlas.",
-    "shareTitle": "Visita Atlas: {{name}}",
+    "shareText": "Visité {{name}} en {{place}} el {{date}}. Registrado con Atlas Places.",
+    "shareTitle": "Visita Atlas Places: {{name}}",
     "shareVisit": "Compartir la visita",
-    "shareIntro": "Envía una tarjeta de Atlas, un enlace o un mensaje listo para planificar la visita con un amigo.",
+    "shareIntro": "Envía una tarjeta de Atlas Places, un enlace o un mensaje listo para planificar la visita con un amigo.",
     "shareMessages": "Mensaje",
     "shareMail": "Correo",
     "shareSocial": "Social",
@@ -191,7 +191,7 @@
     "shareCardFailed": "No se pudo generar la tarjeta de imagen. El mensaje de texto sigue disponible.",
     "shareNoImage": "No hay imagen compartible para esta tienda. Se abrirá el mensaje de texto en su lugar.",
     "shareCardVisited": "Visitada el {{date}}",
-    "shareCardTagline": "Colecciona tiendas Apple con Atlas.",
+    "shareCardTagline": "Colecciona tiendas Apple con Atlas Places.",
     "architectureEra": "Época: {{era}}",
     "architectureEmpty": "Aún no hay firma arquitectónica verificada.",
     "architectureNote": "Nota de arquitectura",
@@ -204,7 +204,7 @@
     "privatePhoto": "Foto personal",
     "localOnly": "Local",
     "savePrivatePhoto": "Guardar foto privada",
-    "privatePhotoSaved": "Foto guardada localmente en Atlas.",
+    "privatePhotoSaved": "Foto guardada localmente en Atlas Places.",
     "removePrivatePhoto": "Eliminar esta foto privada",
     "suggestEdit": "Sugerir edición",
     "addPhoto": "Añadir foto",
@@ -215,7 +215,7 @@
     "suggestEditHelp": "Describe la información a corregir en un lenguaje sencillo. No necesitas conocer el nombre técnico del campo.",
     "photoPermissionDenied": "Permite el acceso a fotos para elegir una imagen.",
     "photoRequired": "Elige una foto antes de enviar.",
-    "photoSubmitted": "Gracias, la foto fue propuesta. Será revisada antes de aparecer en Atlas.",
+    "photoSubmitted": "Gracias, la foto fue propuesta. Será revisada antes de aparecer en Atlas Places.",
     "photoHelp": "Añade una foto que tomaste. Tu nombre o apodo puede mostrarse con la foto si es aceptada.",
     "fieldPath": "Qué corregir",
     "fieldPathPlaceholder": "Ej. dirección, horario, nombre, estado, arquitectura...",
@@ -260,7 +260,7 @@
     "videoWall": "Muro de video"
   },
   "architectureDetails": {
-    "eraFallback": "{{value}} describe un período o familia de diseño utilizado en Atlas. El registro aún puede ampliarse con fuentes, fechas de renovación y fotos de detalles.",
+    "eraFallback": "{{value}} describe un período o familia de diseño utilizado en Atlas Places. El registro aún puede ampliarse con fuentes, fechas de renovación y fotos de detalles.",
     "typologyFallback": "{{value}} describe la forma general de la tienda: su entorno, relación con la calle o centro comercial, y el tipo de experiencia minorista que apoya.",
     "eras": {
       "glassCubeFlagship": {
@@ -273,7 +273,7 @@
         "body": "La época Town Square replantea la tienda como un lugar cívico: Forum, muro de video, plantas, asientos y Today at Apple. Las recientes tiendas insignia apuntan a integrarse con la ciudad, edificios patrimoniales o espacios públicos."
       },
       "unknown": {
-        "body": "La época exacta del diseño aún no está documentada en Atlas. El registro mantiene elementos verificados y puede mejorarse con una fuente confiable o una foto."
+        "body": "La época exacta del diseño aún no está documentada en Atlas Places. El registro mantiene elementos verificados y puede mejorarse con una fuente confiable o una foto."
       }
     },
     "typologies": {
@@ -322,7 +322,7 @@
         "body": "Forum alberga Today at Apple y demostraciones grupales. Históricamente, cambia parte de la lógica de exposición hacia programación cultural y aprendizaje."
       },
       "geniusBar": {
-        "body": "El Genius Bar es el marcador histórico del servicio de Apple Store. Incluso cuando los muebles específicos desaparecen, Atlas lo marca si la ubicación ofreció una zona de soporte identificable."
+        "body": "El Genius Bar es el marcador histórico del servicio de Apple Store. Incluso cuando los muebles específicos desaparecen, Atlas Places lo marca si la ubicación ofreció una zona de soporte identificable."
       },
       "glassCube": {
         "body": "El cubo de cristal es una de las firmas más conocidas. Convierte la entrada en un objeto urbano minimalista, a menudo por encima de una planta de ventas bajo nivel o muy transparente."
@@ -356,7 +356,7 @@
     "unknown": "Desconocido"
   },
   "hours": {
-    "official-link-only": "Los horarios no se copian en Atlas porque cambian frecuentemente.",
+    "official-link-only": "Los horarios no se copian en Atlas Places porque cambian frecuentemente.",
     "community-verified": "Los horarios verificados por la comunidad están disponibles."
   },
   "review": {

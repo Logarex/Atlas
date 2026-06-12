@@ -315,7 +315,7 @@ export default function StoreDetailScreen() {
 
     const cardUri = `${directory}atlas-share-card-${storeId}-${Date.now()}.jpg`;
     const cardBase64 = createShareCardJpegBase64({
-      brand: "Atlas",
+      brand: "Atlas Places",
       place,
       tagline: t("store.shareCardTagline"),
       title: name,
@@ -569,7 +569,7 @@ export default function StoreDetailScreen() {
             <View style={styles.shareCardMark}>
               <Text style={styles.shareCardMarkText}>A</Text>
             </View>
-            <Text style={styles.shareCardBrand}>Atlas</Text>
+            <Text style={styles.shareCardBrand}>Atlas Places</Text>
           </View>
           <Text style={styles.shareCardDate}>
             {t("store.shareCardVisited", { date: shareDate })}

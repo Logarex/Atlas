@@ -1,4 +1,4 @@
-# Contribuir a Atlas
+# Contribuir a Atlas Places
 
 Gracias por querer ayudar. Este documento cubre todo lo que necesitas saber para añadir o actualizar los datos y fotos de las tiendas.
 

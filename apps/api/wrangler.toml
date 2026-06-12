@@ -6,4 +6,4 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 ATLAS_API_KEY = "atlas-secret-dev-key"
 GITHUB_OWNER = "Logarex"
-GITHUB_REPO = "Atlas"
+GITHUB_REPO = "Atlas Places"

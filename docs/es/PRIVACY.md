@@ -1,10 +1,10 @@
 # Política de Privacidad
 
-Atlas es un proyecto de código abierto impulsado por la comunidad, construido por y para los entusiastas de las tiendas Apple Store. Debido a que esto no es un negocio, no nos importan tus datos. La aplicación está diseñada para ser lo más privada posible desde el punto de vista técnico.
+Atlas Places es un proyecto de código abierto impulsado por la comunidad, construido por y para los entusiastas de las tiendas Apple Store. Debido a que esto no es un negocio, no nos importan tus datos. La aplicación está diseñada para ser lo más privada posible desde el punto de vista técnico.
 
 ## Tus datos se quedan en tu dispositivo (Local Primero)
 
-Atlas no tiene cuentas de usuario, bases de datos ni servidores de rastreo. 
+Atlas Places no tiene cuentas de usuario, bases de datos ni servidores de rastreo. 
 Todo lo que haces en la aplicación se guarda exclusivamente en tu propio teléfono:
 - Tus visitas a tiendas
 - Tus notas personales
@@ -19,7 +19,7 @@ No utilizamos ningún software de análisis, informes de errores ni SDKs de rast
 
 ## Contribuciones Públicas
 
-La única vez que los datos salen de tu dispositivo es si eliges explícitamente contribuir al proyecto Atlas. 
+La única vez que los datos salen de tu dispositivo es si eliges explícitamente contribuir al proyecto Atlas Places. 
 
 Si utilizas los formularios integrados para **Sugerir una edición**, **Proponer una tienda faltante**, o **Enviar una foto pública**:
 - La información que proporciones (nombre, foto y detalles de la tienda) será enviada a nuestro repositorio público de GitHub.
@@ -28,7 +28,7 @@ Si utilizas los formularios integrados para **Sugerir una edición**, **Proponer
 
 ## Cambios
 
-Si alguna vez cambiamos la forma en que la aplicación maneja los datos, actualizaremos este documento. Pero dado que la filosofía principal de Atlas es seguir siendo un proyecto local y de código abierto, tu privacidad siempre será la prioridad.
+Si alguna vez cambiamos la forma en que la aplicación maneja los datos, actualizaremos este documento. Pero dado que la filosofía principal de Atlas Places es seguir siendo un proyecto local y de código abierto, tu privacidad siempre será la prioridad.
 
 ## Contacto
 

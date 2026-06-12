@@ -117,7 +117,7 @@ async function createEmbeddedPhotoAttachment(draft: PhotoSubmissionDraft) {
         return `
 ### Photo preview attachment
 
-Atlas compressed a JPEG preview from the image selected in the app, but the GitHub upload did not return a public preview URL.
+Atlas Places compressed a JPEG preview from the image selected in the app, but the GitHub upload did not return a public preview URL.
 
 - **Preview size**: ${result.width} × ${result.height}
 - **Preview format**: JPEG
@@ -127,7 +127,7 @@ Atlas compressed a JPEG preview from the image selected in the app, but the GitH
       return `
 ### Photo preview attachment
 
-Atlas uploaded a compressed JPEG preview from the image selected in the app.
+Atlas Places uploaded a compressed JPEG preview from the image selected in the app.
 
 - **Preview size**: ${result.width} × ${result.height}
 - **Preview format**: JPEG
@@ -140,7 +140,7 @@ Atlas uploaded a compressed JPEG preview from the image selected in the app.
     return `
 ### Photo preview attachment
 
-Atlas could not upload the selected local image as a GitHub preview. The original file name and metadata above are preserved.
+Atlas Places could not upload the selected local image as a GitHub preview. The original file name and metadata above are preserved.
 
 - **Upload error**: ${error instanceof Error ? error.message : "Unknown error"}
     `.trim();
@@ -149,7 +149,7 @@ Atlas could not upload the selected local image as a GitHub preview. The origina
   return `
 ### Photo preview attachment
 
-Atlas tried to upload a compressed preview, but the selected image was still too large for a reliable GitHub issue attachment. The original file name and metadata above are preserved.
+Atlas Places tried to upload a compressed preview, but the selected image was still too large for a reliable GitHub issue attachment. The original file name and metadata above are preserved.
   `.trim();
 }
 

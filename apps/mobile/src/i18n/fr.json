@@ -13,7 +13,7 @@
     "privatePhoto_other": "{{count}} photos privées"
   },
   "home": {
-    "kicker": "Atlas",
+    "kicker": "Atlas Places",
     "title": "Tour du monde\ndes Apple Store",
     "subtitle": "Une carte et un carnet pour retrouver les boutiques Apple, noter tes visites et suivre ta collection.",
     "searchLabel": "Rechercher des boutiques",
@@ -97,16 +97,16 @@
     "progressLabel": "Boutiques visitées",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "Pas de pub ni de suivi caché : Atlas sert à collectionner des lieux, sans profilage.",
-      "localLocation": "Atlas est open source : le code est public, vérifiable et améliorable par la communauté.",
+      "noAds": "Pas de pub ni de suivi caché : Atlas Places sert à collectionner des lieux, sans profilage.",
+      "localLocation": "Atlas Places est open source : le code est public, vérifiable et améliorable par la communauté.",
       "optionalAccount": "Les visites et les notes restent sur cet appareil.",
       "openData": "Les corrections proposées servent à améliorer la base commune après relecture."
     },
     "export": {
       "title": "Exporter et importer",
-      "subtitle": "{{visitsLabel}} et {{photosLabel}} à sauvegarder avec Atlas.",
+      "subtitle": "{{visitsLabel}} et {{photosLabel}} à sauvegarder avec Atlas Places.",
       "button": "Exporter",
-      "shareTitle": "Export Atlas",
+      "shareTitle": "Export Atlas Places",
       "done": "Export prêt : {{visitsLabel}} et {{photosLabel}}."
     },
     "import": {
@@ -115,7 +115,7 @@
     },
     "community": {
       "title": "Communauté et licence",
-      "body": "Atlas est un projet communautaire pensé pour durer. L'app vivra tant que des utilisateurs aideront à enrichir les boutiques, corriger les détails, ajouter des photos et garder la base utile pour tout le monde.",
+      "body": "Atlas Places est un projet communautaire pensé pour durer. L'app vivra tant que des utilisateurs aideront à enrichir les boutiques, corriger les détails, ajouter des photos et garder la base utile pour tout le monde.",
       "license": "Code public sous licence GPLv3."
     },
     "dangerZone": "Zone de danger",
@@ -178,10 +178,10 @@
     "visitInvalidDate": "Utilise une date au format YYYY-MM-DD.",
     "visitSaved": "Visite enregistrée sur cet appareil.",
     "personalHistory": "Historique perso",
-    "shareText": "J'ai visité {{name}} à {{place}} le {{date}}. Suivi avec Atlas.",
-    "shareTitle": "Visite Atlas : {{name}}",
+    "shareText": "J'ai visité {{name}} à {{place}} le {{date}}. Suivi avec Atlas Places.",
+    "shareTitle": "Visite Atlas Places : {{name}}",
     "shareVisit": "Partager la visite",
-    "shareIntro": "Envoie une carte Atlas, un lien ou un message prêt à partir pour proposer la visite à un ami.",
+    "shareIntro": "Envoie une carte Atlas Places, un lien ou un message prêt à partir pour proposer la visite à un ami.",
     "shareMessages": "Message",
     "shareMail": "Mail",
     "shareSocial": "Réseaux",
@@ -191,7 +191,7 @@
     "shareCardFailed": "La carte image n'a pas pu être générée. Le message texte reste disponible.",
     "shareNoImage": "Aucune image partageable pour cette fiche. Le message texte va s'ouvrir.",
     "shareCardVisited": "Visité le {{date}}",
-    "shareCardTagline": "Collectionne les Apple Store avec Atlas.",
+    "shareCardTagline": "Collectionne les Apple Store avec Atlas Places.",
     "architectureEra": "Époque : {{era}}",
     "architectureEmpty": "Aucune signature architecturale vérifiée pour l'instant.",
     "architectureNote": "Note d'architecture",
@@ -204,7 +204,7 @@
     "privatePhoto": "Photo personnelle",
     "localOnly": "Local",
     "savePrivatePhoto": "Sauvegarder une photo privée",
-    "privatePhotoSaved": "Photo sauvegardée localement dans Atlas.",
+    "privatePhotoSaved": "Photo sauvegardée localement dans Atlas Places.",
     "removePrivatePhoto": "Supprimer cette photo privée",
     "suggestEdit": "Proposer une correction",
     "addPhoto": "Ajouter une photo",
@@ -215,7 +215,7 @@
     "suggestEditHelp": "Décris simplement l'information à corriger. Pas besoin de connaître le nom technique du champ.",
     "photoPermissionDenied": "Autorise l'accès aux photos pour choisir une image.",
     "photoRequired": "Choisis une photo avant d'envoyer.",
-    "photoSubmitted": "Merci, la photo a été proposée. Elle sera relue avant d'apparaître dans Atlas.",
+    "photoSubmitted": "Merci, la photo a été proposée. Elle sera relue avant d'apparaître dans Atlas Places.",
     "photoHelp": "Ajoute une photo prise par toi. Ton nom ou pseudo pourra être affiché avec la photo si elle est acceptée.",
     "fieldPath": "À corriger",
     "fieldPathPlaceholder": "Ex. adresse, horaires, nom, statut, architecture...",
@@ -260,7 +260,7 @@
     "videoWall": "Mur vidéo"
   },
   "architectureDetails": {
-    "eraFallback": "{{value}} désigne une période ou une famille de design utilisée dans la base Atlas. La fiche peut encore être enrichie avec des sources, des dates de rénovation et des photos de détails.",
+    "eraFallback": "{{value}} désigne une période ou une famille de design utilisée dans la base Atlas Places. La fiche peut encore être enrichie avec des sources, des dates de rénovation et des photos de détails.",
     "typologyFallback": "{{value}} décrit la forme générale de la boutique : son implantation, sa relation à la rue ou au centre commercial, et le type d'expérience retail qu'elle propose.",
     "eras": {
       "glassCubeFlagship": {
@@ -273,7 +273,7 @@
         "body": "L'époque Town Square replace la boutique comme lieu civique : forum, mur vidéo, végétation, assises et Today at Apple. Les flagships récents cherchent moins l'effet vitrine pure que l'intégration à la ville, au patrimoine ou à une place publique."
       },
       "unknown": {
-        "body": "L'époque exacte n'est pas encore documentée dans Atlas. La fiche conserve les éléments vérifiés et peut être enrichie avec une source fiable ou une photo permettant de préciser la génération du design."
+        "body": "L'époque exacte n'est pas encore documentée dans Atlas Places. La fiche conserve les éléments vérifiés et peut être enrichie avec une source fiable ou une photo permettant de préciser la génération du design."
       }
     },
     "typologies": {
@@ -356,7 +356,7 @@
     "unknown": "Inconnu"
   },
   "hours": {
-    "official-link-only": "Les horaires ne sont pas copiés dans Atlas car ils changent souvent.",
+    "official-link-only": "Les horaires ne sont pas copiés dans Atlas Places car ils changent souvent.",
     "community-verified": "Des horaires vérifiés par la communauté sont disponibles avec une date de fraîcheur."
   },
   "review": {

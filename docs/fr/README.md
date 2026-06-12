@@ -1,8 +1,8 @@
-# Atlas
+# Atlas Places
 
-Atlas est une application mobile permettant de découvrir, de suivre et de collectionner les Apple Stores du monde entier. Elle sert à la fois de carte mondiale et de carnet de notes personnel pour vos visites en boutique.
+Atlas Places est une application mobile permettant de découvrir, de suivre et de collectionner les Apple Stores du monde entier. Elle sert à la fois de carte mondiale et de carnet de notes personnel pour vos visites en boutique.
 
-**Atlas est conçu pour durer.** Il s'agit d'un projet 100 % open-source, dirigé par la communauté. Il s'appuie sur ses utilisateurs pour enrichir les détails des boutiques, ajouter les emplacements manquants et partager des photos. Étant donné que l'application ne dépend d'aucune base de données centrale payante, elle continuera d'exister tant que la communauté continuera de l'utiliser et de la mettre à jour.
+**Atlas Places est conçu pour durer.** Il s'agit d'un projet 100 % open-source, dirigé par la communauté. Il s'appuie sur ses utilisateurs pour enrichir les détails des boutiques, ajouter les emplacements manquants et partager des photos. Étant donné que l'application ne dépend d'aucune base de données centrale payante, elle continuera d'exister tant que la communauté continuera de l'utiliser et de la mettre à jour.
 
 ## Fonctionnalités
 

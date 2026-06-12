@@ -1,10 +1,10 @@
 # Privacy Policy
 
-Atlas is an open-source, community-driven project built by and for Apple Store enthusiasts. Because this is not a business, we don't care about your data. The app is designed to be as private as technically possible.
+Atlas Places is an open-source, community-driven project built by and for Apple Store enthusiasts. Because this is not a business, we don't care about your data. The app is designed to be as private as technically possible.
 
 ## Your data stays on your device (Local First)
 
-Atlas does not have user accounts, databases, or tracking servers. 
+Atlas Places does not have user accounts, databases, or tracking servers. 
 Everything you do in the app is saved exclusively on your own phone:
 - Your store visits
 - Your personal notes
@@ -19,7 +19,7 @@ We do not use any analytics software, crash reporters, or tracking SDKs. We do n
 
 ## Public Contributions
 
-The only time data leaves your device is if you explicitly choose to contribute to the Atlas project. 
+The only time data leaves your device is if you explicitly choose to contribute to the Atlas Places project. 
 
 If you use the built-in forms to **Suggest an edit**, **Propose a missing store**, or **Submit a public photo**:
 - The information you provide (name, photo, and store details) will be sent to our public GitHub repository.
@@ -28,7 +28,7 @@ If you use the built-in forms to **Suggest an edit**, **Propose a missing store*
 
 ## Changes
 
-If we ever change how the app handles data, we will update this document. But since the core philosophy of Atlas is to remain a local-first, open-source project, your privacy will always be the priority.
+If we ever change how the app handles data, we will update this document. But since the core philosophy of Atlas Places is to remain a local-first, open-source project, your privacy will always be the priority.
 
 ## Contact
 

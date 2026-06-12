@@ -31,7 +31,7 @@ type ExportedLocalUserPhoto = LocalUserPhoto & {
 };
 
 type AtlasUserDataExport = {
-  app: "Atlas";
+  app: "Atlas Places";
   exportedAt: string;
   schemaVersion: number;
   profile: unknown | null;
@@ -60,7 +60,7 @@ function notifyLocalPhotoListeners(photos: LocalUserPhoto[]) {
 
 function safeDocumentDirectory() {
   if (!FileSystem.documentDirectory) {
-    throw new Error("Le dossier local Atlas est indisponible sur cet appareil.");
+    throw new Error("Le dossier local Atlas Places est indisponible sur cet appareil.");
   }
 
   return FileSystem.documentDirectory;
@@ -206,7 +206,7 @@ export async function exportLocalUserData() {
   }
 
   const payload: AtlasUserDataExport = {
-    app: "Atlas",
+    app: "Atlas Places",
     exportedAt,
     schemaVersion: EXPORT_SCHEMA_VERSION,
     profile: parseStoredJson(profileRaw),

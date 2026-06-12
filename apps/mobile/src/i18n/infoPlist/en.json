@@ -1,5 +1,5 @@
 {
-  "NSPhotoLibraryUsageDescription": "Atlas lets you choose photos you own to save them locally or submit them for review.",
-  "NSPhotoLibraryAddUsageDescription": "Atlas may save exported visit photos when you choose to share or back up your local data.",
-  "NSCameraUsageDescription": "Atlas can use the camera if you choose to add a personal store photo."
+  "NSPhotoLibraryUsageDescription": "Atlas Places lets you choose photos you own to save them locally or submit them for review.",
+  "NSPhotoLibraryAddUsageDescription": "Atlas Places may save exported visit photos when you choose to share or back up your local data.",
+  "NSCameraUsageDescription": "Atlas Places can use the camera if you choose to add a personal store photo."
 }

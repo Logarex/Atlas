@@ -60,7 +60,7 @@ export default {
           Authorization: `token ${env.GITHUB_TOKEN}`,
           "Content-Type": "application/json",
           Accept: "application/vnd.github.v3+json",
-          "User-Agent": "Atlas-Mobile-App-Proxy",
+          "User-Agent": "Atlas Places-Mobile-App-Proxy",
         },
         body: requestBody,
       });

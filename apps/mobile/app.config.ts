@@ -2,7 +2,7 @@ import type { ConfigContext, ExpoConfig } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "Atlas",
+  name: "Atlas Places",
   slug: "atlas",
   scheme: "atlas",
   version: "0.0.1",
@@ -25,11 +25,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     infoPlist: {
       NSPhotoLibraryUsageDescription:
-        "Atlas lets you choose photos you own to save them locally or submit them for review.",
+        "Atlas Places lets you choose photos you own to save them locally or submit them for review.",
       NSPhotoLibraryAddUsageDescription:
-        "Atlas may save exported visit photos when you choose to share or back up your local data.",
+        "Atlas Places may save exported visit photos when you choose to share or back up your local data.",
       NSCameraUsageDescription:
-        "Atlas can use the camera if you choose to add a personal store photo."
+        "Atlas Places can use the camera if you choose to add a personal store photo."
     }
   },
   android: {
@@ -52,7 +52,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       "expo-image-picker",
       {
         photosPermission:
-          "Atlas lets you choose photos you own to save them locally or submit them for review."
+          "Atlas Places lets you choose photos you own to save them locally or submit them for review."
       }
     ]
   ],

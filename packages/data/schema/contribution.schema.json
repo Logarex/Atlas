@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:atlas:schema:contribution",
-  "title": "Atlas Contribution",
+  "title": "Atlas Places Contribution",
   "type": "object",
   "additionalProperties": false,
   "required": [

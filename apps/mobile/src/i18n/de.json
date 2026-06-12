@@ -13,7 +13,7 @@
     "privatePhoto_other": "{{count}} private Fotos"
   },
   "home": {
-    "kicker": "Atlas",
+    "kicker": "Atlas Places",
     "title": "Apple Store\nWelttour",
     "subtitle": "Eine Karte und ein Notizbuch, um Apple Stores zu finden, Besuche zu protokollieren und deine Sammlung zu verfolgen.",
     "searchLabel": "Stores suchen",
@@ -97,16 +97,16 @@
     "progressLabel": "Besuchte Stores",
     "progressCount": "{{visited}} / {{total}}",
     "privacy": {
-      "noAds": "Keine Werbung oder verstecktes Tracking: Atlas ist zum Sammeln von Orten da.",
-      "localLocation": "Atlas ist Open Source: Der Code ist öffentlich.",
+      "noAds": "Keine Werbung oder verstecktes Tracking: Atlas Places ist zum Sammeln von Orten da.",
+      "localLocation": "Atlas Places ist Open Source: Der Code ist öffentlich.",
       "optionalAccount": "Besuche und Notizen bleiben auf diesem Gerät.",
       "openData": "Vorgeschlagene Korrekturen können den gemeinsamen Datensatz verbessern."
     },
     "export": {
       "title": "Exportieren und Importieren",
-      "subtitle": "{{visitsLabel}} und {{photosLabel}} bereit zur Sicherung mit Atlas.",
+      "subtitle": "{{visitsLabel}} und {{photosLabel}} bereit zur Sicherung mit Atlas Places.",
       "button": "Exportieren",
-      "shareTitle": "Atlas Export",
+      "shareTitle": "Atlas Places Export",
       "done": "Export bereit: {{visitsLabel}} und {{photosLabel}}."
     },
     "import": {
@@ -115,7 +115,7 @@
     },
     "community": {
       "title": "Community und Lizenz",
-      "body": "Atlas ist ein Community-Projekt. Die App wird so lange leben, wie Nutzer helfen, Details zu verbessern.",
+      "body": "Atlas Places ist ein Community-Projekt. Die App wird so lange leben, wie Nutzer helfen, Details zu verbessern.",
       "license": "Öffentlicher Code unter der GPLv3 Lizenz."
     },
     "dangerZone": "Gefahrenzone",
@@ -178,10 +178,10 @@
     "visitInvalidDate": "Verwende das Format JJJJ-MM-TT.",
     "visitSaved": "Besuch auf diesem Gerät gespeichert.",
     "personalHistory": "Persönliche Historie",
-    "shareText": "Ich habe {{name}} in {{place}} am {{date}} besucht. Erfasst mit Atlas.",
-    "shareTitle": "Atlas Besuch: {{name}}",
+    "shareText": "Ich habe {{name}} in {{place}} am {{date}} besucht. Erfasst mit Atlas Places.",
+    "shareTitle": "Atlas Places Besuch: {{name}}",
     "shareVisit": "Besuch teilen",
-    "shareIntro": "Sende eine Atlas-Karte, einen Link oder eine Nachricht, um den Besuch mit einem Freund zu planen.",
+    "shareIntro": "Sende eine Atlas Places-Karte, einen Link oder eine Nachricht, um den Besuch mit einem Freund zu planen.",
     "shareMessages": "Nachricht",
     "shareMail": "E-Mail",
     "shareSocial": "Sozial",
@@ -191,7 +191,7 @@
     "shareCardFailed": "Die Bildkarte konnte nicht generiert werden. Die Textnachricht ist weiterhin verfügbar.",
     "shareNoImage": "Für diesen Store ist kein teilbares Bild verfügbar.",
     "shareCardVisited": "Besucht am {{date}}",
-    "shareCardTagline": "Sammle Apple Stores mit Atlas.",
+    "shareCardTagline": "Sammle Apple Stores mit Atlas Places.",
     "architectureEra": "Ära: {{era}}",
     "architectureEmpty": "Noch keine verifizierte architektonische Signatur.",
     "architectureNote": "Architektur-Notiz",
@@ -204,7 +204,7 @@
     "privatePhoto": "Persönliches Foto",
     "localOnly": "Lokal",
     "savePrivatePhoto": "Privates Foto speichern",
-    "privatePhotoSaved": "Foto lokal in Atlas gespeichert.",
+    "privatePhotoSaved": "Foto lokal in Atlas Places gespeichert.",
     "removePrivatePhoto": "Dieses private Foto entfernen",
     "suggestEdit": "Änderung vorschlagen",
     "addPhoto": "Foto hinzufügen",
@@ -260,7 +260,7 @@
     "videoWall": "Video-Wall"
   },
   "architectureDetails": {
-    "eraFallback": "{{value}} beschreibt eine Design-Periode oder -Familie, die im Atlas-Datensatz verwendet wird.",
+    "eraFallback": "{{value}} beschreibt eine Design-Periode oder -Familie, die im Atlas Places-Datensatz verwendet wird.",
     "typologyFallback": "{{value}} beschreibt die allgemeine Form des Stores: seine Umgebung, Beziehung zur Straße oder zum Einkaufszentrum.",
     "eras": {
       "glassCubeFlagship": {
@@ -273,7 +273,7 @@
         "body": "Die Town Square-Ära betrachtet den Store als zivilen Ort: Forum, Video Wall, Bepflanzung und Today at Apple."
       },
       "unknown": {
-        "body": "Die genaue Design-Ära ist in Atlas noch nicht dokumentiert."
+        "body": "Die genaue Design-Ära ist in Atlas Places noch nicht dokumentiert."
       }
     },
     "typologies": {
@@ -356,7 +356,7 @@
     "unknown": "Unbekannt"
   },
   "hours": {
-    "official-link-only": "Öffnungszeiten werden nicht in Atlas kopiert, da sie sich häufig ändern.",
+    "official-link-only": "Öffnungszeiten werden nicht in Atlas Places kopiert, da sie sich häufig ändern.",
     "community-verified": "Community-verifizierte Öffnungszeiten sind verfügbar."
   },
   "review": {

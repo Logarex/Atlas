@@ -1,10 +1,10 @@
 # Datenschutzrichtlinie
 
-Atlas ist ein quelloffenes, von der Community betriebenes Projekt, das von und für Apple Store-Enthusiasten entwickelt wurde. Da wir kein Unternehmen sind, interessieren wir uns nicht für Ihre Daten. Die App ist so konzipiert, dass sie so privat ist, wie es technisch möglich ist.
+Atlas Places ist ein quelloffenes, von der Community betriebenes Projekt, das von und für Apple Store-Enthusiasten entwickelt wurde. Da wir kein Unternehmen sind, interessieren wir uns nicht für Ihre Daten. Die App ist so konzipiert, dass sie so privat ist, wie es technisch möglich ist.
 
 ## Ihre Daten bleiben auf Ihrem Gerät (Lokal zuerst)
 
-Atlas verfügt nicht über Benutzerkonten, Datenbanken oder Tracking-Server. 
+Atlas Places verfügt nicht über Benutzerkonten, Datenbanken oder Tracking-Server. 
 Alles, was Sie in der App tun, wird ausschließlich auf Ihrem eigenen Telefon gespeichert:
 - Ihre Store-Besuche
 - Ihre persönlichen Notizen
@@ -19,7 +19,7 @@ Wir verwenden keine Analysesoftware, Crash-Reporter oder Tracking-SDKs. Wir wiss
 
 ## Öffentliche Beiträge
 
-Das einzige Mal, dass Daten Ihr Gerät verlassen, ist, wenn Sie sich ausdrücklich dazu entschließen, zum Atlas-Projekt beizutragen. 
+Das einzige Mal, dass Daten Ihr Gerät verlassen, ist, wenn Sie sich ausdrücklich dazu entschließen, zum Atlas Places-Projekt beizutragen. 
 
 Wenn Sie die integrierten Formulare verwenden, um eine **Änderung vorzuschlagen**, einen **fehlenden Store vorzuschlagen** oder ein **öffentliches Foto einzureichen**:
 - Die von Ihnen angegebenen Informationen (Name, Foto und Store-Details) werden an unser öffentliches GitHub-Repository gesendet.
@@ -28,7 +28,7 @@ Wenn Sie die integrierten Formulare verwenden, um eine **Änderung vorzuschlagen
 
 ## Änderungen
 
-Falls wir jemals ändern, wie die App mit Daten umgeht, werden wir dieses Dokument aktualisieren. Da die Kernphilosophie von Atlas jedoch darin besteht, ein quelloffenes, lokal-zuerst funktionierendes Projekt zu bleiben, wird Ihre Privatsphäre immer oberste Priorität haben.
+Falls wir jemals ändern, wie die App mit Daten umgeht, werden wir dieses Dokument aktualisieren. Da die Kernphilosophie von Atlas Places jedoch darin besteht, ein quelloffenes, lokal-zuerst funktionierendes Projekt zu bleiben, wird Ihre Privatsphäre immer oberste Priorität haben.
 
 ## Kontakt
 

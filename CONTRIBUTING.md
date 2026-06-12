@@ -1,4 +1,4 @@
-# Contributing to Atlas
+# Contributing to Atlas Places
 
 Thanks for wanting to help. This document covers everything you need to add or update store data and photos.
 

@@ -1,5 +1,5 @@
 {
-  "NSPhotoLibraryUsageDescription": "Mit Atlas kannst du eigene Fotos auswählen, um sie lokal zu speichern oder zur Überprüfung einzureichen.",
-  "NSPhotoLibraryAddUsageDescription": "Atlas kann exportierte Besuchsfotos speichern, wenn du dich dafür entscheidest, deine lokalen Daten zu teilen oder zu sichern.",
-  "NSCameraUsageDescription": "Atlas kann die Kamera verwenden, wenn du ein persönliches Store-Foto hinzufügen möchtest."
+  "NSPhotoLibraryUsageDescription": "Mit Atlas Places kannst du eigene Fotos auswählen, um sie lokal zu speichern oder zur Überprüfung einzureichen.",
+  "NSPhotoLibraryAddUsageDescription": "Atlas Places kann exportierte Besuchsfotos speichern, wenn du dich dafür entscheidest, deine lokalen Daten zu teilen oder zu sichern.",
+  "NSCameraUsageDescription": "Atlas Places kann die Kamera verwenden, wenn du ein persönliches Store-Foto hinzufügen möchtest."
 }

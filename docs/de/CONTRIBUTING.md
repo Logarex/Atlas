@@ -1,4 +1,4 @@
-# Mitwirken bei Atlas
+# Mitwirken bei Atlas Places
 
 Danke, dass Sie helfen möchten. Dieses Dokument behandelt alles, was Sie wissen müssen, um Store-Daten und Fotos hinzuzufügen oder zu aktualisieren.
 
