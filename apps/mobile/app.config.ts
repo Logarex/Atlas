@@ -21,8 +21,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       dark: "./assets/icon-dark.png"
     },
     infoPlist: {
-      NSLocationWhenInUseUsageDescription:
-        "Atlas uses your location locally to show nearby stores.",
       NSPhotoLibraryUsageDescription:
         "Atlas lets you choose photos you own to save them locally or submit them for review.",
       NSPhotoLibraryAddUsageDescription:
@@ -42,8 +40,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       googleMaps: {
         apiKey: process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY
       }
-    },
-    permissions: ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+    }
   },
   plugins: [
     "expo-router",

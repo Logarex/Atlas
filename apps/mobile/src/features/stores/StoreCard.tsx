@@ -3,7 +3,8 @@ import type { StoreRecord, StoreStatus } from "./store.types";
 import { Link } from "expo-router";
 import { MapPin } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image } from "expo-image";
 import { useMemo } from "react";
 
 import { useAppTheme } from "@/theme/useAppTheme";

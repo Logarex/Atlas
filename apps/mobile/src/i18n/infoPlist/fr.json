@@ -1,5 +1,4 @@
 {
-  "NSLocationWhenInUseUsageDescription": "Atlas utilise votre position localement pour afficher les boutiques à proximité.",
   "NSPhotoLibraryUsageDescription": "Atlas vous permet de choisir vos photos pour les sauvegarder localement ou les soumettre à la communauté.",
   "NSPhotoLibraryAddUsageDescription": "Atlas peut sauvegarder vos photos de visite lorsque vous choisissez de les exporter.",
   "NSCameraUsageDescription": "Atlas utilise l'appareil photo si vous souhaitez prendre une photo de la boutique en direct."
