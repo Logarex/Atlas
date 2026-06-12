@@ -16,6 +16,7 @@ import { useAppTheme } from "@/theme/useAppTheme";
 import type { StoreRecord } from "./store.types";
 import { useTranslation } from "react-i18next";
 import { X } from "lucide-react-native";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 type StoreEditorModalProps = {
   visible: boolean;
@@ -34,6 +35,7 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
   
   const [loading, setLoading] = useState(false);
   const isNew = !store;
+  const reduceMotion = useReducedMotion();
 
   // Initialize form state
   const [id, setId] = useState(store?.id || "");
@@ -89,7 +91,7 @@ export function StoreEditorModal({ visible, store, onClose, onSave }: StoreEdito
   };
 
   return (
-    <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
+    <Modal visible={visible} animationType={reduceMotion ? "fade" : "slide"} presentationStyle="pageSheet" onRequestClose={onClose}>
       <SafeAreaView style={styles.container} edges={["left", "right"]}>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : undefined}

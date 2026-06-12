@@ -24,6 +24,7 @@ import * as FileSystem from "expo-file-system/legacy";
 import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import {
   CalendarDays,
   Camera,
@@ -131,6 +132,7 @@ export default function StoreDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const reduceMotion = useReducedMotion();
   const { stores } = useStores();
   const store = stores.find((item) => item.id === id) ?? null;
   const [visitDate, setVisitDate] = useState(todayISO());
@@ -196,6 +198,7 @@ export default function StoreDetailScreen() {
           ]}
         >
           <Pressable
+            accessibilityRole="button"
             accessibilityLabel={t("store.back")}
             onPress={() => router.back()}
             style={styles.compactBackButton}
@@ -615,6 +618,7 @@ export default function StoreDetailScreen() {
       <View style={styles.hero}>
         <View style={styles.heroNavRow}>
           <Pressable
+            accessibilityRole="button"
             accessibilityLabel={t("store.back")}
             onPress={() => router.back()}
             style={styles.compactBackButton}
@@ -631,11 +635,11 @@ export default function StoreDetailScreen() {
       </View>
 
       <View style={styles.actionRow}>
-        <Pressable style={styles.primaryButton} onPress={handleAddVisit}>
+        <Pressable accessibilityRole="button" style={styles.primaryButton} onPress={handleAddVisit}>
           <Check color={theme.colors.paper} size={18} />
           <Text style={styles.primaryButtonText}>{t("store.markVisited")}</Text>
         </Pressable>
-        <Pressable style={styles.iconButton} onPress={() => setShareModalVisible(true)}>
+        <Pressable accessibilityRole="button" accessibilityLabel={t("store.shareVisit")} style={styles.iconButton} onPress={() => setShareModalVisible(true)}>
           <Share2 color={theme.colors.ink} size={19} />
         </Pressable>
       </View>
@@ -682,7 +686,7 @@ export default function StoreDetailScreen() {
                   <Text style={styles.visitNote}>{visit.note}</Text>
                 ) : null}
               </View>
-              <Pressable onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
+              <Pressable accessibilityRole="button" accessibilityLabel={t("store.removeVisit")} onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
                 <X color={theme.colors.danger} size={16} />
               </Pressable>
             </View>
@@ -765,6 +769,7 @@ export default function StoreDetailScreen() {
             {positiveArchitectureAttributes.map((key) => (
               <Pressable
                 accessibilityRole="button"
+                accessibilityState={{ selected: selectedArchitectureDetail?.kind === "attribute" && selectedArchitectureDetail.value === key }}
                 key={key}
                 onPress={() =>
                   toggleArchitectureDetail({
@@ -874,7 +879,7 @@ export default function StoreDetailScreen() {
             <Text style={styles.body}>{t(`hours.${store.hours.policy}`)}</Text>
             <Text style={styles.muted}>{store.hours.note}</Text>
             {hoursOfficialUrl ? (
-              <Pressable onPress={() => Linking.openURL(hoursOfficialUrl)}>
+              <Pressable accessibilityRole="link" onPress={() => Linking.openURL(hoursOfficialUrl)}>
                 <Text style={styles.sourceLink}>
                   {t("store.verifyOfficial")} ↗
                 </Text>
@@ -953,6 +958,7 @@ export default function StoreDetailScreen() {
                     <Text style={styles.photoCredit}>{photo.takenOn ?? t("store.localOnly")}</Text>
                   </View>
                   <Pressable
+                    accessibilityRole="button"
                     accessibilityLabel={t("store.removePrivatePhoto")}
                     onPress={() => removeLocalUserPhoto(photo.id)}
                     style={styles.photoRemoveButton}
@@ -965,6 +971,7 @@ export default function StoreDetailScreen() {
           </>
         ) : null}
         <Pressable
+          accessibilityRole="button"
           style={[styles.secondaryButton, styles.privatePhotoButton]}
           onPress={handleSavePrivatePhoto}
         >
@@ -976,11 +983,11 @@ export default function StoreDetailScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{t("store.contribute")}</Text>
         <View style={styles.actionRow}>
-          <Pressable style={styles.secondaryButton} onPress={openChangeModal}>
+          <Pressable accessibilityRole="button" style={styles.secondaryButton} onPress={openChangeModal}>
             <Flag color={theme.colors.teal} size={18} />
             <Text style={styles.secondaryButtonText}>{t("store.suggestEdit")}</Text>
           </Pressable>
-          <Pressable style={styles.secondaryButton} onPress={openPhotoModal}>
+          <Pressable accessibilityRole="button" style={styles.secondaryButton} onPress={openPhotoModal}>
             <Camera color={theme.colors.teal} size={18} />
             <Text style={styles.secondaryButtonText}>{t("store.addPhoto")}</Text>
           </Pressable>
@@ -990,7 +997,7 @@ export default function StoreDetailScreen() {
     </ScrollView>
 
       <Modal
-        animationType="slide"
+        animationType={reduceMotion ? "fade" : "slide"}
         onRequestClose={() => setShareModalVisible(false)}
         transparent
         visible={shareModalVisible}
@@ -1010,7 +1017,7 @@ export default function StoreDetailScreen() {
                 <Text style={styles.modalTitle}>{t("store.shareVisit")}</Text>
                 <Text style={styles.modalIntro}>{t("store.shareIntro")}</Text>
               </View>
-              <Pressable onPress={() => setShareModalVisible(false)} style={styles.shareCloseButton}>
+              <Pressable onPress={() => setShareModalVisible(false)} accessibilityRole="button" accessibilityLabel={t("store.close")} style={styles.shareCloseButton}>
                 <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
@@ -1020,22 +1027,23 @@ export default function StoreDetailScreen() {
             </View>
 
             <View style={styles.shareGrid}>
-              <Pressable style={styles.shareOption} onPress={() => handleShareCard("messages")}>
+              <Pressable accessibilityRole="button" style={styles.shareOption} onPress={() => handleShareCard("messages")}>
                 <MessageCircle color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareMessages")}</Text>
               </Pressable>
-              <Pressable style={styles.shareOption} onPress={() => handleShareCard("mail")}>
+              <Pressable accessibilityRole="button" style={styles.shareOption} onPress={() => handleShareCard("mail")}>
                 <Mail color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareMail")}</Text>
               </Pressable>
               <Pressable
+                accessibilityRole="button"
                 style={styles.shareOption}
                 onPress={() => handleShareCard("social")}
               >
                 <Share2 color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareSocial")}</Text>
               </Pressable>
-              <Pressable style={styles.shareOption} onPress={() => handleShareCard("card")}>
+              <Pressable accessibilityRole="button" style={styles.shareOption} onPress={() => handleShareCard("card")}>
                 <ImageIcon color={theme.colors.teal} size={21} />
                 <Text style={styles.shareOptionText}>{t("store.shareCard")}</Text>
               </Pressable>
@@ -1054,7 +1062,7 @@ export default function StoreDetailScreen() {
         <View style={[styles.photoViewerBackdrop, { paddingTop: insets.top + 12 }]}>
           <View style={styles.photoViewerHeader}>
             <Text style={styles.photoViewerTitle}>{t("store.photos")}</Text>
-            <Pressable onPress={() => setSelectedPhoto(null)} style={styles.photoViewerClose}>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("store.close")} onPress={() => setSelectedPhoto(null)} style={styles.photoViewerClose}>
               <X color={theme.colors.paper} size={22} />
             </Pressable>
           </View>
@@ -1083,7 +1091,7 @@ export default function StoreDetailScreen() {
       </Modal>
 
       <Modal
-        animationType="slide"
+        animationType={reduceMotion ? "fade" : "slide"}
         onRequestClose={() => setChangeModalVisible(false)}
         transparent
         visible={changeModalVisible}
@@ -1100,7 +1108,7 @@ export default function StoreDetailScreen() {
           >
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t("store.suggestEdit")}</Text>
-              <Pressable onPress={() => setChangeModalVisible(false)}>
+              <Pressable accessibilityRole="button" accessibilityLabel={t("store.close")} onPress={() => setChangeModalVisible(false)}>
                 <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
@@ -1151,6 +1159,8 @@ export default function StoreDetailScreen() {
                 />
               </View>
               <Pressable
+                accessibilityRole="button"
+                accessibilityState={{ disabled: isSubmittingChange }}
                 disabled={isSubmittingChange}
                 style={[styles.primaryButton, isSubmittingChange && styles.buttonDisabled]}
                 onPress={handleSubmitChange}
@@ -1165,7 +1175,7 @@ export default function StoreDetailScreen() {
       </Modal>
 
       <Modal
-        animationType="slide"
+        animationType={reduceMotion ? "fade" : "slide"}
         onRequestClose={() => setPhotoModalVisible(false)}
         transparent
         visible={photoModalVisible}
@@ -1182,7 +1192,7 @@ export default function StoreDetailScreen() {
           >
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t("store.addPhoto")}</Text>
-              <Pressable onPress={() => setPhotoModalVisible(false)}>
+              <Pressable accessibilityRole="button" accessibilityLabel={t("store.close")} onPress={() => setPhotoModalVisible(false)}>
                 <X color={theme.colors.ink} size={22} />
               </Pressable>
             </View>
@@ -1192,6 +1202,8 @@ export default function StoreDetailScreen() {
             >
               <Text style={styles.modalIntro}>{t("store.photoHelp")}</Text>
               <Pressable
+                accessibilityRole="button"
+                accessibilityState={{ disabled: photoPickerOpen }}
                 disabled={photoPickerOpen}
                 style={[
                   styles.secondaryButton,
@@ -1246,6 +1258,8 @@ export default function StoreDetailScreen() {
                 <Switch value={peopleVisible} onValueChange={setPeopleVisible} />
               </View>
               <Pressable
+                accessibilityRole="button"
+                accessibilityState={{ disabled: isSubmittingPhoto }}
                 disabled={isSubmittingPhoto}
                 style={[styles.primaryButton, isSubmittingPhoto && styles.buttonDisabled]}
                 onPress={handleSubmitPhoto}
@@ -1411,7 +1425,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       flex: 1,
       fontSize: typography.body,
-      height: 48
+      minHeight: 48
     },
     visitNoteInput: {
       backgroundColor: colors.paper,

@@ -105,7 +105,7 @@ export default function HomeScreen() {
                 const store = storeById.get(visit.storeId);
                 return (
                   <Link key={visit.id} href={`/store/${visit.storeId}`} asChild>
-                    <Pressable style={styles.visitCard}>
+                    <Pressable accessibilityRole="button" style={styles.visitCard}>
                       <View style={styles.visitIcon}>
                         <Clock size={16} color={theme.colors.copper} />
                       </View>

@@ -4,6 +4,7 @@ import { useLocalVisits } from "@/features/visits/localVisits";
 import { useAppTheme } from "@/theme/useAppTheme";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
+import { Check, X, ArrowRight, CalendarDays, Store } from "lucide-react-native";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -45,6 +46,19 @@ export default function MapScreen() {
     announced: theme.colors.gold,
     temporary: theme.colors.moss
   };
+
+  const StatusIcon = ({ status, isVisited, color, size = 12 }: { status: StoreStatus; isVisited: boolean; color: string; size?: number }) => {
+    if (isVisited) return <Check color={color} size={size} strokeWidth={3} />;
+    switch (status) {
+      case "open": return null; // Default circle
+      case "closed": return <X color={color} size={size} strokeWidth={3} />;
+      case "relocated": return <ArrowRight color={color} size={size} strokeWidth={3} />;
+      case "announced": return <CalendarDays color={color} size={size} strokeWidth={3} />;
+      case "temporary": return <Store color={color} size={size} strokeWidth={3} />;
+      default: return null;
+    }
+  };
+
   const visitedPinColor = theme.colors.copper;
 
   return (
@@ -66,17 +80,21 @@ export default function MapScreen() {
               const coordinate = store.coordinates!;
 
               return (
-                <Marker
-                  coordinate={coordinate}
-                  description={getStorePlace(store)}
-                  key={store.id}
-                  onPress={() => router.push({ pathname: "/store/[id]", params: { id: store.id } })}
-                  title={getStoreName(store, i18n.language)}
-                >
-                  <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>
-                    <View style={[styles.markerInner, { backgroundColor: pinColor }]} />
-                  </View>
-                </Marker>
+                  <Marker
+                    coordinate={coordinate}
+                    description={getStorePlace(store)}
+                    key={store.id}
+                    onPress={() => router.push({ pathname: "/store/[id]", params: { id: store.id } })}
+                    title={getStoreName(store, i18n.language)}
+                    accessible={true}
+                    accessibilityLabel={`${getStoreName(store, i18n.language)}, ${t(`status.${store.status}`)}${isVisited ? `, ${t("map.visited")}` : ""}`}
+                  >
+                    <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>
+                      <View style={[styles.markerInner, { backgroundColor: pinColor }]}>
+                        <StatusIcon status={store.status} isVisited={isVisited} color={theme.colors.paper} size={10} />
+                      </View>
+                    </View>
+                  </Marker>
               );
             })}
           </MapView>
@@ -89,12 +107,16 @@ export default function MapScreen() {
         <View style={styles.legend}>
           {(["open", "closed", "relocated"] as const).map((status) => (
             <View key={status} style={styles.legendItem}>
-              <View style={[styles.legendDot, { backgroundColor: statusColors[status] }]} />
+              <View style={[styles.legendDot, { backgroundColor: statusColors[status] }]}>
+                <StatusIcon status={status} isVisited={false} color={theme.colors.paper} size={10} />
+              </View>
               <Text style={styles.legendText}>{t(`status.${status}`)}</Text>
             </View>
           ))}
           <View style={styles.legendItem}>
-            <View style={[styles.legendDot, { backgroundColor: visitedPinColor }]} />
+            <View style={[styles.legendDot, { backgroundColor: visitedPinColor }]}>
+              <StatusIcon status="open" isVisited={true} color={theme.colors.paper} size={10} />
+            </View>
             <Text style={styles.legendText}>{t("map.visited")}</Text>
           </View>
         </View>
@@ -151,9 +173,11 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       gap: spacing.xs
     },
     legendDot: {
-      width: 12,
-      height: 12,
-      borderRadius: radii.full
+      width: 16,
+      height: 16,
+      borderRadius: radii.full,
+      alignItems: "center",
+      justifyContent: "center"
     },
     legendText: {
       color: colors.ink,
@@ -171,9 +195,11 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       ...shadows.sm
     },
     markerInner: {
-      borderRadius: 8,
-      height: 14,
-      width: 14
+      alignItems: "center",
+      borderRadius: 9,
+      height: 18,
+      justifyContent: "center",
+      width: 18
     }
   }), [colors, radii, shadows, spacing, typography]);
 }

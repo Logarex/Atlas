@@ -203,6 +203,7 @@ export default function ProfileScreen() {
             <Text style={styles.sectionTitle}>{t("profile.newStore")}</Text>
           </View>
           <TextInput
+            accessibilityLabel={t("profile.newStorePlaceholder")}
             onChangeText={setNewStoreName}
             placeholder={t("profile.newStorePlaceholder")}
             placeholderTextColor={theme.colors.muted}
@@ -210,6 +211,7 @@ export default function ProfileScreen() {
             value={newStoreName}
           />
           <TextInput
+            accessibilityLabel={t("profile.newStoreNote")}
             multiline
             onChangeText={setNewStoreNote}
             placeholder={t("profile.newStoreNote")}
@@ -218,6 +220,7 @@ export default function ProfileScreen() {
             value={newStoreNote}
           />
           <TextInput
+            accessibilityLabel={t("store.contributorNamePlaceholder")}
             onChangeText={setNewStoreContributorName}
             placeholder={t("store.contributorNamePlaceholder")}
             placeholderTextColor={theme.colors.muted}
@@ -225,6 +228,9 @@ export default function ProfileScreen() {
             value={newStoreContributorName}
           />
           <Pressable
+            accessibilityRole="button"
+            accessibilityState={{ disabled: newStoreName.trim().length === 0 || isSubmittingStore }}
+            accessibilityLabel={t("profile.submitStore")}
             disabled={newStoreName.trim().length === 0 || isSubmittingStore}
             onPress={handleNewStoreProposal}
             style={[
@@ -248,6 +254,9 @@ export default function ProfileScreen() {
               const isActive = theme.themeSetting === mode;
               return (
                 <Pressable
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: isActive }}
+                  accessibilityLabel={t(`profile.theme.${mode}`)}
                   key={mode}
                   onPress={() => theme.setThemeSetting(mode)}
                   style={[
@@ -278,6 +287,9 @@ export default function ProfileScreen() {
           </View>
 
           <Pressable
+            accessibilityRole="button"
+            accessibilityExpanded={isLanguageModalVisible}
+            accessibilityLabel={`${t("profile.language.title")}, ${t(`profile.language.${languagePreference}`)}`}
             onPress={() => setIsLanguageModalVisible(true)}
             style={styles.dropdownButton}
           >
@@ -299,6 +311,9 @@ export default function ProfileScreen() {
               const isActive = imageCachePreference === cacheSize;
               return (
                 <Pressable
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: isActive }}
+                  accessibilityLabel={`${t(`profile.cache.${cacheSize}`)}, ${t(`profile.cache.${cacheSize}Desc`)}`}
                   key={cacheSize}
                   onPress={() => handleImageCachePreference(cacheSize)}
                   style={[
@@ -332,7 +347,12 @@ export default function ProfileScreen() {
           </View>
           <Text style={styles.cacheHint}>{t("profile.cache.hint")}</Text>
 
-          <Pressable onPress={handleClearImageCache} style={styles.secondaryButton}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t("profile.cache.clear")}
+            onPress={handleClearImageCache} 
+            style={styles.secondaryButton}
+          >
             <RotateCcw color={theme.colors.copper} size={18} />
             <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.cache.clear")}</Text>
           </Pressable>
@@ -351,6 +371,8 @@ export default function ProfileScreen() {
           </Text>
           <View style={styles.inlineActions}>
             <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("profile.export.button")}
               onPress={handleExportData}
               style={[styles.secondaryButton, styles.inlineActionButton]}
             >
@@ -358,6 +380,8 @@ export default function ProfileScreen() {
               <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.export.button")}</Text>
             </Pressable>
             <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("profile.import.button")}
               onPress={handleImportData}
               style={[styles.secondaryButton, styles.inlineActionButton]}
             >
@@ -400,6 +424,8 @@ export default function ProfileScreen() {
             </Text>
           </View>
           <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t("profile.deleteAccount")}
             onPress={handleDeleteData}
             style={[styles.secondaryButton, { borderColor: theme.colors.copper }]}
           >
@@ -420,16 +446,25 @@ export default function ProfileScreen() {
         visible={isLanguageModalVisible}
       >
         <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={t("profile.language.title")}
           onPress={() => setIsLanguageModalVisible(false)}
           style={styles.modalOverlay}
         >
-          <View style={styles.modalContent}>
+          <View
+            accessible={true}
+            onStartShouldSetResponder={() => true}
+            style={styles.modalContent}
+          >
             <Text style={styles.modalTitle}>{t("profile.language.title")}</Text>
             <ScrollView bounces={false}>
               {appLanguagePreferences.map((language) => {
                 const isActive = languagePreference === language;
                 return (
                   <Pressable
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: isActive }}
+                    accessibilityLabel={t(`profile.language.${language}`)}
                     key={language}
                     onPress={() => {
                       handleLanguagePreference(language);
@@ -536,11 +571,11 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       borderWidth: 1,
       color: colors.ink,
       fontSize: typography.body,
-      height: 48,
+      minHeight: 48,
       paddingHorizontal: spacing.md
     },
     textArea: {
-      height: 92,
+      minHeight: 92,
       paddingTop: spacing.md,
       textAlignVertical: "top"
     },

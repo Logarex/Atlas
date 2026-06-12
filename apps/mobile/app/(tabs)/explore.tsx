@@ -18,6 +18,7 @@ import {
 } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import {
   FlatList,
   Modal,
@@ -224,6 +225,7 @@ export default function ExploreScreen() {
   const theme = useAppTheme();
   const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
+  const reduceMotion = useReducedMotion();
   
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof filterKeys)[number]>("all");
@@ -354,6 +356,9 @@ export default function ExploreScreen() {
 
             return (
               <Pressable
+                accessibilityRole="button"
+                accessibilityState={{ selected: isSelected }}
+                accessibilityLabel={`${option.label}, ${option.count} results`}
                 key={option.value}
                 onPress={() => toggleAdvancedFilter(group, option.value)}
                 style={[styles.filterChip, isSelected && styles.filterChipActive]}
@@ -391,6 +396,9 @@ export default function ExploreScreen() {
 
           return (
             <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ selected: isActive }}
+              accessibilityLabel={`${t(`home.advancedFilters.groups.${group}`)}, ${optionsCount} options${selectedCount > 0 ? `, ${selectedCount} selected` : ""}`}
               key={group}
               onPress={() => setActiveAdvancedFilterGroup(group)}
               style={[
@@ -456,6 +464,7 @@ export default function ExploreScreen() {
       <View style={styles.searchWrap}>
         <View style={styles.searchInputFrame}>
           <TextInput
+            accessibilityRole="search"
             accessibilityLabel={t("home.searchLabel")}
             autoCapitalize="none"
             onChangeText={setQuery}
@@ -466,6 +475,7 @@ export default function ExploreScreen() {
           />
           {query.length > 0 ? (
             <Pressable
+              accessibilityRole="button"
               accessibilityLabel={t("home.clearSearch")}
               onPress={() => setQuery("")}
               style={styles.clearSearchButton}
@@ -478,6 +488,9 @@ export default function ExploreScreen() {
         <View style={styles.filters}>
           {filterKeys.map((key) => (
             <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ selected: filter === key }}
+              accessibilityLabel={t(`home.filters.${key}`)}
               key={key}
               onPress={() => setFilter(key)}
               style={[styles.filterButton, filter === key && styles.filterButtonActive]}
@@ -494,6 +507,11 @@ export default function ExploreScreen() {
         </View>
 
         <Pressable
+          accessibilityRole="button"
+          accessibilityExpanded={advancedFiltersVisible}
+          accessibilityLabel={advancedFilterCount > 0
+            ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
+            : t("home.advancedFilters.button")}
           onPress={() => setAdvancedFiltersVisible(true)}
           style={[
             styles.advancedFilterButton,
@@ -543,7 +561,7 @@ export default function ExploreScreen() {
       />
 
       <Modal
-        animationType="slide"
+        animationType={reduceMotion ? "fade" : "slide"}
         onRequestClose={() => setAdvancedFiltersVisible(false)}
         visible={advancedFiltersVisible}
       >
@@ -561,6 +579,7 @@ export default function ExploreScreen() {
               </Text>
             </View>
             <Pressable
+              accessibilityRole="button"
               accessibilityLabel={t("home.advancedFilters.close")}
               onPress={() => setAdvancedFiltersVisible(false)}
               style={styles.modalCloseButton}
@@ -580,6 +599,9 @@ export default function ExploreScreen() {
 
           <View style={styles.modalFooter}>
             <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ disabled: advancedFilterCount === 0 }}
+              accessibilityLabel={t("home.advancedFilters.reset")}
               disabled={advancedFilterCount === 0}
               onPress={() => setAdvancedFilters(createEmptyAdvancedFilters())}
               style={[
@@ -593,6 +615,8 @@ export default function ExploreScreen() {
               </Text>
             </Pressable>
             <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("home.advancedFilters.done")}
               onPress={() => setAdvancedFiltersVisible(false)}
               style={styles.doneButton}
             >
@@ -635,7 +659,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       backgroundColor: colors.paper,
       borderRadius: radii.md,
       flexDirection: "row",
-      height: 56,
+      minHeight: 56,
       paddingLeft: spacing.lg,
       paddingRight: spacing.sm,
       ...shadows.md

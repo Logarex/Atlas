@@ -39,7 +39,7 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
 
   return (
     <Link href={{ pathname: "/store/[id]", params: { id: store.id } }} asChild>
-      <Pressable style={styles.card}>
+      <Pressable accessibilityRole="button" style={styles.card}>
         {coverPhoto ? (
           <Image
             source={getPhotoSource(coverPhoto.thumbUrl ?? coverPhoto.url)}
