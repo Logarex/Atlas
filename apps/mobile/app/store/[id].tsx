@@ -1091,6 +1091,9 @@ export default function StoreDetailScreen() {
                 keyExtractor={(item) => item.id}
                 horizontal
                 pagingEnabled
+                snapToInterval={screenWidth}
+                snapToAlignment="center"
+                decelerationRate="fast"
                 showsHorizontalScrollIndicator={false}
                 initialScrollIndex={photoViewerIndex}
                 getItemLayout={(_, index) => ({
@@ -1103,10 +1106,11 @@ export default function StoreDetailScreen() {
                   setPhotoViewerIndex(newIndex);
                 }}
                 renderItem={({ item }) => (
-                  <View style={{ width: screenWidth, flex: 1 }}>
+                  <View style={{ width: screenWidth, height: "100%" }}>
                     <ExpoImage
                       cachePolicy="memory-disk"
                       contentFit="contain"
+                      contentPosition="center"
                       source={getPhotoSource(getPhotoFullUrl(item))}
                       style={{ flex: 1, width: "100%" }}
                       transition={160}
