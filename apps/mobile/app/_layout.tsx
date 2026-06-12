@@ -6,6 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useEffect } from "react";
 import { Image as ExpoImage } from "expo-image";
 import { generatedStores } from "@/features/stores/generatedStores";
+import { getPhotoThumbUrl } from "@/features/stores/storeUtils";
 import { useImageCachePreference } from "@/features/stores/imageCache";
 import { useLanguagePreference } from "@/lib/languagePreference";
 import { ThemeProvider, useAppTheme } from "@/theme/useAppTheme";
@@ -29,7 +30,7 @@ function InnerLayout() {
     const urlsToPrefetch = generatedStores
       .flatMap((store) => store.photos?.[0])
       .filter((photo) => photo !== undefined)
-      .map((photo) => photo.thumbUrl ?? photo.url)
+      .map((photo) => getPhotoThumbUrl(photo))
       .filter((url): url is string => !!url && /^https?:\/\//i.test(url));
 
     if (urlsToPrefetch.length > 0) {

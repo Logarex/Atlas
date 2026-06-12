@@ -3,11 +3,15 @@ import {
   submitStoreChange
 } from "@/features/contributions/contributionApi";
 import {
+  getMarkerEmoji,
+  getPhotoSource,
+  getPhotoThumbUrl,
+  getPhotoFullUrl,
+  getPositiveAttributeKeys,
   getStoreName,
   getStorePlace,
-  getPhotoSource,
-  getPositiveAttributeKeys,
   normalizePhotoUri,
+  statusEmojis
 } from "@/features/stores/storeUtils";
 import { createShareCardJpegBase64 } from "@/features/stores/shareCardImage";
 import { useStores } from "@/features/stores/useStores";
@@ -171,7 +175,7 @@ export default function StoreDetailScreen() {
   const name = store ? getStoreName(store, i18n.language) : "";
   const storePhotoUrls = useMemo(() => {
     return (store?.photos ?? [])
-      .flatMap((photo) => [photo.thumbUrl, photo.url])
+      .flatMap((photo) => [getPhotoThumbUrl(photo), getPhotoFullUrl(photo)])
       .filter((url): url is string => !!url && /^https?:\/\//i.test(url))
       .map(normalizePhotoUri);
   }, [store]);
@@ -233,7 +237,7 @@ export default function StoreDetailScreen() {
   });
   const shareMessageWithUrl = officialUrl ? `${shareMessage}\n${officialUrl}` : shareMessage;
   const architectureDetailImageSource = shareCoverPhoto
-    ? getPhotoSource(shareCoverPhoto.thumbUrl ?? shareCoverPhoto.url)
+    ? getPhotoSource(getPhotoThumbUrl(shareCoverPhoto))
     : privatePhotos[0]
       ? { uri: privatePhotos[0].uri }
       : null;
@@ -921,7 +925,7 @@ export default function StoreDetailScreen() {
                     cachePolicy="memory-disk"
                     contentFit="cover"
                     priority="high"
-                    source={getPhotoSource(photo.thumbUrl ?? photo.url)}
+                    source={getPhotoSource(getPhotoThumbUrl(photo))}
                     style={styles.photoImage}
                     transition={160}
                   />
@@ -1103,7 +1107,7 @@ export default function StoreDetailScreen() {
                     <ExpoImage
                       cachePolicy="memory-disk"
                       contentFit="contain"
-                      source={getPhotoSource(item.url)}
+                      source={getPhotoSource(getPhotoFullUrl(item))}
                       style={styles.photoViewerImage}
                       transition={160}
                     />

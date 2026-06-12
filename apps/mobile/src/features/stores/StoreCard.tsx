@@ -10,6 +10,7 @@ import { useMemo } from "react";
 import { useAppTheme } from "@/theme/useAppTheme";
 import {
   getPhotoSource,
+  getPhotoThumbUrl,
   getStoreName,
   getStorePlace
 } from "./storeUtils";
@@ -42,7 +43,7 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
       <Pressable accessibilityRole="button" style={styles.card}>
         {coverPhoto ? (
           <Image
-            source={getPhotoSource(coverPhoto.thumbUrl ?? coverPhoto.url)}
+            source={getPhotoSource(getPhotoThumbUrl(coverPhoto))}
             style={styles.coverImage}
           />
         ) : null}

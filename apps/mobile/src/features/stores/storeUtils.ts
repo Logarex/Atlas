@@ -191,6 +191,35 @@ export function normalizePhotoUri(url: string) {
   return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
 }
 
+export function getPhotoFullUrl(photo?: { url: string; thumbUrl?: string }) {
+  if (!photo?.url) return "";
+  const url = photo.url;
+  
+  if (url.includes("res.cloudinary.com") && !url.includes("q_auto")) {
+    const parts = url.split("/upload/");
+    if (parts.length === 2) {
+      return `${parts[0]}/upload/q_auto,f_auto/${parts[1]}`;
+    }
+  }
+  return url;
+}
+
+export function getPhotoThumbUrl(photo?: { url: string; thumbUrl?: string }) {
+  if (!photo?.url) return "";
+  if (photo.thumbUrl) return photo.thumbUrl;
+  
+  const url = photo.url;
+  if (url.includes("res.cloudinary.com")) {
+    const parts = url.split("/upload/");
+    if (parts.length === 2) {
+      // Inject thumbnail transformations right after /upload/
+      // This will convert the image to 500px width, auto quality, and WebP format
+      return `${parts[0]}/upload/c_limit,w_500,q_auto,f_auto/${parts[1]}`;
+    }
+  }
+  return url;
+}
+
 export function getStorePlace(store: StoreRecord) {
   return compactSearchParts([store.city, store.region, store.countryName ?? store.countryCode])
     .join(", ");

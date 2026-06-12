@@ -4180,11 +4180,11 @@
     "photos": [
       {
         "id": "apple-wondercity-1",
-        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-wonder-city.webp",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781282005/apple-wonder-city_nbcqz7.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
         "caption": "Apple 虹悦城 facade",
-        "takenOn": "2026-05-27"
+        "takenOn": "2026-05-16"
       }
     ],
     "lastVerifiedAt": "2026-05-18",
@@ -5609,19 +5609,19 @@
     "photos": [
       {
         "id": "apple-champs-elysees-1",
-        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-champs-elysees-1.webp",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781282008/apple-champs-elysees-1_o8mbkq.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
-        "caption": "Apple Champs-Élysées facade",
-        "takenOn": "2026-05-27"
+        "caption": "Apple Champs-Elysées",
+        "takenOn": "2025-05-17"
       },
       {
         "id": "apple-champs-elysees-2",
-        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-champs-elysees-2.webp",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781282007/apple-champs-elysees-2_mjz89r.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
-        "caption": "Apple Champs-Élysées interior",
-        "takenOn": "2026-05-27"
+        "caption": "Apple Champs-Elysées",
+        "takenOn": "2025-05-17"
       }
     ],
     "lastVerifiedAt": "2026-05-18",
@@ -5676,11 +5676,11 @@
     "photos": [
       {
         "id": "apple-marche-saint-germain-1",
-        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-marche-saint-germain.webp",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781282008/apple-marche-saint-germain_t8pljt.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
-        "caption": "Apple Marché Saint-Germain facade",
-        "takenOn": "2026-05-27"
+        "caption": "Apple Marché Saint-Germain",
+        "takenOn": "2026-01-19"
       }
     ],
     "lastVerifiedAt": "2026-05-18",
@@ -5735,11 +5735,11 @@
     "photos": [
       {
         "id": "apple-opera-1",
-        "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-opera.webp",
+        "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781282007/apple-opera_wcgkfm.webp",
         "credit": "Louis",
         "license": "CC-BY-4.0",
-        "caption": "Apple Opéra facade",
-        "takenOn": "2026-05-27"
+        "caption": "Apple Opéra",
+        "takenOn": "2026-01-19"
       }
     ],
     "lastVerifiedAt": "2026-05-18",

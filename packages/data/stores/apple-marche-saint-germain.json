@@ -44,11 +44,11 @@
   "photos": [
     {
       "id": "apple-marche-saint-germain-1",
-      "url": "https://github.com/Logarex/Atlas/releases/download/store-photos/apple-marche-saint-germain.webp",
+      "url": "https://res.cloudinary.com/dujhf2zsk/image/upload/v1781282008/apple-marche-saint-germain_t8pljt.webp",
       "credit": "Louis",
       "license": "CC-BY-4.0",
-      "caption": "Apple Marché Saint-Germain facade",
-      "takenOn": "2026-05-27"
+      "caption": "Apple Marché Saint-Germain",
+      "takenOn": "2026-01-19"
     }
   ],
   "lastVerifiedAt": "2026-05-18",
