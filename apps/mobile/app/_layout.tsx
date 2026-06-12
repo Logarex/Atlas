@@ -24,13 +24,17 @@ function InnerLayout() {
   useLanguagePreference();
 
   useEffect(() => {
+    // Optimal strategy: prefetch ONLY the first thumbnail of each store at launch (for the Explore view).
+    // The other thumbnails and full-size images are prefetched dynamically when opening a specific store.
     const urlsToPrefetch = generatedStores
       .flatMap((store) => store.photos?.[0])
       .filter((photo) => photo !== undefined)
-      .map((photo) => photo.thumbUrl ?? photo.url);
+      .map((photo) => photo.thumbUrl ?? photo.url)
+      .filter((url): url is string => !!url && /^https?:\/\//i.test(url));
 
     if (urlsToPrefetch.length > 0) {
-      ExpoImage.prefetch(urlsToPrefetch);
+      // prefetch store cover image thumbnails
+      void ExpoImage.prefetch([...new Set(urlsToPrefetch)], "memory-disk").catch(() => false);
     }
   }, []);
 

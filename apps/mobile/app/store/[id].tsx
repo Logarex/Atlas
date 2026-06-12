@@ -30,6 +30,7 @@ import {
   Camera,
   Check,
   ChevronLeft,
+  ChevronRight,
   Clock,
   Flag,
   Image as ImageIcon,
@@ -57,7 +58,9 @@ import {
   Switch,
   Text,
   TextInput,
-  View
+  View,
+  FlatList,
+  Dimensions
 } from "react-native";
 import { captureRef } from "react-native-view-shot";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -141,6 +144,9 @@ export default function StoreDetailScreen() {
   const [changeModalVisible, setChangeModalVisible] = useState(false);
   const [photoModalVisible, setPhotoModalVisible] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<StorePhoto | null>(null);
+  const [photoViewerIndex, setPhotoViewerIndex] = useState(0);
+  const flatListRef = useRef<FlatList>(null);
+  const { width: screenWidth } = Dimensions.get("window");
   const [selectedArchitectureDetail, setSelectedArchitectureDetail] =
     useState<ArchitectureDetailSelection | null>(null);
   const [fieldPath, setFieldPath] = useState("");
@@ -178,7 +184,7 @@ export default function StoreDetailScreen() {
   };
 
   useEffect(() => {
-    const urls = [...new Set(storePhotoUrls)].slice(0, 6);
+    const urls = [...new Set(storePhotoUrls)].slice(0, 20); // prefetch up to 10 photos (thumb + full)
     if (urls.length === 0) return;
 
     void ExpoImage.prefetch(urls, "memory-disk").catch(() => false);
@@ -905,7 +911,10 @@ export default function StoreDetailScreen() {
                 <Pressable
                   key={photo.id}
                   accessibilityRole="button"
-                  onPress={() => setSelectedPhoto(photo)}
+                  onPress={() => {
+                    setPhotoViewerIndex(store.photos!.findIndex(p => p.id === photo.id));
+                    setSelectedPhoto(photo);
+                  }}
                   style={styles.photoCard}
                 >
                   <ExpoImage
@@ -1061,31 +1070,81 @@ export default function StoreDetailScreen() {
       >
         <View style={[styles.photoViewerBackdrop, { paddingTop: insets.top + 12 }]}>
           <View style={styles.photoViewerHeader}>
-            <Text style={styles.photoViewerTitle}>{t("store.photos")}</Text>
+            <Text style={styles.photoViewerTitle}>
+              {store.photos && store.photos.length > 1
+                ? `${photoViewerIndex + 1} / ${store.photos.length}`
+                : t("store.photos")}
+            </Text>
             <Pressable accessibilityRole="button" accessibilityLabel={t("store.close")} onPress={() => setSelectedPhoto(null)} style={styles.photoViewerClose}>
               <X color={theme.colors.paper} size={22} />
             </Pressable>
           </View>
-          {selectedPhoto ? (
-            <>
-              <ExpoImage
-                cachePolicy="memory-disk"
-                contentFit="contain"
-                source={getPhotoSource(selectedPhoto.url)}
-                style={styles.photoViewerImage}
-                transition={160}
+          {selectedPhoto && store.photos ? (
+            <View style={{ flex: 1, justifyContent: "center" }}>
+              <FlatList
+                ref={flatListRef}
+                data={store.photos}
+                keyExtractor={(item) => item.id}
+                horizontal
+                pagingEnabled
+                showsHorizontalScrollIndicator={false}
+                initialScrollIndex={photoViewerIndex}
+                getItemLayout={(_, index) => ({
+                  length: screenWidth,
+                  offset: screenWidth * index,
+                  index,
+                })}
+                onMomentumScrollEnd={(event) => {
+                  const newIndex = Math.round(event.nativeEvent.contentOffset.x / screenWidth);
+                  setPhotoViewerIndex(newIndex);
+                }}
+                renderItem={({ item }) => (
+                  <View style={{ width: screenWidth, flex: 1 }}>
+                    <ExpoImage
+                      cachePolicy="memory-disk"
+                      contentFit="contain"
+                      source={getPhotoSource(item.url)}
+                      style={styles.photoViewerImage}
+                      transition={160}
+                    />
+                    <View style={[styles.photoViewerMeta, { paddingBottom: insets.bottom + 20 }]}>
+                      {item.caption ? (
+                        <Text style={styles.photoViewerCaption}>{item.caption}</Text>
+                      ) : null}
+                      <Text style={styles.photoViewerCredit}>
+                        {[item.credit, item.license, item.takenOn]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </Text>
+                    </View>
+                  </View>
+                )}
               />
-              <View style={[styles.photoViewerMeta, { paddingBottom: insets.bottom + 20 }]}>
-                {selectedPhoto.caption ? (
-                  <Text style={styles.photoViewerCaption}>{selectedPhoto.caption}</Text>
-                ) : null}
-                <Text style={styles.photoViewerCredit}>
-                  {[selectedPhoto.credit, selectedPhoto.license, selectedPhoto.takenOn]
-                    .filter(Boolean)
-                    .join(" · ")}
-                </Text>
-              </View>
-            </>
+              {photoViewerIndex > 0 && (
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityLabel={t("store.previousPhoto", { defaultValue: "Photo précédente" })}
+                  onPress={() => {
+                    flatListRef.current?.scrollToIndex({ index: photoViewerIndex - 1, animated: true });
+                  }}
+                  style={styles.galleryArrowLeft}
+                >
+                  <ChevronLeft color={theme.colors.paper} size={36} />
+                </Pressable>
+              )}
+              {photoViewerIndex < store.photos.length - 1 && (
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityLabel={t("store.nextPhoto", { defaultValue: "Photo suivante" })}
+                  onPress={() => {
+                    flatListRef.current?.scrollToIndex({ index: photoViewerIndex + 1, animated: true });
+                  }}
+                  style={styles.galleryArrowRight}
+                >
+                  <ChevronRight color={theme.colors.paper} size={36} />
+                </Pressable>
+              )}
+            </View>
           ) : null}
         </View>
       </Modal>
@@ -2114,6 +2173,25 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       fontSize: typography.small,
       fontWeight: "800",
       lineHeight: 20
+    },
+
+    galleryArrowLeft: {
+      position: "absolute",
+      left: spacing.sm,
+      top: "50%",
+      marginTop: -22,
+      backgroundColor: "rgba(0,0,0,0.4)",
+      borderRadius: radii.full,
+      padding: 4,
+    },
+    galleryArrowRight: {
+      position: "absolute",
+      right: spacing.sm,
+      top: "50%",
+      marginTop: -22,
+      backgroundColor: "rgba(0,0,0,0.4)",
+      borderRadius: radii.full,
+      padding: 4,
     }
   }), [colors, radii, shadows, spacing, typography]);
 }
