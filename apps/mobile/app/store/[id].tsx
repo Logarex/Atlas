@@ -23,6 +23,7 @@ import {
   useLocalUserPhotos
 } from "@/features/user/localUserData";
 import { useLocalVisits } from "@/features/visits/localVisits";
+import { AudioRecorder } from "@/features/visits/AudioRecorder";
 import { formatDate, isISODate, parseISODate, todayISO } from "@/lib/date";
 import { useAppTheme } from "@/theme/useAppTheme";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -148,6 +149,7 @@ export default function StoreDetailScreen() {
   const [visitDate, setVisitDate] = useState(todayISO());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [visitNote, setVisitNote] = useState("");
+  const [visitAudioUri, setVisitAudioUri] = useState<string | null>(null);
   const [visitFeedback, setVisitFeedback] = useState<InlineFeedback | null>(null);
   const [changeModalVisible, setChangeModalVisible] = useState(false);
   const [photoModalVisible, setPhotoModalVisible] = useState(false);
@@ -214,7 +216,7 @@ export default function StoreDetailScreen() {
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={t("store.back")}
-            onPress={() => router.back()}
+            onPress={() => router.canGoBack() && router.back()}
             style={styles.compactBackButton}
           >
             <ChevronLeft color={theme.colors.ink} size={22} />
@@ -287,8 +289,9 @@ export default function StoreDetailScreen() {
       return;
     }
 
-    await addVisit(storeId, visitDate, visitNote);
+    await addVisit(storeId, visitDate, visitNote, visitAudioUri || undefined);
     setVisitNote("");
+    setVisitAudioUri(null);
     setVisitFeedback({ message: t("store.visitSaved"), tone: "success" });
   }
 
@@ -632,10 +635,13 @@ export default function StoreDetailScreen() {
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={t("store.back")}
-            onPress={() => router.back()}
+            onPress={() => router.canGoBack() && router.back()}
             style={styles.compactBackButton}
           >
             <ChevronLeft color={theme.colors.ink} size={22} />
+          </Pressable>
+          <Pressable accessibilityRole="button" accessibilityLabel={t("store.shareVisit")} style={styles.compactBackButton} onPress={() => setShareModalVisible(true)}>
+            <Share2 color={theme.colors.ink} size={19} />
           </Pressable>
         </View>
         <Text style={styles.title}>{name}</Text>
@@ -647,30 +653,49 @@ export default function StoreDetailScreen() {
       </View>
 
       <View style={styles.actionRow}>
-        <Pressable accessibilityRole="button" style={styles.primaryButton} onPress={handleAddVisit}>
+        <Pressable accessibilityRole="button" style={[styles.primaryButton, { backgroundColor: theme.colors.copper }]} onPress={handleAddVisit}>
           <Check color={theme.colors.paper} size={18} />
           <Text style={styles.primaryButtonText}>{t("store.markVisited")}</Text>
-        </Pressable>
-        <Pressable accessibilityRole="button" accessibilityLabel={t("store.shareVisit")} style={styles.iconButton} onPress={() => setShareModalVisible(true)}>
-          <Share2 color={theme.colors.ink} size={19} />
         </Pressable>
       </View>
 
       <View style={styles.visitBox}>
         <CalendarDays color={theme.colors.teal} size={20} />
-        {Platform.OS === "ios" ? (
-          <DateTimePicker
-            value={parseISODate(visitDate)}
-            mode="date"
-            display="compact"
-            onChange={(_, date) => {
-              if (date) setVisitDate(date.toISOString().split("T")[0]);
-            }}
-          />
-        ) : (
-          <Pressable onPress={() => setShowDatePicker(true)}>
-            <Text style={[styles.dateInput, { paddingVertical: 8 }]}>{visitDate}</Text>
-          </Pressable>
+        <Pressable onPress={() => setShowDatePicker(true)} style={{ flex: 1, height: 48, justifyContent: 'center' }}>
+          <Text style={{ color: theme.colors.ink, fontSize: theme.typography.body }}>
+            {formatDate(visitDate, visitDate, i18n.language)}
+          </Text>
+        </Pressable>
+        {Platform.OS === "ios" && (
+          <Modal
+            animationType="fade"
+            onRequestClose={() => setShowDatePicker(false)}
+            transparent={true}
+            visible={showDatePicker}
+          >
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => setShowDatePicker(false)}
+              style={styles.modalBackdrop}
+            >
+              <View
+                accessible={true}
+                onStartShouldSetResponder={() => true}
+                style={[styles.modalSheet, { paddingBottom: insets.bottom + theme.spacing.lg }]}
+              >
+                <DateTimePicker
+                  value={parseISODate(visitDate)}
+                  mode="date"
+                  display="inline"
+                  themeVariant={theme.isDark ? "dark" : "light"}
+                  accentColor={theme.colors.copper}
+                  onChange={(_, date) => {
+                    if (date) setVisitDate(date.toISOString().split("T")[0]);
+                  }}
+                />
+              </View>
+            </Pressable>
+          </Modal>
         )}
         {Platform.OS !== "ios" && showDatePicker && (
           <DateTimePicker
@@ -695,6 +720,7 @@ export default function StoreDetailScreen() {
         style={styles.visitNoteInput}
         value={visitNote}
       />
+      <AudioRecorder audioUri={visitAudioUri} setAudioUri={setVisitAudioUri} />
       {visitFeedback ? (
         <Text
           style={[
@@ -715,6 +741,9 @@ export default function StoreDetailScreen() {
                 <Text style={styles.visitDate}>{visit.visitedOn}</Text>
                 {visit.note ? (
                   <Text style={styles.visitNote}>{visit.note}</Text>
+                ) : null}
+                {visit.audioUri ? (
+                  <AudioRecorder audioUri={visit.audioUri} readOnly />
                 ) : null}
               </View>
               <Pressable accessibilityRole="button" accessibilityLabel={t("store.removeVisit")} onPress={() => removeVisit(visit.id)} style={styles.smallIconButton}>
@@ -931,6 +960,8 @@ export default function StoreDetailScreen() {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.photosList}
+            snapToInterval={280 + theme.spacing.sm}
+            decelerationRate="fast"
           >
             {store.photos.map((photo) => {
               const hasCredit = !!photo.credit;
@@ -1862,7 +1893,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       borderRadius: radii.md,
       borderWidth: 1,
       overflow: "hidden",
-      width: 112,
+      width: 280,
       ...shadows.sm
     },
     photoRemoveButton: {
@@ -1878,8 +1909,8 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     photoImage: {
       backgroundColor: colors.line,
-      height: 74,
-      width: 112
+      height: 180,
+      width: 280
     },
     photoMeta: {
       padding: spacing.sm,

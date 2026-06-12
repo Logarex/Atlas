@@ -1,7 +1,7 @@
 import type { StoreRecord, StoreStatus } from "./store.types";
 
 import { Link } from "expo-router";
-import { MapPin } from "lucide-react-native";
+import { MapPin, CalendarDays, Palette } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Image } from "expo-image";
@@ -12,7 +12,8 @@ import {
   getPhotoSource,
   getPhotoThumbUrl,
   getStoreName,
-  getStorePlace
+  getStorePlace,
+  normalizeI18nKey
 } from "./storeUtils";
 
 type StoreCardProps = {
@@ -27,6 +28,8 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
   const styles = useStyles(theme);
   const name = getStoreName(store, i18n.language);
   const coverPhoto = store.photos?.[0];
+  const architecture = store.architecture.typology ?? store.architecture.era;
+  const year = store.openedOn?.slice(0, 4);
 
   const statusColors: Record<StoreStatus, string> = {
     open: theme.colors.teal,
@@ -57,7 +60,23 @@ export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCa
         <Text style={styles.name}>{name}</Text>
         <View style={styles.iconLine}>
           <MapPin color={theme.colors.muted} size={15} />
-          <Text style={styles.location}>{getStorePlace(store)}</Text>
+          <Text style={styles.location} numberOfLines={1}>{getStorePlace(store)}</Text>
+        </View>
+        <View style={styles.detailsRow}>
+          {architecture ? (
+            <View style={styles.detailPill}>
+              <Palette color={theme.colors.copper} size={12} />
+              <Text style={styles.detailText} numberOfLines={1}>
+                {t(`architectureDetails.${store.architecture.typology ? "typologies" : "eras"}.${normalizeI18nKey(architecture)}.title`, { defaultValue: architecture })}
+              </Text>
+            </View>
+          ) : null}
+          {year ? (
+            <View style={styles.detailPill}>
+              <CalendarDays color={theme.colors.copper} size={12} />
+              <Text style={styles.detailText}>{year}</Text>
+            </View>
+          ) : null}
         </View>
         {visitDates.length > 0 ? (
           <View style={styles.personalHistory}>
@@ -140,6 +159,28 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       flexDirection: "row",
       gap: spacing.xs,
       marginTop: spacing.sm
+    },
+    detailsRow: {
+      alignItems: "center",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: spacing.sm,
+      marginTop: spacing.sm
+    },
+    detailPill: {
+      alignItems: "center",
+      backgroundColor: colors.canvas,
+      borderRadius: radii.full,
+      flexDirection: "row",
+      gap: spacing.xs,
+      paddingHorizontal: spacing.sm,
+      paddingVertical: 4
+    },
+    detailText: {
+      color: colors.muted,
+      fontSize: 11,
+      fontWeight: "800",
+      textTransform: "uppercase"
     },
     personalHistory: {
       backgroundColor: colors.canvas,

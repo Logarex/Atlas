@@ -74,7 +74,8 @@
   "map": {
     "title": "Mappa mondiale",
     "copy": "{{count}} negozi caricati, {{visited}} segnati come visitati in questo dispositivo.",
-    "visited": "Visitati"
+    "visited": "Visitati",
+    "storeCount": "{{count}} negozi visualizzati"
   },
   "profile": {
     "kicker": "Spazio personale",

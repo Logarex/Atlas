@@ -485,7 +485,36 @@ export default function ExploreScreen() {
           ) : null}
         </View>
 
-        <View style={styles.filters}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filtersScroll} contentContainerStyle={styles.filters}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityState={{ expanded: advancedFiltersVisible }}
+            accessibilityLabel={advancedFilterCount > 0
+              ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
+              : t("home.advancedFilters.button")}
+            onPress={() => setAdvancedFiltersVisible(true)}
+            style={[
+              styles.filterButton,
+              advancedFilterCount > 0 && styles.advancedFilterButtonActive
+            ]}
+          >
+            <ListFilter
+              color={advancedFilterCount > 0 ? theme.colors.paper : theme.colors.copper}
+              size={14}
+            />
+            <Text
+              style={[
+                styles.filterText,
+                styles.advancedFilterText,
+                advancedFilterCount > 0 && styles.advancedFilterTextActive
+              ]}
+            >
+              {advancedFilterCount > 0
+                ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
+                : t("home.advancedFilters.button")}
+            </Text>
+          </Pressable>
+          <View style={styles.filterDivider} />
           {filterKeys.map((key) => (
             <Pressable
               accessibilityRole="button"
@@ -504,35 +533,7 @@ export default function ExploreScreen() {
               </Text>
             </Pressable>
           ))}
-        </View>
-
-        <Pressable
-          accessibilityRole="button"
-          accessibilityState={{ expanded: advancedFiltersVisible }}
-          accessibilityLabel={advancedFilterCount > 0
-            ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
-            : t("home.advancedFilters.button")}
-          onPress={() => setAdvancedFiltersVisible(true)}
-          style={[
-            styles.advancedFilterButton,
-            advancedFilterCount > 0 && styles.advancedFilterButtonActive
-          ]}
-        >
-          <ListFilter
-            color={advancedFilterCount > 0 ? theme.colors.paper : theme.colors.copper}
-            size={18}
-          />
-          <Text
-            style={[
-              styles.advancedFilterText,
-              advancedFilterCount > 0 && styles.advancedFilterTextActive
-            ]}
-          >
-            {advancedFilterCount > 0
-              ? t("home.advancedFilters.activeButton", { count: advancedFilterCount })
-              : t("home.advancedFilters.button")}
-          </Text>
-        </Pressable>
+        </ScrollView>
 
         {error ? <Text style={styles.warning}>{t("home.remoteError")}</Text> : null}
         {isLoading ? <Text style={styles.warning}>{t("home.loading")}</Text> : null}
@@ -678,20 +679,31 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       justifyContent: "center",
       width: 36
     },
+    filtersScroll: {
+      marginTop: spacing.md,
+      marginHorizontal: -spacing.lg,
+    },
     filters: {
       flexDirection: "row",
       gap: spacing.xs,
-      marginTop: spacing.md
+      paddingHorizontal: spacing.lg,
+      alignItems: "center"
+    },
+    filterDivider: {
+      width: 1,
+      height: 20,
+      backgroundColor: colors.line,
+      marginHorizontal: spacing.xs
     },
     filterButton: {
       alignItems: "center",
       backgroundColor: colors.paper,
       borderRadius: radii.full,
-      flex: 1,
+      flexDirection: "row",
+      gap: spacing.xs,
       justifyContent: "center",
       minHeight: 38,
-      minWidth: 0,
-      paddingHorizontal: spacing.xs,
+      paddingHorizontal: spacing.md,
       paddingVertical: spacing.sm,
       ...shadows.sm
     },
@@ -706,31 +718,17 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     filterTextActive: {
       color: colors.paper
     },
-    advancedFilterButton: {
-      alignItems: "center",
-      backgroundColor: colors.paper,
-      borderColor: colors.line,
-      borderRadius: 8,
-      borderWidth: 1,
-      flexDirection: "row",
-      gap: spacing.sm,
-      justifyContent: "center",
-      marginTop: spacing.md,
-      minHeight: 46,
-      paddingHorizontal: spacing.md
-    },
     advancedFilterButtonActive: {
       backgroundColor: colors.copper,
       borderColor: colors.copper
     },
     advancedFilterText: {
       color: colors.copper,
-      fontSize: typography.small,
-      fontWeight: "900"
     },
     advancedFilterTextActive: {
       color: colors.paper
     },
+
     warning: {
       color: colors.danger,
       fontSize: typography.caption,

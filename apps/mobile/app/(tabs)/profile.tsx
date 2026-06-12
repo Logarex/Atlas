@@ -1,6 +1,4 @@
-import {
-  submitStoreChange,
-} from "@/features/contributions/contributionApi";
+import { Link } from "expo-router";
 import { clearLocalProfile } from "@/features/social/socialApi";
 import {
   clearLocalUserPhotos,
@@ -32,7 +30,10 @@ import {
   Send,
   Trash2,
   Upload,
-  Users
+  Users,
+  BarChart2,
+  QrCode,
+  Image as ImageIcon
 } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -62,11 +63,7 @@ export default function ProfileScreen() {
     useLanguagePreference();
 
   const [isLanguageModalVisible, setIsLanguageModalVisible] = useState(false);
-  const [newStoreName, setNewStoreName] = useState("");
-  const [newStoreNote, setNewStoreNote] = useState("");
-  const [newStoreContributorName, setNewStoreContributorName] = useState("");
   const [message, setMessage] = useState<string | null>(null);
-  const [isSubmittingStore, setIsSubmittingStore] = useState(false);
 
   function visitCountLabel(count: number) {
     return t("counts.visit", { count });
@@ -102,28 +99,6 @@ export default function ProfileScreen() {
     );
   }
 
-  async function handleNewStoreProposal() {
-    if (isSubmittingStore) return;
-    try {
-      setIsSubmittingStore(true);
-      setMessage(t("profile.submittingStore"));
-      await submitStoreChange({
-        storeId: null,
-        type: "new_store",
-        proposedValue: newStoreName,
-        note: newStoreNote,
-        contributorName: newStoreContributorName
-      });
-      setNewStoreName("");
-      setNewStoreNote("");
-      setNewStoreContributorName("");
-      setMessage(t("profile.storeSubmitted"));
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : t("profile.failed"));
-    } finally {
-      setIsSubmittingStore(false);
-    }
-  }
 
   async function handleExportData() {
     try {
@@ -199,48 +174,74 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
+            <ImageIcon color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.gallery.title", { defaultValue: "Galerie Photos" })}</Text>
+          </View>
+          <Text style={styles.itemText}>{t("profile.gallery.subtitle", { defaultValue: "Retrouvez toutes les photos de vos visites dans votre galerie." })}</Text>
+          <Link href="/gallery" asChild>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("profile.gallery.button", { defaultValue: "Voir ma galerie" })}
+              style={styles.secondaryButton}
+            >
+              <ImageIcon color={theme.colors.copper} size={18} />
+              <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.gallery.button", { defaultValue: "Voir ma galerie" })}</Text>
+            </Pressable>
+          </Link>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <BarChart2 color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.stats.title", { defaultValue: "Vos Statistiques" })}</Text>
+          </View>
+          <Text style={styles.itemText}>{t("profile.stats.subtitle", { defaultValue: "Découvrez votre niveau et votre progression dans l'Atlas." })}</Text>
+          <Link href="/stats" asChild>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("profile.stats.button", { defaultValue: "Voir mes statistiques" })}
+              style={styles.secondaryButton}
+            >
+              <BarChart2 color={theme.colors.copper} size={18} />
+              <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.stats.button", { defaultValue: "Voir mes statistiques" })}</Text>
+            </Pressable>
+          </Link>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <QrCode color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.p2p.title", { defaultValue: "Comparaison P2P" })}</Text>
+          </View>
+          <Text style={styles.itemText}>{t("profile.p2p.subtitle", { defaultValue: "Partagez et scannez le code QR de vos amis pour comparer vos visites." })}</Text>
+          <Link href="/p2p" asChild>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("profile.p2p.button", { defaultValue: "Comparer" })}
+              style={styles.secondaryButton}
+            >
+              <QrCode color={theme.colors.copper} size={18} />
+              <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.p2p.button", { defaultValue: "Comparer" })}</Text>
+            </Pressable>
+          </Link>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
             <Send color={theme.colors.copper} size={22} />
             <Text style={styles.sectionTitle}>{t("profile.newStore")}</Text>
           </View>
-          <TextInput
-            accessibilityLabel={t("profile.newStorePlaceholder")}
-            onChangeText={setNewStoreName}
-            placeholder={t("profile.newStorePlaceholder")}
-            placeholderTextColor={theme.colors.muted}
-            style={styles.input}
-            value={newStoreName}
-          />
-          <TextInput
-            accessibilityLabel={t("profile.newStoreNote")}
-            multiline
-            onChangeText={setNewStoreNote}
-            placeholder={t("profile.newStoreNote")}
-            placeholderTextColor={theme.colors.muted}
-            style={[styles.input, styles.textArea]}
-            value={newStoreNote}
-          />
-          <TextInput
-            accessibilityLabel={t("store.contributorNamePlaceholder")}
-            onChangeText={setNewStoreContributorName}
-            placeholder={t("store.contributorNamePlaceholder")}
-            placeholderTextColor={theme.colors.muted}
-            style={styles.input}
-            value={newStoreContributorName}
-          />
-          <Pressable
-            accessibilityRole="button"
-            accessibilityState={{ disabled: newStoreName.trim().length === 0 || isSubmittingStore }}
-            accessibilityLabel={t("profile.submitStore")}
-            disabled={newStoreName.trim().length === 0 || isSubmittingStore}
-            onPress={handleNewStoreProposal}
-            style={[
-              styles.secondaryButton,
-              (newStoreName.trim().length === 0 || isSubmittingStore) && styles.disabledButton
-            ]}
-          >
-            <Send color={theme.colors.copper} size={18} />
-            <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.submitStore")}</Text>
-          </Pressable>
+          <Text style={styles.itemText}>{t("profile.newStoreHint", { defaultValue: "Proposez une nouvelle boutique pour la communauté." })}</Text>
+          <Link href="/contribute" asChild>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t("profile.submitStore")}
+              style={styles.secondaryButton}
+            >
+              <Send color={theme.colors.copper} size={18} />
+              <Text adjustsFontSizeToFit numberOfLines={1} style={styles.secondaryButtonText}>{t("profile.submitStore")}</Text>
+            </Pressable>
+          </Link>
         </View>
 
         <View style={styles.section}>
@@ -288,7 +289,7 @@ export default function ProfileScreen() {
 
           <Pressable
             accessibilityRole="button"
-            accessibilityExpanded={isLanguageModalVisible}
+            accessibilityState={{ expanded: isLanguageModalVisible }}
             accessibilityLabel={`${t("profile.language.title")}, ${t(`profile.language.${languagePreference}`)}`}
             onPress={() => setIsLanguageModalVisible(true)}
             style={styles.dropdownButton}

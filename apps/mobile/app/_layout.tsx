@@ -1,6 +1,6 @@
 import "@/lib/i18n";
 
-import { Stack } from "expo-router";
+import { Stack, useRouter, useSegments } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useEffect } from "react";
@@ -10,6 +10,7 @@ import { getPhotoThumbUrl } from "@/features/stores/storeUtils";
 import { useImageCachePreference } from "@/features/stores/imageCache";
 import { useLanguagePreference } from "@/lib/languagePreference";
 import { ThemeProvider, useAppTheme } from "@/theme/useAppTheme";
+import { useOnboardingStatus } from "@/features/user/onboarding";
 
 export default function RootLayout() {
   return (
@@ -23,6 +24,21 @@ function InnerLayout() {
   const theme = useAppTheme();
   useImageCachePreference();
   useLanguagePreference();
+
+  const { hasSeenOnboarding, isLoading } = useOnboardingStatus();
+  const segments = useSegments();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    const inTabsGroup = segments[0] === "(tabs)";
+    if (!hasSeenOnboarding && inTabsGroup) {
+      router.replace("/onboarding" as any);
+    } else if (hasSeenOnboarding && (segments[0] as string) === "onboarding") {
+      router.replace("/");
+    }
+  }, [hasSeenOnboarding, segments, isLoading]);
 
   useEffect(() => {
     // Optimal strategy: prefetch ONLY the first thumbnail of each store at launch (for the Explore view).
@@ -41,7 +57,12 @@ function InnerLayout() {
 
   return (
     <SafeAreaProvider>
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="gallery" options={{ presentation: "modal" }} />
+        <Stack.Screen name="stats" options={{ presentation: "modal" }} />
+        <Stack.Screen name="p2p" options={{ presentation: "modal" }} />
+        <Stack.Screen name="contribute" options={{ presentation: "modal" }} />
+      </Stack>
       <StatusBar style={theme.isDark ? "light" : "dark"} />
     </SafeAreaProvider>
   );

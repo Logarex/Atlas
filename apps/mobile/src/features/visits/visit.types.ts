@@ -3,6 +3,7 @@ export type LocalVisit = {
   storeId: string;
   visitedOn: string;
   note?: string;
+  audioUri?: string;
   createdAt: string;
   updatedAt: string;
 };

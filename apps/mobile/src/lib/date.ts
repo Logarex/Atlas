@@ -14,7 +14,17 @@ export function parseISODate(value: string) {
   return new Date(parseInt(y, 10), parseInt(m, 10) - 1, parseInt(d, 10));
 }
 
-export function formatDate(value: string | null | undefined, fallback: string) {
+export function formatDate(value: string | null | undefined, fallback: string, locale: string = 'en') {
   if (!value) return fallback;
-  return value;
+  if (!isISODate(value)) return value;
+  try {
+    const date = parseISODate(value);
+    return new Intl.DateTimeFormat(locale, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }).format(date);
+  } catch {
+    return value;
+  }
 }

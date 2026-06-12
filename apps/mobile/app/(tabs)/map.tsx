@@ -5,7 +5,8 @@ import { useAppTheme } from "@/theme/useAppTheme";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
 import { Check, X, ArrowRight, CalendarDays, Store } from "lucide-react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView from "react-native-map-clustering";
+import { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useMemo, useState } from "react";
@@ -73,6 +74,10 @@ export default function MapScreen() {
               longitudeDelta: 120
             }}
             style={[styles.map, mapSize]}
+            clusterColor={theme.colors.copper}
+            clusterTextColor={theme.colors.paper}
+            maxZoom={14}
+            radius={40}
           >
             {geocodedStores.map((store) => {
               const isVisited = visitedStoreIds.has(store.id);
@@ -98,6 +103,14 @@ export default function MapScreen() {
               );
             })}
           </MapView>
+        ) : null}
+        
+        {canRenderMap ? (
+          <View pointerEvents="none" style={[styles.counterOverlay, { top: insets.top + theme.spacing.md }]}>
+            <Text style={styles.counterText}>
+              {t("map.storeCount", { count: geocodedStores.length })}
+            </Text>
+          </View>
         ) : null}
       </View>
 
@@ -138,6 +151,20 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     map: {
       flex: 1
+    },
+    counterOverlay: {
+      position: "absolute",
+      alignSelf: "center",
+      backgroundColor: colors.paper,
+      paddingHorizontal: spacing.md,
+      paddingVertical: spacing.sm,
+      borderRadius: radii.full,
+      ...shadows.md
+    },
+    counterText: {
+      color: colors.ink,
+      fontSize: typography.small,
+      fontWeight: "800"
     },
     panel: {
       backgroundColor: colors.paper,

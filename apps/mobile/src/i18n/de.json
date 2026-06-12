@@ -74,7 +74,8 @@
   "map": {
     "title": "Weltkarte",
     "copy": "{{count}} Stores geladen, {{visited}} als besucht markiert auf diesem Gerät.",
-    "visited": "Besucht"
+    "visited": "Besucht",
+    "storeCount": "{{count}} angezeigte Stores"
   },
   "profile": {
     "kicker": "Persönlicher Bereich",
