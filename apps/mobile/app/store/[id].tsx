@@ -1072,8 +1072,8 @@ export default function StoreDetailScreen() {
         transparent
         visible={!!selectedPhoto}
       >
-        <View style={[styles.photoViewerBackdrop, { paddingTop: insets.top + 12 }]}>
-          <View style={styles.photoViewerHeader}>
+        <View style={styles.photoViewerBackdrop}>
+          <View style={[styles.photoViewerHeader, { paddingTop: insets.top + 12 }]} pointerEvents="box-none">
             <Text style={styles.photoViewerTitle}>
               {store.photos && store.photos.length > 1
                 ? `${photoViewerIndex + 1} / ${store.photos.length}`
@@ -1875,14 +1875,18 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     photoViewerBackdrop: {
       backgroundColor: "rgba(0, 0, 0, 0.92)",
-      flex: 1,
-      paddingHorizontal: spacing.lg
+      flex: 1
     },
     photoViewerHeader: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
       alignItems: "center",
       flexDirection: "row",
       justifyContent: "space-between",
-      marginBottom: spacing.md
+      paddingHorizontal: spacing.lg,
+      zIndex: 10
     },
     photoViewerTitle: {
       color: colors.paper,
@@ -2184,7 +2188,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
 
     galleryArrowLeft: {
       position: "absolute",
-      left: spacing.sm,
+      left: spacing.lg,
       top: "50%",
       marginTop: -22,
       backgroundColor: "rgba(0,0,0,0.4)",
@@ -2193,7 +2197,7 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
     },
     galleryArrowRight: {
       position: "absolute",
-      right: spacing.sm,
+      right: spacing.lg,
       top: "50%",
       marginTop: -22,
       backgroundColor: "rgba(0,0,0,0.4)",
