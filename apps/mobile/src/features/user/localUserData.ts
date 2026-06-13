@@ -31,6 +31,10 @@ type ExportedLocalUserPhoto = LocalUserPhoto & {
   exportFileName?: string;
 };
 
+type ExportedLocalVisit = LocalVisit & {
+  exportAudioFileName?: string;
+};
+
 type AtlasUserDataExport = {
   app: "Atlas Places";
   exportedAt: string;
@@ -42,7 +46,7 @@ type AtlasUserDataExport = {
     theme: string | null;
     romanizedNames: boolean;
   };
-  visits: LocalVisit[];
+  visits: ExportedLocalVisit[];
   privatePhotos: ExportedLocalUserPhoto[];
   summary: {
     privatePhotoCount: number;
@@ -107,6 +111,16 @@ function parseStoredJson(value: string | null) {
   } catch {
     return null;
   }
+}
+
+async function runInBatches<T, R>(items: T[], batchSize: number, processItem: (item: T) => Promise<R>): Promise<R[]> {
+  const results: R[] = [];
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    const batchResults = await Promise.all(batch.map(processItem));
+    results.push(...batchResults);
+  }
+  return results;
 }
 
 export async function readLocalUserPhotos() {
@@ -186,6 +200,7 @@ export async function exportLocalUserData() {
   const exportId = exportedAt.replace(/[:.]/g, "-");
   const exportDirectory = joinUri(safeDocumentDirectory(), `atlas-export-${exportId}`);
   const exportPhotosDirectory = joinUri(exportDirectory, "photos");
+  const exportAudiosDirectory = joinUri(exportDirectory, "audios");
   const manifestUri = joinUri(exportDirectory, "atlas-user-data.json");
   const [visits, privatePhotos, profileRaw, theme, imageCache, language, romanizedStr] = await Promise.all([
     readLocalVisits(),
@@ -199,13 +214,45 @@ export async function exportLocalUserData() {
   const useRomanizedNames = language === "true"; // wait, the 7th element is romanizedNames
   await ensureDirectory(exportDirectory);
   await ensureDirectory(exportPhotosDirectory);
+  await ensureDirectory(exportAudiosDirectory);
 
-  const exportedPhotos: ExportedLocalUserPhoto[] = [];
-  for (const photo of privatePhotos) {
-    const exportFileName = cleanFileName(photo.fileName, `${photo.id}.jpg`);
+  let failedCount = 0;
+
+  const exportedPhotos = (await runInBatches(privatePhotos, 5, async (photo) => {
+    const uniqueId = Math.random().toString(36).substring(2, 9);
+    const exportFileName = `${uniqueId}-${cleanFileName(photo.fileName, `${photo.id}.jpg`)}`;
     const destination = joinUri(exportPhotosDirectory, exportFileName);
-    await FileSystem.copyAsync({ from: photo.uri, to: destination }).catch(() => {});
-    exportedPhotos.push({ ...photo, exportFileName });
+    try {
+      await FileSystem.copyAsync({ from: photo.uri, to: destination });
+      return { ...photo, exportFileName };
+    } catch {
+      failedCount++;
+      return null;
+    }
+  })).filter(Boolean) as ExportedLocalUserPhoto[];
+
+  const exportedVisits = (await runInBatches(visits, 5, async (visit) => {
+    if (!visit.audioUri) return visit as ExportedLocalVisit;
+
+    const sourceInfo = await FileSystem.getInfoAsync(visit.audioUri).catch(() => ({ exists: false }));
+    if (!sourceInfo.exists) return visit as ExportedLocalVisit;
+
+    const extension = extensionForAsset(visit.audioUri) || ".m4a";
+    const uniqueId = Math.random().toString(36).substring(2, 9);
+    const exportFileName = `${uniqueId}-audio${extension}`;
+    const destination = joinUri(exportAudiosDirectory, exportFileName);
+
+    try {
+      await FileSystem.copyAsync({ from: visit.audioUri, to: destination });
+      return { ...visit, exportAudioFileName: exportFileName } as ExportedLocalVisit;
+    } catch {
+      failedCount++;
+      return visit as ExportedLocalVisit;
+    }
+  }));
+
+  if (failedCount > 0) {
+    throw new Error(`${failedCount} fichier(s) (photo ou audio) n'ont pas pu être exportés. Vérifiez l'espace disponible.`);
   }
 
   const payload: AtlasUserDataExport = {
@@ -214,11 +261,11 @@ export async function exportLocalUserData() {
     schemaVersion: EXPORT_SCHEMA_VERSION,
     profile: parseStoredJson(profileRaw),
     settings: { imageCache, language, theme, romanizedNames: romanizedStr === "true" },
-    visits,
+    visits: exportedVisits,
     privatePhotos: exportedPhotos,
     summary: {
-      privatePhotoCount: privatePhotos.length,
-      visitCount: visits.length
+      privatePhotoCount: exportedPhotos.length,
+      visitCount: exportedVisits.length
     }
   };
 
@@ -227,8 +274,8 @@ export async function exportLocalUserData() {
   return {
     directoryUri: exportDirectory,
     manifestUri,
-    privatePhotoCount: privatePhotos.length,
-    visitCount: visits.length
+    privatePhotoCount: exportedPhotos.length,
+    visitCount: exportedVisits.length
   };
 }
 
@@ -253,7 +300,8 @@ async function importPrivatePhoto(photo: ExportedLocalUserPhoto, baseDirectoryUr
   const sourceInfo = await FileSystem.getInfoAsync(sourceUri).catch(() => ({ exists: false }));
   if (!sourceInfo.exists) return null;
 
-  const destinationName = `${Date.now()}-${cleanFileName(photo.fileName, photo.exportFileName ?? "photo.jpg")}`;
+  const uniqueId = Math.random().toString(36).substring(2, 9);
+  const destinationName = `${Date.now()}-${uniqueId}-${cleanFileName(photo.fileName, photo.exportFileName ?? "photo.jpg")}`;
   const destinationUri = joinUri(directory, destinationName);
   await FileSystem.copyAsync({ from: sourceUri, to: destinationUri });
 
@@ -267,27 +315,67 @@ async function importPrivatePhoto(photo: ExportedLocalUserPhoto, baseDirectoryUr
   } satisfies LocalUserPhoto;
 }
 
+async function importAudio(visit: ExportedLocalVisit, baseDirectoryUri?: string): Promise<LocalVisit> {
+  if (!visit.exportAudioFileName || !baseDirectoryUri) return visit;
+
+  const directory = joinUri(safeDocumentDirectory(), "atlas-private-audios");
+  await ensureDirectory(directory);
+
+  const sourceUri = joinUri(joinUri(baseDirectoryUri, "audios"), visit.exportAudioFileName);
+  const sourceInfo = await FileSystem.getInfoAsync(sourceUri).catch(() => ({ exists: false }));
+  if (!sourceInfo.exists) return visit;
+
+  const uniqueId = Math.random().toString(36).substring(2, 9);
+  const destinationName = `${Date.now()}-${uniqueId}-${visit.exportAudioFileName}`;
+  const destinationUri = joinUri(directory, destinationName);
+  
+  await FileSystem.copyAsync({ from: sourceUri, to: destinationUri });
+
+  return {
+    ...visit,
+    audioUri: destinationUri
+  };
+}
+
 export async function importLocalUserDataFromJson(
   json: string,
   options?: { baseDirectoryUri?: string }
 ) {
   const parsed = JSON.parse(json) as Partial<AtlasUserDataExport>;
-  const importedVisits = Array.isArray(parsed.visits) ? parsed.visits : [];
+  const importedVisitsRaw = Array.isArray(parsed.visits) ? parsed.visits : [];
   const importedPhotos = Array.isArray(parsed.privatePhotos) ? parsed.privatePhotos : [];
   const [currentVisits, currentPhotos] = await Promise.all([
     readLocalVisits(),
     readLocalUserPhotos()
   ]);
 
+  let failedCount = 0;
+
+  const importedVisits = await runInBatches(importedVisitsRaw, 5, async (visit) => {
+    try {
+      return await importAudio(visit, options?.baseDirectoryUri);
+    } catch {
+      failedCount++;
+      return visit;
+    }
+  });
+
+  const restoredPhotos = (await runInBatches(importedPhotos, 5, async (photo) => {
+    if (!photo?.storeId) return null;
+    try {
+      return await importPrivatePhoto(photo, options?.baseDirectoryUri);
+    } catch {
+      failedCount++;
+      return null;
+    }
+  })).filter(Boolean) as LocalUserPhoto[];
+
+  if (failedCount > 0) {
+    throw new Error(`${failedCount} fichier(s) (photo ou audio) n'ont pas pu être importés. Vérifiez l'espace disponible.`);
+  }
+
   const nextVisits = mergeVisits(currentVisits, importedVisits);
   await replaceLocalVisits(nextVisits);
-
-  const restoredPhotos: LocalUserPhoto[] = [];
-  for (const photo of importedPhotos) {
-    if (!photo?.storeId) continue;
-    const restored = await importPrivatePhoto(photo, options?.baseDirectoryUri);
-    if (restored) restoredPhotos.push(restored);
-  }
 
   const existingPhotoIds = new Set(currentPhotos.map((photo) => photo.id));
   const nextPhotos = [
