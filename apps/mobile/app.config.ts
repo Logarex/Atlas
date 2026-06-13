@@ -5,7 +5,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   name: "Atlas Places",
   slug: "atlas",
   scheme: "atlas",
-  version: "0.0.1",
+  version: "1.0.0",
   orientation: "portrait",
   userInterfaceStyle: "automatic",
   locales: {
