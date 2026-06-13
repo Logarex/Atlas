@@ -114,9 +114,25 @@
     "kicker": "Persönlicher Bereich",
     "title": "Besuche",
     "subtitle": "Besuchte Stores, Vorschläge, Sprache und App-Einstellungen.",
+    "gallery": {
+      "title": "Fotogalerie",
+      "subtitle": "Finde alle Fotos deiner Besuche in deiner Galerie.",
+      "button": "Meine Galerie ansehen"
+    },
+    "stats": {
+      "title": "Deine Statistiken",
+      "subtitle": "Entdecke dein Level und deinen Fortschritt im Atlas.",
+      "button": "Meine Statistiken ansehen"
+    },
+    "p2p": {
+      "title": "P2P-Vergleich",
+      "subtitle": "Teile und scanne den QR-Code deiner Freunde, um deine Besuche zu vergleichen.",
+      "button": "Vergleichen"
+    },
     "visits": "Besuchte Stores",
     "noVisits": "Noch keine Besuche auf diesem Gerät gespeichert.",
     "newStore": "Fehlender Store",
+    "newStoreHint": "Schlage einen neuen Store für die Community vor.",
     "newStorePlaceholder": "Name oder Standort des Stores",
     "newStoreNote": "Nützliche Details zur Überprüfung",
     "submitStore": "Fehlenden Store einreichen",

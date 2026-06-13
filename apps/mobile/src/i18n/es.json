@@ -103,9 +103,25 @@
     "kicker": "Espacio personal",
     "title": "Visitas",
     "subtitle": "Tiendas visitadas, sugerencias, idioma y ajustes.",
+    "gallery": {
+      "title": "Galería de fotos",
+      "subtitle": "Encuentra todas las fotos de tus visitas en tu galería.",
+      "button": "Ver mi galería"
+    },
+    "stats": {
+      "title": "Tus Estadísticas",
+      "subtitle": "Descubre tu nivel y progreso en el Atlas.",
+      "button": "Ver mis estadísticas"
+    },
+    "p2p": {
+      "title": "Comparación P2P",
+      "subtitle": "Comparte y escanea el código QR de tus amigos para comparar tus visitas.",
+      "button": "Comparar"
+    },
     "visits": "Tiendas visitadas",
     "noVisits": "Aún no hay visitas guardadas en este dispositivo.",
     "newStore": "Tienda faltante",
+    "newStoreHint": "Sugiere una nueva tienda para la comunidad.",
     "newStorePlaceholder": "Nombre o ubicación de la tienda",
     "newStoreNote": "Detalles útiles para la revisión",
     "submitStore": "Enviar tienda faltante",

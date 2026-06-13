@@ -103,9 +103,25 @@
     "kicker": "Spazio personale",
     "title": "Visite",
     "subtitle": "Negozi visitati, suggerimenti, lingua e impostazioni.",
+    "gallery": {
+      "title": "Galleria Foto",
+      "subtitle": "Trova tutte le foto delle tue visite nella tua galleria.",
+      "button": "Vedi la mia galleria"
+    },
+    "stats": {
+      "title": "Le Tue Statistiche",
+      "subtitle": "Scopri il tuo livello e i tuoi progressi nell'Atlas.",
+      "button": "Vedi le mie statistiche"
+    },
+    "p2p": {
+      "title": "Confronto P2P",
+      "subtitle": "Condividi e scansiona il codice QR dei tuoi amici per confrontare le tue visite.",
+      "button": "Confronta"
+    },
     "visits": "Negozi visitati",
     "noVisits": "Nessuna visita salvata su questo dispositivo.",
     "newStore": "Negozio mancante",
+    "newStoreHint": "Suggerisci un nuovo negozio per la comunità.",
     "newStorePlaceholder": "Nome o posizione del negozio",
     "newStoreNote": "Dettagli utili per la revisione",
     "submitStore": "Invia negozio mancante",

@@ -103,9 +103,25 @@
     "kicker": "Personal space",
     "title": "Visits",
     "subtitle": "Visited stores, suggestions, language, and app settings.",
+    "gallery": {
+      "title": "Photo Gallery",
+      "subtitle": "Find all the photos from your visits in your gallery.",
+      "button": "View my gallery"
+    },
+    "stats": {
+      "title": "Your Statistics",
+      "subtitle": "Discover your level and progress in the Atlas.",
+      "button": "View my statistics"
+    },
+    "p2p": {
+      "title": "P2P Comparison",
+      "subtitle": "Share and scan your friends' QR code to compare your visits.",
+      "button": "Compare"
+    },
     "visits": "Visited stores",
     "noVisits": "No visits saved on this device yet.",
     "newStore": "Missing store",
+    "newStoreHint": "Suggest a new store for the community.",
     "newStorePlaceholder": "Store name or location",
     "newStoreNote": "Useful details for review",
     "submitStore": "Submit missing store",

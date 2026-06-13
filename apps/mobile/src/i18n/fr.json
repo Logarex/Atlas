@@ -103,9 +103,25 @@
     "kicker": "Espace personnel",
     "title": "Visites",
     "subtitle": "Boutiques vues, propositions, langue et réglages de l'app.",
+    "gallery": {
+      "title": "Galerie Photos",
+      "subtitle": "Retrouvez toutes les photos de vos visites dans votre galerie.",
+      "button": "Voir ma galerie"
+    },
+    "stats": {
+      "title": "Vos Statistiques",
+      "subtitle": "Découvrez votre niveau et votre progression dans l'Atlas.",
+      "button": "Voir mes statistiques"
+    },
+    "p2p": {
+      "title": "Comparaison P2P",
+      "subtitle": "Partagez et scannez le code QR de vos amis pour comparer vos visites.",
+      "button": "Comparer"
+    },
     "visits": "Boutiques vues",
     "noVisits": "Aucune visite enregistrée sur cet appareil pour l'instant.",
     "newStore": "Boutique manquante",
+    "newStoreHint": "Proposez une nouvelle boutique pour la communauté.",
     "newStorePlaceholder": "Nom ou emplacement",
     "newStoreNote": "Information utile pour la révision",
     "submitStore": "Proposer la boutique",
