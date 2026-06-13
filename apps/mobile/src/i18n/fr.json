@@ -263,7 +263,13 @@
     "captionPlaceholder": "Ex. Façade principale au coucher du soleil",
     "takenOn": "Date de prise",
     "takenOnPlaceholder": "YYYY-MM-DD",
-    "peopleVisible": "Des personnes reconnaissables sont visibles"
+    "peopleVisible": "Des personnes reconnaissables sont visibles",
+    "audio": {
+      "play": "Écouter la note",
+      "record": "Ajouter une note vocale",
+      "stop": "Arrêter l'enregistrement",
+      "playing": "Lecture en cours..."
+    }
   },
   "status": {
     "open": "Ouvert",

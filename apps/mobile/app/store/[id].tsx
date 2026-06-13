@@ -291,7 +291,24 @@ export default function StoreDetailScreen() {
       return;
     }
 
-    await addVisit(storeId, visitDate, visitNote, visitAudioUri || undefined);
+    let finalAudioUri = visitAudioUri;
+    if (visitAudioUri && !visitAudioUri.includes("visits-audio")) {
+      try {
+        const directory = `${FileSystem.documentDirectory}visits-audio/`;
+        const dirInfo = await FileSystem.getInfoAsync(directory);
+        if (!dirInfo.exists) {
+          await FileSystem.makeDirectoryAsync(directory, { intermediates: true });
+        }
+        const extension = visitAudioUri.split('.').pop() || "m4a";
+        const newUri = `${directory}${storeId}-${Date.now()}.${extension}`;
+        await FileSystem.copyAsync({ from: visitAudioUri, to: newUri });
+        finalAudioUri = newUri;
+      } catch (err) {
+        console.error("Failed to save audio", err);
+      }
+    }
+
+    await addVisit(storeId, visitDate, visitNote, finalAudioUri || undefined);
     setVisitNote("");
     setVisitAudioUri(null);
     setVisitFeedback({ message: t("store.visitSaved"), tone: "success" });

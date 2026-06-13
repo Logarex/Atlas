@@ -263,7 +263,13 @@
     "captionPlaceholder": "Es. Facciata principale al tramonto",
     "takenOn": "Data dello scatto",
     "takenOnPlaceholder": "AAAA-MM-GG",
-    "peopleVisible": "Sono visibili persone riconoscibili"
+    "peopleVisible": "Sono visibili persone riconoscibili",
+    "audio": {
+      "play": "Ascolta nota",
+      "record": "Aggiungi nota vocale",
+      "stop": "Interrompi registrazione",
+      "playing": "In riproduzione..."
+    }
   },
   "status": {
     "open": "Aperto",

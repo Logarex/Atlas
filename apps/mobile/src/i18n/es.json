@@ -263,7 +263,13 @@
     "captionPlaceholder": "Ej. Fachada principal al atardecer",
     "takenOn": "Fecha de la foto",
     "takenOnPlaceholder": "AAAA-MM-DD",
-    "peopleVisible": "Se ven personas reconocibles"
+    "peopleVisible": "Se ven personas reconocibles",
+    "audio": {
+      "play": "Escuchar nota",
+      "record": "Añadir nota de voz",
+      "stop": "Detener grabación",
+      "playing": "Reproduciendo..."
+    }
   },
   "status": {
     "open": "Abierta",

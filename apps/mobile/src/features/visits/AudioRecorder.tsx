@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { setAudioModeAsync, useAudioPlayer, useAudioRecorder, useAudioRecorderState, RecordingPresets, requestRecordingPermissionsAsync } from 'expo-audio';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, Pressable, Animated } from 'react-native';
+import { setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus, useAudioRecorder, useAudioRecorderState, RecordingPresets, requestRecordingPermissionsAsync } from 'expo-audio';
 import { Mic, Square, Play, Pause, Trash2 } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import { useAppTheme } from '@/theme/useAppTheme';
@@ -13,6 +13,24 @@ export function AudioRecorder({ audioUri, setAudioUri, readOnly = false }: { aud
   const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
   const recorderState = useAudioRecorderState(recorder);
   const player = useAudioPlayer(audioUri || null);
+  const playerStatus = useAudioPlayerStatus(player);
+  const isPlaying = playerStatus.playing;
+
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    if (isPlaying) {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(pulseAnim, { toValue: 0.5, duration: 800, useNativeDriver: true }),
+          Animated.timing(pulseAnim, { toValue: 1, duration: 800, useNativeDriver: true })
+        ])
+      ).start();
+    } else {
+      pulseAnim.stopAnimation();
+      pulseAnim.setValue(1);
+    }
+  }, [isPlaying, pulseAnim]);
 
   async function startRecording() {
     try {
@@ -33,9 +51,15 @@ export function AudioRecorder({ audioUri, setAudioUri, readOnly = false }: { aud
   if (audioUri) {
     return (
       <View style={styles.container}>
-        <Pressable onPress={() => player.playing ? player.pause() : player.play()} style={styles.button}>
-          {player.playing ? <Pause color={theme.colors.paper} size={18} /> : <Play color={theme.colors.paper} size={18} />}
-          <Text style={styles.buttonText}>{t("store.audio.play", { defaultValue: "Écouter la note" })}</Text>
+        <Pressable onPress={() => isPlaying ? player.pause() : player.play()} style={styles.button}>
+          <Animated.View style={{ opacity: pulseAnim, flexDirection: 'row', alignItems: 'center', gap: theme.spacing.sm }}>
+            {isPlaying ? <Pause color={theme.colors.paper} size={18} /> : <Play color={theme.colors.paper} size={18} />}
+            <Text style={styles.buttonText}>
+              {isPlaying 
+                ? t("store.audio.playing", { defaultValue: "Lecture en cours..." }) 
+                : t("store.audio.play", { defaultValue: "Écouter la note" })}
+            </Text>
+          </Animated.View>
         </Pressable>
         {!readOnly && setAudioUri && (
           <Pressable onPress={() => setAudioUri(null)} style={styles.iconButton}>

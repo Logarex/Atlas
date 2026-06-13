@@ -263,7 +263,13 @@
     "captionPlaceholder": "E.g. Main facade at sunset",
     "takenOn": "Date taken",
     "takenOnPlaceholder": "YYYY-MM-DD",
-    "peopleVisible": "Recognizable people are visible"
+    "peopleVisible": "Recognizable people are visible",
+    "audio": {
+      "play": "Listen to note",
+      "record": "Add voice note",
+      "stop": "Stop recording",
+      "playing": "Playing..."
+    }
   },
   "status": {
     "open": "Open",

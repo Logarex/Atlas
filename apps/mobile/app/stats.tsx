@@ -8,16 +8,19 @@ import { useAppTheme } from "@/theme/useAppTheme";
 import { useLocalVisits } from "@/features/visits/localVisits";
 import { generatedStores } from "@/features/stores/generatedStores";
 import { BarChart } from "react-native-chart-kit";
+import { getStoreName } from "@/features/stores/storeUtils";
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 
 const screenWidth = Dimensions.get("window").width;
 
 export default function StatsScreen() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const theme = useAppTheme();
   const styles = useStyles(theme);
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { visits } = useLocalVisits();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
 
   const [isGradeModalVisible, setIsGradeModalVisible] = useState(false);
   const [isStoresModalVisible, setIsStoresModalVisible] = useState(false);
@@ -296,7 +299,9 @@ export default function StatsScreen() {
               showsVerticalScrollIndicator={false}
               renderItem={({ item }) => (
                 <View style={styles.listItem}>
-                  <Text style={styles.listItemTitle}>{item.store?.name?.en || item.store?.id}</Text>
+                  <Text style={styles.listItemTitle}>
+                    {item.store ? getStoreName(item.store, i18n.language, { romanized: useRomanizedNames }) : item.visit.storeId}
+                  </Text>
                   <Text style={styles.listItemSubtitle}>{item.visit.visitedOn}</Text>
                 </View>
               )}

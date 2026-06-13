@@ -274,7 +274,13 @@
     "captionPlaceholder": "Z.B. Hauptfassade bei Sonnenuntergang",
     "takenOn": "Aufnahmedatum",
     "takenOnPlaceholder": "JJJJ-MM-TT",
-    "peopleVisible": "Erkennbare Personen sind sichtbar"
+    "peopleVisible": "Erkennbare Personen sind sichtbar",
+    "audio": {
+      "play": "Notiz anhören",
+      "record": "Sprachnotiz hinzufügen",
+      "stop": "Aufnahme stoppen",
+      "playing": "Wird abgespielt..."
+    }
   },
   "status": {
     "open": "Geöffnet",
