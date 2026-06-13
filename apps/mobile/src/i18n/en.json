@@ -4,7 +4,8 @@
     "explore": "Explore",
     "map": "Map",
     "review": "Review",
-    "profile": "Profile"
+    "profile": "Profile",
+    "circuit": "Circuits"
   },
   "counts": {
     "visit_one": "{{count}} visit",
@@ -67,9 +68,30 @@
     "stats": {
       "open": "Open",
       "closed": "Closed",
-      "relocated": "Former places"
+      "relocated": "Relocated"
     },
     "recentVisits": "Recent visits"
+  },
+  "stats": {
+    "grade": {
+      "tourist": "Tourist",
+      "explorer": "Explorer",
+      "citizen": "Global Citizen",
+      "legend": "Living Legend"
+    },
+    "gradeLabel": "Your Rank",
+    "gradeHint": "Tap to see details",
+    "visitedStores": "Stores",
+    "visitedCountries": "Explored Countries",
+    "topCountries": "Top 5 Countries",
+    "gradeDetails": "Rank Progress",
+    "visitedCount": "visits",
+    "nextRankIn": "{{count}} more for {{rank}} rank",
+    "maxRankReched": "You've reached the maximum rank!",
+    "current": "Current",
+    "visitsAbbr": "visits",
+    "visitedStoresTitle": "Visited Stores",
+    "exploredCountriesTitle": "Explored Countries"
   },
   "map": {
     "title": "Worldwide map",
@@ -152,6 +174,10 @@
       "hint": "Controls how many store photos are kept on disk between sessions. A larger cache means fewer network requests when revisiting stores.",
       "clear": "Clear cache",
       "cleared": "Image cache cleared."
+    },
+    "romanized": {
+      "title": "Romanized names",
+      "hint": "Show store names in romanized alphabet (e.g. Apple Taipei 101 instead of Apple 台北101)."
     }
   },
   "store": {
@@ -315,13 +341,16 @@
         "title": "Unknown"
       },
       "vintageD2": {
-        "body": "An older format tied to intermediate generations of Apple Retail design. It remains very functional, before Forums, Avenues, and recent video walls became widespread."
+        "body": "An older format tied to intermediate generations of Apple Retail design. It remains very functional, before Forums, Avenues, and recent video walls became widespread.",
+        "title": "Vintage D.2"
       },
       "vintageE": {
-        "body": "An older or transitional store type, useful for spotting locations that have not fully adopted the vocabulary of contemporary Apple Stores."
+        "body": "An older or transitional store type, useful for spotting locations that have not fully adopted the vocabulary of contemporary Apple Stores.",
+        "title": "Vintage E"
       },
       "watchShop": {
-        "body": "A format dedicated to Apple Watch, usually more compact and closer to a jewelry or accessories space. It emphasizes presentation, try-on, and direct advisor interaction."
+        "body": "A format dedicated to Apple Watch, usually more compact and closer to a jewelry or accessories space. It emphasizes presentation, try-on, and direct advisor interaction.",
+        "title": "Apple Watch Shop"
       }
     },
     "attributes": {
@@ -409,5 +438,10 @@
         "status": "Status"
       }
     }
+  },
+  "p2p": {
+    "commonVisits": "In common",
+    "onlyMeVisits": "Only me",
+    "onlyThemVisits": "Only them"
   }
 }

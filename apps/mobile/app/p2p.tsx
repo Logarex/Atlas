@@ -2,12 +2,16 @@ import { useState, useMemo } from "react";
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useTranslation } from "react-i18next";
-import { ChevronLeft, QrCode, ScanLine, Share2 } from "lucide-react-native";
+import { ChevronLeft, ChevronRight, QrCode, ScanLine, Share2 } from "lucide-react-native";
 import { Stack, useRouter } from "expo-router";
 import QRCode from "react-native-qrcode-svg";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { useAppTheme } from "@/theme/useAppTheme";
 import { useLocalVisits } from "@/features/visits/localVisits";
+import { useStores } from "@/features/stores/useStores";
+import { getStoreName, getStorePlace, getMarkerEmoji } from "@/features/stores/storeUtils";
+import type { StoreRecord } from "@/features/stores/store.types";
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 
 export default function P2PCompareScreen() {
   const { t } = useTranslation();
@@ -16,6 +20,8 @@ export default function P2PCompareScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { visits } = useLocalVisits();
+  const { stores } = useStores();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
 
   const [activeTab, setActiveTab] = useState<"share" | "scan">("share");
   const [scannedData, setScannedData] = useState<string | null>(null);
@@ -32,8 +38,39 @@ export default function P2PCompareScreen() {
     }
   };
 
-  const myVisitsCount = new Set(visits.map(v => v.storeId)).size;
-  const scannedVisitsCount = scannedData ? scannedData.replace("atlas:v1:", "").split(",").filter(Boolean).length : 0;
+  const myVisitsSet = useMemo(() => new Set(visits.map(v => v.storeId)), [visits]);
+  const scannedVisitsSet = useMemo(() => {
+    return new Set(scannedData ? scannedData.replace("atlas:v1:", "").split(",").filter(Boolean) : []);
+  }, [scannedData]);
+
+  const comparison = useMemo(() => {
+    const commonIds = [...myVisitsSet].filter(id => scannedVisitsSet.has(id));
+    const onlyMeIds = [...myVisitsSet].filter(id => !scannedVisitsSet.has(id));
+    const onlyThemIds = [...scannedVisitsSet].filter(id => !myVisitsSet.has(id));
+
+    return {
+      common: commonIds.map(id => stores.find(s => s.id === id)).filter(Boolean) as StoreRecord[],
+      onlyMe: onlyMeIds.map(id => stores.find(s => s.id === id)).filter(Boolean) as StoreRecord[],
+      onlyThem: onlyThemIds.map(id => stores.find(s => s.id === id)).filter(Boolean) as StoreRecord[],
+    };
+  }, [myVisitsSet, scannedVisitsSet, stores]);
+
+  const myVisitsCount = myVisitsSet.size;
+  const scannedVisitsCount = scannedVisitsSet.size;
+
+  const StoreRow = ({ store }: { store: StoreRecord }) => {
+    const { i18n } = useTranslation();
+    return (
+      <View style={styles.storeRow}>
+        <Text style={styles.storeEmoji}>{getMarkerEmoji(store)}</Text>
+        <View style={styles.storeRowInfo}>
+          <Text style={styles.storeRowName}>{getStoreName(store, i18n.language, { romanized: useRomanizedNames })}</Text>
+          <Text style={styles.storeRowPlace}>{getStorePlace(store)}</Text>
+        </View>
+        <ChevronRight color={theme.colors.muted} size={16} />
+      </View>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
@@ -133,6 +170,37 @@ export default function P2PCompareScreen() {
                     <Text style={styles.statsValue}>{scannedVisitsCount}</Text>
                   </View>
                 </View>
+
+                {comparison.common.length > 0 && (
+                  <View style={styles.listSection}>
+                    <Text style={styles.listSectionTitle}>{t("p2p.commonVisits", { defaultValue: "En commun" })} ({comparison.common.length})</Text>
+                    {comparison.common.map(store => (
+                      <Pressable key={store.id} onPress={() => router.push(`/store/${store.id}` as any)}>
+                        <StoreRow store={store} />
+                      </Pressable>
+                    ))}
+                  </View>
+                )}
+                {comparison.onlyMe.length > 0 && (
+                  <View style={styles.listSection}>
+                    <Text style={styles.listSectionTitle}>{t("p2p.onlyMeVisits", { defaultValue: "Moi seul" })} ({comparison.onlyMe.length})</Text>
+                    {comparison.onlyMe.map(store => (
+                      <Pressable key={store.id} onPress={() => router.push(`/store/${store.id}` as any)}>
+                        <StoreRow store={store} />
+                      </Pressable>
+                    ))}
+                  </View>
+                )}
+                {comparison.onlyThem.length > 0 && (
+                  <View style={styles.listSection}>
+                    <Text style={styles.listSectionTitle}>{t("p2p.onlyThemVisits", { defaultValue: "Ami seul" })} ({comparison.onlyThem.length})</Text>
+                    {comparison.onlyThem.map(store => (
+                      <Pressable key={store.id} onPress={() => router.push(`/store/${store.id}` as any)}>
+                        <StoreRow store={store} />
+                      </Pressable>
+                    ))}
+                  </View>
+                )}
                 <Pressable style={styles.secondaryButton} onPress={() => setScannedData(null)}>
                   <Text style={styles.secondaryButtonText}>{t("p2p.scanAnother", { defaultValue: "Scanner un autre code" })}</Text>
                 </Pressable>
@@ -319,6 +387,46 @@ function useStyles(theme: ReturnType<typeof useAppTheme>) {
       color: colors.ink,
       fontSize: typography.small,
       fontWeight: "800"
+    },
+    listSection: {
+      width: "100%",
+      marginTop: spacing.md,
+      gap: spacing.sm
+    },
+    listSectionTitle: {
+      fontSize: typography.small,
+      fontWeight: "800",
+      color: colors.muted,
+      textTransform: "uppercase",
+      marginBottom: spacing.xs,
+      paddingHorizontal: spacing.sm
+    },
+    storeRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: colors.paper,
+      borderWidth: 1,
+      borderColor: colors.line,
+      borderRadius: radii.md,
+      padding: spacing.md,
+      gap: spacing.md,
+      ...shadows.sm
+    },
+    storeEmoji: {
+      fontSize: 24,
+    },
+    storeRowInfo: {
+      flex: 1,
+      gap: 2
+    },
+    storeRowName: {
+      fontSize: typography.body,
+      fontWeight: "700",
+      color: colors.ink
+    },
+    storeRowPlace: {
+      fontSize: typography.small,
+      color: colors.muted
     }
   }), [colors, typography, spacing, shadows, radii]);
 }

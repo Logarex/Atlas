@@ -4,7 +4,8 @@
     "explore": "Explorer",
     "map": "Carte",
     "review": "Révision",
-    "profile": "Profil"
+    "profile": "Profil",
+    "circuit": "Circuits"
   },
   "counts": {
     "visit_one": "{{count}} visite",
@@ -70,6 +71,27 @@
       "closed": "Fermées",
       "relocated": "Anciens lieux"
     }
+  },
+  "stats": {
+    "grade": {
+      "tourist": "Touriste",
+      "explorer": "Explorateur",
+      "citizen": "Citoyen du Monde",
+      "legend": "Légende Vivante"
+    },
+    "gradeLabel": "Votre Grade",
+    "gradeHint": "Appuyez pour voir les détails",
+    "visitedStores": "Boutiques",
+    "visitedCountries": "Pays explorés",
+    "topCountries": "Top 5 Pays",
+    "gradeDetails": "Progression de Grade",
+    "visitedCount": "visites",
+    "nextRankIn": "Encore {{count}} pour le niveau {{rank}}",
+    "maxRankReched": "Vous avez atteint le rang maximum !",
+    "current": "Actuel",
+    "visitsAbbr": "visites",
+    "visitedStoresTitle": "Boutiques visitées",
+    "exploredCountriesTitle": "Pays explorés"
   },
   "map": {
     "title": "Carte mondiale",
@@ -152,6 +174,10 @@
       "hint": "Définit combien de photos de boutiques sont gardées sur le disque entre les sessions. Un cache plus grand réduit les téléchargements quand tu revisites des boutiques.",
       "clear": "Vider le cache",
       "cleared": "Cache images vidé."
+    },
+    "romanized": {
+      "title": "Noms romanisés",
+      "hint": "Afficher les noms des boutiques dans leur alphabet romanisé (ex: Apple Taipei 101 au lieu de Apple 台北101)."
     }
   },
   "store": {
@@ -315,13 +341,16 @@
         "title": "Inconnu"
       },
       "vintageD2": {
-        "body": "Format plus ancien lié aux générations intermédiaires du design Apple Retail. Il garde une organisation très fonctionnelle, avant la généralisation des forums, avenues et murs vidéo récents."
+        "body": "Format plus ancien lié aux générations intermédiaires du design Apple Retail. Il garde une organisation très fonctionnelle, avant la généralisation des forums, avenues et murs vidéo récents.",
+        "title": "Vintage D.2"
       },
       "vintageE": {
-        "body": "Typologie ancienne ou transitoire de boutique, utile pour repérer les lieux qui n'ont pas encore adopté tout le vocabulaire des Apple Store contemporains."
+        "body": "Typologie ancienne ou transitoire de boutique, utile pour repérer les lieux qui n'ont pas encore adopté tout le vocabulaire des Apple Store contemporains.",
+        "title": "Vintage E"
       },
       "watchShop": {
-        "body": "Format consacré à Apple Watch, souvent plus compact et plus proche d'un espace de joaillerie ou d'accessoires. Le design privilégie la présentation, l'essayage et la relation directe avec le conseiller."
+        "body": "Format consacré à Apple Watch, souvent plus compact et plus proche d'un espace de joaillerie ou d'accessoires. Le design privilégie la présentation, l'essayage et la relation directe avec le conseiller.",
+        "title": "Apple Watch Shop"
       }
     },
     "attributes": {
@@ -409,5 +438,10 @@
         "status": "Statut"
       }
     }
+  },
+  "p2p": {
+    "commonVisits": "En commun",
+    "onlyMeVisits": "Moi seul",
+    "onlyThemVisits": "Ami seul"
   }
 }

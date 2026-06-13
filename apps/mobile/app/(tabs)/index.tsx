@@ -7,10 +7,12 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useMemo } from "react";
 import { CalendarDays, Clock, Compass } from "lucide-react-native";
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 import { getStoreName } from "@/features/stores/storeUtils";
 
 export default function HomeScreen() {
   const { t, i18n } = useTranslation();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
   const theme = useAppTheme();
   const insets = useSafeAreaInsets();
   const styles = useStyles(theme);
@@ -112,7 +114,7 @@ export default function HomeScreen() {
                       <View style={styles.visitCardBody}>
                         <View style={styles.visitTopLine}>
                           <Text style={styles.visitName} numberOfLines={1}>
-                            {store ? getStoreName(store, i18n.language, { noLocal: true }) : visit.storeId}
+                            {store ? getStoreName(store, i18n.language, { noLocal: true, romanized: useRomanizedNames }) : visit.storeId}
                           </Text>
                           <Text style={styles.visitDate}>{visit.visitedOn}</Text>
                         </View>

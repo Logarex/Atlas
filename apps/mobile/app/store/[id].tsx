@@ -1,3 +1,4 @@
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 import {
   submitPhoto,
   submitStoreChange
@@ -137,6 +138,7 @@ const architectureTypologyDetailKeys: Record<string, string> = {
 
 export default function StoreDetailScreen() {
   const { t, i18n } = useTranslation();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
   const theme = useAppTheme();
   const styles = useStyles(theme);
   
@@ -178,7 +180,7 @@ export default function StoreDetailScreen() {
   const shareCardRef = useRef<View>(null);
   const { addVisit, removeVisit, storeVisits } = useLocalVisits(store?.id);
   const { storePhotos: privatePhotos } = useLocalUserPhotos(store?.id);
-  const name = store ? getStoreName(store, i18n.language) : "";
+  const name = store ? getStoreName(store, i18n.language, { romanized: useRomanizedNames }) : "";
   const storePhotoUrls = useMemo(() => {
     return (store?.photos ?? [])
       .flatMap((photo) => [getPhotoThumbUrl(photo), getPhotoFullUrl(photo)])

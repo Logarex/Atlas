@@ -8,6 +8,7 @@ import { Image as ExpoImage } from "expo-image";
 import { useAppTheme } from "@/theme/useAppTheme";
 import { useLocalUserPhotos } from "@/features/user/localUserData";
 import { generatedStores } from "@/features/stores/generatedStores";
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 import { getStoreName } from "@/features/stores/storeUtils";
 
 const { width } = Dimensions.get("window");
@@ -16,6 +17,7 @@ const imageSize = (width - 32 - (numColumns - 1) * 8) / numColumns;
 
 export default function GalleryScreen() {
   const { t, i18n } = useTranslation();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
   const theme = useAppTheme();
   const styles = useStyles(theme);
   const router = useRouter();
@@ -55,7 +57,7 @@ export default function GalleryScreen() {
           columnWrapperStyle={styles.row}
           renderItem={({ item }) => {
             const store = generatedStores.find(s => s.id === item.storeId);
-            const storeName = store ? getStoreName(store, i18n.language) : "";
+            const storeName = store ? getStoreName(store, i18n.language, { romanized: useRomanizedNames }) : "";
             return (
               <View style={styles.photoContainer}>
                 <ExpoImage

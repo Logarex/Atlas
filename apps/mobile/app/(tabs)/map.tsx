@@ -1,3 +1,4 @@
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 import { getStoreName, getStorePlace } from "@/features/stores/storeUtils";
 import { useStores } from "@/features/stores/useStores";
 import { useLocalVisits } from "@/features/visits/localVisits";
@@ -15,6 +16,7 @@ import type { LayoutChangeEvent } from "react-native";
 
 export default function MapScreen() {
   const { t, i18n } = useTranslation();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
   const theme = useAppTheme();
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -90,9 +92,9 @@ export default function MapScreen() {
                     description={getStorePlace(store)}
                     key={store.id}
                     onPress={() => router.push({ pathname: "/store/[id]", params: { id: store.id } })}
-                    title={getStoreName(store, i18n.language)}
+                    title={getStoreName(store, i18n.language, { romanized: useRomanizedNames })}
                     accessible={true}
-                    accessibilityLabel={`${getStoreName(store, i18n.language)}, ${t(`status.${store.status}`)}${isVisited ? `, ${t("map.visited")}` : ""}`}
+                    accessibilityLabel={`${getStoreName(store, i18n.language, { romanized: useRomanizedNames })}, ${t(`status.${store.status}`)}${isVisited ? `, ${t("map.visited")}` : ""}`}
                   >
                     <View style={[styles.marker, { borderColor: isVisited ? theme.colors.paper : pinColor }]}>
                       <View style={[styles.markerInner, { backgroundColor: pinColor }]}>

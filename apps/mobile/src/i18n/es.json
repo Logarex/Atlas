@@ -4,7 +4,8 @@
     "explore": "Explorar",
     "map": "Mapa",
     "review": "Revisar",
-    "profile": "Perfil"
+    "profile": "Perfil",
+    "circuit": "Circuitos"
   },
   "counts": {
     "visit_one": "{{count}} visita",
@@ -67,9 +68,30 @@
     "stats": {
       "open": "Abiertas",
       "closed": "Cerradas",
-      "relocated": "Antiguas"
+      "relocated": "Reubicadas"
     },
     "recentVisits": "Visitas recientes"
+  },
+  "stats": {
+    "grade": {
+      "tourist": "Turista",
+      "explorer": "Explorador",
+      "citizen": "Ciudadano del Mundo",
+      "legend": "Leyenda Viva"
+    },
+    "gradeLabel": "Tu Rango",
+    "gradeHint": "Toca para ver detalles",
+    "visitedStores": "Tiendas",
+    "visitedCountries": "Países explorados",
+    "topCountries": "Top 5 Países",
+    "gradeDetails": "Progreso de Rango",
+    "visitedCount": "visitas",
+    "nextRankIn": "{{count}} más para el rango {{rank}}",
+    "maxRankReched": "¡Has alcanzado el rango máximo!",
+    "current": "Actual",
+    "visitsAbbr": "visitas",
+    "visitedStoresTitle": "Tiendas visitadas",
+    "exploredCountriesTitle": "Países explorados"
   },
   "map": {
     "title": "Mapa mundial",
@@ -152,6 +174,10 @@
       "hint": "Controla cuántas fotos se guardan en el disco entre sesiones. Una caché más grande significa menos solicitudes de red al volver a visitar tiendas.",
       "clear": "Borrar caché",
       "cleared": "Caché de imágenes borrada."
+    },
+    "romanized": {
+      "title": "Nombres romanizados",
+      "hint": "Mostrar nombres de tiendas en alfabeto romanizado."
     }
   },
   "store": {
@@ -315,13 +341,16 @@
         "title": "Desconocido"
       },
       "vintageD2": {
-        "body": "Un formato antiguo vinculado a generaciones intermedias del diseño minorista de Apple. Sigue siendo muy funcional, antes de que los Forums, Avenues y los recientes muros de video se generalizaran."
+        "body": "Un formato antiguo vinculado a generaciones intermedias del diseño minorista de Apple. Sigue siendo muy funcional, antes de que los Forums, Avenues y los recientes muros de video se generalizaran.",
+        "title": "Vintage D.2"
       },
       "vintageE": {
-        "body": "Un tipo de tienda antigua o de transición, útil para identificar ubicaciones que no han adoptado completamente el vocabulario de las tiendas Apple contemporáneas."
+        "body": "Un tipo de tienda antigua o de transición, útil para identificar ubicaciones que no han adoptado completamente el vocabulario de las tiendas Apple contemporáneas.",
+        "title": "Vintage E"
       },
       "watchShop": {
-        "body": "Un formato dedicado a Apple Watch, generalmente más compacto y cercano a una joyería. Destaca la presentación y la interacción directa con el asesor."
+        "body": "Un formato dedicado a Apple Watch, generalmente más compacto y cercano a una joyería. Destaca la presentación y la interacción directa con el asesor.",
+        "title": "Apple Watch Shop"
       }
     },
     "attributes": {
@@ -409,5 +438,21 @@
         "status": "Estado"
       }
     }
+  },
+  "circuit": {
+    "title": "Circuitos",
+    "description": "Descubre itinerarios optimizados para visitar múltiples Apple Stores.",
+    "selectCity": "Elige una ciudad",
+    "duration": "{{time}} min",
+    "distance": "{{dist}} km",
+    "walking": "A pie",
+    "transit": "Transporte",
+    "stepWalking": "Caminar {{time}} min ({{dist}})",
+    "stepTransit": "Transporte {{time}} min ({{dist}})"
+  },
+  "p2p": {
+    "commonVisits": "En común",
+    "onlyMeVisits": "Solo yo",
+    "onlyThemVisits": "Solo amigo"
   }
 }

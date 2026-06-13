@@ -1,3 +1,4 @@
+import { useRomanizedNamesPreference } from "@/features/user/localUserData";
 import type { StoreRecord, StoreStatus } from "./store.types";
 
 import { Link } from "expo-router";
@@ -24,9 +25,10 @@ type StoreCardProps = {
 
 export function StoreCard({ isVisited = false, store, visitDates = [] }: StoreCardProps) {
   const { t, i18n } = useTranslation();
+  const { preference: useRomanizedNames } = useRomanizedNamesPreference();
   const theme = useAppTheme();
   const styles = useStyles(theme);
-  const name = getStoreName(store, i18n.language);
+  const name = getStoreName(store, i18n.language, { romanized: useRomanizedNames });
   const coverPhoto = store.photos?.[0];
   const architecture = store.architecture.typology ?? store.architecture.era;
   const year = store.openedOn?.slice(0, 4);

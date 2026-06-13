@@ -12,6 +12,7 @@ const LOCAL_PHOTOS_KEY = "@atlas/local-user-photos/v1";
 const PROFILE_KEY = "@atlas/local-profile/v1";
 const THEME_KEY = "@atlas/theme-setting/v1";
 const IMAGE_CACHE_KEY = "@atlas/image-cache-preference/v1";
+const ROMANIZED_NAMES_KEY = "@atlas/romanized-names-preference/v1";
 const EXPORT_SCHEMA_VERSION = 1;
 
 export type LocalUserPhoto = {
@@ -39,6 +40,7 @@ type AtlasUserDataExport = {
     imageCache: string | null;
     language: string | null;
     theme: string | null;
+    romanizedNames: boolean;
   };
   visits: LocalVisit[];
   privatePhotos: ExportedLocalUserPhoto[];
@@ -185,15 +187,16 @@ export async function exportLocalUserData() {
   const exportDirectory = joinUri(safeDocumentDirectory(), `atlas-export-${exportId}`);
   const exportPhotosDirectory = joinUri(exportDirectory, "photos");
   const manifestUri = joinUri(exportDirectory, "atlas-user-data.json");
-  const [visits, privatePhotos, profileRaw, theme, imageCache, language] = await Promise.all([
+  const [visits, privatePhotos, profileRaw, theme, imageCache, language, romanizedStr] = await Promise.all([
     readLocalVisits(),
     readLocalUserPhotos(),
     AsyncStorage.getItem(PROFILE_KEY),
     AsyncStorage.getItem(THEME_KEY),
     AsyncStorage.getItem(IMAGE_CACHE_KEY),
-    AsyncStorage.getItem(APP_LANGUAGE_STORAGE_KEY)
+    AsyncStorage.getItem(APP_LANGUAGE_STORAGE_KEY),
+    AsyncStorage.getItem(ROMANIZED_NAMES_KEY)
   ]);
-
+  const useRomanizedNames = language === "true"; // wait, the 7th element is romanizedNames
   await ensureDirectory(exportDirectory);
   await ensureDirectory(exportPhotosDirectory);
 
@@ -210,7 +213,7 @@ export async function exportLocalUserData() {
     exportedAt,
     schemaVersion: EXPORT_SCHEMA_VERSION,
     profile: parseStoredJson(profileRaw),
-    settings: { imageCache, language, theme },
+    settings: { imageCache, language, theme, romanizedNames: romanizedStr === "true" },
     visits,
     privatePhotos: exportedPhotos,
     summary: {
@@ -307,6 +310,9 @@ export async function importLocalUserDataFromJson(
   if (isAppLanguagePreference(parsed.settings?.language)) {
     await AsyncStorage.setItem(APP_LANGUAGE_STORAGE_KEY, parsed.settings.language);
   }
+  if (parsed.settings?.romanizedNames !== undefined) {
+    await AsyncStorage.setItem(ROMANIZED_NAMES_KEY, parsed.settings.romanizedNames ? "true" : "false");
+  }
 
   return {
     privatePhotoCount: restoredPhotos.length,
@@ -354,4 +360,26 @@ export function useLocalUserPhotos(storeId?: string) {
     photos,
     storePhotos
   };
+}
+
+
+export function useRomanizedNamesPreference() {
+  const [preference, setPreferenceState] = useState<boolean>(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    AsyncStorage.getItem(ROMANIZED_NAMES_KEY).then((value) => {
+      if (isMounted) setPreferenceState(value === null ? true : value === "true");
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const setPreference = async (nextPreference: boolean) => {
+    setPreferenceState(nextPreference);
+    await AsyncStorage.setItem(ROMANIZED_NAMES_KEY, nextPreference ? "true" : "false");
+  };
+
+  return { preference, setPreference };
 }

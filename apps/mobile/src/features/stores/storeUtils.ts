@@ -151,20 +151,50 @@ export const latinStoreNames: Record<string, string> = {
   "apple-zhujiangnewtown": "Apple Zhujiang New Town"
 };
 
+export const latinCityNames: Record<string, string> = {
+  "台北市": "Taipei",
+  "Beşiktaş İstanbul": "Istanbul",
+  "香港": "Hong Kong",
+  "苏州": "Suzhou",
+  "กรุงเทพมหานคร": "Bangkok",
+  "北京": "Beijing",
+  "澳門": "Macau",
+  "서울": "Seoul",
+  "渋谷区": "Tokyo",
+  "上海": "Shanghai",
+  "重庆": "Chongqing",
+  "大阪市": "Osaka",
+  "成都": "Chengdu",
+  "杭州": "Hangzhou",
+  "沈阳": "Shenyang",
+  "天津": "Tianjin",
+  "广州": "Guangzhou",
+  "南京": "Nanjing"
+};
+
+export function getCityName(cityName: string, options?: { romanized?: boolean }) {
+  if (options?.romanized && latinCityNames[cityName]) {
+    return latinCityNames[cityName];
+  }
+  return cityName;
+}
+
 export function getStoreName(
-  store: StoreRecord,
+  store: { id: string; name: { en: string; fr?: string; [key: string]: any } },
   language: string,
-  options?: { noLocal?: boolean }
+  options?: { noLocal?: boolean; romanized?: boolean }
 ) {
-  const baseName = language.startsWith("fr") ? store.name.fr : store.name.en;
+  if (options?.romanized) {
+    if (latinStoreNames[store.id]) return latinStoreNames[store.id];
+    return store.name.en;
+  }
+  const baseName = (language.startsWith("fr") && store.name.fr) ? store.name.fr : store.name.en;
   const isFRorEN = language.startsWith("fr") || language.startsWith("en");
 
   if (isFRorEN && latinStoreNames[store.id]) {
     const latinName = latinStoreNames[store.id];
     if (options?.noLocal) {
       return latinName;
-    } else {
-      return `${latinName} (${baseName})`;
     }
   }
 

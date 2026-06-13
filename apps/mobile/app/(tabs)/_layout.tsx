@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Home, Map, Search, UserRound } from "lucide-react-native";
+import { Home, Map, Search, UserRound, Route } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 
 import { useAppTheme } from "@/theme/useAppTheme";
@@ -39,6 +39,13 @@ export default function TabsLayout() {
         options={{
           title: t("tabs.map"),
           tabBarIcon: ({ color, size }) => <Map color={color} size={size} />
+        }}
+      />
+      <Tabs.Screen
+        name="circuit"
+        options={{
+          title: t("tabs.circuit", { defaultValue: "Circuits" }),
+          tabBarIcon: ({ color, size }) => <Route color={color} size={size} />
         }}
       />
       <Tabs.Screen

@@ -4,7 +4,8 @@
     "explore": "Entdecken",
     "map": "Karte",
     "review": "Überprüfen",
-    "profile": "Profil"
+    "profile": "Profil",
+    "circuit": "Routen"
   },
   "counts": {
     "visit_one": "{{count}} Besuch",
@@ -67,15 +68,47 @@
     "stats": {
       "open": "Geöffnet",
       "closed": "Geschlossen",
-      "relocated": "Verlegt"
+      "relocated": "Umgezogen"
     },
     "recentVisits": "Letzte Besuche"
+  },
+  "stats": {
+    "grade": {
+      "tourist": "Tourist",
+      "explorer": "Entdecker",
+      "citizen": "Weltbürger",
+      "legend": "Lebende Legende"
+    },
+    "gradeLabel": "Dein Rang",
+    "gradeHint": "Tippen für Details",
+    "visitedStores": "Stores",
+    "visitedCountries": "Entdeckte Länder",
+    "topCountries": "Top 5 Länder",
+    "gradeDetails": "Rang Fortschritt",
+    "visitedCount": "Besuche",
+    "nextRankIn": "Noch {{count}} für {{rank}}",
+    "maxRankReched": "Du hast den höchsten Rang erreicht!",
+    "current": "Aktuell",
+    "visitsAbbr": "Besuche",
+    "visitedStoresTitle": "Besuchte Stores",
+    "exploredCountriesTitle": "Entdeckte Länder"
   },
   "map": {
     "title": "Weltkarte",
     "copy": "{{count}} Stores geladen, {{visited}} als besucht markiert auf diesem Gerät.",
     "visited": "Besucht",
     "storeCount": "{{count}} angezeigte Stores"
+  },
+  "circuit": {
+    "title": "Routen",
+    "description": "Entdecken Sie optimierte Routen, um mehrere Apple Stores zu besuchen.",
+    "selectCity": "Wählen Sie eine Stadt",
+    "duration": "{{time}} Min.",
+    "distance": "{{dist}} km",
+    "walking": "Zu Fuß",
+    "transit": "Nahverkehr",
+    "stepWalking": "Gehen {{time}} Min. ({{dist}})",
+    "stepTransit": "Nahverkehr {{time}} Min. ({{dist}})"
   },
   "profile": {
     "kicker": "Persönlicher Bereich",
@@ -152,6 +185,10 @@
       "hint": "Steuert, wie viele Fotos zwischen Sitzungen auf der Festplatte gespeichert bleiben.",
       "clear": "Cache leeren",
       "cleared": "Bild-Cache geleert."
+    },
+    "romanized": {
+      "title": "Romanisierte Namen",
+      "hint": "Store-Namen im romanisierten Alphabet anzeigen."
     }
   },
   "store": {
@@ -315,13 +352,16 @@
         "title": "Unbekannt"
       },
       "vintageD2": {
-        "body": "Ein älteres Format aus mittleren Generationen von Apple Retail Design."
+        "body": "Ein älteres Format aus mittleren Generationen von Apple Retail Design.",
+        "title": "Vintage D.2"
       },
       "vintageE": {
-        "body": "Ein älterer oder Übergangstyp von Store."
+        "body": "Ein älterer oder Übergangstyp von Store.",
+        "title": "Vintage E"
       },
       "watchShop": {
-        "body": "Ein Format, das der Apple Watch gewidmet ist, in der Regel kompakter."
+        "body": "Ein Format, das der Apple Watch gewidmet ist, in der Regel kompakter.",
+        "title": "Apple Watch Shop"
       }
     },
     "attributes": {
@@ -409,5 +449,10 @@
         "status": "Status"
       }
     }
+  },
+  "p2p": {
+    "commonVisits": "Gemeinsam",
+    "onlyMeVisits": "Nur ich",
+    "onlyThemVisits": "Nur Freund"
   }
 }

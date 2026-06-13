@@ -4,7 +4,8 @@
     "explore": "Esplora",
     "map": "Mappa",
     "review": "Revisione",
-    "profile": "Profilo"
+    "profile": "Profilo",
+    "circuit": "Circuiti"
   },
   "counts": {
     "visit_one": "{{count}} visita",
@@ -70,6 +71,27 @@
       "relocated": "Trasferiti"
     },
     "recentVisits": "Visite recenti"
+  },
+  "stats": {
+    "grade": {
+      "tourist": "Turista",
+      "explorer": "Esploratore",
+      "citizen": "Cittadino del Mondo",
+      "legend": "Leggenda Vivente"
+    },
+    "gradeLabel": "Il Tuo Rango",
+    "gradeHint": "Tocca per vedere i dettagli",
+    "visitedStores": "Negozi",
+    "visitedCountries": "Paesi esplorati",
+    "topCountries": "Top 5 Paesi",
+    "gradeDetails": "Progresso Rango",
+    "visitedCount": "visite",
+    "nextRankIn": "Ancora {{count}} per il rango {{rank}}",
+    "maxRankReched": "Hai raggiunto il rango massimo!",
+    "current": "Attuale",
+    "visitsAbbr": "visite",
+    "visitedStoresTitle": "Negozi visitati",
+    "exploredCountriesTitle": "Paesi esplorati"
   },
   "map": {
     "title": "Mappa mondiale",
@@ -152,6 +174,10 @@
       "hint": "Controlla quante foto del negozio vengono conservate su disco tra le sessioni.",
       "clear": "Svuota cache",
       "cleared": "Cache delle immagini svuotata."
+    },
+    "romanized": {
+      "title": "Nomi romanizzati",
+      "hint": "Mostra i nomi dei negozi in alfabeto romanizzato."
     }
   },
   "store": {
@@ -315,13 +341,16 @@
         "title": "Sconosciuto"
       },
       "vintageD2": {
-        "body": "Un formato più vecchio legato alle generazioni intermedie del design retail di Apple."
+        "body": "Un formato più vecchio legato alle generazioni intermedie del design retail di Apple.",
+        "title": "Vintage D.2"
       },
       "vintageE": {
-        "body": "Un tipo di negozio più vecchio o di transizione."
+        "body": "Un tipo di negozio più vecchio o di transizione.",
+        "title": "Vintage E"
       },
       "watchShop": {
-        "body": "Un formato dedicato ad Apple Watch."
+        "body": "Un formato dedicato ad Apple Watch.",
+        "title": "Apple Watch Shop"
       }
     },
     "attributes": {
@@ -409,5 +438,21 @@
         "status": "Stato"
       }
     }
+  },
+  "circuit": {
+    "title": "Circuiti",
+    "description": "Scopri itinerari ottimizzati per visitare più Apple Store.",
+    "selectCity": "Scegli una città",
+    "duration": "{{time}} min",
+    "distance": "{{dist}} km",
+    "walking": "A piedi",
+    "transit": "Trasporto",
+    "stepWalking": "Camminare {{time}} min ({{dist}})",
+    "stepTransit": "Trasporto {{time}} min ({{dist}})"
+  },
+  "p2p": {
+    "commonVisits": "In comune",
+    "onlyMeVisits": "Solo io",
+    "onlyThemVisits": "Solo amico"
   }
 }

@@ -4,7 +4,8 @@ import {
   clearLocalUserPhotos,
   exportLocalUserData,
   importLocalUserDataFromPickedFile,
-  useLocalUserPhotos
+  useLocalUserPhotos,
+  useRomanizedNamesPreference
 } from "@/features/user/localUserData";
 import {
   clearImageCache,
@@ -46,6 +47,7 @@ import {
   Text,
   TextInput,
   View,
+  Switch,
 } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -61,6 +63,8 @@ export default function ProfileScreen() {
     useImageCachePreference();
   const { preference: languagePreference, setPreference: setLanguagePreference } =
     useLanguagePreference();
+  const { preference: romanizedPreference, setPreference: setRomanizedPreference } =
+    useRomanizedNamesPreference();
 
   const [isLanguageModalVisible, setIsLanguageModalVisible] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -299,6 +303,22 @@ export default function ProfileScreen() {
             </Text>
             <ChevronDown color={theme.colors.muted} size={20} />
           </Pressable>
+        </View>
+
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Languages color={theme.colors.copper} size={22} />
+            <Text style={styles.sectionTitle}>{t("profile.romanized.title")}</Text>
+          </View>
+          <View style={styles.privacyRow}>
+            <Text style={styles.itemText}>{t("profile.romanized.hint")}</Text>
+            <Switch
+              value={romanizedPreference}
+              onValueChange={setRomanizedPreference}
+              trackColor={{ false: theme.colors.line, true: theme.colors.copper }}
+              thumbColor={theme.colors.paper}
+            />
+          </View>
         </View>
 
         <View style={styles.section}>
