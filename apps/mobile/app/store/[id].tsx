@@ -671,13 +671,6 @@ export default function StoreDetailScreen() {
         <Text style={styles.address}>{store.address}</Text>
       </View>
 
-      <View style={styles.actionRow}>
-        <Pressable accessibilityRole="button" style={[styles.primaryButton, { backgroundColor: theme.colors.copper }]} onPress={handleAddVisit}>
-          <Check color={theme.colors.paper} size={18} />
-          <Text style={styles.primaryButtonText}>{t("store.markVisited")}</Text>
-        </Pressable>
-      </View>
-
       <View style={styles.visitBox}>
         <CalendarDays color={theme.colors.teal} size={20} />
         <Pressable onPress={() => setShowDatePicker(true)} style={{ flex: 1, height: 48, justifyContent: 'center' }}>
@@ -750,6 +743,13 @@ export default function StoreDetailScreen() {
           {visitFeedback.message}
         </Text>
       ) : null}
+
+      <View style={styles.actionRow}>
+        <Pressable accessibilityRole="button" style={[styles.primaryButton, { backgroundColor: theme.colors.copper }]} onPress={handleAddVisit}>
+          <Check color={theme.colors.paper} size={18} />
+          <Text style={styles.primaryButtonText}>{t("store.markVisited")}</Text>
+        </Pressable>
+      </View>
 
       {storeVisits.length > 0 ? (
         <View style={styles.section}>
